@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chapter 2 Introduktion till R | Kursmaterial till Certifierad Data Scientist</title>
+  <title>Kapitel 2 Introduktion till R | Kursmaterial till Certifierad Data Scientist</title>
   <meta name="description" content="Det här dokumentet innehåller kursmaterial och övningar för det första blockets R-övningar.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 2 Introduktion till R | Kursmaterial till Certifierad Data Scientist" />
+  <meta property="og:title" content="Kapitel 2 Introduktion till R | Kursmaterial till Certifierad Data Scientist" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Introduktion till R | Kursmaterial till Certifierad Data Scientist" />
+  <meta name="twitter:title" content="Kapitel 2 Introduktion till R | Kursmaterial till Certifierad Data Scientist" />
   
   <meta name="twitter:description" content="Det här dokumentet innehåller kursmaterial och övningar för det första blockets R-övningar." />
   
@@ -127,7 +127,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./">Kursmaterial Certifierad Data Scientist</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Om dokumentet</a></li>
@@ -203,7 +203,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="intro" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> Introduktion till R</h1>
+<h1><span class="header-section-number">Kapitel 2</span> Introduktion till R</h1>
 <p>R är ett programmeringsspråk för dataanalys. Men R sträcker sig långt utöver enkla databearbetningar och statistisk modellering. Tack vare ett aktivt community har det utvecklats en stor mängd paket för att lösa många av de olika uppgifter en dataanalytiker kan tänkas ställas inför.</p>
 <p>R kan i sin enklaste form användas som en miniräknare med <code>+</code>, <code>-</code>, <code>/</code> eller <code>*</code>.</p>
 <p>Exempelvis:</p>
@@ -253,7 +253,7 @@ blandat</code></pre>
 helenas_ålder &lt;-<span class="st"> </span><span class="ot">NA</span>
 filips_ålder <span class="op">==</span><span class="st"> </span>helenas_ålder</code></pre>
 <pre><code>## [1] NA</code></pre>
-<p>Är Rikards ålder densamma som Katarinas ålder för att vi saknar värdet? Nej, det går inte att veta.</p>
+<p>Är Filips ålder densamma som Helenas ålder för att vi saknar värdet? Nej, det går inte att veta.</p>
 <p>Därför använder man i R istället <code>is.na()</code> för att undersöka om något <em>är</em> <code>NA</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.na</span>(x)</code></pre>
 <pre><code>## [1] FALSE  TRUE FALSE FALSE</code></pre>
@@ -461,11 +461,11 @@ filips_ålder <span class="op">==</span><span class="st"> </span>helenas_ålder<
 <p>Vi kan enkelt skapa våra egna data.frames.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data.frame</span>(<span class="dt">random_number =</span> <span class="kw">rnorm</span>(<span class="dv">5</span>))</code></pre>
 <pre><code>##   random_number
-## 1    -0.6327817
-## 2     0.9788995
-## 3    -0.2620598
-## 4     0.5847146
-## 5     0.1181710</code></pre>
+## 1     0.6627170
+## 2     1.2251595
+## 3     0.7812642
+## 4    -0.5863360
+## 5     0.7269374</code></pre>
 <p>En data.frame är ett bra sätt att spara en eller flera vektorer. De måste då vara exakt lika långa.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>),
            <span class="dt">y =</span> <span class="kw">c</span>(<span class="st">&quot;hej&quot;</span>, <span class="st">&quot;på&quot;</span>, <span class="st">&quot;dig&quot;</span>))</code></pre>

@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chapter 3 Datamanipulering med dplyr | Kursmaterial till Certifierad Data Scientist</title>
+  <title>Kapitel 3 Datamanipulering med dplyr | Kursmaterial till Certifierad Data Scientist</title>
   <meta name="description" content="Det här dokumentet innehåller kursmaterial och övningar för det första blockets R-övningar.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 3 Datamanipulering med dplyr | Kursmaterial till Certifierad Data Scientist" />
+  <meta property="og:title" content="Kapitel 3 Datamanipulering med dplyr | Kursmaterial till Certifierad Data Scientist" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Datamanipulering med dplyr | Kursmaterial till Certifierad Data Scientist" />
+  <meta name="twitter:title" content="Kapitel 3 Datamanipulering med dplyr | Kursmaterial till Certifierad Data Scientist" />
   
   <meta name="twitter:description" content="Det här dokumentet innehåller kursmaterial och övningar för det första blockets R-övningar." />
   
@@ -127,7 +127,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./">Kursmaterial Certifierad Data Scientist</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Om dokumentet</a></li>
@@ -203,7 +203,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="datamanipulering-med-dplyr" class="section level1">
-<h1><span class="header-section-number">Chapter 3</span> Datamanipulering med dplyr</h1>
+<h1><span class="header-section-number">Kapitel 3</span> Datamanipulering med dplyr</h1>
 <p>Det sägs ofta att en Data Scientist ägnar 80% av sin tid till att manipulera data så att den går att visualisera och modellera. Därför är det klokt att välja en metod och ett paket som underlättar det arbetet för dig.</p>
 <p>I den här introduktionen kommer vi att fokusera på att använda paketet <code>dplyr</code> för att göra datamanipuleringar. <code>dplyr</code> är ett av de mest populära paketen i R och ger dig en bred verktygslåda för att manipulera data. <code>dplyr</code> ingår också i ett samlingspaket <code>tidyverse</code> och samlar flertalet paket för datamanipulering, visualisering och modellering.</p>
 <p><code>dplyr</code> har ett antal <em>verb</em> för att göra manipuleringar:</p>
@@ -757,16 +757,16 @@ räknar vi ut medelvärde på <code>dep_delay</code>.</p>
 <pre><code>## # A tibble: 10 x 19
 ##     year month   day dep_time sched_dep_time dep_delay arr_time
 ##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;
-##  1  2013     4     8     1026           1030        -4     1312
-##  2  2013     9    15     2053           2055        -2     2343
-##  3  2013     2    18     1602           1545        17     1900
-##  4  2013     4     1     1826           1830        -4     2134
-##  5  2013    10    28     2249           2250        -1       13
-##  6  2013     7    31     1805           1730        35     2106
-##  7  2013     3    18     1424           1430        -6     1602
-##  8  2013     3    21     1955           1935        20     2218
-##  9  2013     3     1     1654           1700        -6     1917
-## 10  2013     9     5      650            625        25      858
+##  1  2013    11    20     1750           1755        -5     2102
+##  2  2013     1    13     1149           1150        -1     1335
+##  3  2013     8     2     1700           1703        -3     1918
+##  4  2013    11    30     2002           1923        39     2229
+##  5  2013    12    31      621            625        -4      954
+##  6  2013     9     5      625            630        -5      815
+##  7  2013     1    16     1409           1415        -6     1502
+##  8  2013     4     1     1511           1456        15     1827
+##  9  2013    11     8      733            730         3     1103
+## 10  2013     2    12     1247           1245         2     1559
 ## # ... with 12 more variables: sched_arr_time &lt;int&gt;, arr_delay &lt;dbl&gt;,
 ## #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
 ## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;,
@@ -776,16 +776,16 @@ räknar vi ut medelvärde på <code>dep_delay</code>.</p>
 <pre><code>## # A tibble: 337 x 19
 ##     year month   day dep_time sched_dep_time dep_delay arr_time
 ##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;
-##  1  2013     4     6     1240           1245        -5     1334
-##  2  2013     1    24     1427           1429        -2     1816
-##  3  2013    11    17     1756           1759        -3     2103
-##  4  2013     9    26     1749           1735        14     2002
-##  5  2013     7    31     1815           1815         0     2117
-##  6  2013     9    13      616            610         6      724
-##  7  2013     2    21      753            800        -7     1107
-##  8  2013     8    27      556            602        -6      820
-##  9  2013     8    28     1839           1835         4     2141
-## 10  2013     9    26      554            600        -6      718
+##  1  2013    11     1     1255           1300        -5     1526
+##  2  2013     3    18      632            630         2      906
+##  3  2013     7    18     1128           1034        54     1251
+##  4  2013     9    12     1250           1246         4     1518
+##  5  2013     2    19     1503           1446        17     1717
+##  6  2013     6    16     1236           1210        26     1515
+##  7  2013     3    20      802            755         7     1112
+##  8  2013    11    18     1943           1945        -2     2055
+##  9  2013    10     3     1613           1615        -2     1858
+## 10  2013     7     8     1312           1315        -3     1443
 ## # ... with 327 more rows, and 12 more variables: sched_arr_time &lt;int&gt;,
 ## #   arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;,
 ## #   origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;,

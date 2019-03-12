@@ -89,7 +89,7 @@ helenas_ålder <- NA
 filips_ålder == helenas_ålder
 ```
 
-Är Rikards ålder densamma som Katarinas ålder för att vi saknar värdet? Nej, det går inte att veta.
+Är Filips ålder densamma som Helenas ålder för att vi saknar värdet? Nej, det går inte att veta.
 
 Därför använder man i R istället `is.na()` för att undersöka om något *är* `NA`.
 
