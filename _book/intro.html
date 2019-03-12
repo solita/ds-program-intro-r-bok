@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 2 Introduktion till R | Kursmaterial till Certifierad Data Scientist</title>
+  <meta name="description" content="Det här dokumentet innehåller kursmaterial och övningar för det första blockets R-övningar.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Chapter 2 Introduktion till R | Kursmaterial till Certifierad Data Scientist" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Det här dokumentet innehåller kursmaterial och övningar för det första blockets R-övningar." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Introduktion till R | Kursmaterial till Certifierad Data Scientist" />
+  
+  <meta name="twitter:description" content="Det här dokumentet innehåller kursmaterial och övningar för det första blockets R-övningar." />
+  
+
+<meta name="author" content="Ferrologic">
+
+
+<meta name="date" content="2019-03-12">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="datamanipulering-med-dplyr.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Om dokumentet</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduktion till R</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#saknade-varden-missing-values"><i class="fa fa-check"></i><b>2.1</b> Saknade värden (missing values)</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#r-ar-ett-funktionellt-programmeringssprak"><i class="fa fa-check"></i><b>2.2</b> R är ett funktionellt programmeringsspråk</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="intro.html"><a href="intro.html#funktioner"><i class="fa fa-check"></i><b>2.2.1</b> Funktioner</a></li>
+<li class="chapter" data-level="2.2.2" data-path="intro.html"><a href="intro.html#dokumentation-av-funktioner"><i class="fa fa-check"></i><b>2.2.2</b> Dokumentation av funktioner</a></li>
+<li class="chapter" data-level="2.2.3" data-path="intro.html"><a href="intro.html#ovning"><i class="fa fa-check"></i><b>2.2.3</b> Övning</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#data-frames"><i class="fa fa-check"></i><b>2.3</b> Data frames</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#paket"><i class="fa fa-check"></i><b>2.4</b> Paket</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="intro.html"><a href="intro.html#ovning-1"><i class="fa fa-check"></i><b>2.4.1</b> Övning</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#tidyverse-and-friends"><i class="fa fa-check"></i><b>2.5</b> tidyverse and friends</a></li>
+<li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#workflow-i-r"><i class="fa fa-check"></i><b>2.6</b> Workflow i R</a></li>
+<li class="chapter" data-level="2.7" data-path="intro.html"><a href="intro.html#att-skriva-kod-i-r"><i class="fa fa-check"></i><b>2.7</b> Att skriva kod i R</a></li>
+<li class="chapter" data-level="2.8" data-path="intro.html"><a href="intro.html#rmarkdown"><i class="fa fa-check"></i><b>2.8</b> Rmarkdown</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="datamanipulering-med-dplyr.html"><a href="datamanipulering-med-dplyr.html"><i class="fa fa-check"></i><b>3</b> Datamanipulering med dplyr</a><ul>
+<li class="chapter" data-level="3.1" data-path="datamanipulering-med-dplyr.html"><a href="datamanipulering-med-dplyr.html#filter"><i class="fa fa-check"></i><b>3.1</b> Filter</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="datamanipulering-med-dplyr.html"><a href="datamanipulering-med-dplyr.html#ovning-2"><i class="fa fa-check"></i><b>3.1.1</b> Övning</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="datamanipulering-med-dplyr.html"><a href="datamanipulering-med-dplyr.html#arrange"><i class="fa fa-check"></i><b>3.2</b> Arrange</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="datamanipulering-med-dplyr.html"><a href="datamanipulering-med-dplyr.html#ovning-3"><i class="fa fa-check"></i><b>3.2.1</b> Övning</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="datamanipulering-med-dplyr.html"><a href="datamanipulering-med-dplyr.html#select"><i class="fa fa-check"></i><b>3.3</b> Select</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="datamanipulering-med-dplyr.html"><a href="datamanipulering-med-dplyr.html#ovning-4"><i class="fa fa-check"></i><b>3.3.1</b> Övning</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="datamanipulering-med-dplyr.html"><a href="datamanipulering-med-dplyr.html#mutate"><i class="fa fa-check"></i><b>3.4</b> Mutate</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="datamanipulering-med-dplyr.html"><a href="datamanipulering-med-dplyr.html#if_else"><i class="fa fa-check"></i><b>3.4.1</b> if_else()</a></li>
+<li class="chapter" data-level="3.4.2" data-path="datamanipulering-med-dplyr.html"><a href="datamanipulering-med-dplyr.html#andra-funktioner"><i class="fa fa-check"></i><b>3.4.2</b> Andra funktioner</a></li>
+<li class="chapter" data-level="3.4.3" data-path="datamanipulering-med-dplyr.html"><a href="datamanipulering-med-dplyr.html#ovningar"><i class="fa fa-check"></i><b>3.4.3</b> Övningar</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="datamanipulering-med-dplyr.html"><a href="datamanipulering-med-dplyr.html#summarise"><i class="fa fa-check"></i><b>3.5</b> Summarise</a></li>
+<li class="chapter" data-level="3.6" data-path="datamanipulering-med-dplyr.html"><a href="datamanipulering-med-dplyr.html#sample_n"><i class="fa fa-check"></i><b>3.6</b> sample_n()</a><ul>
+<li class="chapter" data-level="3.6.1" data-path="datamanipulering-med-dplyr.html"><a href="datamanipulering-med-dplyr.html#ovning-5"><i class="fa fa-check"></i><b>3.6.1</b> Övning</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="bilaga.html"><a href="bilaga.html"><i class="fa fa-check"></i><b>4</b> Bilaga</a><ul>
+<li class="chapter" data-level="4.1" data-path="bilaga.html"><a href="bilaga.html#variabeltyper-i-r"><i class="fa fa-check"></i><b>4.1</b> Variabeltyper i R</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="bilaga.html"><a href="bilaga.html#vektorer"><i class="fa fa-check"></i><b>4.1.1</b> Vektorer</a></li>
+<li class="chapter" data-level="4.1.2" data-path="bilaga.html"><a href="bilaga.html#faktorvariabel"><i class="fa fa-check"></i><b>4.1.2</b> Faktorvariabel</a></li>
+<li class="chapter" data-level="4.1.3" data-path="bilaga.html"><a href="bilaga.html#logik"><i class="fa fa-check"></i><b>4.1.3</b> Logik</a></li>
+<li class="chapter" data-level="4.1.4" data-path="bilaga.html"><a href="bilaga.html#matriser"><i class="fa fa-check"></i><b>4.1.4</b> Matriser</a></li>
+<li class="chapter" data-level="4.1.5" data-path="bilaga.html"><a href="bilaga.html#data.frame"><i class="fa fa-check"></i><b>4.1.5</b> Data.frame</a></li>
+<li class="chapter" data-level="4.1.6" data-path="bilaga.html"><a href="bilaga.html#listor"><i class="fa fa-check"></i><b>4.1.6</b> Listor</a></li>
+<li class="chapter" data-level="4.1.7" data-path="bilaga.html"><a href="bilaga.html#datum"><i class="fa fa-check"></i><b>4.1.7</b> Datum</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="bilaga.html"><a href="bilaga.html#indexering"><i class="fa fa-check"></i><b>4.2</b> Indexering</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="bilaga.html"><a href="bilaga.html#genom-att-begransa-varden-som-man-vill-plocka-ut"><i class="fa fa-check"></i><b>4.2.1</b> Genom att begränsa värden som man vill plocka ut</a></li>
+<li class="chapter" data-level="4.2.2" data-path="bilaga.html"><a href="bilaga.html#genom-att-ange-namn-av-elementet-eller-kolumnen"><i class="fa fa-check"></i><b>4.2.2</b> Genom att ange namn av elementet eller kolumnen</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Kursmaterial till Certifierad Data Scientist</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="intro" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Introduktion till R</h1>
+<p>R är ett programmeringsspråk för dataanalys. Men R sträcker sig långt utöver enkla databearbetningar och statistisk modellering. Tack vare ett aktivt community har det utvecklats en stor mängd paket för att lösa många av de olika uppgifter en dataanalytiker kan tänkas ställas inför.</p>
+<p>R kan i sin enklaste form användas som en miniräknare med <code>+</code>, <code>-</code>, <code>/</code> eller <code>*</code>.</p>
+<p>Exempelvis:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">100</span> <span class="op">+</span><span class="st"> </span><span class="dv">4</span></code></pre>
+<pre><code>## [1] 104</code></pre>
+<p>Eller:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">4</span> <span class="op">*</span><span class="st"> </span><span class="dv">6</span> <span class="op">-</span><span class="st"> </span><span class="dv">2</span></code></pre>
+<pre><code>## [1] 22</code></pre>
+<p>Beräkningar, eller alla former av manipuleringar kan sparas i så kallade <code>objekt</code>.</p>
+<p>Exempelvis kan vi spara en av ovanstående beräkningar i objektet <code>x</code> med <code>&lt;-</code> som kallas för <em>the assign operator</em>.</p>
+<pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="dv">100</span> <span class="op">+</span><span class="st"> </span><span class="dv">4</span>
+x</code></pre>
+<pre><code>## [1] 104</code></pre>
+<p>Pilen <code>&lt;-</code> kan även vändas på <code>-&gt;</code></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">100</span> <span class="op">+</span><span class="st"> </span><span class="dv">4</span> -&gt;<span class="st"> </span>x
+x</code></pre>
+<pre><code>## [1] 104</code></pre>
+<p>Du kan spara flera värden i ett objekt genom att omsluta dem med funktionen <code>c()</code> och separatera med <code>,</code> (<em>c</em> står för <em>combine</em>). Då kallas objektet för en <code>vector</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">100</span> <span class="op">+</span><span class="st"> </span><span class="dv">4</span>, <span class="dv">10</span> <span class="op">*</span><span class="st"> </span><span class="dv">2</span>)
+x</code></pre>
+<pre><code>## [1]   4 104  20</code></pre>
+<p>Objekt och vektorer är inte begränsade till numeriska värden utan kan även innehålla text.</p>
+<pre class="sourceCode r"><code class="sourceCode r">text &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;hej&quot;</span>, <span class="st">&quot;jag&quot;</span>, <span class="st">&quot;älskar&quot;</span>, <span class="st">&quot;r&quot;</span>)
+text</code></pre>
+<pre><code>## [1] &quot;hej&quot;    &quot;jag&quot;    &quot;älskar&quot; &quot;r&quot;</code></pre>
+<p>Vi kan dock inte blanda text och numeriska värden. Då kommer R att tolka det som text.</p>
+<pre class="sourceCode r"><code class="sourceCode r">blandat &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="st">&quot;hej&quot;</span>, <span class="dv">6</span>)
+blandat</code></pre>
+<pre><code>## [1] &quot;1&quot;   &quot;5&quot;   &quot;hej&quot; &quot;6&quot;</code></pre>
+<div id="saknade-varden-missing-values" class="section level2">
+<h2><span class="header-section-number">2.1</span> Saknade värden (missing values)</h2>
+<p>Ett vanligt fenomen i data från verkligheten är saknade värden. Saknade värden representeras i R med <code>NA</code>.
+<code>NA</code> är inte <em>noll</em>. Det är inte heller ett värde. Det är helt enkelt en indikation på att vi inte vet vilket värde som ligger där.</p>
+<p>Det här upplevde i alla fall jag som lite förvirrande till en början.</p>
+<p>Om vi har en vektor med <code>NA</code>:</p>
+<pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="ot">NA</span>, <span class="dv">2</span>, <span class="dv">50</span>)</code></pre>
+<p>Och kollar vilka värden som är större än 2.</p>
+<pre class="sourceCode r"><code class="sourceCode r">x <span class="op">&gt;</span><span class="st"> </span><span class="dv">2</span> </code></pre>
+<pre><code>## [1]  TRUE    NA FALSE  TRUE</code></pre>
+<p>Så ser vi att vår observation med <code>NA</code> inte är <code>TRUE</code> eller <code>FALSE</code> utan helt enkelt <code>NA</code>.</p>
+<p>Om vi vill kolla vilka värden som är <code>NA</code> borde vi kunna göra samma sak:</p>
+<pre class="sourceCode r"><code class="sourceCode r">x <span class="op">==</span><span class="st"> </span><span class="ot">NA</span></code></pre>
+<pre><code>## [1] NA NA NA NA</code></pre>
+<p>Det här svaret känns kanske inte intuitivt men det här beror på att vi helt enkelt inte vet. Det går inte att utvärdera om <code>x</code> <em>är</em> <code>NA</code>.</p>
+<p>Vi kan illustrera med ett exempel:</p>
+<pre class="sourceCode r"><code class="sourceCode r">filips_ålder &lt;-<span class="st"> </span><span class="ot">NA</span>
+helenas_ålder &lt;-<span class="st"> </span><span class="ot">NA</span>
+filips_ålder <span class="op">==</span><span class="st"> </span>helenas_ålder</code></pre>
+<pre><code>## [1] NA</code></pre>
+<p>Är Rikards ålder densamma som Katarinas ålder för att vi saknar värdet? Nej, det går inte att veta.</p>
+<p>Därför använder man i R istället <code>is.na()</code> för att undersöka om något <em>är</em> <code>NA</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.na</span>(x)</code></pre>
+<pre><code>## [1] FALSE  TRUE FALSE FALSE</code></pre>
+<p><code>NA</code> är ett vanligt argument i funktioner. Ska vi exempelvis beräkna medelvärdet på vår vektor <em>x</em> som har <code>NA</code> i sig så får vi:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(x)</code></pre>
+<pre><code>## [1] NA</code></pre>
+<p>Eftersom vi saknar ett värde kan vi omöjligen veta vad medelvärdet för <code>x</code> är. Det saknade värdet kan vara vilken siffra som helst.</p>
+<p>Därför kan vi i funktionen <code>mean()</code> välja att helt bortse från det saknade värdet:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(x, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre>
+<pre><code>## [1] 18.66667</code></pre>
+</div>
+<div id="r-ar-ett-funktionellt-programmeringssprak" class="section level2">
+<h2><span class="header-section-number">2.2</span> R är ett funktionellt programmeringsspråk</h2>
+<p>Vi använder oss hela tiden av funktioner i R. Vi kan skriva egna funktioner men oftast använder vi färdiga funktioner från paket med funktioner.</p>
+<p>Funktionell programmering är bra för dataanalys. Ofta jobbar vi med data som vi vill manipulera om och om igen och funktioner är ett bra sätt att göra det på. På många sätt liknar R därför Excel som också jobbar mycket med funktioner.</p>
+<div id="funktioner" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Funktioner</h3>
+<p>Precis som i Excel finns det flertalet inbyggda statistiska och matematiska funktioner i R:</p>
+<ul>
+<li><code>mean()</code></li>
+<li><code>median()</code></li>
+<li><code>sd()</code></li>
+<li>…osv</li>
+</ul>
+<p>Det finns också matematiska funktioner</p>
+<ul>
+<li><code>log()</code></li>
+<li><code>sin()</code></li>
+<li><code>cos()</code></li>
+<li>…osv</li>
+</ul>
+</div>
+<div id="dokumentation-av-funktioner" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Dokumentation av funktioner</h3>
+<p>Funktioner innehåller också dokumentation om hur de fungerar.</p>
+<p>För att komma åt dokumentation skriver du ett frågetecken innan funktioner.</p>
+<pre class="sourceCode r"><code class="sourceCode r">?<span class="kw">mean</span>()</code></pre>
+</div>
+<div id="ovning" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> Övning</h3>
+<ul>
+<li>Använd några av R:s statistiska funktioner på en numerisk vektor</li>
+</ul>
+</div>
+</div>
+<div id="data-frames" class="section level2">
+<h2><span class="header-section-number">2.3</span> Data frames</h2>
+<ul>
+<li>Det vanligaste formatet i R för dataanalys</li>
+<li>En data.frame är en rektangulär tabell med en eller flera kolumner</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="right">year</th>
+<th align="right">month</th>
+<th align="right">day</th>
+<th align="right">dep_time</th>
+<th align="right">sched_dep_time</th>
+<th align="right">dep_delay</th>
+<th align="right">arr_time</th>
+<th align="right">sched_arr_time</th>
+<th align="right">arr_delay</th>
+<th align="left">carrier</th>
+<th align="right">flight</th>
+<th align="left">tailnum</th>
+<th align="left">origin</th>
+<th align="left">dest</th>
+<th align="right">air_time</th>
+<th align="right">distance</th>
+<th align="right">hour</th>
+<th align="right">minute</th>
+<th align="left">time_hour</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">2013</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">517</td>
+<td align="right">515</td>
+<td align="right">2</td>
+<td align="right">830</td>
+<td align="right">819</td>
+<td align="right">11</td>
+<td align="left">UA</td>
+<td align="right">1545</td>
+<td align="left">N14228</td>
+<td align="left">EWR</td>
+<td align="left">IAH</td>
+<td align="right">227</td>
+<td align="right">1400</td>
+<td align="right">5</td>
+<td align="right">15</td>
+<td align="left">2013-01-01 05:00:00</td>
+</tr>
+<tr class="even">
+<td align="right">2013</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">533</td>
+<td align="right">529</td>
+<td align="right">4</td>
+<td align="right">850</td>
+<td align="right">830</td>
+<td align="right">20</td>
+<td align="left">UA</td>
+<td align="right">1714</td>
+<td align="left">N24211</td>
+<td align="left">LGA</td>
+<td align="left">IAH</td>
+<td align="right">227</td>
+<td align="right">1416</td>
+<td align="right">5</td>
+<td align="right">29</td>
+<td align="left">2013-01-01 05:00:00</td>
+</tr>
+<tr class="odd">
+<td align="right">2013</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">542</td>
+<td align="right">540</td>
+<td align="right">2</td>
+<td align="right">923</td>
+<td align="right">850</td>
+<td align="right">33</td>
+<td align="left">AA</td>
+<td align="right">1141</td>
+<td align="left">N619AA</td>
+<td align="left">JFK</td>
+<td align="left">MIA</td>
+<td align="right">160</td>
+<td align="right">1089</td>
+<td align="right">5</td>
+<td align="right">40</td>
+<td align="left">2013-01-01 05:00:00</td>
+</tr>
+<tr class="even">
+<td align="right">2013</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">544</td>
+<td align="right">545</td>
+<td align="right">-1</td>
+<td align="right">1004</td>
+<td align="right">1022</td>
+<td align="right">-18</td>
+<td align="left">B6</td>
+<td align="right">725</td>
+<td align="left">N804JB</td>
+<td align="left">JFK</td>
+<td align="left">BQN</td>
+<td align="right">183</td>
+<td align="right">1576</td>
+<td align="right">5</td>
+<td align="right">45</td>
+<td align="left">2013-01-01 05:00:00</td>
+</tr>
+<tr class="odd">
+<td align="right">2013</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">554</td>
+<td align="right">600</td>
+<td align="right">-6</td>
+<td align="right">812</td>
+<td align="right">837</td>
+<td align="right">-25</td>
+<td align="left">DL</td>
+<td align="right">461</td>
+<td align="left">N668DN</td>
+<td align="left">LGA</td>
+<td align="left">ATL</td>
+<td align="right">116</td>
+<td align="right">762</td>
+<td align="right">6</td>
+<td align="right">0</td>
+<td align="left">2013-01-01 06:00:00</td>
+</tr>
+<tr class="even">
+<td align="right">2013</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">554</td>
+<td align="right">558</td>
+<td align="right">-4</td>
+<td align="right">740</td>
+<td align="right">728</td>
+<td align="right">12</td>
+<td align="left">UA</td>
+<td align="right">1696</td>
+<td align="left">N39463</td>
+<td align="left">EWR</td>
+<td align="left">ORD</td>
+<td align="right">150</td>
+<td align="right">719</td>
+<td align="right">5</td>
+<td align="right">58</td>
+<td align="left">2013-01-01 05:00:00</td>
+</tr>
+</tbody>
+</table>
+<p>Vi kan enkelt skapa våra egna data.frames.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data.frame</span>(<span class="dt">random_number =</span> <span class="kw">rnorm</span>(<span class="dv">5</span>))</code></pre>
+<pre><code>##   random_number
+## 1    -0.6327817
+## 2     0.9788995
+## 3    -0.2620598
+## 4     0.5847146
+## 5     0.1181710</code></pre>
+<p>En data.frame är ett bra sätt att spara en eller flera vektorer. De måste då vara exakt lika långa.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>),
+           <span class="dt">y =</span> <span class="kw">c</span>(<span class="st">&quot;hej&quot;</span>, <span class="st">&quot;på&quot;</span>, <span class="st">&quot;dig&quot;</span>))</code></pre>
+<pre><code>##   x   y
+## 1 1 hej
+## 2 2  på
+## 3 3 dig</code></pre>
+<p>Om du sparar vektorerna som två objekt kan du enkelt göra dem till den data.frame.</p>
+<pre class="sourceCode r"><code class="sourceCode r">siffror &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>)
+ord &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;vad&quot;</span>, <span class="st">&quot;var&quot;</span>, <span class="st">&quot;det&quot;</span>, <span class="st">&quot;där&quot;</span>)
+
+<span class="kw">data.frame</span>(siffror, ord)</code></pre>
+<pre><code>##   siffror ord
+## 1       5 vad
+## 2       1 var
+## 3       2 det
+## 4       5 där</code></pre>
+</div>
+<div id="paket" class="section level2">
+<h2><span class="header-section-number">2.4</span> Paket</h2>
+<p>Vi nämnde tidigare att vi kan spara funktioner i så kallade paket. Paket är precis det. Ett sätt för oss att spara och lätt komma åt funktioner i R. Paket som genomgår viss granskning läggs upp på <code>CRAN</code> (The Comprehensive R Archive Network). Men man kan även skapa egna paket och lägga upp på Github eller spara på sin egen dator.</p>
+<p>För att installera ett paket från <code>CRAN</code> använder du funktionen <code>install.packages("paketnamn")</code>.</p>
+<p>När du sedan laddat ner paketet behöver du ladda det i R genom <code>library(paketnamn)</code>.</p>
+<div id="ovning-1" class="section level3">
+<h3><span class="header-section-number">2.4.1</span> Övning</h3>
+<p>Paketet <code>tidyverse</code> är nedladdat åt dig. Ladda paketet med <code>library()</code></p>
+</div>
+</div>
+<div id="tidyverse-and-friends" class="section level2">
+<h2><span class="header-section-number">2.5</span> tidyverse and friends</h2>
+<p>tidyverse är en samling paket för att lösa olika typer av problem inom dataanalys.</p>
+<p>De har en gemensam filosofi: paketen och dess funktioner är i första hand designade för att människor ska använda dem.</p>
+<p>Det gör att de av många upplevs som enklare att använda och mer konsekventa än det som kallas <em>base R</em> . D.v.s. R utan några paket.</p>
+<p>Vi kommer här att fokusera på <code>tidyverse</code> eftersom det är ett bra sätt att komma igång med R.</p>
+</div>
+<div id="workflow-i-r" class="section level2">
+<h2><span class="header-section-number">2.6</span> Workflow i R</h2>
+<p>I R så jobbar vi med så kallade R-projects. I Rstudio kan du klicka på <em>file -&gt; New Project -&gt; New Directory -&gt; Create Project</em> för att skapa ett nytt projekt. Genom att skapa ett projekt vet R alltid var filerna för det projektet är och det blir enklare för dig att jobba.</p>
+</div>
+<div id="att-skriva-kod-i-r" class="section level2">
+<h2><span class="header-section-number">2.7</span> Att skriva kod i R</h2>
+<p>När du skriver kod gör du det dels med hänsyn dels till andra men framför allt med hänsyn till ditt framtida jag. Koden ska med andra ord vara enkel att läsa.</p>
+<p>Därför kan det vara bra att följa en stilguide.</p>
+<p>Jag följer stilguiden från <code>tidyverse</code> som säger att:</p>
+<ul>
+<li>Namnge alltid variabler, objekt m.m. med små bokstäver.</li>
+</ul>
+<p>Exempelvis är det enklare att läsa:</p>
+<pre class="sourceCode r"><code class="sourceCode r">min_egna_funktion &lt;-<span class="st"> </span><span class="cf">function</span>(x)</code></pre>
+<p>I kontrast till:</p>
+<pre class="sourceCode r"><code class="sourceCode r">MinEgnaFunktion &lt;-<span class="st"> </span><span class="cf">function</span>(x)</code></pre>
+<p>Vi strävar dessutom efter att skriva kod som vi skriver text, med mellanrum mellan <code>,</code> och ord.</p>
+<p>Det här är enklare att läsa:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(x, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre>
+<p>Än det här:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(x,<span class="dt">na.rm=</span><span class="ot">TRUE</span>)</code></pre>
+<p>När vi sparar filer så försöker vi följa den här syntaxen. Därför ska du inte ha mellanrum i när du sparar filer. <code>min-r-fil.R</code> är bra men <code>min R fil.R</code> är dåligt.</p>
+<p>När vi skriver kod försöker vi dessutom inte att skriva för lång uttryck:</p>
+<p>Det här är mycket svårare att läsa:</p>
+<pre class="sourceCode r"><code class="sourceCode r">iris <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(Species) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">Sepal.Length =</span> <span class="kw">mean</span>(Sepal.Length), <span class="dt">Sepal.Width =</span> <span class="kw">mean</span>(Sepal.Width), <span class="dt">Species =</span> <span class="kw">n_distinct</span>(Species))</code></pre>
+<p>Än det här:</p>
+<pre class="sourceCode r"><code class="sourceCode r">iris <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(Species) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(
+    <span class="dt">Sepal.Length =</span> <span class="kw">mean</span>(Sepal.Length),
+    <span class="dt">Sepal.Width =</span> <span class="kw">mean</span>(Sepal.Width),
+    <span class="dt">Species =</span> <span class="kw">n_distinct</span>(Species)
+  ) </code></pre>
+</div>
+<div id="rmarkdown" class="section level2">
+<h2><span class="header-section-number">2.8</span> Rmarkdown</h2>
+<p>Rmarkdown är ett format som tillåter dig varva r-kod med skriven text. Du kan sedan rendera filen till antigen HTML, PDF, Word, PowerPoint samt en rad andra format.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="datamanipulering-med-dplyr.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["ds-intro-till-r-bok.pdf", "ds-intro-till-r-bok.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

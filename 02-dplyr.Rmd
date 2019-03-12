@@ -1,0 +1,270 @@
+# Datamanipulering med dplyr
+Det sägs ofta att en Data Scientist ägnar 80% av sin tid till att manipulera data så att den går att visualisera och modellera. Därför är det klokt att välja en metod och ett paket som underlättar det arbetet för dig. 
+
+I den här introduktionen kommer vi att fokusera på att använda paketet `dplyr` för att göra datamanipuleringar. `dplyr` är ett av de mest populära paketen i R och ger dig en bred verktygslåda för att manipulera data. `dplyr` ingår också i ett samlingspaket `tidyverse` och samlar flertalet paket för datamanipulering, visualisering och modellering. 
+
+`dplyr` har ett antal *verb*  för att göra manipuleringar:
+
+- **`filter()`** där du väljer observationer baserat på deras värden
+- **`arrange()`** som ändrar ordningen på rader
+- **`select()`** för att välja variabler baserat på deras namn
+- **`mutate()`** för att skapa nya variabler baserat på funktioner
+- **`summarise()`** för att summera många värden till ett värde
+
+Samtliga av dessa verb kan användas i kombination med funktionen `group_by()` som innebär att du utför verben på flera grupper. 
+
+Alla verb i `dplyr` är konsekventa. Det första argumentet är din data och i det andra argumentet specificerar du vad du vill göra med din data. Resultatet är alltid en ny data.frame. 
+
+## Filter
+Med filter kan du enkelt filtrera din data baserat på villkor. 
+
+Dessa villkor uttrycks med hjälp av `relationsoperatorer` och `logical operators`.
+
+I R är dessa:
+```{r echo = FALSE,results='asis'}
+knitr::kable(tibble::tibble(Relationsoperator = 
+                                c("och (and) ", "eller(or)", "icke(not)"),
+                              `Symbol i R` = 
+                                c("&", "|", "!")))
+```
+
+```{r echo = FALSE, results='asis'}
+knitr::kable(tibble::tibble(`Logical Operators` =
+                              c( "lika", "inte lika", "större än eller lika", "mindre än eller lika",
+                           "större än", "mindre än", "finns i"),
+             `Symbol i R` = c("==", "!=", ">=", "<=", ">", "<", "%in%")))
+```
+
+Dessa kan du använda i `filter()`.
+
+**PS: Det vanligaste misstaget i början av din R-karriär är att skriva `=` istället för `==`.**
+
+Så här använder du operatorerna:
+
+Hitta alla flyg som kom fram 08:30 under februari
+```{r message=FALSE}
+library(dplyr)
+library(nycflights13)
+filter(flights, month == 2, arr_time == 830)
+```
+
+Hitta alla flygbolag som finns i  `c("UA", "DL")` i februari eller mars och som inte var försenade.
+```{r}
+filter(flights, carrier %in% c("UA", "DL"), month == 2 | month == 3, dep_delay <= 0)
+```
+
+### Övning
+Hur många plan...
+
+1. var försenade mer än 1 timme?
+2. skulle till Boston ("BOS")
+3. lämnade JFK och var försenade
+4. lämnade JFK på julafton
+5. var försenade, men inte kom fram försent
+6. flög United Airlines (UA) eller American Airlines?
+
+## Arrange 
+`arrange()` kastar om ordningen på dina rader enligt en av dig vald variabel. Exempelvis kanske vi vill sortera data på försenade avgångar `dep_delay`.
+
+```{r}
+arrange(flights, dep_delay)
+```
+
+`arrange()` sorterar per default på sjunkande värde (ascending). Vill du sortera på stigande värde (descending) sätter du `desc()` runt din variabel.
+
+```{r}
+arrange(flights, desc(dep_delay))
+```
+### Övning
+Hitta det flyg som...
+
+1. flög längst
+2. var mest försenat (när det kom fram)
+
+## Select
+Medan `arrange()` kastar om raderna så kastar `select()` om kolumnerna. Men mest används den för att välja ut kolumner av intresse.
+
+```{r}
+select(flights, dep_delay, carrier)
+```
+
+Om du av något skäl vill flytta en kolumn till början kan du skriva:
+```{r}
+select(flights, carrier, everything())
+```
+
+Du kan även välja alla kolumner mellan två kolumner:
+
+```{r}
+select(flights, year:day)
+```
+
+Genom att sätta ett minus framför variabelnamnet exkluderar du variabeln.
+
+```{r}
+select(flights, -year)
+```
+
+#### select() plus hjälpfunktioner
+`select()` kommer med ett antal hjälpfunktioner:
+
+- `starts_with("asd")`
+- `ends_with("air")`
+- `contains("flyg")`
+- `matches("asd")`
+- `num_range("flyg", 1:10)`
+
+De används för att identifiera kolumner baserat på text.
+
+Exempelvis kan du hitta alla delay-kolumner med `contains`.
+
+```{r}
+select(flights, contains("delay"))
+```
+
+#### rename()
+En annan nyttig funktion är `rename()` som kort och gott döper om variabler.
+
+Formeln är `rename(data, ny_variabel = gammal_variabel)`
+
+### Övning
+
+1. Som innehåller "dep"
+2. Som börjar med "dep"
+3. Döp om `dep_delay` till `försenad_avgång`
+
+## Mutate
+`mutate()` används för att skapa nya variabler.
+
+Exempelvis kan vi räkna ut hur mycket tid man vunnit om exempelvis flyget landar tidigare än avsett.
+
+```{r}
+mutate(flights, beer_time = dep_delay - arr_delay)
+```
+
+I `mutate()` kan du även använda funktioner såsom `mean()`.
+
+```{r}
+mutate(flights, mean_delay = mean(dep_delay, na.rm = T))
+```
+
+### if_else()
+En vanlig funktion i databearbetning är ifelse-satser. 
+
+I R gör du det enklast med funktionen `if_else()` från `dplyr`. Det finns även en inbyggd funktion som heter `ifelse()` som mestadels fungerar bra men den från `dplyr` är något mer stabil. 
+
+Du kan använda den i mutate:
+```{r}
+mutate(flights, försenad = if_else(dep_delay  > 5, "försenad", "ej försenad"))
+```
+
+Ibland vill man göra flera stycken `if_else()` i samma, exempelvis om man vill dela upp en variabel i flera kategorier beroende på ett logiskt villkor. För att göra det kan du använda funktionen `case_when()`. 
+```{r}
+mutate(flights, försenad_kat = case_when(
+dep_delay < 0 ~ "före tid",
+dep_delay == 0 ~ "i tid",
+dep_delay > 0 ~ "försenad")) 
+```
+
+### Andra funktioner
+I `mutate()` kan du använda de allra flesta funktionerna i R. Här är exempel på några funktioner som kan vara nyttiga i databearbetning:
+
+- Funktioner för att ranka variabler: `rank()`, `min_rank()`, `dense_rank()`, `percent_rank()`
+- För att logaritmiska funktioner: `log()`, `log10()`
+- För kumulativa beräkningar: `cumsum()`, `cummean()`
+- För att bara generera radnummer: `row_number()`
+- För att ta observation innan eller efter: `lead()` och `lag()`
+- För skapa variabler baserat på värde i andra variabler `if_else()` och `case_when()`
+
+### Övningar
+1. Skapa en variabel som innehåller den totala förseningen
+2. Rangordna flygens distans. Hur hanterar du fall där distansen är lika lång?
+3. Skapa en variabel som anger om flyget går på våren, hösten, vintern eller sommaren.
+
+## Summarise
+Ofta vill man summera variabler för att få ut intressant information. Exempelvis vill vi här kanske veta en rad medelvärden.
+
+```{r}
+summarise(flights, mean_dist = mean(distance, na.rm = T))
+summarise(flights, sum_dist = sum(distance, na.rm = T))
+summarise(flights, count = n())
+```
+
+Men dessa värden är inte så intressanta i sig, utan vi vill kunna göra jämförelse. Då använder vi `group_by()`.
+```{r}
+group_by_flights <- group_by(flights, carrier)
+
+summarise(group_by_flights, 
+          mean_air_time = mean(air_time, na.rm = T),
+          mean_dep_delay = mean(dep_delay, na.rm = T),
+          mean_arr_delay = mean(arr_delay, na.rm = T))
+```
+
+I `summarise()` kan du använda en rad olika funktioner såsom `sum()` för summeringar, `median()` etc. 
+
+#### Övningar 
+1. Vilken flygplats har högst medelvärde förförseningar från flygplatsen?
+2. Vilken flygplats tar emot minst flyg?
+
+#### Väv ihop verben med %>%
+Med `%>%` (som kallas för `pipe` and kan uttalas som `and then`) kan länka ihop flera uttryck i *R*. Det gör framför allt din kod mer lättläst.
+
+Med `%>%` kan du exempelvis först filtrera, sen gruppera och till sist summera, allt i samma uttryck.
+```{r}
+flights %>%
+filter(dep_delay < 60) %>%
+group_by(carrier) %>%
+summarise(mean_dep_delay = mean(dep_delay, na.rm = T))
+```
+
+Du läser alltså:
+Första tar vi `flights` *and then* 
+filtrerar vi på `dep_delay` *and then*
+grupperar vi på `carrier` *and then*
+räknar vi ut medelvärde på `dep_delay`.
+
+Vilket är mycket mer lättläst än motsvarigheten med parenteser:
+```{r eval=FALSE}
+summarise(
+  group_by(
+    filter(flights, dep_delay > 60),
+    carrier),
+  mean_dep_delay = mean(dep_delay, na.rm = T))
+```
+
+#### count()
+Du kan i `summarise()` räkna antalet observationer med funktionen `n()`.
+
+```{r}
+flights %>%
+  group_by(carrier) %>%
+  summarise(count = n())
+```
+
+Men istället för att göra det här kan du använda funktionen `count()`
+
+```{r}
+flights %>%
+  group_by(carrier) %>%
+  count()
+```
+
+## sample_n()
+Att göra slumpmässiga urval är en vanlig arbetsuppgift för en data scientist. Det gör du enkelt med `sample_n()` från `dplyr`.
+
+Om du vill ta ett slumpmässigt urval om 10 från exempelvis `flights` gör du bara:
+```{r}
+sample_n(flights, 10)
+```
+
+Om du istället vill ta ett urval som baseras på *procent* kan du använda `sample_frac`, här för *0.01%*
+
+```{r}
+sample_frac(flights, 0.001)
+```
+
+### Övning
+
+1. Vilken månad ska du flyga under för att undvika förseningar? 
+2. Vilken tid ska du flyga för att undvika förseningar?
+3. Hitta det flygbolag som flyger till flest destinationer, rangordna flygbolagen baserat på den informationen.
