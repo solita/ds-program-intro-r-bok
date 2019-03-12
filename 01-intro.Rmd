@@ -1,0 +1,263 @@
+# Introduktion till R {#intro}
+
+R är ett programmeringsspråk för dataanalys. Men R sträcker sig långt utöver enkla databearbetningar och statistisk modellering. Tack vare ett aktivt community har det utvecklats en stor mängd paket för att lösa många av de olika uppgifter en dataanalytiker kan tänkas ställas inför. 
+
+R kan i sin enklaste form användas som en miniräknare med `+`, `-`, `/` eller `*`.
+
+Exempelvis: 
+```{r plus}
+100 + 4
+```
+
+Eller:
+
+```{r m_calc}
+4 * 6 - 2
+```
+
+Beräkningar, eller alla former av manipuleringar kan sparas i så kallade `objekt`.
+
+Exempelvis kan vi spara en av ovanstående beräkningar i objektet `x` med `<-` som kallas för *the assign operator*.
+
+```{r save_object}
+x <- 100 + 4
+x
+```
+
+Pilen `<-` kan även vändas på `->`
+
+```{r rev_assign}
+100 + 4 -> x
+x
+```
+
+Du kan spara flera värden i ett objekt genom att omsluta dem med funktionen `c()` och separatera med `,` (*c* står för *combine*). Då kallas objektet för en `vector`.
+
+```{r vector}
+x <- c(4, 100 + 4, 10 * 2)
+x
+```
+
+Objekt och vektorer är inte begränsade till numeriska värden utan kan även innehålla text.
+
+```{r text_vector}
+text <- c("hej", "jag", "älskar", "r")
+text
+```
+
+Vi kan dock inte blanda text och numeriska värden. Då kommer R att tolka det som text.
+
+```{r mixed}
+blandat <- c(1, 5, "hej", 6)
+blandat
+```
+
+## Saknade värden (missing values)
+
+Ett vanligt fenomen i data från verkligheten är saknade värden. Saknade värden representeras i R med `NA`. 
+`NA` är inte *noll*. Det är inte heller ett värde. Det är helt enkelt en indikation på att vi inte vet vilket värde som ligger där.
+
+Det här upplevde i alla fall jag som lite förvirrande till en början.
+
+Om vi har en vektor med `NA`:
+
+```{r na}
+x <- c(4, NA, 2, 50)
+```
+
+Och kollar vilka värden som är större än 2.
+
+```{r na_check}
+x > 2 
+```
+
+Så ser vi att vår observation med `NA` inte är `TRUE` eller `FALSE` utan helt enkelt `NA`.
+
+Om vi vill kolla vilka värden som är `NA` borde vi kunna göra samma sak:
+
+```{r na_fail}
+x == NA
+```
+
+Det här svaret känns kanske inte intuitivt men det här beror på att vi helt enkelt inte vet. Det går inte att utvärdera om `x` *är* `NA`. 
+
+Vi kan illustrera med ett exempel:
+
+```{r na_age}
+filips_ålder <- NA
+helenas_ålder <- NA
+filips_ålder == helenas_ålder
+```
+
+Är Rikards ålder densamma som Katarinas ålder för att vi saknar värdet? Nej, det går inte att veta.
+
+Därför använder man i R istället `is.na()` för att undersöka om något *är* `NA`.
+
+```{r is_na}
+is.na(x)
+```
+
+`NA` är ett vanligt argument i funktioner. Ska vi exempelvis beräkna medelvärdet på vår vektor *x* som har `NA` i sig så får vi:
+
+```{r func_na}
+mean(x)
+```
+
+Eftersom vi saknar ett värde kan vi omöjligen veta vad medelvärdet för `x` är. Det saknade värdet kan vara vilken siffra som helst.
+
+Därför kan vi i funktionen `mean()` välja att helt bortse från det saknade värdet:
+
+```{r func_na_success}
+mean(x, na.rm = TRUE)
+```
+
+## R är ett funktionellt programmeringsspråk
+
+Vi använder oss hela tiden av funktioner i R. Vi kan skriva egna funktioner men oftast använder vi färdiga funktioner från paket med funktioner.
+
+Funktionell programmering är bra för dataanalys. Ofta jobbar vi med data som vi vill manipulera om och om igen och funktioner är ett bra sätt att göra det på. På många sätt liknar R därför Excel som också jobbar mycket med funktioner.
+
+### Funktioner 
+Precis som i Excel finns det flertalet inbyggda statistiska och matematiska funktioner i R:
+
+- `mean()`
+- `median()`
+- `sd()`
+- ...osv 
+
+Det finns också matematiska funktioner
+
+- `log()`
+- `sin()`
+- `cos()`
+- ...osv
+
+### Dokumentation av funktioner
+Funktioner innehåller också dokumentation om hur de fungerar.
+
+För att komma åt dokumentation skriver du ett frågetecken innan funktioner.
+
+```{r docu, eval=FALSE}
+?mean()
+```
+
+### Övning
+
+- Använd några av R:s statistiska funktioner på en numerisk vektor
+
+## Data frames
+
+- Det vanligaste formatet i R för dataanalys
+- En data.frame är en rektangulär tabell med en eller flera kolumner
+
+```{r df, echo=FALSE}
+knitr::kable(head(nycflights13::flights))
+```
+
+Vi kan enkelt skapa våra egna data.frames.
+
+```{r, create_df}
+data.frame(random_number = rnorm(5))
+```
+
+En data.frame är ett bra sätt att spara en eller flera vektorer. De måste då vara exakt lika långa.
+
+```{r df_mixed1}
+data.frame(x = c(1,2,3),
+           y = c("hej", "på", "dig"))
+```
+
+Om du sparar vektorerna som två objekt kan du enkelt göra dem till den data.frame.
+
+```{r df_mixed2}
+siffror <- c(5,1,2,5)
+ord <- c("vad", "var", "det", "där")
+
+data.frame(siffror, ord)
+```
+
+## Paket
+
+Vi nämnde tidigare att vi kan spara funktioner i så kallade paket. Paket är precis det. Ett sätt för oss att spara och lätt komma åt funktioner i R. Paket som genomgår viss granskning läggs upp på `CRAN` (The Comprehensive R Archive Network). Men man kan även skapa egna paket och lägga upp på Github eller spara på sin egen dator.
+
+För att installera ett paket från `CRAN` använder du funktionen `install.packages("paketnamn")`. 
+
+När du sedan laddat ner paketet behöver du ladda det i R genom `library(paketnamn)`.
+
+### Övning
+
+Paketet `tidyverse` är nedladdat åt dig. Ladda paketet med `library()`
+
+## tidyverse and friends
+
+tidyverse är en samling paket för att lösa olika typer av problem inom dataanalys.
+
+De har en gemensam filosofi: paketen och dess funktioner är i första hand designade för att människor ska använda dem. 
+
+Det gör att de av många upplevs som enklare att använda och mer konsekventa än det som kallas *base R* . D.v.s. R utan några paket.
+
+Vi kommer här att fokusera på `tidyverse` eftersom det är ett bra sätt att komma igång med R.
+
+## Workflow i R
+
+I R så jobbar vi med så kallade R-projects. I Rstudio kan du klicka på *file -> New Project -> New Directory -> Create Project* för att skapa ett nytt projekt. Genom att skapa ett projekt vet R alltid var filerna för det projektet är och det blir enklare för dig att jobba.
+
+## Att skriva kod i R
+
+När du skriver kod gör du det dels med hänsyn dels till andra men framför allt med hänsyn till ditt framtida jag. Koden ska med andra ord vara enkel att läsa.
+
+Därför kan det vara bra att följa en stilguide.
+
+Jag följer stilguiden från `tidyverse` som säger att:
+
+- Namnge alltid variabler, objekt m.m. med små bokstäver.
+
+Exempelvis är det enklare att läsa:
+
+```{r funct_correct, eval=FALSE}
+min_egna_funktion <- function(x)
+```
+
+I kontrast till:
+
+```{r funct_wrong, eval=FALSE}
+MinEgnaFunktion <- function(x)
+```
+
+Vi strävar dessutom efter att skriva kod som vi skriver text, med mellanrum mellan `,` och ord.
+
+Det här är enklare att läsa:
+```{r mean_correct, eval=FALSE}
+mean(x, na.rm = TRUE)
+```
+
+Än det här:
+```{r mean_wrong, eval=FALSE}
+mean(x,na.rm=TRUE)
+```
+
+När vi sparar filer så försöker vi följa den här syntaxen. Därför ska du inte ha mellanrum i när du sparar filer. `min-r-fil.R` är bra men `min R fil.R` är dåligt.
+
+När vi skriver kod försöker vi dessutom inte att skriva för lång uttryck:
+
+Det här är mycket svårare att läsa:
+```{r length_wrong, eval=FALSE}
+iris %>% group_by(Species) %>% summarise(Sepal.Length = mean(Sepal.Length), Sepal.Width = mean(Sepal.Width), Species = n_distinct(Species))
+```
+
+Än det här:
+
+```{r length_right, eval=FALSE}
+iris %>%
+  group_by(Species) %>%
+  summarise(
+    Sepal.Length = mean(Sepal.Length),
+    Sepal.Width = mean(Sepal.Width),
+    Species = n_distinct(Species)
+  ) 
+```
+
+## Rmarkdown
+
+Rmarkdown är ett format som tillåter dig varva r-kod med skriven text. Du kan sedan rendera filen till antigen HTML, PDF, Word, PowerPoint samt en rad andra format. 
+
