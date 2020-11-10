@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Kapitel 4 Bilaga | Kursmaterial till Certifierad Data Scientist</title>
-  <meta name="description" content="Det här dokumentet innehåller kursmaterial och övningar för det första blockets R-övningar.">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="Det här dokumentet innehåller kursmaterial och övningar för det första blockets R-övningar." />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Kapitel 4 Bilaga | Kursmaterial till Certifierad Data Scientist" />
   <meta property="og:type" content="book" />
@@ -22,14 +21,14 @@
   <meta name="twitter:description" content="Det här dokumentet innehåller kursmaterial och övningar för det första blockets R-övningar." />
   
 
-<meta name="author" content="Ferrologic">
+<meta name="author" content="Ferrologic" />
 
 
-<meta name="date" content="2019-03-12">
+<meta name="date" content="2019-10-14" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
 <link rel="prev" href="datamanipulering-med-dplyr.html">
@@ -56,7 +55,6 @@ a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -68,7 +66,7 @@ a.sourceLine { text-indent: -1em; padding-left: 1em; }
 pre.numberSource a.sourceLine
   { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(title);
+  { content: attr(data-line-number);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
     border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
@@ -263,36 +261,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 <p><code>flights</code> är en så kallad data.frame som egentligen är en samling vektorer. data.frame är den vanligaste data-typen i R för att arbeta med data.</p>
 <p>Om du är nyfiken på att undersöka variabeltypen, eller klassen, på ett objekt eller en kolumn kan du använda funktionen <strong>class()</strong></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(x)</code></pre>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb86-1" data-line-number="1"><span class="kw">class</span>(x)</a></code></pre></div>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(text)</code></pre>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb88-1" data-line-number="1"><span class="kw">class</span>(text)</a></code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
 <div id="vektorer" class="section level3">
 <h3><span class="header-section-number">4.1.1</span> Vektorer</h3>
 <p>Vektorer är ett objekt i R som innehåller en eller flera element. En vektor kan endast innehålla en typ av variabel. Det vanligaste sättet att skapa en vektor är genom <strong>c()</strong>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Numerisk vektor</span>
-numvec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">7</span>)
-
-<span class="co"># Textvektor</span>
-charvec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Kalle&quot;</span>, <span class="st">&quot;Anka&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb90-1" data-line-number="1"><span class="co"># Numerisk vektor</span></a>
+<a class="sourceLine" id="cb90-2" data-line-number="2">numvec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">7</span>)</a>
+<a class="sourceLine" id="cb90-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb90-4" data-line-number="4"><span class="co"># Textvektor</span></a>
+<a class="sourceLine" id="cb90-5" data-line-number="5">charvec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Kalle&quot;</span>, <span class="st">&quot;Anka&quot;</span>)</a></code></pre></div>
 </div>
 <div id="faktorvariabel" class="section level3">
 <h3><span class="header-section-number">4.1.2</span> Faktorvariabel</h3>
 <p>En annan typ av variabel är den såkallade faktorer, <em>factor</em>. Faktorer är kategoriska variabler som har olika nivåer som representerar fakta. Kön eller åldersgrupp är exempel på faktorer.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># minText är en textvektor</span>
-min_text &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>)
-
-<span class="co"># Konvertera minText till faktorvariabel med as.factor</span>
-min_faktor &lt;-<span class="st"> </span><span class="kw">as.factor</span>(min_text)
-
-min_faktor</code></pre>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb91-1" data-line-number="1"><span class="co"># minText är en textvektor</span></a>
+<a class="sourceLine" id="cb91-2" data-line-number="2">min_text &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>)</a>
+<a class="sourceLine" id="cb91-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb91-4" data-line-number="4"><span class="co"># Konvertera minText till faktorvariabel med as.factor</span></a>
+<a class="sourceLine" id="cb91-5" data-line-number="5">min_faktor &lt;-<span class="st"> </span><span class="kw">as.factor</span>(min_text)</a>
+<a class="sourceLine" id="cb91-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb91-7" data-line-number="7">min_faktor</a></code></pre></div>
 <pre><code>## [1] A B A A
 ## Levels: A B</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># För att undersöka klassen av vektorn minFaktor</span>
-<span class="kw">class</span>(min_faktor)</code></pre>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb93-1" data-line-number="1"><span class="co"># För att undersöka klassen av vektorn minFaktor</span></a>
+<a class="sourceLine" id="cb93-2" data-line-number="2"><span class="kw">class</span>(min_faktor)</a></code></pre></div>
 <pre><code>## [1] &quot;factor&quot;</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># För att undersöka vilka unika värden finns på minFaktor </span>
-<span class="kw">levels</span>(min_faktor)</code></pre>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb95-1" data-line-number="1"><span class="co"># För att undersöka vilka unika värden finns på minFaktor </span></a>
+<a class="sourceLine" id="cb95-2" data-line-number="2"><span class="kw">levels</span>(min_faktor)</a></code></pre></div>
 <pre><code>## [1] &quot;A&quot; &quot;B&quot;</code></pre>
 </div>
 <div id="logik" class="section level3">
@@ -378,8 +376,8 @@ min_faktor</code></pre>
 <h3><span class="header-section-number">4.1.4</span> Matriser</h3>
 <p>Matriser är också en av de vanligaste datastruktur i R. Den har två dimensioner, rader och kolumner. Likt som vektorer så kan matriser bara innehålla en typ av element. Det innebär att en matris kan endast vara en textmatris, numerisk matris eller logisk matris.</p>
 <p>Matriserna kan skapas enkelt i R med funktionen <strong>matrix()</strong>.</p>
-<pre class="sourceCode r"><code class="sourceCode r">min_matris &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>), <span class="dt">nrow=</span><span class="dv">2</span>)
-min_matris</code></pre>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb97-1" data-line-number="1">min_matris &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>), <span class="dt">nrow=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb97-2" data-line-number="2">min_matris</a></code></pre></div>
 <pre><code>##      [,1] [,2]
 ## [1,]    1    3
 ## [2,]    2    4</code></pre>
@@ -388,35 +386,35 @@ min_matris</code></pre>
 <h3><span class="header-section-number">4.1.5</span> Data.frame</h3>
 <p>data.frame är en tabell som innehåller flera olika typer av variabler. Det är egentligen en samling av vektorer, därför kan en data.frame innehålla olika typer av vektorer som numeriska, logiska, textsträngar och faktorer.</p>
 <p>För att skapa ett dataset i R används funktionen <strong>data.frame()</strong></p>
-<pre class="sourceCode r"><code class="sourceCode r">df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">num =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">text =</span> <span class="kw">rep</span>(<span class="st">&quot;Text&quot;</span>, <span class="dv">3</span>), <span class="dt">logi=</span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)) 
-df </code></pre>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">num =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">text =</span> <span class="kw">rep</span>(<span class="st">&quot;Text&quot;</span>, <span class="dv">3</span>), <span class="dt">logi=</span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)) </a>
+<a class="sourceLine" id="cb99-2" data-line-number="2">df </a></code></pre></div>
 <pre><code>##   num text  logi
 ## 1   1 Text  TRUE
 ## 2   2 Text  TRUE
 ## 3   3 Text FALSE</code></pre>
 <p>Det finns ett antal förinstallerade data frames i R som du kan använda, det är även vanligt med paket vars enda syfte är att innehålla data.</p>
 <p>För att kolla upp vilka data frames som finns förinstallerade kan du använda funktionen <strong>data()</strong>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>()
-
-<span class="co"># För att läsa in en data.frame i Global Environment så skriv namn av data inom parentesen</span>
-<span class="kw">data</span>(iris)
-iris</code></pre>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" data-line-number="1"><span class="kw">data</span>()</a>
+<a class="sourceLine" id="cb101-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb101-3" data-line-number="3"><span class="co"># För att läsa in en data.frame i Global Environment så skriv namn av data inom parentesen</span></a>
+<a class="sourceLine" id="cb101-4" data-line-number="4"><span class="kw">data</span>(iris)</a>
+<a class="sourceLine" id="cb101-5" data-line-number="5">iris</a></code></pre></div>
 <div id="section" class="section level4">
 <h4><span class="header-section-number">4.1.5.1</span> $</h4>
 <p>Även om <code>dplyr</code> är att föredra för datamanipuleringar är det bra att veta att det går att göra samma manipuleringar i R men med en annan syntax. Då använder man i princip endast de inbyggda paketen (ofta kallade för <code>base</code>) som laddas mer R.</p>
 <p>En viktig operatör i <code>base</code>-R är <code>$</code> (extract-operator) som extraherar värden från objekt baserat på namn.</p>
 <p>Exempelvis</p>
-<pre class="sourceCode r"><code class="sourceCode r">mtcars<span class="op">$</span>cyl</code></pre>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb102-1" data-line-number="1">mtcars<span class="op">$</span>cyl</a></code></pre></div>
 <pre><code>##  [1] 6 6 4 6 8 6 8 4 4 6 6 8 8 8 8 8 8 4 4 4 4 8 8 8 8 4 4 4 8 6 8 4</code></pre>
 <p>Med <code>$</code> kan du också skapa nya variabler.</p>
-<pre class="sourceCode r"><code class="sourceCode r">mtcars<span class="op">$</span>ny_variabel &lt;-<span class="st"> </span>mtcars<span class="op">$</span>mpg <span class="op">/</span><span class="st"> </span>mtcars<span class="op">$</span>cyl</code></pre>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb104-1" data-line-number="1">mtcars<span class="op">$</span>ny_variabel &lt;-<span class="st"> </span>mtcars<span class="op">$</span>mpg <span class="op">/</span><span class="st"> </span>mtcars<span class="op">$</span>cyl</a></code></pre></div>
 <p>Eller döpa om variabler</p>
-<pre class="sourceCode r"><code class="sourceCode r">mtcars<span class="op">$</span>mpg_med_konstigt_namn &lt;-<span class="st"> </span>mtcars<span class="op">$</span>mpg</code></pre>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb105-1" data-line-number="1">mtcars<span class="op">$</span>mpg_med_konstigt_namn &lt;-<span class="st"> </span>mtcars<span class="op">$</span>mpg</a></code></pre></div>
 </div>
 <div id="colnames" class="section level4">
 <h4><span class="header-section-number">4.1.5.2</span> colnames()</h4>
 <p>Om du vill ha dina kolumnnamn som en vektor kan du extrahera dessa med <code>colnames()</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">colnames</span>(mtcars)</code></pre>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb106-1" data-line-number="1"><span class="kw">colnames</span>(mtcars)</a></code></pre></div>
 <pre><code>##  [1] &quot;mpg&quot;                   &quot;cyl&quot;                  
 ##  [3] &quot;disp&quot;                  &quot;hp&quot;                   
 ##  [5] &quot;drat&quot;                  &quot;wt&quot;                   
@@ -425,10 +423,10 @@ iris</code></pre>
 ## [11] &quot;carb&quot;                  &quot;ny_variabel&quot;          
 ## [13] &quot;mpg_med_konstigt_namn&quot;</code></pre>
 <p>Ibland kanske du har en lista på variabelnamn som du vill att data ska ha.</p>
-<pre class="sourceCode r"><code class="sourceCode r">kolumnnamn &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;D&quot;</span>, <span class="st">&quot;E&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;G&quot;</span>, <span class="st">&quot;H&quot;</span>, <span class="st">&quot;I&quot;</span>, <span class="st">&quot;J&quot;</span>, <span class="st">&quot;K&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb108-1" data-line-number="1">kolumnnamn &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;D&quot;</span>, <span class="st">&quot;E&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;G&quot;</span>, <span class="st">&quot;H&quot;</span>, <span class="st">&quot;I&quot;</span>, <span class="st">&quot;J&quot;</span>, <span class="st">&quot;K&quot;</span>)</a></code></pre></div>
 <p>Då kan du applicera <code>colnames()</code> med din vektor på din data.frame.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">colnames</span>(mtcars) &lt;-<span class="st"> </span>kolumnnamn
-mtcars</code></pre>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb109-1" data-line-number="1"><span class="kw">colnames</span>(mtcars) &lt;-<span class="st"> </span>kolumnnamn</a>
+<a class="sourceLine" id="cb109-2" data-line-number="2">mtcars</a></code></pre></div>
 <pre><code>##                        A B     C   D    E     F     G H I J K       NA
 ## Mazda RX4           21.0 6 160.0 110 3.90 2.620 16.46 0 1 4 4 3.500000
 ## Mazda RX4 Wag       21.0 6 160.0 110 3.90 2.875 17.02 0 1 4 4 3.500000
@@ -501,13 +499,13 @@ mtcars</code></pre>
 <h3><span class="header-section-number">4.1.6</span> Listor</h3>
 <p>Listor är mer generell datastruktur i R. Man kan jämföra lista med en “låda” som innehåller olika datastrukter i R. En lista kan innehålla vektorer, data.frame och matriser, i olika längd och storlek, samtidigt.</p>
 <p>För att skapa en lista används funktionen <strong>list()</strong></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># skapar vektorer a, b, c</span>
-a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;hej&quot;</span>, <span class="st">&quot;Kalle&quot;</span>, <span class="st">&quot;hejdå&quot;</span>)
-b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>)
-c &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">8</span>
-
-x &lt;-<span class="st"> </span><span class="kw">list</span>(a,b,c)
-x</code></pre>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb111-1" data-line-number="1"><span class="co"># skapar vektorer a, b, c</span></a>
+<a class="sourceLine" id="cb111-2" data-line-number="2">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;hej&quot;</span>, <span class="st">&quot;Kalle&quot;</span>, <span class="st">&quot;hejdå&quot;</span>)</a>
+<a class="sourceLine" id="cb111-3" data-line-number="3">b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb111-4" data-line-number="4">c &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">8</span></a>
+<a class="sourceLine" id="cb111-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb111-6" data-line-number="6">x &lt;-<span class="st"> </span><span class="kw">list</span>(a,b,c)</a>
+<a class="sourceLine" id="cb111-7" data-line-number="7">x</a></code></pre></div>
 <pre><code>## [[1]]
 ## [1] &quot;hej&quot;   &quot;Kalle&quot; &quot;hejdå&quot;
 ## 
@@ -517,19 +515,19 @@ x</code></pre>
 ## [[3]]
 ## [1] 1 2 3 4 5 6 7 8</code></pre>
 <p>Ett mycket vanligt exempel på en lista är modellobjekt, dvs objektet man skapar när man anpassar en modell, till exempel en regressionsmodell. Hela resultatet från modellanpassningen ligger på en lista. Se nedan.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Skapar en data.frame</span>
-ctl &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">4.17</span>,<span class="fl">5.58</span>,<span class="fl">5.18</span>,<span class="fl">6.11</span>,<span class="fl">4.50</span>,<span class="fl">4.61</span>,<span class="fl">5.17</span>,<span class="fl">4.53</span>,<span class="fl">5.33</span>,<span class="fl">5.14</span>)
-trt &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">4.81</span>,<span class="fl">4.17</span>,<span class="fl">4.41</span>,<span class="fl">3.59</span>,<span class="fl">5.87</span>,<span class="fl">3.83</span>,<span class="fl">6.03</span>,<span class="fl">4.89</span>,<span class="fl">4.32</span>,<span class="fl">4.69</span>)
-group &lt;-<span class="st"> </span><span class="kw">gl</span>(<span class="dv">2</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Ctl&quot;</span>,<span class="st">&quot;Trt&quot;</span>))
-weight &lt;-<span class="st"> </span><span class="kw">c</span>(ctl, trt)
-
-<span class="co"># Linjär regression.</span>
-lm &lt;-<span class="st"> </span><span class="kw">lm</span>(weight <span class="op">~</span><span class="st"> </span>group)
-
-<span class="kw">is.list</span>(lm)</code></pre>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb113-1" data-line-number="1"><span class="co"># Skapar en data.frame</span></a>
+<a class="sourceLine" id="cb113-2" data-line-number="2">ctl &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">4.17</span>,<span class="fl">5.58</span>,<span class="fl">5.18</span>,<span class="fl">6.11</span>,<span class="fl">4.50</span>,<span class="fl">4.61</span>,<span class="fl">5.17</span>,<span class="fl">4.53</span>,<span class="fl">5.33</span>,<span class="fl">5.14</span>)</a>
+<a class="sourceLine" id="cb113-3" data-line-number="3">trt &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">4.81</span>,<span class="fl">4.17</span>,<span class="fl">4.41</span>,<span class="fl">3.59</span>,<span class="fl">5.87</span>,<span class="fl">3.83</span>,<span class="fl">6.03</span>,<span class="fl">4.89</span>,<span class="fl">4.32</span>,<span class="fl">4.69</span>)</a>
+<a class="sourceLine" id="cb113-4" data-line-number="4">group &lt;-<span class="st"> </span><span class="kw">gl</span>(<span class="dv">2</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Ctl&quot;</span>,<span class="st">&quot;Trt&quot;</span>))</a>
+<a class="sourceLine" id="cb113-5" data-line-number="5">weight &lt;-<span class="st"> </span><span class="kw">c</span>(ctl, trt)</a>
+<a class="sourceLine" id="cb113-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb113-7" data-line-number="7"><span class="co"># Linjär regression.</span></a>
+<a class="sourceLine" id="cb113-8" data-line-number="8">lm &lt;-<span class="st"> </span><span class="kw">lm</span>(weight <span class="op">~</span><span class="st"> </span>group)</a>
+<a class="sourceLine" id="cb113-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb113-10" data-line-number="10"><span class="kw">is.list</span>(lm)</a></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Vilka element eller objekt som finns i listan lm? </span>
-<span class="kw">attributes</span>(lm)</code></pre>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb115-1" data-line-number="1"><span class="co"># Vilka element eller objekt som finns i listan lm? </span></a>
+<a class="sourceLine" id="cb115-2" data-line-number="2"><span class="kw">attributes</span>(lm)</a></code></pre></div>
 <pre><code>## $names
 ##  [1] &quot;coefficients&quot;  &quot;residuals&quot;     &quot;effects&quot;       &quot;rank&quot;         
 ##  [5] &quot;fitted.values&quot; &quot;assign&quot;        &quot;qr&quot;            &quot;df.residual&quot;  
@@ -543,11 +541,11 @@ lm &lt;-<span class="st"> </span><span class="kw">lm</span>(weight <span class="
 <div id="datum" class="section level3">
 <h3><span class="header-section-number">4.1.7</span> Datum</h3>
 <p>I R uttrycks datum som antal dagar från 1970-01-01. Datum som kommer innan det skrivs ut som negativa värde.</p>
-<pre class="sourceCode r"><code class="sourceCode r">minaDatum &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="kw">c</span>(<span class="st">&quot;2018-08-14&quot;</span>, <span class="st">&quot;1970-01-01&quot;</span>))
-
-minaDatum[<span class="dv">1</span>] <span class="op">-</span><span class="st"> </span>minaDatum[<span class="dv">2</span>]</code></pre>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb117-1" data-line-number="1">minaDatum &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="kw">c</span>(<span class="st">&quot;2018-08-14&quot;</span>, <span class="st">&quot;1970-01-01&quot;</span>))</a>
+<a class="sourceLine" id="cb117-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb117-3" data-line-number="3">minaDatum[<span class="dv">1</span>] <span class="op">-</span><span class="st"> </span>minaDatum[<span class="dv">2</span>]</a></code></pre></div>
 <pre><code>## Time difference of 17757 days</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.Date</span>(<span class="dv">17757</span>, <span class="dt">origin =</span> <span class="st">&quot;1970-01-01&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb119-1" data-line-number="1"><span class="kw">as.Date</span>(<span class="dv">17757</span>, <span class="dt">origin =</span> <span class="st">&quot;1970-01-01&quot;</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;2018-08-14&quot;</code></pre>
 <p><strong>Sys.Date()</strong> ger dagens datum.
 <strong>date()</strong> returnerar dagens veckodag, datum och tid.</p>
@@ -607,12 +605,12 @@ minaDatum[<span class="dv">1</span>] <span class="op">-</span><span class="st"> 
 </div>
 <div id="formatera-datum" class="section level4">
 <h4><span class="header-section-number">4.1.7.2</span> Formatera datum</h4>
-<pre class="sourceCode r"><code class="sourceCode r">idag &lt;-<span class="st"> </span><span class="kw">Sys.Date</span>()
-
-format_idag &lt;-<span class="st"> </span><span class="kw">format</span>(idag, <span class="dt">format =</span> <span class="st">&quot;%B %d %Y&quot;</span>)
-format_idag</code></pre>
-<pre><code>## [1] &quot;mars 12 2019&quot;</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">format</span>(minaDatum[<span class="dv">2</span>], <span class="dt">format=</span><span class="st">&quot;%m/%d/%y&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb121-1" data-line-number="1">idag &lt;-<span class="st"> </span><span class="kw">Sys.Date</span>()</a>
+<a class="sourceLine" id="cb121-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb121-3" data-line-number="3">format_idag &lt;-<span class="st"> </span><span class="kw">format</span>(idag, <span class="dt">format =</span> <span class="st">&quot;%B %d %Y&quot;</span>)</a>
+<a class="sourceLine" id="cb121-4" data-line-number="4">format_idag</a></code></pre></div>
+<pre><code>## [1] &quot;October 14 2019&quot;</code></pre>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb123-1" data-line-number="1"><span class="kw">format</span>(minaDatum[<span class="dv">2</span>], <span class="dt">format=</span><span class="st">&quot;%m/%d/%y&quot;</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;01/01/70&quot;</code></pre>
 </div>
 </div>
@@ -621,44 +619,44 @@ format_idag</code></pre>
 <h2><span class="header-section-number">4.2</span> Indexering</h2>
 <p>Ibland är man bara intresserad av en kolumn eller enstaka värde. För att indexera eller plocka ut specifikt element ur ett objekt kan man använda sig av hackparentes [] eller dollar tecken $ och detta görs på olika sätt.
 ### Genom att ange positions nummer</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Vektor</span>
-testScore &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">23</span>, <span class="fl">1.2</span>)
-testScore[<span class="dv">3</span>] <span class="co">#tredje element</span></code></pre>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb125-1" data-line-number="1"><span class="co">#Vektor</span></a>
+<a class="sourceLine" id="cb125-2" data-line-number="2">testScore &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">23</span>, <span class="fl">1.2</span>)</a>
+<a class="sourceLine" id="cb125-3" data-line-number="3">testScore[<span class="dv">3</span>] <span class="co">#tredje element</span></a></code></pre></div>
 <pre><code>## [1] 20</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">testScore[<span class="op">-</span><span class="dv">1</span>] <span class="co">#alla utom den första</span></code></pre>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb127-1" data-line-number="1">testScore[<span class="op">-</span><span class="dv">1</span>] <span class="co">#alla utom den första</span></a></code></pre></div>
 <pre><code>## [1] 15.0 20.0 20.0 23.0  1.2</code></pre>
 <p>Kör koden nedan för att se resultatet.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Data.frame.</span>
-<span class="kw">data</span>(iris)
-iris[, <span class="dv">1</span>] <span class="co"># Väljer kolumn nummer 1</span>
-iris[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)] <span class="co"># Rad 1 till 5 på Kolumn 1 och 2</span></code></pre>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb129-1" data-line-number="1"><span class="co">#Data.frame.</span></a>
+<a class="sourceLine" id="cb129-2" data-line-number="2"><span class="kw">data</span>(iris)</a>
+<a class="sourceLine" id="cb129-3" data-line-number="3">iris[, <span class="dv">1</span>] <span class="co"># Väljer kolumn nummer 1</span></a>
+<a class="sourceLine" id="cb129-4" data-line-number="4">iris[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)] <span class="co"># Rad 1 till 5 på Kolumn 1 och 2</span></a></code></pre></div>
 <div id="genom-att-begransa-varden-som-man-vill-plocka-ut" class="section level3">
 <h3><span class="header-section-number">4.2.1</span> Genom att begränsa värden som man vill plocka ut</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Vektor</span>
-testScore[testScore <span class="op">&lt;</span><span class="st"> </span><span class="dv">10</span>] <span class="co"># alla som är mindre än 10</span></code></pre>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb130-1" data-line-number="1"><span class="co"># Vektor</span></a>
+<a class="sourceLine" id="cb130-2" data-line-number="2">testScore[testScore <span class="op">&lt;</span><span class="st"> </span><span class="dv">10</span>] <span class="co"># alla som är mindre än 10</span></a></code></pre></div>
 <pre><code>## [1] 7.0 1.2</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">testScore[testScore <span class="op">==</span><span class="st"> </span><span class="dv">20</span>] <span class="co"># alla som är lika med 20</span></code></pre>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb132-1" data-line-number="1">testScore[testScore <span class="op">==</span><span class="st"> </span><span class="dv">20</span>] <span class="co"># alla som är lika med 20</span></a></code></pre></div>
 <pre><code>## [1] 20 20</code></pre>
 <p>Kör koden nedan för att se resultatet.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Data.frame</span>
-<span class="kw">head</span>(iris[iris[,<span class="dv">1</span>] <span class="op">&gt;</span><span class="st"> </span><span class="dv">7</span>,]) <span class="co"># alla observationer där kolumn nummer 1 är större än 7. Funktionen head() används för att minimera rader som skrivs ut. </span></code></pre>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb134-1" data-line-number="1"><span class="co"># Data.frame</span></a>
+<a class="sourceLine" id="cb134-2" data-line-number="2"><span class="kw">head</span>(iris[iris[,<span class="dv">1</span>] <span class="op">&gt;</span><span class="st"> </span><span class="dv">7</span>,]) <span class="co"># alla observationer där kolumn nummer 1 är större än 7. Funktionen head() används för att minimera rader som skrivs ut. </span></a></code></pre></div>
 </div>
 <div id="genom-att-ange-namn-av-elementet-eller-kolumnen" class="section level3">
 <h3><span class="header-section-number">4.2.2</span> Genom att ange namn av elementet eller kolumnen</h3>
 <p>Det går att namnge element i en vektor. Koder nedan visar hur man ger namn till varje element i en vektor. Efter att ha namngett vektorn kan du nu plocka ut värde med hjälp av namn.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Sätter namn på respektive element i testScore</span>
-<span class="kw">names</span>(testScore) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Zaida&quot;</span>, <span class="st">&quot;Anna&quot;</span>, <span class="st">&quot;Helena&quot;</span>, <span class="st">&quot;Per&quot;</span>, <span class="st">&quot;Filip&quot;</span>, <span class="st">&quot;Annelie&quot;</span>)
-testScore</code></pre>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb135-1" data-line-number="1"><span class="co"># Sätter namn på respektive element i testScore</span></a>
+<a class="sourceLine" id="cb135-2" data-line-number="2"><span class="kw">names</span>(testScore) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Zaida&quot;</span>, <span class="st">&quot;Anna&quot;</span>, <span class="st">&quot;Helena&quot;</span>, <span class="st">&quot;Per&quot;</span>, <span class="st">&quot;Filip&quot;</span>, <span class="st">&quot;Annelie&quot;</span>)</a>
+<a class="sourceLine" id="cb135-3" data-line-number="3">testScore</a></code></pre></div>
 <pre><code>##   Zaida    Anna  Helena     Per   Filip Annelie 
 ##     7.0    15.0    20.0    20.0    23.0     1.2</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">testScore[<span class="st">&quot;Per&quot;</span>]</code></pre>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb137-1" data-line-number="1">testScore[<span class="st">&quot;Per&quot;</span>]</a></code></pre></div>
 <pre><code>## Per 
 ##  20</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">testScore[<span class="st">&quot;Filip&quot;</span>]</code></pre>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb139-1" data-line-number="1">testScore[<span class="st">&quot;Filip&quot;</span>]</a></code></pre></div>
 <pre><code>## Filip 
 ##    23</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Kolumnen i en data.frame oftast har namn. Objekt som har 2 eller mer dimensioner kan vi använda oss av dollar tecken.   </span>
-<span class="kw">colnames</span>(iris)</code></pre>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb141-1" data-line-number="1"><span class="co"># Kolumnen i en data.frame oftast har namn. Objekt som har 2 eller mer dimensioner kan vi använda oss av dollar tecken.   </span></a>
+<a class="sourceLine" id="cb141-2" data-line-number="2"><span class="kw">colnames</span>(iris)</a></code></pre></div>
 <pre><code>## [1] &quot;Sepal.Length&quot; &quot;Sepal.Width&quot;  &quot;Petal.Length&quot; &quot;Petal.Width&quot; 
 ## [5] &quot;Species&quot;</code></pre>
 

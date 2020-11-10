@@ -5,8 +5,8 @@ account: filip.wastberg
 server: bookdown.org
 hostUrl: https://bookdown.org/__api__
 appId: 2395
-bundleId: 9294
+bundleId: 13079
 url: https://bookdown.org/content/2395/
-when: 1552395030.68351
+when: 1571053294.32903
 asMultiple: FALSE
 asStatic: FALSE
