@@ -18,6 +18,7 @@ Alla verb i `dplyr` är konsekventa. Det första argumentet är din data och i d
 ## Filter
 Med filter kan du enkelt filtrera din data baserat på villkor. 
 
+
 Dessa villkor uttrycks med hjälp av `relationsoperatorer` och `logical operators`.
 
 I R är dessa:
