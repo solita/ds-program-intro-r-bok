@@ -1,0 +1,553 @@
+# Explorativ dataanalys {#eda}
+
+## Vad är Explorativ Dataanalys?
+
+
+
+- En kreativ iterativ process där man ställer frågor/gör hypoteser om sin data och sedan utforskar dem
+  
+
+
+- Mera konkret kan det beskrivas som
+ 1. Formulera en hypotes
+ 2. Transformera din data - om nödvändigt
+ 3. Visualisera din data (vårt fokus idag)
+ 4. Modellera - om nödvändigt
+ 5. Formulera nya hypoteser
+
+
+
+- Mindset inte formel!
+
+-
+
+### Exempel på basala frågor/hypoteser
+
+Frågeställningar kan vara vaga!
+
+
+  - Vad för data innehåller de olika kolonnerna?
+  
+
+  
+  - Hur ser Datans kvalitét ut? e.g missing values, felaktiga tabellvärden, duplicerade värden
+  
+
+
+  - Finns det outliers?
+  
+
+
+  - Medelvärde, spridning
+  
+-
+
+### Hur gör man i R?
+
+R har basfunktionalitet som kan användas för att snabbt få en numerisk överblick datan t.ex
+`summary()` och `head()`
+
+```{r iris_sum}
+summary(iris)
+```
+
+
+```{r iris_head}
+head(iris)
+```
+
+### Hur gör man i R?
+
+R har även mer avancerade verktyg:
+- `dlookr`, ta fram rapport för datakvalitét
+
+- `skimr`, snabb explorativ analys (som vi kommer använda idag)
+
+
+```{r eval = F}
+skim(iris)
+```
+![](images/Iris_skim.png)
+
+
+## Datavisualisering
+
+- Grunden i explorativ dataanalys 
+
+
+
+- Visualisering är grundläggande för att människor ska kunna få en överblick av data
+
+
+
+### Varför visualisera?
+
+Anscombe quartet - Dataset skapat av Francis Anscombe 1973
+
+```{r anscombe, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(broom)
+anscombe_tidy <- anscombe %>%
+    mutate(observation = seq_len(n())) %>%
+    gather(key, value, -observation) %>%
+    separate(key, c("variable", "set"), 1, convert = TRUE) %>%
+    mutate(set = c("I", "II", "III", "IV")[set]) %>%
+    spread(variable, value)
+
+head(anscombe_tidy, 10)
+```
+
+
+
+### Vad är det första vi gör?
+
+```{r anscombe_summary, echo=FALSE, message=FALSE, warning=FALSE}
+anscombe_tidy %>%
+  group_by(set) %>%
+  summarise_at(vars(x, y), lst(mean, sd))
+```
+
+Ser bra ut!
+
+### Steg 2: anpassar en linjär modell
+```{r ancombe_lm}
+anscombe_tidy %>% 
+  nest(observation, x, y) %>% 
+  mutate(model = map(data, ~lm(y ~ x, data = .x)),
+         tidy = map(model, broom::tidy)) %>% 
+  unnest(tidy) %>% 
+  filter(term == "x") %>% 
+  select(set, estimate, std.error, statistic)
+```
+
+Ser inte ut som att det är någon skillnad mellan grupperna
+
+Men...
+
+```{r anscombe_final, echo=FALSE}
+library(ggplot2)
+ggplot(anscombe_tidy, aes(x, y)) +
+  geom_point() +
+  facet_wrap(~set) +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme_light() +
+  labs(
+       caption = "Source: Anscombe, F. J. (1973). Graphs in Statistical Analysis")
+```
+
+Statistiska mått kan gömma mycket av sanningen!
+
+## Datasaurus Dozen
+
+Modern variant av Anscombe - skapat av Alberto Cairo
+```{r datasauRus}
+library(datasauRus)
+datasaurus_dozen %>% 
+  group_by(dataset) %>%
+  summarise(x_mean = mean(x), y_mean = mean(y), 
+            x_sd = sd(x), y_sd = sd(y),
+            corr = cor(x,y)) 
+```
+
+Datasaurus Dozen
+
+```{r}
+ggplot(datasaurus_dozen, aes(x=x, y=y))+
+  geom_point()+
+  theme_minimal() +
+  facet_wrap(~dataset)
+```
+
+Eller som animering:
+
+```{r}
+library(datasauRus)
+library(ggplot2)
+library(gganimate)
+
+ggplot(datasaurus_dozen, aes(x=x, y=y))+
+  geom_point()+
+  theme_minimal() +
+  transition_states(dataset, 3, 1) + 
+  ease_aes('cubic-in-out')
+```
+
+
+## Workflow för nytt dataset
+
+- Börja *alltid* med visualisering, särskilt om du ska göra modellering
+
+- explorativ visualisering är en iterativ process
+
+- Börjar övergripande sedan mera specialiserade beroende på hur dina hypoteser/frågor utvecklas
+
+Gör *alltid* explorativ analys med ett programmeringsspråk
+
+- Det gör att din analys finns dokumenterad
+
+- Du kan dela med den till andra
+
+- Den är reproducerbar och kan granskas 
+
+Saker du bör undvika: BI-verktyg för explorativ analys och Excel.
+
+
+
+## Gapminder
+
+- Vi har fått ett dataset `gapminder` och egentligen inga andra uppgifter och vi vill förstå det
+
+
+
+- Vi börjar med att snabbt kolla på datan med `head()`
+
+
+
+```{r gapminder_head}
+library(gapminder)
+head(gapminder)
+```
+
+- Undersöker med hjälp av `summary()`/`skim()`
+
+
+
+```{r gapminder_sum}
+summary(gapminder)
+```
+
+
+```{r gapminder_skim, eval=F}
+library(skimr)
+skim(gapminder)
+```
+![](images/gapminder_skim.png)
+
+### Datapunkter per land?
+```{r}
+gapminder %>% filter(country == "Sweden") %>% arrange(year)
+```
+
+
+#### Naturlig fråga: Hur påverkar ekonomisk utveckling den förväntande livslängden i ett land?
+
+
+För att undersöka den här frågan så vill vi göra en visualisering med hjälp av `ggplot2`
+
+Då behöver vi först 
+
+## Grammar of grahics
+
+### 1. Data
+
+För att minska mängden data kollar vi bara på ett år
+```{r gapminder_data}
+data <- gapminder %>%
+  filter(year == 1972)
+
+ggplot(data)
+```
+
+
+
+### 2. Aesthetics
+
+- Vi behöver `mappa` data till visualiseringen. Vi mappar data till `aestethics` i visualiseringen. En `aesthetic` kan vara exempelvis `x`-axeln eller `y`-axeln.
+
+- För att svara på vår fråga kan vi exempelvis mappa `gdpPercap` till `x`-axeln och `lifeExp` till `y`-axeln
+
+```{r gapminder_aes}
+ggplot(data = data, aes(x = gdpPercap, y = lifeExp))
+```
+
+### 3. Geometriska objekt
+
+Vi behöver geometriska objekt som representerar data, exempelvis punkter, linjer eller staplar.
+
+I ggplot2 kallas dessa för `geoms`, exempelvis:
+
+`geom_point()`: punkter,
+
+`geom_line()`: linjer,
+
+`geom_bar()`: staplar
+
+```{r gapminder_geoms}
+ggplot(data = data, aes(x = gdpPercap, y = lifeExp)) +
+  geom_point()
+```
+
+Det verkar finnas ett samband, kan vi förstå mera?
+
+Mer `aesthetics`
+
+```{r gapminder_aes_color}
+p <- ggplot(data = data,
+            aes(x = gdpPercap,
+                y = lifeExp,
+                color = continent)) +
+  geom_point()
+```
+
+```{r echo = F}
+p
+```
+
+#### Storlek ~ invånare
+
+ännu mer `aesthetics`
+
+```{r gapminder_aes_size}
+ggplot(data = data,
+       aes(x = gdpPercap,
+                     y = lifeExp,
+                     color = continent,
+                     size = pop)) + 
+  geom_point()
+```
+
+### 4. Skala
+
+Vilken skala ska axlarna i grafen ha?
+
+```{r gapminder_scale1}
+ggplot(data = data, aes(x = gdpPercap, y = lifeExp,
+                                  size = pop, color = continent)) +
+  geom_point() +
+  scale_y_continuous() + ## Default value
+  scale_x_continuous() 
+```
+
+### GDP per capita är skevt fördelad
+
+Vanligt i variabler som motsvarar pengar
+
+```{r gapminder_gdp}
+ggplot(data, aes(x = gdpPercap)) +
+  geom_density()
+
+```
+
+
+#### Logaritmisk skala 
+
+Genom att ta logaritmen kan vi justera för den skeva fördelningen
+
+```{r gapminder_gdplog}
+ggplot(data, aes(x = gdpPercap)) +
+  geom_density() +
+  scale_x_log10() ##
+```
+
+
+
+```{r gapminder_log}
+ggplot(data = data, aes(x = gdpPercap,
+                                  y = lifeExp,
+                                  size = pop,
+                                  color = continent)) +
+  geom_point() +
+  scale_x_log10() 
+
+```
+
+
+##<4 Hans Roslings berömda visualisering
+
+```{r hans_rosling}
+library(gganimate)
+library(gapminder)
+
+ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, colour = continent)) +
+  geom_point(alpha = 0.7) +
+  #scale_colour_manual(values = country_colors) +
+  scale_size(range = c(2, 12)) +
+  scale_x_log10() +
+  guides(color= guide_legend(), size=FALSE) +
+  theme_light() +
+  labs(title = 'Year: {frame_time}', 
+       x = 'GDP per capita',
+       y = 'life expectancy') +
+  transition_time(year) +
+  ease_aes('linear')
+```
+
+### 5. Statistiska beräkningar
+
+För att kvantifiera sammanbandet mera kan vi också lägga till statistiska beräkningar till grafen
+
+```{r gapminder_lm}
+ggplot(data = data, aes(x = gdpPercap,
+                                  y = lifeExp,
+                                  size = pop,
+                                  color = continent)) +
+  geom_point() +
+  scale_x_log10() +
+  stat_smooth(method = "lm")
+```
+
+- Nu beräknas statistik per grupp. Det är eftersom att vi specificerat i vår `aes()` i `ggplot()`. 
+
+- Vi kan flytta `aes()` till våra geometriska objekt om vi vill beräkna statistik för hela gruppen.
+
+```{r gapminder_lm_all}
+ggplot(data = data, aes(x = gdpPercap, y = lifeExp)) +
+  geom_point(aes(size = pop, color = continent)) +
+  scale_x_log10() +
+  stat_smooth(method = "lm")
+```
+
+### 6. Facets
+
+Vi kan också dela upp grafen i flera visualiseringar
+
+```{r gapminder_facets}
+ggplot(data = data, aes(x = gdpPercap,
+                                  y = lifeExp,
+                                  size = pop,
+                                  color = continent)) +
+  geom_point() +
+  scale_x_log10() +
+  stat_smooth(method = "lm") +
+  facet_wrap(~continent)
+```
+
+Vi kan också specificera skalorna för varje subplot
+
+```{r gapminder_facet_scale}
+ggplot(data = data, aes(x = gdpPercap,
+                                  y = lifeExp,
+                                  size = pop,
+                                  color = continent)) +
+  geom_point() +
+  scale_x_log10() +
+  stat_smooth(method = "lm") +
+  facet_wrap(~continent, scales = "free")
+```
+
+### 7. Koordinatsystem
+
+- Ett sista lager vi skulle kunna använda för att ändra vår graf
+- Exempelvis Kartesiskt eller Polärt
+- Polärt för exempelvis cirkeldiagram
+
+![](images/Nightingale-mortality.jpg)
+
+
+
+### Grammar of graphics
+
+R Paketet som har använts heter `ggplot2` och det bygger på en variant av *The Grammar of Graphics* och består av de 7 beståndsdelar vi precis gått igenom
+
+.footnote[
+Wickham, H (2010), _"A layered Grammar of Graphics"_, Journal of Computational and Graphical Statistics, vol. 19, no. 1, pp. 3–28,
+]
+
+
+1. Data
+
+
+2. Aesthetics
+
+
+3. Geometric Objects
+
+
+4. Scale
+
+
+5. Statistics
+
+
+6. Facets
+
+
+7. Coordinate systems
+
+(8.) Labels, titlar, legends
+
+
+Som kan manipuleras för att skapa de visualiseringar vi vill ha
+
+## Gapminder - fortsättning
+
+Vi såg att det fanns en outlier i `gdpPercap` per `lifeExp`
+
+```{r echo = F}
+data %>% 
+  mutate(Color = ifelse(country == "Kuwait", 'red', 'gray')) %>%
+  ggplot(aes(x = gdpPercap, y = lifeExp, color = Color)) +
+  geom_point() + scale_color_identity()
+```
+
+Vilket land är det?
+
+```{r}
+data %>% arrange(desc(gdpPercap))
+```
+
+Är det en utveckling som håller i sig?
+
+```{r}
+kuwait_data <- gapminder %>% 
+  filter(country == "Kuwait")
+
+kuwait_data %>%
+  ggplot(aes(x=year, y=gdpPercap)) +
+  geom_line(color='red') + scale_color_identity()
+```
+
+
+
+I jämförelse med utveckingen i resten av toppländerna 1972?
+```{r}
+top_countries <- data %>%  top_n(11, gdpPercap) %>% 
+  filter( country!= 'Kuwait') %>% 
+  pull(country)
+top_countries
+
+top_mean <- gapminder %>% 
+  filter(country %in% top_countries) %>% 
+  group_by(year) %>%  
+  summarise(gdp_mean = mean(gdpPercap))
+top_mean
+
+data_added_mean <- kuwait_data %>% add_column(
+  "mean" = top_mean$gdp_mean)
+
+data_added_mean %>% 
+  ggplot(aes(x = year)) + 
+  geom_line(aes(y = gdpPercap), color = 'red') +
+  geom_line(aes(y = mean), color = 'gray') + 
+  scale_color_identity()
+```
+
+## EDA är en nyfiken process utan slut!
+
+Det finns i princip alltid mera saker man skulle kunna undersöka som:
+
+
+* Hur ser utvecklingen ut om vi istället för att undersöka BNP per kapita, undersöker totala BNP per land? 
+
+
+* Om vi utesluter Kuwait som en outlier 1972? 
+
+
+* Om vi inför en annan gruppering?
+
+
+* etc..
+
+### Det ni ska ta med er idag är inte de specifika sakerna vi har undersökt, utan ett mindset!
+
+## Länkar till resurser
+
+- [R for Data Science](https://r4ds.had.co.nz/) - fantastisk bok som har bra material om alling Data Science
+
+- [Visual Vocabulary](https://ft-interactive.github.io/visual-vocabulary/) - Financial Times referensmaterial för visualiseringar
+
+- [ggplot2](https://ggplot2.tidyverse.org/) - dokumentation för ggplot2
+
+- [kaggle](https://www.kaggle.com/) - Hemsida med AI/ML tävlingar och källa till gratis dataset
+
+- [stack overflow](https://www.stackoverflow.com) - Forum för programmeringsfrågor, där svar på nästan alla problem man stöter på finns

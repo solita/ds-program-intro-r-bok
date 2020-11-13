@@ -1,4 +1,4 @@
-# Datamanipulering med dplyr
+# Datamanipulering med dplyr {#databearbetning}
 Det sägs ofta att en Data Scientist ägnar 80% av sin tid till att manipulera data så att den går att visualisera och modellera. Därför är det klokt att välja en metod och ett paket som underlättar det arbetet för dig. 
 
 I den här introduktionen kommer vi att fokusera på att använda paketet `dplyr` för att göra datamanipuleringar. `dplyr` är ett av de mest populära paketen i R och ger dig en bred verktygslåda för att manipulera data. `dplyr` ingår också i ett samlingspaket `tidyverse` och samlar flertalet paket för datamanipulering, visualisering och modellering. 
@@ -17,7 +17,6 @@ Alla verb i `dplyr` är konsekventa. Det första argumentet är din data och i d
 
 ## Filter
 Med filter kan du enkelt filtrera din data baserat på villkor. 
-
 
 Dessa villkor uttrycks med hjälp av `relationsoperatorer` och `logical operators`.
 

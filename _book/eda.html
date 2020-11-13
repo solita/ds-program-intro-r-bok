@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Kapitel 4 Explorativ dataanalys | Kursmaterial Introduktion till R - Certifierad Data Scientist</title>
+  <meta name="description" content="Här finns kursmaterial och övningar för första blocket R-övningar." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Kapitel 4 Explorativ dataanalys | Kursmaterial Introduktion till R - Certifierad Data Scientist" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Här finns kursmaterial och övningar för första blocket R-övningar." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Kapitel 4 Explorativ dataanalys | Kursmaterial Introduktion till R - Certifierad Data Scientist" />
+  
+  <meta name="twitter:description" content="Här finns kursmaterial och övningar för första blocket R-övningar." />
+  
+
+<meta name="author" content="Filip Wästberg &amp; Torbjörn Sjöberg, Solita" />
+
+
+<meta name="date" content="2020-11-13" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="databearbetning.html"/>
+<link rel="next" href="bilaga.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Kursmaterial Certifierad Data Scientist</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Om dokumentet</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduktion till R</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#saknade-värden-missing-values"><i class="fa fa-check"></i><b>2.1</b> Saknade värden (missing values)</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#r-är-ett-funktionellt-programmeringsspråk"><i class="fa fa-check"></i><b>2.2</b> R är ett funktionellt programmeringsspråk</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="intro.html"><a href="intro.html#funktioner"><i class="fa fa-check"></i><b>2.2.1</b> Funktioner</a></li>
+<li class="chapter" data-level="2.2.2" data-path="intro.html"><a href="intro.html#dokumentation-av-funktioner"><i class="fa fa-check"></i><b>2.2.2</b> Dokumentation av funktioner</a></li>
+<li class="chapter" data-level="2.2.3" data-path="intro.html"><a href="intro.html#övning"><i class="fa fa-check"></i><b>2.2.3</b> Övning</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#data-frames"><i class="fa fa-check"></i><b>2.3</b> Data frames</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#paket"><i class="fa fa-check"></i><b>2.4</b> Paket</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="intro.html"><a href="intro.html#övning-1"><i class="fa fa-check"></i><b>2.4.1</b> Övning</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#tidyverse-and-friends"><i class="fa fa-check"></i><b>2.5</b> tidyverse and friends</a></li>
+<li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#workflow-i-r"><i class="fa fa-check"></i><b>2.6</b> Workflow i R</a></li>
+<li class="chapter" data-level="2.7" data-path="intro.html"><a href="intro.html#att-skriva-kod-i-r"><i class="fa fa-check"></i><b>2.7</b> Att skriva kod i R</a></li>
+<li class="chapter" data-level="2.8" data-path="intro.html"><a href="intro.html#rmarkdown"><i class="fa fa-check"></i><b>2.8</b> Rmarkdown</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="databearbetning.html"><a href="databearbetning.html"><i class="fa fa-check"></i><b>3</b> Datamanipulering med dplyr</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="databearbetning.html"><a href="databearbetning.html#filter"><i class="fa fa-check"></i><b>3.1</b> Filter</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="intro.html"><a href="intro.html#övning"><i class="fa fa-check"></i><b>3.1.1</b> Övning</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="databearbetning.html"><a href="databearbetning.html#arrange"><i class="fa fa-check"></i><b>3.2</b> Arrange</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="intro.html"><a href="intro.html#övning-1"><i class="fa fa-check"></i><b>3.2.1</b> Övning</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="databearbetning.html"><a href="databearbetning.html#select"><i class="fa fa-check"></i><b>3.3</b> Select</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="databearbetning.html"><a href="databearbetning.html#övning-2"><i class="fa fa-check"></i><b>3.3.1</b> Övning</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="databearbetning.html"><a href="databearbetning.html#mutate"><i class="fa fa-check"></i><b>3.4</b> Mutate</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="databearbetning.html"><a href="databearbetning.html#if_else"><i class="fa fa-check"></i><b>3.4.1</b> if_else()</a></li>
+<li class="chapter" data-level="3.4.2" data-path="databearbetning.html"><a href="databearbetning.html#andra-funktioner"><i class="fa fa-check"></i><b>3.4.2</b> Andra funktioner</a></li>
+<li class="chapter" data-level="3.4.3" data-path="databearbetning.html"><a href="databearbetning.html#övningar"><i class="fa fa-check"></i><b>3.4.3</b> Övningar</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="databearbetning.html"><a href="databearbetning.html#summarise"><i class="fa fa-check"></i><b>3.5</b> Summarise</a></li>
+<li class="chapter" data-level="3.6" data-path="databearbetning.html"><a href="databearbetning.html#sample_n"><i class="fa fa-check"></i><b>3.6</b> sample_n()</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="databearbetning.html"><a href="databearbetning.html#övning-3"><i class="fa fa-check"></i><b>3.6.1</b> Övning</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="eda.html"><a href="eda.html"><i class="fa fa-check"></i><b>4</b> Explorativ dataanalys</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="eda.html"><a href="eda.html#vad-är-explorativ-dataanalys"><i class="fa fa-check"></i><b>4.1</b> Vad är Explorativ Dataanalys?</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="eda.html"><a href="eda.html#exempel-på-basala-frågorhypoteser"><i class="fa fa-check"></i><b>4.1.1</b> Exempel på basala frågor/hypoteser</a></li>
+<li class="chapter" data-level="4.1.2" data-path="eda.html"><a href="eda.html#hur-gör-man-i-r"><i class="fa fa-check"></i><b>4.1.2</b> Hur gör man i R?</a></li>
+<li class="chapter" data-level="4.1.3" data-path="eda.html"><a href="eda.html#hur-gör-man-i-r-1"><i class="fa fa-check"></i><b>4.1.3</b> Hur gör man i R?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="eda.html"><a href="eda.html#datavisualisering"><i class="fa fa-check"></i><b>4.2</b> Datavisualisering</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="eda.html"><a href="eda.html#varför-visualisera"><i class="fa fa-check"></i><b>4.2.1</b> Varför visualisera?</a></li>
+<li class="chapter" data-level="4.2.2" data-path="eda.html"><a href="eda.html#vad-är-det-första-vi-gör"><i class="fa fa-check"></i><b>4.2.2</b> Vad är det första vi gör?</a></li>
+<li class="chapter" data-level="4.2.3" data-path="eda.html"><a href="eda.html#steg-2-anpassar-en-linjär-modell"><i class="fa fa-check"></i><b>4.2.3</b> Steg 2: anpassar en linjär modell</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="eda.html"><a href="eda.html#datasaurus-dozen"><i class="fa fa-check"></i><b>4.3</b> Datasaurus Dozen</a></li>
+<li class="chapter" data-level="4.4" data-path="eda.html"><a href="eda.html#workflow-för-nytt-dataset"><i class="fa fa-check"></i><b>4.4</b> Workflow för nytt dataset</a></li>
+<li class="chapter" data-level="4.5" data-path="eda.html"><a href="eda.html#gapminder"><i class="fa fa-check"></i><b>4.5</b> Gapminder</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="eda.html"><a href="eda.html#datapunkter-per-land"><i class="fa fa-check"></i><b>4.5.1</b> Datapunkter per land?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="eda.html"><a href="eda.html#grammar-of-grahics"><i class="fa fa-check"></i><b>4.6</b> Grammar of grahics</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="eda.html"><a href="eda.html#data"><i class="fa fa-check"></i><b>4.6.1</b> 1. Data</a></li>
+<li class="chapter" data-level="4.6.2" data-path="eda.html"><a href="eda.html#aesthetics"><i class="fa fa-check"></i><b>4.6.2</b> 2. Aesthetics</a></li>
+<li class="chapter" data-level="4.6.3" data-path="eda.html"><a href="eda.html#geometriska-objekt"><i class="fa fa-check"></i><b>4.6.3</b> 3. Geometriska objekt</a></li>
+<li class="chapter" data-level="4.6.4" data-path="eda.html"><a href="eda.html#skala"><i class="fa fa-check"></i><b>4.6.4</b> 4. Skala</a></li>
+<li class="chapter" data-level="4.6.5" data-path="eda.html"><a href="eda.html#gdp-per-capita-är-skevt-fördelad"><i class="fa fa-check"></i><b>4.6.5</b> GDP per capita är skevt fördelad</a></li>
+<li class="chapter" data-level="4.6.6" data-path="eda.html"><a href="eda.html#statistiska-beräkningar"><i class="fa fa-check"></i><b>4.6.6</b> 5. Statistiska beräkningar</a></li>
+<li class="chapter" data-level="4.6.7" data-path="eda.html"><a href="eda.html#facets"><i class="fa fa-check"></i><b>4.6.7</b> 6. Facets</a></li>
+<li class="chapter" data-level="4.6.8" data-path="eda.html"><a href="eda.html#koordinatsystem"><i class="fa fa-check"></i><b>4.6.8</b> 7. Koordinatsystem</a></li>
+<li class="chapter" data-level="4.6.9" data-path="eda.html"><a href="eda.html#grammar-of-graphics"><i class="fa fa-check"></i><b>4.6.9</b> Grammar of graphics</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="eda.html"><a href="eda.html#gapminder---fortsättning"><i class="fa fa-check"></i><b>4.7</b> Gapminder - fortsättning</a></li>
+<li class="chapter" data-level="4.8" data-path="eda.html"><a href="eda.html#eda-är-en-nyfiken-process-utan-slut"><i class="fa fa-check"></i><b>4.8</b> EDA är en nyfiken process utan slut!</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="eda.html"><a href="eda.html#det-ni-ska-ta-med-er-idag-är-inte-de-specifika-sakerna-vi-har-undersökt-utan-ett-mindset"><i class="fa fa-check"></i><b>4.8.1</b> Det ni ska ta med er idag är inte de specifika sakerna vi har undersökt, utan ett mindset!</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="eda.html"><a href="eda.html#länkar-till-resurser"><i class="fa fa-check"></i><b>4.9</b> Länkar till resurser</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="bilaga.html"><a href="bilaga.html"><i class="fa fa-check"></i><b>5</b> Bilaga</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="bilaga.html"><a href="bilaga.html#variabeltyper-i-r"><i class="fa fa-check"></i><b>5.1</b> Variabeltyper i R</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="bilaga.html"><a href="bilaga.html#vektorer"><i class="fa fa-check"></i><b>5.1.1</b> Vektorer</a></li>
+<li class="chapter" data-level="5.1.2" data-path="bilaga.html"><a href="bilaga.html#faktorvariabel"><i class="fa fa-check"></i><b>5.1.2</b> Faktorvariabel</a></li>
+<li class="chapter" data-level="5.1.3" data-path="bilaga.html"><a href="bilaga.html#logik"><i class="fa fa-check"></i><b>5.1.3</b> Logik</a></li>
+<li class="chapter" data-level="5.1.4" data-path="bilaga.html"><a href="bilaga.html#matriser"><i class="fa fa-check"></i><b>5.1.4</b> Matriser</a></li>
+<li class="chapter" data-level="5.1.5" data-path="bilaga.html"><a href="bilaga.html#data.frame"><i class="fa fa-check"></i><b>5.1.5</b> Data.frame</a></li>
+<li class="chapter" data-level="5.1.6" data-path="bilaga.html"><a href="bilaga.html#listor"><i class="fa fa-check"></i><b>5.1.6</b> Listor</a></li>
+<li class="chapter" data-level="5.1.7" data-path="bilaga.html"><a href="bilaga.html#datum"><i class="fa fa-check"></i><b>5.1.7</b> Datum</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="bilaga.html"><a href="bilaga.html#indexering"><i class="fa fa-check"></i><b>5.2</b> Indexering</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="bilaga.html"><a href="bilaga.html#genom-att-begränsa-värden-som-man-vill-plocka-ut"><i class="fa fa-check"></i><b>5.2.1</b> Genom att begränsa värden som man vill plocka ut</a></li>
+<li class="chapter" data-level="5.2.2" data-path="bilaga.html"><a href="bilaga.html#genom-att-ange-namn-av-elementet-eller-kolumnen"><i class="fa fa-check"></i><b>5.2.2</b> Genom att ange namn av elementet eller kolumnen</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Kursmaterial Introduktion till R - Certifierad Data Scientist</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="eda" class="section level1" number="4">
+<h1><span class="header-section-number">Kapitel 4</span> Explorativ dataanalys</h1>
+<div id="vad-är-explorativ-dataanalys" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Vad är Explorativ Dataanalys?</h2>
+<ul>
+<li><p>En kreativ iterativ process där man ställer frågor/gör hypoteser om sin data och sedan utforskar dem</p></li>
+<li><p>Mera konkret kan det beskrivas som</p></li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>Formulera en hypotes</li>
+<li>Transformera din data - om nödvändigt</li>
+<li>Visualisera din data (vårt fokus idag)</li>
+<li>Modellera - om nödvändigt</li>
+<li>Formulera nya hypoteser</li>
+</ol>
+<ul>
+<li><p>Mindset inte formel!</p></li>
+<li></li>
+</ul>
+<div id="exempel-på-basala-frågorhypoteser" class="section level3" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Exempel på basala frågor/hypoteser</h3>
+<p>Frågeställningar kan vara vaga!</p>
+<ul>
+<li><p>Vad för data innehåller de olika kolonnerna?</p></li>
+<li><p>Hur ser Datans kvalitét ut? e.g missing values, felaktiga tabellvärden, duplicerade värden</p></li>
+<li><p>Finns det outliers?</p></li>
+<li><p>Medelvärde, spridning</p></li>
+<li></li>
+</ul>
+</div>
+<div id="hur-gör-man-i-r" class="section level3" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Hur gör man i R?</h3>
+<p>R har basfunktionalitet som kan användas för att snabbt få en numerisk överblick datan t.ex
+<code>summary()</code> och <code>head()</code></p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="eda.html#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(iris)</span></code></pre></div>
+<pre><code>##   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
+##  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
+##  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
+##  Median :5.800   Median :3.000   Median :4.350   Median :1.300  
+##  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
+##  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
+##  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
+##        Species  
+##  setosa    :50  
+##  versicolor:50  
+##  virginica :50  
+##                 
+##                 
+## </code></pre>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="eda.html#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code></pre></div>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa</code></pre>
+</div>
+<div id="hur-gör-man-i-r-1" class="section level3" number="4.1.3">
+<h3><span class="header-section-number">4.1.3</span> Hur gör man i R?</h3>
+<p>R har även mer avancerade verktyg:
+- <code>dlookr</code>, ta fram rapport för datakvalitét</p>
+<ul>
+<li><code>skimr</code>, snabb explorativ analys (som vi kommer använda idag)</li>
+</ul>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="eda.html#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="fu">skim</span>(iris)</span></code></pre></div>
+<p><img src="images/Iris_skim.png" /></p>
+</div>
+</div>
+<div id="datavisualisering" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Datavisualisering</h2>
+<ul>
+<li><p>Grunden i explorativ dataanalys</p></li>
+<li><p>Visualisering är grundläggande för att människor ska kunna få en överblick av data</p></li>
+</ul>
+<div id="varför-visualisera" class="section level3" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Varför visualisera?</h3>
+<p>Anscombe quartet - Dataset skapat av Francis Anscombe 1973</p>
+<pre><code>##    observation set  x    y
+## 1            1   I 10 8.04
+## 2            1  II 10 9.14
+## 3            1 III 10 7.46
+## 4            1  IV  8 6.58
+## 5            2   I  8 6.95
+## 6            2  II  8 8.14
+## 7            2 III  8 6.77
+## 8            2  IV  8 5.76
+## 9            3   I 13 7.58
+## 10           3  II 13 8.74</code></pre>
+</div>
+<div id="vad-är-det-första-vi-gör" class="section level3" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Vad är det första vi gör?</h3>
+<pre><code>## # A tibble: 4 x 5
+##   set   x_mean y_mean  x_sd  y_sd
+##   &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 I          9   7.50  3.32  2.03
+## 2 II         9   7.50  3.32  2.03
+## 3 III        9   7.5   3.32  2.03
+## 4 IV         9   7.50  3.32  2.03</code></pre>
+<p>Ser bra ut!</p>
+</div>
+<div id="steg-2-anpassar-en-linjär-modell" class="section level3" number="4.2.3">
+<h3><span class="header-section-number">4.2.3</span> Steg 2: anpassar en linjär modell</h3>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="eda.html#cb96-1" aria-hidden="true" tabindex="-1"></a>anscombe_tidy <span class="sc">%&gt;%</span> </span>
+<span id="cb96-2"><a href="eda.html#cb96-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">nest</span>(observation, x, y) <span class="sc">%&gt;%</span> </span>
+<span id="cb96-3"><a href="eda.html#cb96-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">model =</span> <span class="fu">map</span>(data, <span class="sc">~</span><span class="fu">lm</span>(y <span class="sc">~</span> x, <span class="at">data =</span> .x)),</span>
+<span id="cb96-4"><a href="eda.html#cb96-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">tidy =</span> <span class="fu">map</span>(model, broom<span class="sc">::</span>tidy)) <span class="sc">%&gt;%</span> </span>
+<span id="cb96-5"><a href="eda.html#cb96-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(tidy) <span class="sc">%&gt;%</span> </span>
+<span id="cb96-6"><a href="eda.html#cb96-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(term <span class="sc">==</span> <span class="st">&quot;x&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb96-7"><a href="eda.html#cb96-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(set, estimate, std.error, statistic)</span></code></pre></div>
+<pre><code>## Warning: All elements of `...` must be named.
+## Did you want `data = c(observation, x, y)`?</code></pre>
+<pre><code>## # A tibble: 4 x 4
+##   set   estimate std.error statistic
+##   &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+## 1 I        0.500     0.118      4.24
+## 2 II       0.5       0.118      4.24
+## 3 III      0.500     0.118      4.24
+## 4 IV       0.500     0.118      4.24</code></pre>
+<p>Ser inte ut som att det är någon skillnad mellan grupperna</p>
+<p>Men…</p>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<p><img src="ds-intro-till-r-bok_files/figure-html/anscombe_final-1.png" width="672" /></p>
+<p>Statistiska mått kan gömma mycket av sanningen!</p>
+</div>
+</div>
+<div id="datasaurus-dozen" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Datasaurus Dozen</h2>
+<p>Modern variant av Anscombe - skapat av Alberto Cairo</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="eda.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(datasauRus)</span>
+<span id="cb100-2"><a href="eda.html#cb100-2" aria-hidden="true" tabindex="-1"></a>datasaurus_dozen <span class="sc">%&gt;%</span> </span>
+<span id="cb100-3"><a href="eda.html#cb100-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(dataset) <span class="sc">%&gt;%</span></span>
+<span id="cb100-4"><a href="eda.html#cb100-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">x_mean =</span> <span class="fu">mean</span>(x), <span class="at">y_mean =</span> <span class="fu">mean</span>(y), </span>
+<span id="cb100-5"><a href="eda.html#cb100-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">x_sd =</span> <span class="fu">sd</span>(x), <span class="at">y_sd =</span> <span class="fu">sd</span>(y),</span>
+<span id="cb100-6"><a href="eda.html#cb100-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">corr =</span> <span class="fu">cor</span>(x,y)) </span></code></pre></div>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<pre><code>## # A tibble: 13 x 6
+##    dataset    x_mean y_mean  x_sd  y_sd    corr
+##    &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
+##  1 away         54.3   47.8  16.8  26.9 -0.0641
+##  2 bullseye     54.3   47.8  16.8  26.9 -0.0686
+##  3 circle       54.3   47.8  16.8  26.9 -0.0683
+##  4 dino         54.3   47.8  16.8  26.9 -0.0645
+##  5 dots         54.3   47.8  16.8  26.9 -0.0603
+##  6 h_lines      54.3   47.8  16.8  26.9 -0.0617
+##  7 high_lines   54.3   47.8  16.8  26.9 -0.0685
+##  8 slant_down   54.3   47.8  16.8  26.9 -0.0690
+##  9 slant_up     54.3   47.8  16.8  26.9 -0.0686
+## 10 star         54.3   47.8  16.8  26.9 -0.0630
+## 11 v_lines      54.3   47.8  16.8  26.9 -0.0694
+## 12 wide_lines   54.3   47.8  16.8  26.9 -0.0666
+## 13 x_shape      54.3   47.8  16.8  26.9 -0.0656</code></pre>
+<p>Datasaurus Dozen</p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="eda.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datasaurus_dozen, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y))<span class="sc">+</span></span>
+<span id="cb103-2"><a href="eda.html#cb103-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb103-3"><a href="eda.html#cb103-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb103-4"><a href="eda.html#cb103-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>dataset)</span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<p>Eller som animering:</p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="eda.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(datasauRus)</span>
+<span id="cb104-2"><a href="eda.html#cb104-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb104-3"><a href="eda.html#cb104-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gganimate)</span>
+<span id="cb104-4"><a href="eda.html#cb104-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-5"><a href="eda.html#cb104-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datasaurus_dozen, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y))<span class="sc">+</span></span>
+<span id="cb104-6"><a href="eda.html#cb104-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb104-7"><a href="eda.html#cb104-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb104-8"><a href="eda.html#cb104-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transition_states</span>(dataset, <span class="dv">3</span>, <span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb104-9"><a href="eda.html#cb104-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ease_aes</span>(<span class="st">&#39;cubic-in-out&#39;</span>)</span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/unnamed-chunk-26-1.gif" /><!-- --></p>
+</div>
+<div id="workflow-för-nytt-dataset" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> Workflow för nytt dataset</h2>
+<ul>
+<li><p>Börja <em>alltid</em> med visualisering, särskilt om du ska göra modellering</p></li>
+<li><p>explorativ visualisering är en iterativ process</p></li>
+<li><p>Börjar övergripande sedan mera specialiserade beroende på hur dina hypoteser/frågor utvecklas</p></li>
+</ul>
+<p>Gör <em>alltid</em> explorativ analys med ett programmeringsspråk</p>
+<ul>
+<li><p>Det gör att din analys finns dokumenterad</p></li>
+<li><p>Du kan dela med den till andra</p></li>
+<li><p>Den är reproducerbar och kan granskas</p></li>
+</ul>
+<p>Saker du bör undvika: BI-verktyg för explorativ analys och Excel.</p>
+</div>
+<div id="gapminder" class="section level2" number="4.5">
+<h2><span class="header-section-number">4.5</span> Gapminder</h2>
+<ul>
+<li><p>Vi har fått ett dataset <code>gapminder</code> och egentligen inga andra uppgifter och vi vill förstå det</p></li>
+<li><p>Vi börjar med att snabbt kolla på datan med <code>head()</code></p></li>
+</ul>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="eda.html#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
+<span id="cb105-2"><a href="eda.html#cb105-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder)</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 6
+##   country     continent  year lifeExp      pop gdpPercap
+##   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
+## 1 Afghanistan Asia       1952    28.8  8425333      779.
+## 2 Afghanistan Asia       1957    30.3  9240934      821.
+## 3 Afghanistan Asia       1962    32.0 10267083      853.
+## 4 Afghanistan Asia       1967    34.0 11537966      836.
+## 5 Afghanistan Asia       1972    36.1 13079460      740.
+## 6 Afghanistan Asia       1977    38.4 14880372      786.</code></pre>
+<ul>
+<li>Undersöker med hjälp av <code>summary()</code>/<code>skim()</code></li>
+</ul>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="eda.html#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(gapminder)</span></code></pre></div>
+<pre><code>##         country        continent        year         lifeExp     
+##  Afghanistan:  12   Africa  :624   Min.   :1952   Min.   :23.60  
+##  Albania    :  12   Americas:300   1st Qu.:1966   1st Qu.:48.20  
+##  Algeria    :  12   Asia    :396   Median :1980   Median :60.71  
+##  Angola     :  12   Europe  :360   Mean   :1980   Mean   :59.47  
+##  Argentina  :  12   Oceania : 24   3rd Qu.:1993   3rd Qu.:70.85  
+##  Australia  :  12                  Max.   :2007   Max.   :82.60  
+##  (Other)    :1632                                                
+##       pop              gdpPercap       
+##  Min.   :6.001e+04   Min.   :   241.2  
+##  1st Qu.:2.794e+06   1st Qu.:  1202.1  
+##  Median :7.024e+06   Median :  3531.8  
+##  Mean   :2.960e+07   Mean   :  7215.3  
+##  3rd Qu.:1.959e+07   3rd Qu.:  9325.5  
+##  Max.   :1.319e+09   Max.   :113523.1  
+## </code></pre>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="eda.html#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
+<span id="cb109-2"><a href="eda.html#cb109-2" aria-hidden="true" tabindex="-1"></a><span class="fu">skim</span>(gapminder)</span></code></pre></div>
+<p><img src="images/gapminder_skim.png" /></p>
+<div id="datapunkter-per-land" class="section level3" number="4.5.1">
+<h3><span class="header-section-number">4.5.1</span> Datapunkter per land?</h3>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="eda.html#cb110-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">&quot;Sweden&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(year)</span></code></pre></div>
+<pre><code>## # A tibble: 12 x 6
+##    country continent  year lifeExp     pop gdpPercap
+##    &lt;fct&gt;   &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;   &lt;int&gt;     &lt;dbl&gt;
+##  1 Sweden  Europe     1952    71.9 7124673     8528.
+##  2 Sweden  Europe     1957    72.5 7363802     9912.
+##  3 Sweden  Europe     1962    73.4 7561588    12329.
+##  4 Sweden  Europe     1967    74.2 7867931    15258.
+##  5 Sweden  Europe     1972    74.7 8122293    17832.
+##  6 Sweden  Europe     1977    75.4 8251648    18856.
+##  7 Sweden  Europe     1982    76.4 8325260    20667.
+##  8 Sweden  Europe     1987    77.2 8421403    23587.
+##  9 Sweden  Europe     1992    78.2 8718867    23880.
+## 10 Sweden  Europe     1997    79.4 8897619    25267.
+## 11 Sweden  Europe     2002    80.0 8954175    29342.
+## 12 Sweden  Europe     2007    80.9 9031088    33860.</code></pre>
+<div id="naturlig-fråga-hur-påverkar-ekonomisk-utveckling-den-förväntande-livslängden-i-ett-land" class="section level4" number="4.5.1.1">
+<h4><span class="header-section-number">4.5.1.1</span> Naturlig fråga: Hur påverkar ekonomisk utveckling den förväntande livslängden i ett land?</h4>
+<p>För att undersöka den här frågan så vill vi göra en visualisering med hjälp av <code>ggplot2</code></p>
+<p>Då behöver vi först</p>
+</div>
+</div>
+</div>
+<div id="grammar-of-grahics" class="section level2" number="4.6">
+<h2><span class="header-section-number">4.6</span> Grammar of grahics</h2>
+<div id="data" class="section level3" number="4.6.1">
+<h3><span class="header-section-number">4.6.1</span> 1. Data</h3>
+<p>För att minska mängden data kollar vi bara på ett år</p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="eda.html#cb112-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span></span>
+<span id="cb112-2"><a href="eda.html#cb112-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">1972</span>)</span>
+<span id="cb112-3"><a href="eda.html#cb112-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-4"><a href="eda.html#cb112-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data)</span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/gapminder_data-1.png" width="672" /></p>
+</div>
+<div id="aesthetics" class="section level3" number="4.6.2">
+<h3><span class="header-section-number">4.6.2</span> 2. Aesthetics</h3>
+<ul>
+<li><p>Vi behöver <code>mappa</code> data till visualiseringen. Vi mappar data till <code>aestethics</code> i visualiseringen. En <code>aesthetic</code> kan vara exempelvis <code>x</code>-axeln eller <code>y</code>-axeln.</p></li>
+<li><p>För att svara på vår fråga kan vi exempelvis mappa <code>gdpPercap</code> till <code>x</code>-axeln och <code>lifeExp</code> till <code>y</code>-axeln</p></li>
+</ul>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="eda.html#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp))</span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/gapminder_aes-1.png" width="672" /></p>
+</div>
+<div id="geometriska-objekt" class="section level3" number="4.6.3">
+<h3><span class="header-section-number">4.6.3</span> 3. Geometriska objekt</h3>
+<p>Vi behöver geometriska objekt som representerar data, exempelvis punkter, linjer eller staplar.</p>
+<p>I ggplot2 kallas dessa för <code>geoms</code>, exempelvis:</p>
+<p><code>geom_point()</code>: punkter,</p>
+<p><code>geom_line()</code>: linjer,</p>
+<p><code>geom_bar()</code>: staplar</p>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="eda.html#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb114-2"><a href="eda.html#cb114-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/gapminder_geoms-1.png" width="672" /></p>
+<p>Det verkar finnas ett samband, kan vi förstå mera?</p>
+<p>Mer <code>aesthetics</code></p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="eda.html#cb115-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data,</span>
+<span id="cb115-2"><a href="eda.html#cb115-2" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap,</span>
+<span id="cb115-3"><a href="eda.html#cb115-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> lifeExp,</span>
+<span id="cb115-4"><a href="eda.html#cb115-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">color =</span> continent)) <span class="sc">+</span></span>
+<span id="cb115-5"><a href="eda.html#cb115-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<div id="storlek-invånare" class="section level4" number="4.6.3.1">
+<h4><span class="header-section-number">4.6.3.1</span> Storlek ~ invånare</h4>
+<p>ännu mer <code>aesthetics</code></p>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="eda.html#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data,</span>
+<span id="cb116-2"><a href="eda.html#cb116-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap,</span>
+<span id="cb116-3"><a href="eda.html#cb116-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> lifeExp,</span>
+<span id="cb116-4"><a href="eda.html#cb116-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">color =</span> continent,</span>
+<span id="cb116-5"><a href="eda.html#cb116-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">size =</span> pop)) <span class="sc">+</span> </span>
+<span id="cb116-6"><a href="eda.html#cb116-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/gapminder_aes_size-1.png" width="672" /></p>
+</div>
+</div>
+<div id="skala" class="section level3" number="4.6.4">
+<h3><span class="header-section-number">4.6.4</span> 4. Skala</h3>
+<p>Vilken skala ska axlarna i grafen ha?</p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="eda.html#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp,</span>
+<span id="cb117-2"><a href="eda.html#cb117-2" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">size =</span> pop, <span class="at">color =</span> continent)) <span class="sc">+</span></span>
+<span id="cb117-3"><a href="eda.html#cb117-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb117-4"><a href="eda.html#cb117-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>() <span class="sc">+</span> <span class="do">## Default value</span></span>
+<span id="cb117-5"><a href="eda.html#cb117-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>() </span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/gapminder_scale1-1.png" width="672" /></p>
+</div>
+<div id="gdp-per-capita-är-skevt-fördelad" class="section level3" number="4.6.5">
+<h3><span class="header-section-number">4.6.5</span> GDP per capita är skevt fördelad</h3>
+<p>Vanligt i variabler som motsvarar pengar</p>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="eda.html#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap)) <span class="sc">+</span></span>
+<span id="cb118-2"><a href="eda.html#cb118-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()</span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/gapminder_gdp-1.png" width="672" /></p>
+<div id="logaritmisk-skala" class="section level4" number="4.6.5.1">
+<h4><span class="header-section-number">4.6.5.1</span> Logaritmisk skala</h4>
+<p>Genom att ta logaritmen kan vi justera för den skeva fördelningen</p>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="eda.html#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap)) <span class="sc">+</span></span>
+<span id="cb119-2"><a href="eda.html#cb119-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb119-3"><a href="eda.html#cb119-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="do">##</span></span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/gapminder_gdplog-1.png" width="672" /></p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="eda.html#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap,</span>
+<span id="cb120-2"><a href="eda.html#cb120-2" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">y =</span> lifeExp,</span>
+<span id="cb120-3"><a href="eda.html#cb120-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">size =</span> pop,</span>
+<span id="cb120-4"><a href="eda.html#cb120-4" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">color =</span> continent)) <span class="sc">+</span></span>
+<span id="cb120-5"><a href="eda.html#cb120-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb120-6"><a href="eda.html#cb120-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() </span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/gapminder_log-1.png" width="672" /></p>
+<p>##&lt;4 Hans Roslings berömda visualisering</p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="eda.html#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gganimate)</span>
+<span id="cb121-2"><a href="eda.html#cb121-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
+<span id="cb121-3"><a href="eda.html#cb121-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb121-4"><a href="eda.html#cb121-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(gdpPercap, lifeExp, <span class="at">size =</span> pop, <span class="at">colour =</span> continent)) <span class="sc">+</span></span>
+<span id="cb121-5"><a href="eda.html#cb121-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb121-6"><a href="eda.html#cb121-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">#scale_colour_manual(values = country_colors) +</span></span>
+<span id="cb121-7"><a href="eda.html#cb121-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">12</span>)) <span class="sc">+</span></span>
+<span id="cb121-8"><a href="eda.html#cb121-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb121-9"><a href="eda.html#cb121-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">color=</span> <span class="fu">guide_legend</span>(), <span class="at">size=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb121-10"><a href="eda.html#cb121-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
+<span id="cb121-11"><a href="eda.html#cb121-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;Year: {frame_time}&#39;</span>, </span>
+<span id="cb121-12"><a href="eda.html#cb121-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&#39;GDP per capita&#39;</span>,</span>
+<span id="cb121-13"><a href="eda.html#cb121-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;life expectancy&#39;</span>) <span class="sc">+</span></span>
+<span id="cb121-14"><a href="eda.html#cb121-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transition_time</span>(year) <span class="sc">+</span></span>
+<span id="cb121-15"><a href="eda.html#cb121-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ease_aes</span>(<span class="st">&#39;linear&#39;</span>)</span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/hans_rosling-1.gif" /><!-- --></p>
+</div>
+</div>
+<div id="statistiska-beräkningar" class="section level3" number="4.6.6">
+<h3><span class="header-section-number">4.6.6</span> 5. Statistiska beräkningar</h3>
+<p>För att kvantifiera sammanbandet mera kan vi också lägga till statistiska beräkningar till grafen</p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="eda.html#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap,</span>
+<span id="cb122-2"><a href="eda.html#cb122-2" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">y =</span> lifeExp,</span>
+<span id="cb122-3"><a href="eda.html#cb122-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">size =</span> pop,</span>
+<span id="cb122-4"><a href="eda.html#cb122-4" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">color =</span> continent)) <span class="sc">+</span></span>
+<span id="cb122-5"><a href="eda.html#cb122-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb122-6"><a href="eda.html#cb122-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb122-7"><a href="eda.html#cb122-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<pre><code>## Warning in qt((1 - level)/2, df): NaNs produced</code></pre>
+<pre><code>## Warning in max(ids, na.rm = TRUE): no non-missing arguments to max; returning -
+## Inf</code></pre>
+<p><img src="ds-intro-till-r-bok_files/figure-html/gapminder_lm-1.png" width="672" /></p>
+<ul>
+<li><p>Nu beräknas statistik per grupp. Det är eftersom att vi specificerat i vår <code>aes()</code> i <code>ggplot()</code>.</p></li>
+<li><p>Vi kan flytta <code>aes()</code> till våra geometriska objekt om vi vill beräkna statistik för hela gruppen.</p></li>
+</ul>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="eda.html#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb126-2"><a href="eda.html#cb126-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> pop, <span class="at">color =</span> continent)) <span class="sc">+</span></span>
+<span id="cb126-3"><a href="eda.html#cb126-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb126-4"><a href="eda.html#cb126-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<p><img src="ds-intro-till-r-bok_files/figure-html/gapminder_lm_all-1.png" width="672" /></p>
+</div>
+<div id="facets" class="section level3" number="4.6.7">
+<h3><span class="header-section-number">4.6.7</span> 6. Facets</h3>
+<p>Vi kan också dela upp grafen i flera visualiseringar</p>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="eda.html#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap,</span>
+<span id="cb128-2"><a href="eda.html#cb128-2" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">y =</span> lifeExp,</span>
+<span id="cb128-3"><a href="eda.html#cb128-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">size =</span> pop,</span>
+<span id="cb128-4"><a href="eda.html#cb128-4" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">color =</span> continent)) <span class="sc">+</span></span>
+<span id="cb128-5"><a href="eda.html#cb128-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb128-6"><a href="eda.html#cb128-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb128-7"><a href="eda.html#cb128-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>) <span class="sc">+</span></span>
+<span id="cb128-8"><a href="eda.html#cb128-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>continent)</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<pre><code>## Warning in qt((1 - level)/2, df): NaNs produced</code></pre>
+<pre><code>## Warning in max(ids, na.rm = TRUE): no non-missing arguments to max; returning -
+## Inf</code></pre>
+<p><img src="ds-intro-till-r-bok_files/figure-html/gapminder_facets-1.png" width="672" /></p>
+<p>Vi kan också specificera skalorna för varje subplot</p>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="eda.html#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap,</span>
+<span id="cb132-2"><a href="eda.html#cb132-2" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">y =</span> lifeExp,</span>
+<span id="cb132-3"><a href="eda.html#cb132-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">size =</span> pop,</span>
+<span id="cb132-4"><a href="eda.html#cb132-4" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">color =</span> continent)) <span class="sc">+</span></span>
+<span id="cb132-5"><a href="eda.html#cb132-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb132-6"><a href="eda.html#cb132-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb132-7"><a href="eda.html#cb132-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>) <span class="sc">+</span></span>
+<span id="cb132-8"><a href="eda.html#cb132-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>continent, <span class="at">scales =</span> <span class="st">&quot;free&quot;</span>)</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<pre><code>## Warning in qt((1 - level)/2, df): NaNs produced</code></pre>
+<pre><code>## Warning in max(ids, na.rm = TRUE): no non-missing arguments to max; returning -
+## Inf</code></pre>
+<p><img src="ds-intro-till-r-bok_files/figure-html/gapminder_facet_scale-1.png" width="672" /></p>
+</div>
+<div id="koordinatsystem" class="section level3" number="4.6.8">
+<h3><span class="header-section-number">4.6.8</span> 7. Koordinatsystem</h3>
+<ul>
+<li>Ett sista lager vi skulle kunna använda för att ändra vår graf</li>
+<li>Exempelvis Kartesiskt eller Polärt</li>
+<li>Polärt för exempelvis cirkeldiagram</li>
+</ul>
+<p><img src="images/Nightingale-mortality.jpg" /></p>
+</div>
+<div id="grammar-of-graphics" class="section level3" number="4.6.9">
+<h3><span class="header-section-number">4.6.9</span> Grammar of graphics</h3>
+<p>R Paketet som har använts heter <code>ggplot2</code> och det bygger på en variant av <em>The Grammar of Graphics</em> och består av de 7 beståndsdelar vi precis gått igenom</p>
+<p>.footnote[
+Wickham, H (2010), <em>“A layered Grammar of Graphics”</em>, Journal of Computational and Graphical Statistics, vol. 19, no. 1, pp. 3–28,]</p>
+<ol style="list-style-type: decimal">
+<li><p>Data</p></li>
+<li><p>Aesthetics</p></li>
+<li><p>Geometric Objects</p></li>
+<li><p>Scale</p></li>
+<li><p>Statistics</p></li>
+<li><p>Facets</p></li>
+<li><p>Coordinate systems</p></li>
+</ol>
+<p>(8.) Labels, titlar, legends</p>
+<p>Som kan manipuleras för att skapa de visualiseringar vi vill ha</p>
+</div>
+</div>
+<div id="gapminder---fortsättning" class="section level2" number="4.7">
+<h2><span class="header-section-number">4.7</span> Gapminder - fortsättning</h2>
+<p>Vi såg att det fanns en outlier i <code>gdpPercap</code> per <code>lifeExp</code></p>
+<p><img src="ds-intro-till-r-bok_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p>Vilket land är det?</p>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="eda.html#cb136-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(gdpPercap))</span></code></pre></div>
+<pre><code>## # A tibble: 142 x 6
+##    country       continent  year lifeExp       pop gdpPercap
+##    &lt;fct&gt;         &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;     &lt;int&gt;     &lt;dbl&gt;
+##  1 Kuwait        Asia       1972    67.7    841934   109348.
+##  2 Switzerland   Europe     1972    73.8   6401400    27195.
+##  3 Saudi Arabia  Asia       1972    53.9   6472756    24837.
+##  4 United States Americas   1972    71.3 209896000    21806.
+##  5 Libya         Africa     1972    52.8   2183877    21011.
+##  6 Canada        Americas   1972    72.9  22284500    18971.
+##  7 Norway        Europe     1972    74.3   3933004    18965.
+##  8 Denmark       Europe     1972    73.5   4991596    18866.
+##  9 Netherlands   Europe     1972    73.8  13329874    18795.
+## 10 Bahrain       Asia       1972    63.3    230800    18269.
+## # … with 132 more rows</code></pre>
+<p>Är det en utveckling som håller i sig?</p>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="eda.html#cb138-1" aria-hidden="true" tabindex="-1"></a>kuwait_data <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> </span>
+<span id="cb138-2"><a href="eda.html#cb138-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">&quot;Kuwait&quot;</span>)</span>
+<span id="cb138-3"><a href="eda.html#cb138-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb138-4"><a href="eda.html#cb138-4" aria-hidden="true" tabindex="-1"></a>kuwait_data <span class="sc">%&gt;%</span></span>
+<span id="cb138-5"><a href="eda.html#cb138-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>gdpPercap)) <span class="sc">+</span></span>
+<span id="cb138-6"><a href="eda.html#cb138-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color=</span><span class="st">&#39;red&#39;</span>) <span class="sc">+</span> <span class="fu">scale_color_identity</span>()</span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+<p>I jämförelse med utveckingen i resten av toppländerna 1972?</p>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="eda.html#cb139-1" aria-hidden="true" tabindex="-1"></a>top_countries <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span>  <span class="fu">top_n</span>(<span class="dv">11</span>, gdpPercap) <span class="sc">%&gt;%</span> </span>
+<span id="cb139-2"><a href="eda.html#cb139-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>( country<span class="sc">!=</span> <span class="st">&#39;Kuwait&#39;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb139-3"><a href="eda.html#cb139-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(country)</span>
+<span id="cb139-4"><a href="eda.html#cb139-4" aria-hidden="true" tabindex="-1"></a>top_countries</span></code></pre></div>
+<pre><code>##  [1] Bahrain       Canada        Denmark       Germany       Libya        
+##  [6] Netherlands   Norway        Saudi Arabia  Switzerland   United States
+## 142 Levels: Afghanistan Albania Algeria Angola Argentina Australia ... Zimbabwe</code></pre>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="eda.html#cb141-1" aria-hidden="true" tabindex="-1"></a>top_mean <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> </span>
+<span id="cb141-2"><a href="eda.html#cb141-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">%in%</span> top_countries) <span class="sc">%&gt;%</span> </span>
+<span id="cb141-3"><a href="eda.html#cb141-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span>  </span>
+<span id="cb141-4"><a href="eda.html#cb141-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">gdp_mean =</span> <span class="fu">mean</span>(gdpPercap))</span></code></pre></div>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="eda.html#cb143-1" aria-hidden="true" tabindex="-1"></a>top_mean</span></code></pre></div>
+<pre><code>## # A tibble: 12 x 2
+##     year gdp_mean
+##    &lt;int&gt;    &lt;dbl&gt;
+##  1  1952    9468.
+##  2  1957   11271.
+##  3  1962   13393.
+##  4  1967   17146.
+##  5  1972   20673.
+##  6  1977   23406.
+##  7  1982   23799.
+##  8  1987   24323.
+##  9  1992   25740.
+## 10  1997   27633.
+## 11  2002   29947.
+## 12  2007   33389.</code></pre>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="eda.html#cb145-1" aria-hidden="true" tabindex="-1"></a>data_added_mean <span class="ot">&lt;-</span> kuwait_data <span class="sc">%&gt;%</span> <span class="fu">add_column</span>(</span>
+<span id="cb145-2"><a href="eda.html#cb145-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;mean&quot;</span> <span class="ot">=</span> top_mean<span class="sc">$</span>gdp_mean)</span>
+<span id="cb145-3"><a href="eda.html#cb145-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb145-4"><a href="eda.html#cb145-4" aria-hidden="true" tabindex="-1"></a>data_added_mean <span class="sc">%&gt;%</span> </span>
+<span id="cb145-5"><a href="eda.html#cb145-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year)) <span class="sc">+</span> </span>
+<span id="cb145-6"><a href="eda.html#cb145-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> gdpPercap), <span class="at">color =</span> <span class="st">&#39;red&#39;</span>) <span class="sc">+</span></span>
+<span id="cb145-7"><a href="eda.html#cb145-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> mean), <span class="at">color =</span> <span class="st">&#39;gray&#39;</span>) <span class="sc">+</span> </span>
+<span id="cb145-8"><a href="eda.html#cb145-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_identity</span>()</span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+</div>
+<div id="eda-är-en-nyfiken-process-utan-slut" class="section level2" number="4.8">
+<h2><span class="header-section-number">4.8</span> EDA är en nyfiken process utan slut!</h2>
+<p>Det finns i princip alltid mera saker man skulle kunna undersöka som:</p>
+<ul>
+<li><p>Hur ser utvecklingen ut om vi istället för att undersöka BNP per kapita, undersöker totala BNP per land?</p></li>
+<li><p>Om vi utesluter Kuwait som en outlier 1972?</p></li>
+<li><p>Om vi inför en annan gruppering?</p></li>
+<li><p>etc..</p></li>
+</ul>
+<div id="det-ni-ska-ta-med-er-idag-är-inte-de-specifika-sakerna-vi-har-undersökt-utan-ett-mindset" class="section level3" number="4.8.1">
+<h3><span class="header-section-number">4.8.1</span> Det ni ska ta med er idag är inte de specifika sakerna vi har undersökt, utan ett mindset!</h3>
+</div>
+</div>
+<div id="länkar-till-resurser" class="section level2" number="4.9">
+<h2><span class="header-section-number">4.9</span> Länkar till resurser</h2>
+<ul>
+<li><p><a href="https://r4ds.had.co.nz/">R for Data Science</a> - fantastisk bok som har bra material om alling Data Science</p></li>
+<li><p><a href="https://ft-interactive.github.io/visual-vocabulary/">Visual Vocabulary</a> - Financial Times referensmaterial för visualiseringar</p></li>
+<li><p><a href="https://ggplot2.tidyverse.org/">ggplot2</a> - dokumentation för ggplot2</p></li>
+<li><p><a href="https://www.kaggle.com/">kaggle</a> - Hemsida med AI/ML tävlingar och källa till gratis dataset</p></li>
+<li><p><a href="https://www.stackoverflow.com">stack overflow</a> - Forum för programmeringsfrågor, där svar på nästan alla problem man stöter på finns</p></li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="databearbetning.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bilaga.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["ds-intro-till-r-bok.pdf", "ds-intro-till-r-bok.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

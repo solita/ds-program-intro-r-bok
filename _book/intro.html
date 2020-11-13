@@ -1,38 +1,39 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Kapitel 2 Introduktion till R | Kursmaterial till Certifierad Data Scientist</title>
-  <meta name="description" content="Det här dokumentet innehåller kursmaterial och övningar för det första blockets R-övningar." />
-  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+  <title>Kapitel 2 Introduktion till R | Kursmaterial Introduktion till R - Certifierad Data Scientist</title>
+  <meta name="description" content="Här finns kursmaterial och övningar för första blocket R-övningar." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Kapitel 2 Introduktion till R | Kursmaterial till Certifierad Data Scientist" />
+  <meta property="og:title" content="Kapitel 2 Introduktion till R | Kursmaterial Introduktion till R - Certifierad Data Scientist" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Det här dokumentet innehåller kursmaterial och övningar för det första blockets R-övningar." />
+  <meta property="og:description" content="Här finns kursmaterial och övningar för första blocket R-övningar." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Kapitel 2 Introduktion till R | Kursmaterial till Certifierad Data Scientist" />
+  <meta name="twitter:title" content="Kapitel 2 Introduktion till R | Kursmaterial Introduktion till R - Certifierad Data Scientist" />
   
-  <meta name="twitter:description" content="Det här dokumentet innehåller kursmaterial och övningar för det första blockets R-övningar." />
+  <meta name="twitter:description" content="Här finns kursmaterial och övningar för första blocket R-övningar." />
   
 
-<meta name="author" content="Ferrologic" />
+<meta name="author" content="Filip Wästberg &amp; Torbjörn Sjöberg, Solita" />
 
 
-<meta name="date" content="2019-10-14" />
+<meta name="date" content="2020-11-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="datamanipulering-med-dplyr.html">
+<link rel="prev" href="index.html"/>
+<link rel="next" href="databearbetning.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -40,6 +41,7 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
 
 
 
@@ -47,28 +49,33 @@
 
 
 
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -77,9 +84,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -129,55 +136,106 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Om dokumentet</a></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduktion till R</a><ul>
-<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#saknade-varden-missing-values"><i class="fa fa-check"></i><b>2.1</b> Saknade värden (missing values)</a></li>
-<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#r-ar-ett-funktionellt-programmeringssprak"><i class="fa fa-check"></i><b>2.2</b> R är ett funktionellt programmeringsspråk</a><ul>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduktion till R</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#saknade-värden-missing-values"><i class="fa fa-check"></i><b>2.1</b> Saknade värden (missing values)</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#r-är-ett-funktionellt-programmeringsspråk"><i class="fa fa-check"></i><b>2.2</b> R är ett funktionellt programmeringsspråk</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="intro.html"><a href="intro.html#funktioner"><i class="fa fa-check"></i><b>2.2.1</b> Funktioner</a></li>
 <li class="chapter" data-level="2.2.2" data-path="intro.html"><a href="intro.html#dokumentation-av-funktioner"><i class="fa fa-check"></i><b>2.2.2</b> Dokumentation av funktioner</a></li>
-<li class="chapter" data-level="2.2.3" data-path="intro.html"><a href="intro.html#ovning"><i class="fa fa-check"></i><b>2.2.3</b> Övning</a></li>
+<li class="chapter" data-level="2.2.3" data-path="intro.html"><a href="intro.html#övning"><i class="fa fa-check"></i><b>2.2.3</b> Övning</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#data-frames"><i class="fa fa-check"></i><b>2.3</b> Data frames</a></li>
-<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#paket"><i class="fa fa-check"></i><b>2.4</b> Paket</a><ul>
-<li class="chapter" data-level="2.4.1" data-path="intro.html"><a href="intro.html#ovning-1"><i class="fa fa-check"></i><b>2.4.1</b> Övning</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#paket"><i class="fa fa-check"></i><b>2.4</b> Paket</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="intro.html"><a href="intro.html#övning-1"><i class="fa fa-check"></i><b>2.4.1</b> Övning</a></li>
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#tidyverse-and-friends"><i class="fa fa-check"></i><b>2.5</b> tidyverse and friends</a></li>
 <li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#workflow-i-r"><i class="fa fa-check"></i><b>2.6</b> Workflow i R</a></li>
 <li class="chapter" data-level="2.7" data-path="intro.html"><a href="intro.html#att-skriva-kod-i-r"><i class="fa fa-check"></i><b>2.7</b> Att skriva kod i R</a></li>
 <li class="chapter" data-level="2.8" data-path="intro.html"><a href="intro.html#rmarkdown"><i class="fa fa-check"></i><b>2.8</b> Rmarkdown</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="datamanipulering-med-dplyr.html"><a href="datamanipulering-med-dplyr.html"><i class="fa fa-check"></i><b>3</b> Datamanipulering med dplyr</a><ul>
-<li class="chapter" data-level="3.1" data-path="datamanipulering-med-dplyr.html"><a href="datamanipulering-med-dplyr.html#filter"><i class="fa fa-check"></i><b>3.1</b> Filter</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="datamanipulering-med-dplyr.html"><a href="datamanipulering-med-dplyr.html#ovning-2"><i class="fa fa-check"></i><b>3.1.1</b> Övning</a></li>
+<li class="chapter" data-level="3" data-path="databearbetning.html"><a href="databearbetning.html"><i class="fa fa-check"></i><b>3</b> Datamanipulering med dplyr</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="databearbetning.html"><a href="databearbetning.html#filter"><i class="fa fa-check"></i><b>3.1</b> Filter</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="intro.html"><a href="intro.html#övning"><i class="fa fa-check"></i><b>3.1.1</b> Övning</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="datamanipulering-med-dplyr.html"><a href="datamanipulering-med-dplyr.html#arrange"><i class="fa fa-check"></i><b>3.2</b> Arrange</a><ul>
-<li class="chapter" data-level="3.2.1" data-path="datamanipulering-med-dplyr.html"><a href="datamanipulering-med-dplyr.html#ovning-3"><i class="fa fa-check"></i><b>3.2.1</b> Övning</a></li>
+<li class="chapter" data-level="3.2" data-path="databearbetning.html"><a href="databearbetning.html#arrange"><i class="fa fa-check"></i><b>3.2</b> Arrange</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="intro.html"><a href="intro.html#övning-1"><i class="fa fa-check"></i><b>3.2.1</b> Övning</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="datamanipulering-med-dplyr.html"><a href="datamanipulering-med-dplyr.html#select"><i class="fa fa-check"></i><b>3.3</b> Select</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="datamanipulering-med-dplyr.html"><a href="datamanipulering-med-dplyr.html#ovning-4"><i class="fa fa-check"></i><b>3.3.1</b> Övning</a></li>
+<li class="chapter" data-level="3.3" data-path="databearbetning.html"><a href="databearbetning.html#select"><i class="fa fa-check"></i><b>3.3</b> Select</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="databearbetning.html"><a href="databearbetning.html#övning-2"><i class="fa fa-check"></i><b>3.3.1</b> Övning</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="datamanipulering-med-dplyr.html"><a href="datamanipulering-med-dplyr.html#mutate"><i class="fa fa-check"></i><b>3.4</b> Mutate</a><ul>
-<li class="chapter" data-level="3.4.1" data-path="datamanipulering-med-dplyr.html"><a href="datamanipulering-med-dplyr.html#if_else"><i class="fa fa-check"></i><b>3.4.1</b> if_else()</a></li>
-<li class="chapter" data-level="3.4.2" data-path="datamanipulering-med-dplyr.html"><a href="datamanipulering-med-dplyr.html#andra-funktioner"><i class="fa fa-check"></i><b>3.4.2</b> Andra funktioner</a></li>
-<li class="chapter" data-level="3.4.3" data-path="datamanipulering-med-dplyr.html"><a href="datamanipulering-med-dplyr.html#ovningar"><i class="fa fa-check"></i><b>3.4.3</b> Övningar</a></li>
+<li class="chapter" data-level="3.4" data-path="databearbetning.html"><a href="databearbetning.html#mutate"><i class="fa fa-check"></i><b>3.4</b> Mutate</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="databearbetning.html"><a href="databearbetning.html#if_else"><i class="fa fa-check"></i><b>3.4.1</b> if_else()</a></li>
+<li class="chapter" data-level="3.4.2" data-path="databearbetning.html"><a href="databearbetning.html#andra-funktioner"><i class="fa fa-check"></i><b>3.4.2</b> Andra funktioner</a></li>
+<li class="chapter" data-level="3.4.3" data-path="databearbetning.html"><a href="databearbetning.html#övningar"><i class="fa fa-check"></i><b>3.4.3</b> Övningar</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="datamanipulering-med-dplyr.html"><a href="datamanipulering-med-dplyr.html#summarise"><i class="fa fa-check"></i><b>3.5</b> Summarise</a></li>
-<li class="chapter" data-level="3.6" data-path="datamanipulering-med-dplyr.html"><a href="datamanipulering-med-dplyr.html#sample_n"><i class="fa fa-check"></i><b>3.6</b> sample_n()</a><ul>
-<li class="chapter" data-level="3.6.1" data-path="datamanipulering-med-dplyr.html"><a href="datamanipulering-med-dplyr.html#ovning-5"><i class="fa fa-check"></i><b>3.6.1</b> Övning</a></li>
+<li class="chapter" data-level="3.5" data-path="databearbetning.html"><a href="databearbetning.html#summarise"><i class="fa fa-check"></i><b>3.5</b> Summarise</a></li>
+<li class="chapter" data-level="3.6" data-path="databearbetning.html"><a href="databearbetning.html#sample_n"><i class="fa fa-check"></i><b>3.6</b> sample_n()</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="databearbetning.html"><a href="databearbetning.html#övning-3"><i class="fa fa-check"></i><b>3.6.1</b> Övning</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="bilaga.html"><a href="bilaga.html"><i class="fa fa-check"></i><b>4</b> Bilaga</a><ul>
-<li class="chapter" data-level="4.1" data-path="bilaga.html"><a href="bilaga.html#variabeltyper-i-r"><i class="fa fa-check"></i><b>4.1</b> Variabeltyper i R</a><ul>
-<li class="chapter" data-level="4.1.1" data-path="bilaga.html"><a href="bilaga.html#vektorer"><i class="fa fa-check"></i><b>4.1.1</b> Vektorer</a></li>
-<li class="chapter" data-level="4.1.2" data-path="bilaga.html"><a href="bilaga.html#faktorvariabel"><i class="fa fa-check"></i><b>4.1.2</b> Faktorvariabel</a></li>
-<li class="chapter" data-level="4.1.3" data-path="bilaga.html"><a href="bilaga.html#logik"><i class="fa fa-check"></i><b>4.1.3</b> Logik</a></li>
-<li class="chapter" data-level="4.1.4" data-path="bilaga.html"><a href="bilaga.html#matriser"><i class="fa fa-check"></i><b>4.1.4</b> Matriser</a></li>
-<li class="chapter" data-level="4.1.5" data-path="bilaga.html"><a href="bilaga.html#data.frame"><i class="fa fa-check"></i><b>4.1.5</b> Data.frame</a></li>
-<li class="chapter" data-level="4.1.6" data-path="bilaga.html"><a href="bilaga.html#listor"><i class="fa fa-check"></i><b>4.1.6</b> Listor</a></li>
-<li class="chapter" data-level="4.1.7" data-path="bilaga.html"><a href="bilaga.html#datum"><i class="fa fa-check"></i><b>4.1.7</b> Datum</a></li>
+<li class="chapter" data-level="4" data-path="eda.html"><a href="eda.html"><i class="fa fa-check"></i><b>4</b> Explorativ dataanalys</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="eda.html"><a href="eda.html#vad-är-explorativ-dataanalys"><i class="fa fa-check"></i><b>4.1</b> Vad är Explorativ Dataanalys?</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="eda.html"><a href="eda.html#exempel-på-basala-frågorhypoteser"><i class="fa fa-check"></i><b>4.1.1</b> Exempel på basala frågor/hypoteser</a></li>
+<li class="chapter" data-level="4.1.2" data-path="eda.html"><a href="eda.html#hur-gör-man-i-r"><i class="fa fa-check"></i><b>4.1.2</b> Hur gör man i R?</a></li>
+<li class="chapter" data-level="4.1.3" data-path="eda.html"><a href="eda.html#hur-gör-man-i-r-1"><i class="fa fa-check"></i><b>4.1.3</b> Hur gör man i R?</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="bilaga.html"><a href="bilaga.html#indexering"><i class="fa fa-check"></i><b>4.2</b> Indexering</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="bilaga.html"><a href="bilaga.html#genom-att-begransa-varden-som-man-vill-plocka-ut"><i class="fa fa-check"></i><b>4.2.1</b> Genom att begränsa värden som man vill plocka ut</a></li>
-<li class="chapter" data-level="4.2.2" data-path="bilaga.html"><a href="bilaga.html#genom-att-ange-namn-av-elementet-eller-kolumnen"><i class="fa fa-check"></i><b>4.2.2</b> Genom att ange namn av elementet eller kolumnen</a></li>
+<li class="chapter" data-level="4.2" data-path="eda.html"><a href="eda.html#datavisualisering"><i class="fa fa-check"></i><b>4.2</b> Datavisualisering</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="eda.html"><a href="eda.html#varför-visualisera"><i class="fa fa-check"></i><b>4.2.1</b> Varför visualisera?</a></li>
+<li class="chapter" data-level="4.2.2" data-path="eda.html"><a href="eda.html#vad-är-det-första-vi-gör"><i class="fa fa-check"></i><b>4.2.2</b> Vad är det första vi gör?</a></li>
+<li class="chapter" data-level="4.2.3" data-path="eda.html"><a href="eda.html#steg-2-anpassar-en-linjär-modell"><i class="fa fa-check"></i><b>4.2.3</b> Steg 2: anpassar en linjär modell</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="eda.html"><a href="eda.html#datasaurus-dozen"><i class="fa fa-check"></i><b>4.3</b> Datasaurus Dozen</a></li>
+<li class="chapter" data-level="4.4" data-path="eda.html"><a href="eda.html#workflow-för-nytt-dataset"><i class="fa fa-check"></i><b>4.4</b> Workflow för nytt dataset</a></li>
+<li class="chapter" data-level="4.5" data-path="eda.html"><a href="eda.html#gapminder"><i class="fa fa-check"></i><b>4.5</b> Gapminder</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="eda.html"><a href="eda.html#datapunkter-per-land"><i class="fa fa-check"></i><b>4.5.1</b> Datapunkter per land?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="eda.html"><a href="eda.html#grammar-of-grahics"><i class="fa fa-check"></i><b>4.6</b> Grammar of grahics</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="eda.html"><a href="eda.html#data"><i class="fa fa-check"></i><b>4.6.1</b> 1. Data</a></li>
+<li class="chapter" data-level="4.6.2" data-path="eda.html"><a href="eda.html#aesthetics"><i class="fa fa-check"></i><b>4.6.2</b> 2. Aesthetics</a></li>
+<li class="chapter" data-level="4.6.3" data-path="eda.html"><a href="eda.html#geometriska-objekt"><i class="fa fa-check"></i><b>4.6.3</b> 3. Geometriska objekt</a></li>
+<li class="chapter" data-level="4.6.4" data-path="eda.html"><a href="eda.html#skala"><i class="fa fa-check"></i><b>4.6.4</b> 4. Skala</a></li>
+<li class="chapter" data-level="4.6.5" data-path="eda.html"><a href="eda.html#gdp-per-capita-är-skevt-fördelad"><i class="fa fa-check"></i><b>4.6.5</b> GDP per capita är skevt fördelad</a></li>
+<li class="chapter" data-level="4.6.6" data-path="eda.html"><a href="eda.html#statistiska-beräkningar"><i class="fa fa-check"></i><b>4.6.6</b> 5. Statistiska beräkningar</a></li>
+<li class="chapter" data-level="4.6.7" data-path="eda.html"><a href="eda.html#facets"><i class="fa fa-check"></i><b>4.6.7</b> 6. Facets</a></li>
+<li class="chapter" data-level="4.6.8" data-path="eda.html"><a href="eda.html#koordinatsystem"><i class="fa fa-check"></i><b>4.6.8</b> 7. Koordinatsystem</a></li>
+<li class="chapter" data-level="4.6.9" data-path="eda.html"><a href="eda.html#grammar-of-graphics"><i class="fa fa-check"></i><b>4.6.9</b> Grammar of graphics</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="eda.html"><a href="eda.html#gapminder---fortsättning"><i class="fa fa-check"></i><b>4.7</b> Gapminder - fortsättning</a></li>
+<li class="chapter" data-level="4.8" data-path="eda.html"><a href="eda.html#eda-är-en-nyfiken-process-utan-slut"><i class="fa fa-check"></i><b>4.8</b> EDA är en nyfiken process utan slut!</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="eda.html"><a href="eda.html#det-ni-ska-ta-med-er-idag-är-inte-de-specifika-sakerna-vi-har-undersökt-utan-ett-mindset"><i class="fa fa-check"></i><b>4.8.1</b> Det ni ska ta med er idag är inte de specifika sakerna vi har undersökt, utan ett mindset!</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="eda.html"><a href="eda.html#länkar-till-resurser"><i class="fa fa-check"></i><b>4.9</b> Länkar till resurser</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="bilaga.html"><a href="bilaga.html"><i class="fa fa-check"></i><b>5</b> Bilaga</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="bilaga.html"><a href="bilaga.html#variabeltyper-i-r"><i class="fa fa-check"></i><b>5.1</b> Variabeltyper i R</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="bilaga.html"><a href="bilaga.html#vektorer"><i class="fa fa-check"></i><b>5.1.1</b> Vektorer</a></li>
+<li class="chapter" data-level="5.1.2" data-path="bilaga.html"><a href="bilaga.html#faktorvariabel"><i class="fa fa-check"></i><b>5.1.2</b> Faktorvariabel</a></li>
+<li class="chapter" data-level="5.1.3" data-path="bilaga.html"><a href="bilaga.html#logik"><i class="fa fa-check"></i><b>5.1.3</b> Logik</a></li>
+<li class="chapter" data-level="5.1.4" data-path="bilaga.html"><a href="bilaga.html#matriser"><i class="fa fa-check"></i><b>5.1.4</b> Matriser</a></li>
+<li class="chapter" data-level="5.1.5" data-path="bilaga.html"><a href="bilaga.html#data.frame"><i class="fa fa-check"></i><b>5.1.5</b> Data.frame</a></li>
+<li class="chapter" data-level="5.1.6" data-path="bilaga.html"><a href="bilaga.html#listor"><i class="fa fa-check"></i><b>5.1.6</b> Listor</a></li>
+<li class="chapter" data-level="5.1.7" data-path="bilaga.html"><a href="bilaga.html#datum"><i class="fa fa-check"></i><b>5.1.7</b> Datum</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="bilaga.html"><a href="bilaga.html#indexering"><i class="fa fa-check"></i><b>5.2</b> Indexering</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="bilaga.html"><a href="bilaga.html#genom-att-begränsa-värden-som-man-vill-plocka-ut"><i class="fa fa-check"></i><b>5.2.1</b> Genom att begränsa värden som man vill plocka ut</a></li>
+<li class="chapter" data-level="5.2.2" data-path="bilaga.html"><a href="bilaga.html#genom-att-ange-namn-av-elementet-eller-kolumnen"><i class="fa fa-check"></i><b>5.2.2</b> Genom att ange namn av elementet eller kolumnen</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -192,7 +250,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Kursmaterial till Certifierad Data Scientist</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Kursmaterial Introduktion till R - Certifierad Data Scientist</a>
           </h1>
         </div>
 
@@ -200,74 +258,74 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="intro" class="section level1">
+<div id="intro" class="section level1" number="2">
 <h1><span class="header-section-number">Kapitel 2</span> Introduktion till R</h1>
 <p>R är ett programmeringsspråk för dataanalys. Men R sträcker sig långt utöver enkla databearbetningar och statistisk modellering. Tack vare ett aktivt community har det utvecklats en stor mängd paket för att lösa många av de olika uppgifter en dataanalytiker kan tänkas ställas inför.</p>
 <p>R kan i sin enklaste form användas som en miniräknare med <code>+</code>, <code>-</code>, <code>/</code> eller <code>*</code>.</p>
 <p>Exempelvis:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="dv">100</span> <span class="op">+</span><span class="st"> </span><span class="dv">4</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="intro.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">100</span> <span class="sc">+</span> <span class="dv">4</span></span></code></pre></div>
 <pre><code>## [1] 104</code></pre>
 <p>Eller:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="dv">4</span> <span class="op">*</span><span class="st"> </span><span class="dv">6</span> <span class="op">-</span><span class="st"> </span><span class="dv">2</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="intro.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="sc">*</span> <span class="dv">6</span> <span class="sc">-</span> <span class="dv">2</span></span></code></pre></div>
 <pre><code>## [1] 22</code></pre>
 <p>Beräkningar, eller alla former av manipuleringar kan sparas i så kallade <code>objekt</code>.</p>
 <p>Exempelvis kan vi spara en av ovanstående beräkningar i objektet <code>x</code> med <code>&lt;-</code> som kallas för <em>the assign operator</em>.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="dv">100</span> <span class="op">+</span><span class="st"> </span><span class="dv">4</span></a>
-<a class="sourceLine" id="cb5-2" data-line-number="2">x</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="intro.html#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">+</span> <span class="dv">4</span></span>
+<span id="cb5-2"><a href="intro.html#cb5-2" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
 <pre><code>## [1] 104</code></pre>
 <p>Pilen <code>&lt;-</code> kan även vändas på <code>-&gt;</code></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="dv">100</span> <span class="op">+</span><span class="st"> </span><span class="dv">4</span> -&gt;<span class="st"> </span>x</a>
-<a class="sourceLine" id="cb7-2" data-line-number="2">x</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="intro.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dv">100</span> <span class="sc">+</span> <span class="dv">4</span> <span class="ot">-&gt;</span> x</span>
+<span id="cb7-2"><a href="intro.html#cb7-2" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
 <pre><code>## [1] 104</code></pre>
 <p>Du kan spara flera värden i ett objekt genom att omsluta dem med funktionen <code>c()</code> och separatera med <code>,</code> (<em>c</em> står för <em>combine</em>). Då kallas objektet för en <code>vector</code>.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">100</span> <span class="op">+</span><span class="st"> </span><span class="dv">4</span>, <span class="dv">10</span> <span class="op">*</span><span class="st"> </span><span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb9-2" data-line-number="2">x</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="intro.html#cb9-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">100</span> <span class="sc">+</span> <span class="dv">4</span>, <span class="dv">10</span> <span class="sc">*</span> <span class="dv">2</span>)</span>
+<span id="cb9-2"><a href="intro.html#cb9-2" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
 <pre><code>## [1]   4 104  20</code></pre>
 <p>Objekt och vektorer är inte begränsade till numeriska värden utan kan även innehålla text.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">text &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;hej&quot;</span>, <span class="st">&quot;jag&quot;</span>, <span class="st">&quot;älskar&quot;</span>, <span class="st">&quot;r&quot;</span>)</a>
-<a class="sourceLine" id="cb11-2" data-line-number="2">text</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="intro.html#cb11-1" aria-hidden="true" tabindex="-1"></a>text <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;hej&quot;</span>, <span class="st">&quot;jag&quot;</span>, <span class="st">&quot;älskar&quot;</span>, <span class="st">&quot;r&quot;</span>)</span>
+<span id="cb11-2"><a href="intro.html#cb11-2" aria-hidden="true" tabindex="-1"></a>text</span></code></pre></div>
 <pre><code>## [1] &quot;hej&quot;    &quot;jag&quot;    &quot;älskar&quot; &quot;r&quot;</code></pre>
 <p>Vi kan dock inte blanda text och numeriska värden. Då kommer R att tolka det som text.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">blandat &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="st">&quot;hej&quot;</span>, <span class="dv">6</span>)</a>
-<a class="sourceLine" id="cb13-2" data-line-number="2">blandat</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="intro.html#cb13-1" aria-hidden="true" tabindex="-1"></a>blandat <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="st">&quot;hej&quot;</span>, <span class="dv">6</span>)</span>
+<span id="cb13-2"><a href="intro.html#cb13-2" aria-hidden="true" tabindex="-1"></a>blandat</span></code></pre></div>
 <pre><code>## [1] &quot;1&quot;   &quot;5&quot;   &quot;hej&quot; &quot;6&quot;</code></pre>
-<div id="saknade-varden-missing-values" class="section level2">
+<div id="saknade-värden-missing-values" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Saknade värden (missing values)</h2>
 <p>Ett vanligt fenomen i data från verkligheten är saknade värden. Saknade värden representeras i R med <code>NA</code>.
 <code>NA</code> är inte <em>noll</em>. Det är inte heller ett värde. Det är helt enkelt en indikation på att vi inte vet vilket värde som ligger där.</p>
 <p>Det här upplevde i alla fall jag som lite förvirrande till en början.</p>
 <p>Om vi har en vektor med <code>NA</code>:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="ot">NA</span>, <span class="dv">2</span>, <span class="dv">50</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="intro.html#cb15-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="cn">NA</span>, <span class="dv">2</span>, <span class="dv">50</span>)</span></code></pre></div>
 <p>Och kollar vilka värden som är större än 2.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">x <span class="op">&gt;</span><span class="st"> </span><span class="dv">2</span> </a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="intro.html#cb16-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">&gt;</span> <span class="dv">2</span> </span></code></pre></div>
 <pre><code>## [1]  TRUE    NA FALSE  TRUE</code></pre>
 <p>Så ser vi att vår observation med <code>NA</code> inte är <code>TRUE</code> eller <code>FALSE</code> utan helt enkelt <code>NA</code>.</p>
 <p>Om vi vill kolla vilka värden som är <code>NA</code> borde vi kunna göra samma sak:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1">x <span class="op">==</span><span class="st"> </span><span class="ot">NA</span></a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="intro.html#cb18-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">==</span> <span class="cn">NA</span></span></code></pre></div>
 <pre><code>## [1] NA NA NA NA</code></pre>
 <p>Det här svaret känns kanske inte intuitivt men det här beror på att vi helt enkelt inte vet. Det går inte att utvärdera om <code>x</code> <em>är</em> <code>NA</code>.</p>
 <p>Vi kan illustrera med ett exempel:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">filips_ålder &lt;-<span class="st"> </span><span class="ot">NA</span></a>
-<a class="sourceLine" id="cb20-2" data-line-number="2">helenas_ålder &lt;-<span class="st"> </span><span class="ot">NA</span></a>
-<a class="sourceLine" id="cb20-3" data-line-number="3">filips_ålder <span class="op">==</span><span class="st"> </span>helenas_ålder</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="intro.html#cb20-1" aria-hidden="true" tabindex="-1"></a>filips_ålder <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb20-2"><a href="intro.html#cb20-2" aria-hidden="true" tabindex="-1"></a>helenas_ålder <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb20-3"><a href="intro.html#cb20-3" aria-hidden="true" tabindex="-1"></a>filips_ålder <span class="sc">==</span> helenas_ålder</span></code></pre></div>
 <pre><code>## [1] NA</code></pre>
 <p>Är Filips ålder densamma som Helenas ålder för att vi saknar värdet? Nej, det går inte att veta.</p>
 <p>Därför använder man i R istället <code>is.na()</code> för att undersöka om något <em>är</em> <code>NA</code>.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="kw">is.na</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="intro.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.na</span>(x)</span></code></pre></div>
 <pre><code>## [1] FALSE  TRUE FALSE FALSE</code></pre>
 <p><code>NA</code> är ett vanligt argument i funktioner. Ska vi exempelvis beräkna medelvärdet på vår vektor <em>x</em> som har <code>NA</code> i sig så får vi:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="kw">mean</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="intro.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code></pre></div>
 <pre><code>## [1] NA</code></pre>
 <p>Eftersom vi saknar ett värde kan vi omöjligen veta vad medelvärdet för <code>x</code> är. Det saknade värdet kan vara vilken siffra som helst.</p>
 <p>Därför kan vi i funktionen <code>mean()</code> välja att helt bortse från det saknade värdet:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="kw">mean</span>(x, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="intro.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] 18.66667</code></pre>
 </div>
-<div id="r-ar-ett-funktionellt-programmeringssprak" class="section level2">
+<div id="r-är-ett-funktionellt-programmeringsspråk" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> R är ett funktionellt programmeringsspråk</h2>
 <p>Vi använder oss hela tiden av funktioner i R. Vi kan skriva egna funktioner men oftast använder vi färdiga funktioner från paket med funktioner.</p>
 <p>Funktionell programmering är bra för dataanalys. Ofta jobbar vi med data som vi vill manipulera om och om igen och funktioner är ett bra sätt att göra det på. På många sätt liknar R därför Excel som också jobbar mycket med funktioner.</p>
-<div id="funktioner" class="section level3">
+<div id="funktioner" class="section level3" number="2.2.1">
 <h3><span class="header-section-number">2.2.1</span> Funktioner</h3>
 <p>Precis som i Excel finns det flertalet inbyggda statistiska och matematiska funktioner i R:</p>
 <ul>
@@ -284,26 +342,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>…osv</li>
 </ul>
 </div>
-<div id="dokumentation-av-funktioner" class="section level3">
+<div id="dokumentation-av-funktioner" class="section level3" number="2.2.2">
 <h3><span class="header-section-number">2.2.2</span> Dokumentation av funktioner</h3>
 <p>Funktioner innehåller också dokumentation om hur de fungerar.</p>
 <p>För att komma åt dokumentation skriver du ett frågetecken innan funktioner.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1">?<span class="kw">mean</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="intro.html#cb28-1" aria-hidden="true" tabindex="-1"></a>?<span class="fu">mean</span>()</span></code></pre></div>
 </div>
-<div id="ovning" class="section level3">
+<div id="övning" class="section level3" number="2.2.3">
 <h3><span class="header-section-number">2.2.3</span> Övning</h3>
 <ul>
 <li>Använd några av R:s statistiska funktioner på en numerisk vektor</li>
 </ul>
 </div>
 </div>
-<div id="data-frames" class="section level2">
+<div id="data-frames" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> Data frames</h2>
 <ul>
 <li>Det vanligaste formatet i R för dataanalys</li>
 <li>En data.frame är en rektangulär tabell med en eller flera kolumner</li>
 </ul>
 <table>
+<colgroup>
+<col width="2%" />
+<col width="3%" />
+<col width="2%" />
+<col width="5%" />
+<col width="8%" />
+<col width="5%" />
+<col width="5%" />
+<col width="8%" />
+<col width="5%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="2%" />
+<col width="5%" />
+<col width="5%" />
+<col width="2%" />
+<col width="4%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="right">year</th>
@@ -457,53 +536,53 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <p>Vi kan enkelt skapa våra egna data.frames.</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="kw">data.frame</span>(<span class="dt">random_number =</span> <span class="kw">rnorm</span>(<span class="dv">5</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="intro.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">random_number =</span> <span class="fu">rnorm</span>(<span class="dv">5</span>))</span></code></pre></div>
 <pre><code>##   random_number
-## 1    -1.6992399
-## 2     0.9755193
-## 3    -1.4807371
-## 4    -1.2570500
-## 5    -0.1507325</code></pre>
+## 1   -0.09592906
+## 2    0.60568208
+## 3    0.33191963
+## 4   -0.88814707
+## 5    0.66863254</code></pre>
 <p>En data.frame är ett bra sätt att spara en eller flera vektorer. De måste då vara exakt lika långa.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>),</a>
-<a class="sourceLine" id="cb31-2" data-line-number="2">           <span class="dt">y =</span> <span class="kw">c</span>(<span class="st">&quot;hej&quot;</span>, <span class="st">&quot;på&quot;</span>, <span class="st">&quot;dig&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="intro.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>),</span>
+<span id="cb31-2"><a href="intro.html#cb31-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> <span class="fu">c</span>(<span class="st">&quot;hej&quot;</span>, <span class="st">&quot;på&quot;</span>, <span class="st">&quot;dig&quot;</span>))</span></code></pre></div>
 <pre><code>##   x   y
 ## 1 1 hej
 ## 2 2  på
 ## 3 3 dig</code></pre>
 <p>Om du sparar vektorerna som två objekt kan du enkelt göra dem till den data.frame.</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1">siffror &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb33-2" data-line-number="2">ord &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;vad&quot;</span>, <span class="st">&quot;var&quot;</span>, <span class="st">&quot;det&quot;</span>, <span class="st">&quot;där&quot;</span>)</a>
-<a class="sourceLine" id="cb33-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb33-4" data-line-number="4"><span class="kw">data.frame</span>(siffror, ord)</a></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="intro.html#cb33-1" aria-hidden="true" tabindex="-1"></a>siffror <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>)</span>
+<span id="cb33-2"><a href="intro.html#cb33-2" aria-hidden="true" tabindex="-1"></a>ord <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;vad&quot;</span>, <span class="st">&quot;var&quot;</span>, <span class="st">&quot;det&quot;</span>, <span class="st">&quot;där&quot;</span>)</span>
+<span id="cb33-3"><a href="intro.html#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="intro.html#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(siffror, ord)</span></code></pre></div>
 <pre><code>##   siffror ord
 ## 1       5 vad
 ## 2       1 var
 ## 3       2 det
 ## 4       5 där</code></pre>
 </div>
-<div id="paket" class="section level2">
+<div id="paket" class="section level2" number="2.4">
 <h2><span class="header-section-number">2.4</span> Paket</h2>
 <p>Vi nämnde tidigare att vi kan spara funktioner i så kallade paket. Paket är precis det. Ett sätt för oss att spara och lätt komma åt funktioner i R. Paket som genomgår viss granskning läggs upp på <code>CRAN</code> (The Comprehensive R Archive Network). Men man kan även skapa egna paket och lägga upp på Github eller spara på sin egen dator.</p>
-<p>För att installera ett paket från <code>CRAN</code> använder du funktionen <code>install.packages(&quot;paketnamn&quot;)</code>.</p>
+<p>För att installera ett paket från <code>CRAN</code> använder du funktionen <code>install.packages("paketnamn")</code>.</p>
 <p>När du sedan laddat ner paketet behöver du ladda det i R genom <code>library(paketnamn)</code>.</p>
-<div id="ovning-1" class="section level3">
+<div id="övning-1" class="section level3" number="2.4.1">
 <h3><span class="header-section-number">2.4.1</span> Övning</h3>
 <p>Paketet <code>tidyverse</code> är nedladdat åt dig. Ladda paketet med <code>library()</code></p>
 </div>
 </div>
-<div id="tidyverse-and-friends" class="section level2">
+<div id="tidyverse-and-friends" class="section level2" number="2.5">
 <h2><span class="header-section-number">2.5</span> tidyverse and friends</h2>
 <p>tidyverse är en samling paket för att lösa olika typer av problem inom dataanalys.</p>
 <p>De har en gemensam filosofi: paketen och dess funktioner är i första hand designade för att människor ska använda dem.</p>
 <p>Det gör att de av många upplevs som enklare att använda och mer konsekventa än det som kallas <em>base R</em> . D.v.s. R utan några paket.</p>
 <p>Vi kommer här att fokusera på <code>tidyverse</code> eftersom det är ett bra sätt att komma igång med R.</p>
 </div>
-<div id="workflow-i-r" class="section level2">
+<div id="workflow-i-r" class="section level2" number="2.6">
 <h2><span class="header-section-number">2.6</span> Workflow i R</h2>
 <p>I R så jobbar vi med så kallade R-projects. I Rstudio kan du klicka på <em>file -&gt; New Project -&gt; New Directory -&gt; Create Project</em> för att skapa ett nytt projekt. Genom att skapa ett projekt vet R alltid var filerna för det projektet är och det blir enklare för dig att jobba.</p>
 </div>
-<div id="att-skriva-kod-i-r" class="section level2">
+<div id="att-skriva-kod-i-r" class="section level2" number="2.7">
 <h2><span class="header-section-number">2.7</span> Att skriva kod i R</h2>
 <p>När du skriver kod gör du det dels med hänsyn dels till andra men framför allt med hänsyn till ditt framtida jag. Koden ska med andra ord vara enkel att läsa.</p>
 <p>Därför kan det vara bra att följa en stilguide.</p>
@@ -512,28 +591,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Namnge alltid variabler, objekt m.m. med små bokstäver.</li>
 </ul>
 <p>Exempelvis är det enklare att läsa:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1">min_egna_funktion &lt;-<span class="st"> </span><span class="cf">function</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="intro.html#cb35-1" aria-hidden="true" tabindex="-1"></a>min_egna_funktion <span class="ot">&lt;-</span> <span class="cf">function</span>(x)</span></code></pre></div>
 <p>I kontrast till:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1">MinEgnaFunktion &lt;-<span class="st"> </span><span class="cf">function</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="intro.html#cb36-1" aria-hidden="true" tabindex="-1"></a>MinEgnaFunktion <span class="ot">&lt;-</span> <span class="cf">function</span>(x)</span></code></pre></div>
 <p>Vi strävar dessutom efter att skriva kod som vi skriver text, med mellanrum mellan <code>,</code> och ord.</p>
 <p>Det här är enklare att läsa:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="kw">mean</span>(x, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="intro.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p>Än det här:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="kw">mean</span>(x,<span class="dt">na.rm=</span><span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="intro.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x,<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <p>När vi sparar filer så försöker vi följa den här syntaxen. Därför ska du inte ha mellanrum i när du sparar filer. <code>min-r-fil.R</code> är bra men <code>min R fil.R</code> är dåligt.</p>
 <p>När vi skriver kod försöker vi dessutom inte att skriva för lång uttryck:</p>
 <p>Det här är mycket svårare att läsa:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1">iris <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(Species) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">Sepal.Length =</span> <span class="kw">mean</span>(Sepal.Length), <span class="dt">Sepal.Width =</span> <span class="kw">mean</span>(Sepal.Width), <span class="dt">Species =</span> <span class="kw">n_distinct</span>(Species))</a></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="intro.html#cb39-1" aria-hidden="true" tabindex="-1"></a>iris <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">Sepal.Length =</span> <span class="fu">mean</span>(Sepal.Length), <span class="at">Sepal.Width =</span> <span class="fu">mean</span>(Sepal.Width), <span class="at">Species =</span> <span class="fu">n_distinct</span>(Species))</span></code></pre></div>
 <p>Än det här:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1">iris <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb40-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Species) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb40-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(</a>
-<a class="sourceLine" id="cb40-4" data-line-number="4">    <span class="dt">Sepal.Length =</span> <span class="kw">mean</span>(Sepal.Length),</a>
-<a class="sourceLine" id="cb40-5" data-line-number="5">    <span class="dt">Sepal.Width =</span> <span class="kw">mean</span>(Sepal.Width),</a>
-<a class="sourceLine" id="cb40-6" data-line-number="6">    <span class="dt">Species =</span> <span class="kw">n_distinct</span>(Species)</a>
-<a class="sourceLine" id="cb40-7" data-line-number="7">  ) </a></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="intro.html#cb40-1" aria-hidden="true" tabindex="-1"></a>iris <span class="sc">%&gt;%</span></span>
+<span id="cb40-2"><a href="intro.html#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span></span>
+<span id="cb40-3"><a href="intro.html#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb40-4"><a href="intro.html#cb40-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Sepal.Length =</span> <span class="fu">mean</span>(Sepal.Length),</span>
+<span id="cb40-5"><a href="intro.html#cb40-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Sepal.Width =</span> <span class="fu">mean</span>(Sepal.Width),</span>
+<span id="cb40-6"><a href="intro.html#cb40-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Species =</span> <span class="fu">n_distinct</span>(Species)</span>
+<span id="cb40-7"><a href="intro.html#cb40-7" aria-hidden="true" tabindex="-1"></a>  ) </span></code></pre></div>
 </div>
-<div id="rmarkdown" class="section level2">
+<div id="rmarkdown" class="section level2" number="2.8">
 <h2><span class="header-section-number">2.8</span> Rmarkdown</h2>
 <p>Rmarkdown är ett format som tillåter dig varva r-kod med skriven text. Du kan sedan rendera filen till antigen HTML, PDF, Word, PowerPoint samt en rad andra format.</p>
 
@@ -545,16 +624,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="datamanipulering-med-dplyr.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="databearbetning.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -562,12 +643,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -579,6 +659,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
