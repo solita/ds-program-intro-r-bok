@@ -24,7 +24,7 @@
 <meta name="author" content="Filip Wästberg &amp; Torbjörn Sjöberg, Solita" />
 
 
-<meta name="date" content="2020-11-13" />
+<meta name="date" content="2020-11-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,6 +53,13 @@
 
 <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -152,8 +159,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#tidyverse-and-friends"><i class="fa fa-check"></i><b>2.5</b> tidyverse and friends</a></li>
 <li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#workflow-i-r"><i class="fa fa-check"></i><b>2.6</b> Workflow i R</a></li>
-<li class="chapter" data-level="2.7" data-path="intro.html"><a href="intro.html#att-skriva-kod-i-r"><i class="fa fa-check"></i><b>2.7</b> Att skriva kod i R</a></li>
-<li class="chapter" data-level="2.8" data-path="intro.html"><a href="intro.html#rmarkdown"><i class="fa fa-check"></i><b>2.8</b> Rmarkdown</a></li>
+<li class="chapter" data-level="2.7" data-path="intro.html"><a href="intro.html#r-markdown"><i class="fa fa-check"></i><b>2.7</b> R Markdown</a></li>
+<li class="chapter" data-level="2.8" data-path="intro.html"><a href="intro.html#kodstil-att-skriva-kod-i-r"><i class="fa fa-check"></i><b>2.8</b> Kodstil: Att skriva kod i R</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="databearbetning.html"><a href="databearbetning.html"><i class="fa fa-check"></i><b>3</b> Datamanipulering med dplyr</a>
 <ul>
@@ -169,16 +176,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="3.3.1" data-path="databearbetning.html"><a href="databearbetning.html#övning-2"><i class="fa fa-check"></i><b>3.3.1</b> Övning</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="databearbetning.html"><a href="databearbetning.html#mutate"><i class="fa fa-check"></i><b>3.4</b> Mutate</a>
+<li class="chapter" data-level="3.4" data-path="databearbetning.html"><a href="databearbetning.html#kallad-the-pipe"><i class="fa fa-check"></i><b>3.4</b> <code>%&gt;%</code> kallad “the pipe”</a></li>
+<li class="chapter" data-level="3.5" data-path="databearbetning.html"><a href="databearbetning.html#mutate"><i class="fa fa-check"></i><b>3.5</b> Mutate</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="databearbetning.html"><a href="databearbetning.html#if_else"><i class="fa fa-check"></i><b>3.4.1</b> if_else()</a></li>
-<li class="chapter" data-level="3.4.2" data-path="databearbetning.html"><a href="databearbetning.html#andra-funktioner"><i class="fa fa-check"></i><b>3.4.2</b> Andra funktioner</a></li>
-<li class="chapter" data-level="3.4.3" data-path="databearbetning.html"><a href="databearbetning.html#övningar"><i class="fa fa-check"></i><b>3.4.3</b> Övningar</a></li>
+<li class="chapter" data-level="3.5.1" data-path="databearbetning.html"><a href="databearbetning.html#if_else"><i class="fa fa-check"></i><b>3.5.1</b> if_else()</a></li>
+<li class="chapter" data-level="3.5.2" data-path="databearbetning.html"><a href="databearbetning.html#case_when"><i class="fa fa-check"></i><b>3.5.2</b> case_when()</a></li>
+<li class="chapter" data-level="3.5.3" data-path="databearbetning.html"><a href="databearbetning.html#andra-funktioner"><i class="fa fa-check"></i><b>3.5.3</b> Andra funktioner</a></li>
+<li class="chapter" data-level="3.5.4" data-path="databearbetning.html"><a href="databearbetning.html#övningar"><i class="fa fa-check"></i><b>3.5.4</b> Övningar</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="databearbetning.html"><a href="databearbetning.html#summarise"><i class="fa fa-check"></i><b>3.5</b> Summarise</a></li>
-<li class="chapter" data-level="3.6" data-path="databearbetning.html"><a href="databearbetning.html#sample_n"><i class="fa fa-check"></i><b>3.6</b> sample_n()</a>
+<li class="chapter" data-level="3.6" data-path="databearbetning.html"><a href="databearbetning.html#summarise"><i class="fa fa-check"></i><b>3.6</b> Summarise</a>
 <ul>
-<li class="chapter" data-level="3.6.1" data-path="databearbetning.html"><a href="databearbetning.html#övning-3"><i class="fa fa-check"></i><b>3.6.1</b> Övning</a></li>
+<li class="chapter" data-level="3.6.1" data-path="databearbetning.html"><a href="databearbetning.html#count"><i class="fa fa-check"></i><b>3.6.1</b> count()</a></li>
+<li class="chapter" data-level="3.6.2" data-path="databearbetning.html"><a href="databearbetning.html#sample_n"><i class="fa fa-check"></i><b>3.6.2</b> <code>sample_n()</code></a></li>
+<li class="chapter" data-level="3.6.3" data-path="databearbetning.html"><a href="databearbetning.html#övning---väv-ihop-allt-du-lärt-dig"><i class="fa fa-check"></i><b>3.6.3</b> Övning - väv ihop allt du lärt dig</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="eda.html"><a href="eda.html"><i class="fa fa-check"></i><b>4</b> Explorativ dataanalys</a>
@@ -219,6 +229,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.8.1" data-path="eda.html"><a href="eda.html#det-ni-ska-ta-med-er-idag-är-inte-de-specifika-sakerna-vi-har-undersökt-utan-ett-mindset"><i class="fa fa-check"></i><b>4.8.1</b> Det ni ska ta med er idag är inte de specifika sakerna vi har undersökt, utan ett mindset!</a></li>
 </ul></li>
 <li class="chapter" data-level="4.9" data-path="eda.html"><a href="eda.html#länkar-till-resurser"><i class="fa fa-check"></i><b>4.9</b> Länkar till resurser</a></li>
+<li class="chapter" data-level="4.10" data-path="eda.html"><a href="eda.html#övningar-explorativ-dataanalys"><i class="fa fa-check"></i><b>4.10</b> Övningar Explorativ dataanalys</a></li>
+<li class="chapter" data-level="4.11" data-path="eda.html"><a href="eda.html#fördelningar"><i class="fa fa-check"></i><b>4.11</b> Fördelningar</a>
+<ul>
+<li class="chapter" data-level="4.11.1" data-path="eda.html"><a href="eda.html#skalor-och-fördelningar"><i class="fa fa-check"></i><b>4.11.1</b> Skalor och fördelningar</a></li>
+<li class="chapter" data-level="4.11.2" data-path="eda.html"><a href="eda.html#övningar---fördelning"><i class="fa fa-check"></i><b>4.11.2</b> Övningar - Fördelning</a></li>
+</ul></li>
+<li class="chapter" data-level="4.12" data-path="eda.html"><a href="eda.html#korrelation"><i class="fa fa-check"></i><b>4.12</b> Korrelation</a></li>
+<li class="chapter" data-level="4.13" data-path="eda.html"><a href="eda.html#pimp-my-plot"><i class="fa fa-check"></i><b>4.13</b> Pimp my plot!</a></li>
+<li class="chapter" data-level="4.14" data-path="eda.html"><a href="eda.html#vi-kan-ändra-tema-med-theme_..."><i class="fa fa-check"></i><b>4.14</b> Vi kan ändra tema med <code>theme_...</code></a></li>
+<li class="chapter" data-level="4.15" data-path="eda.html"><a href="eda.html#andra-aesthetics"><i class="fa fa-check"></i><b>4.15</b> Andra aesthetics</a></li>
+<li class="chapter" data-level="4.16" data-path="eda.html"><a href="eda.html#diskreta-variabler"><i class="fa fa-check"></i><b>4.16</b> Diskreta variabler</a></li>
+<li class="chapter" data-level="4.17" data-path="eda.html"><a href="eda.html#facets-1"><i class="fa fa-check"></i><b>4.17</b> Facets</a></li>
+<li class="chapter" data-level="4.18" data-path="eda.html"><a href="eda.html#barcharts-på-aggregerade-tabeller"><i class="fa fa-check"></i><b>4.18</b> Barcharts på aggregerade tabeller</a>
+<ul>
+<li class="chapter" data-level="4.18.1" data-path="eda.html"><a href="eda.html#geom_col"><i class="fa fa-check"></i><b>4.18.1</b> geom_col()</a></li>
+<li class="chapter" data-level="4.18.2" data-path="eda.html"><a href="eda.html#hur-fördelar-sig-kvadratmeterpris-per-bostadstyp"><i class="fa fa-check"></i><b>4.18.2</b> Hur fördelar sig kvadratmeterpris per bostadstyp?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.19" data-path="eda.html"><a href="eda.html#sortera-kategorier"><i class="fa fa-check"></i><b>4.19</b> Sortera kategorier</a></li>
+<li class="chapter" data-level="4.20" data-path="eda.html"><a href="eda.html#sortera-din-bar-chart-efter-medianpris"><i class="fa fa-check"></i><b>4.20</b> Sortera din bar-chart efter medianpris</a></li>
+<li class="chapter" data-level="4.21" data-path="eda.html"><a href="eda.html#tidsserier"><i class="fa fa-check"></i><b>4.21</b> Tidsserier</a></li>
+<li class="chapter" data-level="4.22" data-path="eda.html"><a href="eda.html#grammar-of-graphics---artikel-om-the-grammar-of-graphics-som-ggplot-bygger-på"><i class="fa fa-check"></i><b>4.22</b> Grammar of Graphics - Artikel om the grammar of graphics som ggplot bygger på</a></li>
+<li class="chapter" data-level="4.23" data-path="eda.html"><a href="eda.html#r-for-data-science"><i class="fa fa-check"></i><b>4.23</b> R for Data Science</a></li>
+<li class="chapter" data-level="4.24" data-path="eda.html"><a href="eda.html#ggplot2-extensions"><i class="fa fa-check"></i><b>4.24</b> ggplot2 extensions</a></li>
+<li class="chapter" data-level="4.25" data-path="eda.html"><a href="eda.html#shiny"><i class="fa fa-check"></i><b>4.25</b> Shiny</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="bilaga.html"><a href="bilaga.html"><i class="fa fa-check"></i><b>5</b> Bilaga</a>
 <ul>
@@ -292,7 +326,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">4.1.2</span> Hur gör man i R?</h3>
 <p>R har basfunktionalitet som kan användas för att snabbt få en numerisk överblick datan t.ex
 <code>summary()</code> och <code>head()</code></p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="eda.html#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(iris)</span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="eda.html#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(iris)</span></code></pre></div>
 <pre><code>##   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
 ##  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
 ##  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
@@ -307,7 +341,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##                 
 ##                 
 ## </code></pre>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="eda.html#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="eda.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code></pre></div>
 <pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 ## 1          5.1         3.5          1.4         0.2  setosa
 ## 2          4.9         3.0          1.4         0.2  setosa
@@ -323,7 +357,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><code>skimr</code>, snabb explorativ analys (som vi kommer använda idag)</li>
 </ul>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="eda.html#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="fu">skim</span>(iris)</span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="eda.html#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">skim</span>(iris)</span></code></pre></div>
 <p><img src="images/Iris_skim.png" /></p>
 </div>
 </div>
@@ -361,13 +395,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="steg-2-anpassar-en-linjär-modell" class="section level3" number="4.2.3">
 <h3><span class="header-section-number">4.2.3</span> Steg 2: anpassar en linjär modell</h3>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="eda.html#cb96-1" aria-hidden="true" tabindex="-1"></a>anscombe_tidy <span class="sc">%&gt;%</span> </span>
-<span id="cb96-2"><a href="eda.html#cb96-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">nest</span>(observation, x, y) <span class="sc">%&gt;%</span> </span>
-<span id="cb96-3"><a href="eda.html#cb96-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">model =</span> <span class="fu">map</span>(data, <span class="sc">~</span><span class="fu">lm</span>(y <span class="sc">~</span> x, <span class="at">data =</span> .x)),</span>
-<span id="cb96-4"><a href="eda.html#cb96-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">tidy =</span> <span class="fu">map</span>(model, broom<span class="sc">::</span>tidy)) <span class="sc">%&gt;%</span> </span>
-<span id="cb96-5"><a href="eda.html#cb96-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(tidy) <span class="sc">%&gt;%</span> </span>
-<span id="cb96-6"><a href="eda.html#cb96-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(term <span class="sc">==</span> <span class="st">&quot;x&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb96-7"><a href="eda.html#cb96-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(set, estimate, std.error, statistic)</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="eda.html#cb95-1" aria-hidden="true" tabindex="-1"></a>anscombe_tidy <span class="sc">%&gt;%</span> </span>
+<span id="cb95-2"><a href="eda.html#cb95-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">nest</span>(observation, x, y) <span class="sc">%&gt;%</span> </span>
+<span id="cb95-3"><a href="eda.html#cb95-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">model =</span> <span class="fu">map</span>(data, <span class="sc">~</span><span class="fu">lm</span>(y <span class="sc">~</span> x, <span class="at">data =</span> .x)),</span>
+<span id="cb95-4"><a href="eda.html#cb95-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">tidy =</span> <span class="fu">map</span>(model, broom<span class="sc">::</span>tidy)) <span class="sc">%&gt;%</span> </span>
+<span id="cb95-5"><a href="eda.html#cb95-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(tidy) <span class="sc">%&gt;%</span> </span>
+<span id="cb95-6"><a href="eda.html#cb95-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(term <span class="sc">==</span> <span class="st">&quot;x&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb95-7"><a href="eda.html#cb95-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(set, estimate, std.error, statistic)</span></code></pre></div>
 <pre><code>## Warning: All elements of `...` must be named.
 ## Did you want `data = c(observation, x, y)`?</code></pre>
 <pre><code>## # A tibble: 4 x 4
@@ -387,12 +421,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="datasaurus-dozen" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> Datasaurus Dozen</h2>
 <p>Modern variant av Anscombe - skapat av Alberto Cairo</p>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="eda.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(datasauRus)</span>
-<span id="cb100-2"><a href="eda.html#cb100-2" aria-hidden="true" tabindex="-1"></a>datasaurus_dozen <span class="sc">%&gt;%</span> </span>
-<span id="cb100-3"><a href="eda.html#cb100-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(dataset) <span class="sc">%&gt;%</span></span>
-<span id="cb100-4"><a href="eda.html#cb100-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">x_mean =</span> <span class="fu">mean</span>(x), <span class="at">y_mean =</span> <span class="fu">mean</span>(y), </span>
-<span id="cb100-5"><a href="eda.html#cb100-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">x_sd =</span> <span class="fu">sd</span>(x), <span class="at">y_sd =</span> <span class="fu">sd</span>(y),</span>
-<span id="cb100-6"><a href="eda.html#cb100-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">corr =</span> <span class="fu">cor</span>(x,y)) </span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="eda.html#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(datasauRus)</span>
+<span id="cb99-2"><a href="eda.html#cb99-2" aria-hidden="true" tabindex="-1"></a>datasaurus_dozen <span class="sc">%&gt;%</span> </span>
+<span id="cb99-3"><a href="eda.html#cb99-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(dataset) <span class="sc">%&gt;%</span></span>
+<span id="cb99-4"><a href="eda.html#cb99-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">x_mean =</span> <span class="fu">mean</span>(x), <span class="at">y_mean =</span> <span class="fu">mean</span>(y), </span>
+<span id="cb99-5"><a href="eda.html#cb99-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">x_sd =</span> <span class="fu">sd</span>(x), <span class="at">y_sd =</span> <span class="fu">sd</span>(y),</span>
+<span id="cb99-6"><a href="eda.html#cb99-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">corr =</span> <span class="fu">cor</span>(x,y)) </span></code></pre></div>
 <pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <pre><code>## # A tibble: 13 x 6
 ##    dataset    x_mean y_mean  x_sd  y_sd    corr
@@ -411,22 +445,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 12 wide_lines   54.3   47.8  16.8  26.9 -0.0666
 ## 13 x_shape      54.3   47.8  16.8  26.9 -0.0656</code></pre>
 <p>Datasaurus Dozen</p>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="eda.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datasaurus_dozen, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y))<span class="sc">+</span></span>
-<span id="cb103-2"><a href="eda.html#cb103-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb103-3"><a href="eda.html#cb103-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb103-4"><a href="eda.html#cb103-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>dataset)</span></code></pre></div>
-<p><img src="ds-intro-till-r-bok_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="eda.html#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datasaurus_dozen, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y))<span class="sc">+</span></span>
+<span id="cb102-2"><a href="eda.html#cb102-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb102-3"><a href="eda.html#cb102-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb102-4"><a href="eda.html#cb102-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>dataset)</span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
 <p>Eller som animering:</p>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="eda.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(datasauRus)</span>
-<span id="cb104-2"><a href="eda.html#cb104-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb104-3"><a href="eda.html#cb104-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gganimate)</span>
-<span id="cb104-4"><a href="eda.html#cb104-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb104-5"><a href="eda.html#cb104-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datasaurus_dozen, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y))<span class="sc">+</span></span>
-<span id="cb104-6"><a href="eda.html#cb104-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb104-7"><a href="eda.html#cb104-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb104-8"><a href="eda.html#cb104-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transition_states</span>(dataset, <span class="dv">3</span>, <span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb104-9"><a href="eda.html#cb104-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ease_aes</span>(<span class="st">&#39;cubic-in-out&#39;</span>)</span></code></pre></div>
-<p><img src="ds-intro-till-r-bok_files/figure-html/unnamed-chunk-26-1.gif" /><!-- --></p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="eda.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(datasauRus)</span>
+<span id="cb103-2"><a href="eda.html#cb103-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb103-3"><a href="eda.html#cb103-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gganimate)</span>
+<span id="cb103-4"><a href="eda.html#cb103-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-5"><a href="eda.html#cb103-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datasaurus_dozen, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y))<span class="sc">+</span></span>
+<span id="cb103-6"><a href="eda.html#cb103-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb103-7"><a href="eda.html#cb103-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb103-8"><a href="eda.html#cb103-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transition_states</span>(dataset, <span class="dv">3</span>, <span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb103-9"><a href="eda.html#cb103-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ease_aes</span>(<span class="st">&#39;cubic-in-out&#39;</span>)</span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/unnamed-chunk-27-1.gif" /><!-- --></p>
 </div>
 <div id="workflow-för-nytt-dataset" class="section level2" number="4.4">
 <h2><span class="header-section-number">4.4</span> Workflow för nytt dataset</h2>
@@ -449,8 +483,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Vi har fått ett dataset <code>gapminder</code> och egentligen inga andra uppgifter och vi vill förstå det</p></li>
 <li><p>Vi börjar med att snabbt kolla på datan med <code>head()</code></p></li>
 </ul>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="eda.html#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
-<span id="cb105-2"><a href="eda.html#cb105-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder)</span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="eda.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
+<span id="cb104-2"><a href="eda.html#cb104-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder)</span></code></pre></div>
 <pre><code>## # A tibble: 6 x 6
 ##   country     continent  year lifeExp      pop gdpPercap
 ##   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
@@ -463,7 +497,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Undersöker med hjälp av <code>summary()</code>/<code>skim()</code></li>
 </ul>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="eda.html#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(gapminder)</span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="eda.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(gapminder)</span></code></pre></div>
 <pre><code>##         country        continent        year         lifeExp     
 ##  Afghanistan:  12   Africa  :624   Min.   :1952   Min.   :23.60  
 ##  Albania    :  12   Americas:300   1st Qu.:1966   1st Qu.:48.20  
@@ -480,12 +514,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  3rd Qu.:1.959e+07   3rd Qu.:  9325.5  
 ##  Max.   :1.319e+09   Max.   :113523.1  
 ## </code></pre>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="eda.html#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
-<span id="cb109-2"><a href="eda.html#cb109-2" aria-hidden="true" tabindex="-1"></a><span class="fu">skim</span>(gapminder)</span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="eda.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
+<span id="cb108-2"><a href="eda.html#cb108-2" aria-hidden="true" tabindex="-1"></a><span class="fu">skim</span>(gapminder)</span></code></pre></div>
 <p><img src="images/gapminder_skim.png" /></p>
 <div id="datapunkter-per-land" class="section level3" number="4.5.1">
 <h3><span class="header-section-number">4.5.1</span> Datapunkter per land?</h3>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="eda.html#cb110-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">&quot;Sweden&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(year)</span></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="eda.html#cb109-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">&quot;Sweden&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(year)</span></code></pre></div>
 <pre><code>## # A tibble: 12 x 6
 ##    country continent  year lifeExp     pop gdpPercap
 ##    &lt;fct&gt;   &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;   &lt;int&gt;     &lt;dbl&gt;
@@ -513,10 +547,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="data" class="section level3" number="4.6.1">
 <h3><span class="header-section-number">4.6.1</span> 1. Data</h3>
 <p>För att minska mängden data kollar vi bara på ett år</p>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="eda.html#cb112-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span></span>
-<span id="cb112-2"><a href="eda.html#cb112-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">1972</span>)</span>
-<span id="cb112-3"><a href="eda.html#cb112-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb112-4"><a href="eda.html#cb112-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data)</span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="eda.html#cb111-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span></span>
+<span id="cb111-2"><a href="eda.html#cb111-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">1972</span>)</span>
+<span id="cb111-3"><a href="eda.html#cb111-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb111-4"><a href="eda.html#cb111-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data)</span></code></pre></div>
 <p><img src="ds-intro-till-r-bok_files/figure-html/gapminder_data-1.png" width="672" /></p>
 </div>
 <div id="aesthetics" class="section level3" number="4.6.2">
@@ -525,7 +559,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Vi behöver <code>mappa</code> data till visualiseringen. Vi mappar data till <code>aestethics</code> i visualiseringen. En <code>aesthetic</code> kan vara exempelvis <code>x</code>-axeln eller <code>y</code>-axeln.</p></li>
 <li><p>För att svara på vår fråga kan vi exempelvis mappa <code>gdpPercap</code> till <code>x</code>-axeln och <code>lifeExp</code> till <code>y</code>-axeln</p></li>
 </ul>
-<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="eda.html#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp))</span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="eda.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp))</span></code></pre></div>
 <p><img src="ds-intro-till-r-bok_files/figure-html/gapminder_aes-1.png" width="672" /></p>
 </div>
 <div id="geometriska-objekt" class="section level3" number="4.6.3">
@@ -535,88 +569,88 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><code>geom_point()</code>: punkter,</p>
 <p><code>geom_line()</code>: linjer,</p>
 <p><code>geom_bar()</code>: staplar</p>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="eda.html#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
-<span id="cb114-2"><a href="eda.html#cb114-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="eda.html#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb113-2"><a href="eda.html#cb113-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
 <p><img src="ds-intro-till-r-bok_files/figure-html/gapminder_geoms-1.png" width="672" /></p>
 <p>Det verkar finnas ett samband, kan vi förstå mera?</p>
 <p>Mer <code>aesthetics</code></p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="eda.html#cb115-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data,</span>
-<span id="cb115-2"><a href="eda.html#cb115-2" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap,</span>
-<span id="cb115-3"><a href="eda.html#cb115-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> lifeExp,</span>
-<span id="cb115-4"><a href="eda.html#cb115-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">color =</span> continent)) <span class="sc">+</span></span>
-<span id="cb115-5"><a href="eda.html#cb115-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="ds-intro-till-r-bok_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="eda.html#cb114-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data,</span>
+<span id="cb114-2"><a href="eda.html#cb114-2" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap,</span>
+<span id="cb114-3"><a href="eda.html#cb114-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> lifeExp,</span>
+<span id="cb114-4"><a href="eda.html#cb114-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">color =</span> continent)) <span class="sc">+</span></span>
+<span id="cb114-5"><a href="eda.html#cb114-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
 <div id="storlek-invånare" class="section level4" number="4.6.3.1">
 <h4><span class="header-section-number">4.6.3.1</span> Storlek ~ invånare</h4>
 <p>ännu mer <code>aesthetics</code></p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="eda.html#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data,</span>
-<span id="cb116-2"><a href="eda.html#cb116-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap,</span>
-<span id="cb116-3"><a href="eda.html#cb116-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> lifeExp,</span>
-<span id="cb116-4"><a href="eda.html#cb116-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">color =</span> continent,</span>
-<span id="cb116-5"><a href="eda.html#cb116-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">size =</span> pop)) <span class="sc">+</span> </span>
-<span id="cb116-6"><a href="eda.html#cb116-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="eda.html#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data,</span>
+<span id="cb115-2"><a href="eda.html#cb115-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap,</span>
+<span id="cb115-3"><a href="eda.html#cb115-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> lifeExp,</span>
+<span id="cb115-4"><a href="eda.html#cb115-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">color =</span> continent,</span>
+<span id="cb115-5"><a href="eda.html#cb115-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">size =</span> pop)) <span class="sc">+</span> </span>
+<span id="cb115-6"><a href="eda.html#cb115-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
 <p><img src="ds-intro-till-r-bok_files/figure-html/gapminder_aes_size-1.png" width="672" /></p>
 </div>
 </div>
 <div id="skala" class="section level3" number="4.6.4">
 <h3><span class="header-section-number">4.6.4</span> 4. Skala</h3>
 <p>Vilken skala ska axlarna i grafen ha?</p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="eda.html#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp,</span>
-<span id="cb117-2"><a href="eda.html#cb117-2" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">size =</span> pop, <span class="at">color =</span> continent)) <span class="sc">+</span></span>
-<span id="cb117-3"><a href="eda.html#cb117-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb117-4"><a href="eda.html#cb117-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>() <span class="sc">+</span> <span class="do">## Default value</span></span>
-<span id="cb117-5"><a href="eda.html#cb117-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>() </span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="eda.html#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp,</span>
+<span id="cb116-2"><a href="eda.html#cb116-2" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">size =</span> pop, <span class="at">color =</span> continent)) <span class="sc">+</span></span>
+<span id="cb116-3"><a href="eda.html#cb116-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb116-4"><a href="eda.html#cb116-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>() <span class="sc">+</span> <span class="do">## Default value</span></span>
+<span id="cb116-5"><a href="eda.html#cb116-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>() </span></code></pre></div>
 <p><img src="ds-intro-till-r-bok_files/figure-html/gapminder_scale1-1.png" width="672" /></p>
 </div>
 <div id="gdp-per-capita-är-skevt-fördelad" class="section level3" number="4.6.5">
 <h3><span class="header-section-number">4.6.5</span> GDP per capita är skevt fördelad</h3>
 <p>Vanligt i variabler som motsvarar pengar</p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="eda.html#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap)) <span class="sc">+</span></span>
-<span id="cb118-2"><a href="eda.html#cb118-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="eda.html#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap)) <span class="sc">+</span></span>
+<span id="cb117-2"><a href="eda.html#cb117-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()</span></code></pre></div>
 <p><img src="ds-intro-till-r-bok_files/figure-html/gapminder_gdp-1.png" width="672" /></p>
 <div id="logaritmisk-skala" class="section level4" number="4.6.5.1">
 <h4><span class="header-section-number">4.6.5.1</span> Logaritmisk skala</h4>
 <p>Genom att ta logaritmen kan vi justera för den skeva fördelningen</p>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="eda.html#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap)) <span class="sc">+</span></span>
-<span id="cb119-2"><a href="eda.html#cb119-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
-<span id="cb119-3"><a href="eda.html#cb119-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="do">##</span></span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="eda.html#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap)) <span class="sc">+</span></span>
+<span id="cb118-2"><a href="eda.html#cb118-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb118-3"><a href="eda.html#cb118-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="do">##</span></span></code></pre></div>
 <p><img src="ds-intro-till-r-bok_files/figure-html/gapminder_gdplog-1.png" width="672" /></p>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="eda.html#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap,</span>
-<span id="cb120-2"><a href="eda.html#cb120-2" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">y =</span> lifeExp,</span>
-<span id="cb120-3"><a href="eda.html#cb120-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">size =</span> pop,</span>
-<span id="cb120-4"><a href="eda.html#cb120-4" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">color =</span> continent)) <span class="sc">+</span></span>
-<span id="cb120-5"><a href="eda.html#cb120-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb120-6"><a href="eda.html#cb120-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() </span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="eda.html#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap,</span>
+<span id="cb119-2"><a href="eda.html#cb119-2" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">y =</span> lifeExp,</span>
+<span id="cb119-3"><a href="eda.html#cb119-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">size =</span> pop,</span>
+<span id="cb119-4"><a href="eda.html#cb119-4" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">color =</span> continent)) <span class="sc">+</span></span>
+<span id="cb119-5"><a href="eda.html#cb119-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb119-6"><a href="eda.html#cb119-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() </span></code></pre></div>
 <p><img src="ds-intro-till-r-bok_files/figure-html/gapminder_log-1.png" width="672" /></p>
 <p>##&lt;4 Hans Roslings berömda visualisering</p>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="eda.html#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gganimate)</span>
-<span id="cb121-2"><a href="eda.html#cb121-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
-<span id="cb121-3"><a href="eda.html#cb121-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb121-4"><a href="eda.html#cb121-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(gdpPercap, lifeExp, <span class="at">size =</span> pop, <span class="at">colour =</span> continent)) <span class="sc">+</span></span>
-<span id="cb121-5"><a href="eda.html#cb121-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb121-6"><a href="eda.html#cb121-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">#scale_colour_manual(values = country_colors) +</span></span>
-<span id="cb121-7"><a href="eda.html#cb121-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">12</span>)) <span class="sc">+</span></span>
-<span id="cb121-8"><a href="eda.html#cb121-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
-<span id="cb121-9"><a href="eda.html#cb121-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">color=</span> <span class="fu">guide_legend</span>(), <span class="at">size=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb121-10"><a href="eda.html#cb121-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
-<span id="cb121-11"><a href="eda.html#cb121-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;Year: {frame_time}&#39;</span>, </span>
-<span id="cb121-12"><a href="eda.html#cb121-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&#39;GDP per capita&#39;</span>,</span>
-<span id="cb121-13"><a href="eda.html#cb121-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;life expectancy&#39;</span>) <span class="sc">+</span></span>
-<span id="cb121-14"><a href="eda.html#cb121-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transition_time</span>(year) <span class="sc">+</span></span>
-<span id="cb121-15"><a href="eda.html#cb121-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ease_aes</span>(<span class="st">&#39;linear&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="eda.html#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gganimate)</span>
+<span id="cb120-2"><a href="eda.html#cb120-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
+<span id="cb120-3"><a href="eda.html#cb120-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-4"><a href="eda.html#cb120-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(gdpPercap, lifeExp, <span class="at">size =</span> pop, <span class="at">colour =</span> continent)) <span class="sc">+</span></span>
+<span id="cb120-5"><a href="eda.html#cb120-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb120-6"><a href="eda.html#cb120-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">#scale_colour_manual(values = country_colors) +</span></span>
+<span id="cb120-7"><a href="eda.html#cb120-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">12</span>)) <span class="sc">+</span></span>
+<span id="cb120-8"><a href="eda.html#cb120-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb120-9"><a href="eda.html#cb120-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">color=</span> <span class="fu">guide_legend</span>(), <span class="at">size=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb120-10"><a href="eda.html#cb120-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
+<span id="cb120-11"><a href="eda.html#cb120-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;Year: {frame_time}&#39;</span>, </span>
+<span id="cb120-12"><a href="eda.html#cb120-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&#39;GDP per capita&#39;</span>,</span>
+<span id="cb120-13"><a href="eda.html#cb120-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;life expectancy&#39;</span>) <span class="sc">+</span></span>
+<span id="cb120-14"><a href="eda.html#cb120-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transition_time</span>(year) <span class="sc">+</span></span>
+<span id="cb120-15"><a href="eda.html#cb120-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ease_aes</span>(<span class="st">&#39;linear&#39;</span>)</span></code></pre></div>
 <p><img src="ds-intro-till-r-bok_files/figure-html/hans_rosling-1.gif" /><!-- --></p>
 </div>
 </div>
 <div id="statistiska-beräkningar" class="section level3" number="4.6.6">
 <h3><span class="header-section-number">4.6.6</span> 5. Statistiska beräkningar</h3>
 <p>För att kvantifiera sammanbandet mera kan vi också lägga till statistiska beräkningar till grafen</p>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="eda.html#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap,</span>
-<span id="cb122-2"><a href="eda.html#cb122-2" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">y =</span> lifeExp,</span>
-<span id="cb122-3"><a href="eda.html#cb122-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">size =</span> pop,</span>
-<span id="cb122-4"><a href="eda.html#cb122-4" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">color =</span> continent)) <span class="sc">+</span></span>
-<span id="cb122-5"><a href="eda.html#cb122-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb122-6"><a href="eda.html#cb122-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
-<span id="cb122-7"><a href="eda.html#cb122-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="eda.html#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap,</span>
+<span id="cb121-2"><a href="eda.html#cb121-2" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">y =</span> lifeExp,</span>
+<span id="cb121-3"><a href="eda.html#cb121-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">size =</span> pop,</span>
+<span id="cb121-4"><a href="eda.html#cb121-4" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">color =</span> continent)) <span class="sc">+</span></span>
+<span id="cb121-5"><a href="eda.html#cb121-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb121-6"><a href="eda.html#cb121-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb121-7"><a href="eda.html#cb121-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)</span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
 <pre><code>## Warning in qt((1 - level)/2, df): NaNs produced</code></pre>
 <pre><code>## Warning in max(ids, na.rm = TRUE): no non-missing arguments to max; returning -
@@ -626,38 +660,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Nu beräknas statistik per grupp. Det är eftersom att vi specificerat i vår <code>aes()</code> i <code>ggplot()</code>.</p></li>
 <li><p>Vi kan flytta <code>aes()</code> till våra geometriska objekt om vi vill beräkna statistik för hela gruppen.</p></li>
 </ul>
-<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="eda.html#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
-<span id="cb126-2"><a href="eda.html#cb126-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> pop, <span class="at">color =</span> continent)) <span class="sc">+</span></span>
-<span id="cb126-3"><a href="eda.html#cb126-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
-<span id="cb126-4"><a href="eda.html#cb126-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="eda.html#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb125-2"><a href="eda.html#cb125-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> pop, <span class="at">color =</span> continent)) <span class="sc">+</span></span>
+<span id="cb125-3"><a href="eda.html#cb125-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb125-4"><a href="eda.html#cb125-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)</span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
 <p><img src="ds-intro-till-r-bok_files/figure-html/gapminder_lm_all-1.png" width="672" /></p>
 </div>
 <div id="facets" class="section level3" number="4.6.7">
 <h3><span class="header-section-number">4.6.7</span> 6. Facets</h3>
 <p>Vi kan också dela upp grafen i flera visualiseringar</p>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="eda.html#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap,</span>
-<span id="cb128-2"><a href="eda.html#cb128-2" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">y =</span> lifeExp,</span>
-<span id="cb128-3"><a href="eda.html#cb128-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">size =</span> pop,</span>
-<span id="cb128-4"><a href="eda.html#cb128-4" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">color =</span> continent)) <span class="sc">+</span></span>
-<span id="cb128-5"><a href="eda.html#cb128-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb128-6"><a href="eda.html#cb128-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
-<span id="cb128-7"><a href="eda.html#cb128-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>) <span class="sc">+</span></span>
-<span id="cb128-8"><a href="eda.html#cb128-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>continent)</span></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="eda.html#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap,</span>
+<span id="cb127-2"><a href="eda.html#cb127-2" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">y =</span> lifeExp,</span>
+<span id="cb127-3"><a href="eda.html#cb127-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">size =</span> pop,</span>
+<span id="cb127-4"><a href="eda.html#cb127-4" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">color =</span> continent)) <span class="sc">+</span></span>
+<span id="cb127-5"><a href="eda.html#cb127-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb127-6"><a href="eda.html#cb127-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb127-7"><a href="eda.html#cb127-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>) <span class="sc">+</span></span>
+<span id="cb127-8"><a href="eda.html#cb127-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>continent)</span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
 <pre><code>## Warning in qt((1 - level)/2, df): NaNs produced</code></pre>
 <pre><code>## Warning in max(ids, na.rm = TRUE): no non-missing arguments to max; returning -
 ## Inf</code></pre>
 <p><img src="ds-intro-till-r-bok_files/figure-html/gapminder_facets-1.png" width="672" /></p>
 <p>Vi kan också specificera skalorna för varje subplot</p>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="eda.html#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap,</span>
-<span id="cb132-2"><a href="eda.html#cb132-2" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">y =</span> lifeExp,</span>
-<span id="cb132-3"><a href="eda.html#cb132-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">size =</span> pop,</span>
-<span id="cb132-4"><a href="eda.html#cb132-4" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">color =</span> continent)) <span class="sc">+</span></span>
-<span id="cb132-5"><a href="eda.html#cb132-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb132-6"><a href="eda.html#cb132-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
-<span id="cb132-7"><a href="eda.html#cb132-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>) <span class="sc">+</span></span>
-<span id="cb132-8"><a href="eda.html#cb132-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>continent, <span class="at">scales =</span> <span class="st">&quot;free&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="eda.html#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap,</span>
+<span id="cb131-2"><a href="eda.html#cb131-2" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">y =</span> lifeExp,</span>
+<span id="cb131-3"><a href="eda.html#cb131-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">size =</span> pop,</span>
+<span id="cb131-4"><a href="eda.html#cb131-4" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">color =</span> continent)) <span class="sc">+</span></span>
+<span id="cb131-5"><a href="eda.html#cb131-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb131-6"><a href="eda.html#cb131-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb131-7"><a href="eda.html#cb131-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>) <span class="sc">+</span></span>
+<span id="cb131-8"><a href="eda.html#cb131-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>continent, <span class="at">scales =</span> <span class="st">&quot;free&quot;</span>)</span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
 <pre><code>## Warning in qt((1 - level)/2, df): NaNs produced</code></pre>
 <pre><code>## Warning in max(ids, na.rm = TRUE): no non-missing arguments to max; returning -
@@ -694,9 +728,9 @@ Wickham, H (2010), <em>“A layered Grammar of Graphics”</em>, Journal of Comp
 <div id="gapminder---fortsättning" class="section level2" number="4.7">
 <h2><span class="header-section-number">4.7</span> Gapminder - fortsättning</h2>
 <p>Vi såg att det fanns en outlier i <code>gdpPercap</code> per <code>lifeExp</code></p>
-<p><img src="ds-intro-till-r-bok_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p><img src="ds-intro-till-r-bok_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
 <p>Vilket land är det?</p>
-<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="eda.html#cb136-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(gdpPercap))</span></code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="eda.html#cb135-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(gdpPercap))</span></code></pre></div>
 <pre><code>## # A tibble: 142 x 6
 ##    country       continent  year lifeExp       pop gdpPercap
 ##    &lt;fct&gt;         &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;     &lt;int&gt;     &lt;dbl&gt;
@@ -712,27 +746,27 @@ Wickham, H (2010), <em>“A layered Grammar of Graphics”</em>, Journal of Comp
 ## 10 Bahrain       Asia       1972    63.3    230800    18269.
 ## # … with 132 more rows</code></pre>
 <p>Är det en utveckling som håller i sig?</p>
-<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="eda.html#cb138-1" aria-hidden="true" tabindex="-1"></a>kuwait_data <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> </span>
-<span id="cb138-2"><a href="eda.html#cb138-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">&quot;Kuwait&quot;</span>)</span>
-<span id="cb138-3"><a href="eda.html#cb138-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb138-4"><a href="eda.html#cb138-4" aria-hidden="true" tabindex="-1"></a>kuwait_data <span class="sc">%&gt;%</span></span>
-<span id="cb138-5"><a href="eda.html#cb138-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>gdpPercap)) <span class="sc">+</span></span>
-<span id="cb138-6"><a href="eda.html#cb138-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color=</span><span class="st">&#39;red&#39;</span>) <span class="sc">+</span> <span class="fu">scale_color_identity</span>()</span></code></pre></div>
-<p><img src="ds-intro-till-r-bok_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="eda.html#cb137-1" aria-hidden="true" tabindex="-1"></a>kuwait_data <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> </span>
+<span id="cb137-2"><a href="eda.html#cb137-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">&quot;Kuwait&quot;</span>)</span>
+<span id="cb137-3"><a href="eda.html#cb137-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb137-4"><a href="eda.html#cb137-4" aria-hidden="true" tabindex="-1"></a>kuwait_data <span class="sc">%&gt;%</span></span>
+<span id="cb137-5"><a href="eda.html#cb137-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>gdpPercap)) <span class="sc">+</span></span>
+<span id="cb137-6"><a href="eda.html#cb137-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color=</span><span class="st">&#39;red&#39;</span>) <span class="sc">+</span> <span class="fu">scale_color_identity</span>()</span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
 <p>I jämförelse med utveckingen i resten av toppländerna 1972?</p>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="eda.html#cb139-1" aria-hidden="true" tabindex="-1"></a>top_countries <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span>  <span class="fu">top_n</span>(<span class="dv">11</span>, gdpPercap) <span class="sc">%&gt;%</span> </span>
-<span id="cb139-2"><a href="eda.html#cb139-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>( country<span class="sc">!=</span> <span class="st">&#39;Kuwait&#39;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb139-3"><a href="eda.html#cb139-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(country)</span>
-<span id="cb139-4"><a href="eda.html#cb139-4" aria-hidden="true" tabindex="-1"></a>top_countries</span></code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="eda.html#cb138-1" aria-hidden="true" tabindex="-1"></a>top_countries <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span>  <span class="fu">top_n</span>(<span class="dv">11</span>, gdpPercap) <span class="sc">%&gt;%</span> </span>
+<span id="cb138-2"><a href="eda.html#cb138-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>( country<span class="sc">!=</span> <span class="st">&#39;Kuwait&#39;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb138-3"><a href="eda.html#cb138-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(country)</span>
+<span id="cb138-4"><a href="eda.html#cb138-4" aria-hidden="true" tabindex="-1"></a>top_countries</span></code></pre></div>
 <pre><code>##  [1] Bahrain       Canada        Denmark       Germany       Libya        
 ##  [6] Netherlands   Norway        Saudi Arabia  Switzerland   United States
 ## 142 Levels: Afghanistan Albania Algeria Angola Argentina Australia ... Zimbabwe</code></pre>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="eda.html#cb141-1" aria-hidden="true" tabindex="-1"></a>top_mean <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> </span>
-<span id="cb141-2"><a href="eda.html#cb141-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">%in%</span> top_countries) <span class="sc">%&gt;%</span> </span>
-<span id="cb141-3"><a href="eda.html#cb141-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span>  </span>
-<span id="cb141-4"><a href="eda.html#cb141-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">gdp_mean =</span> <span class="fu">mean</span>(gdpPercap))</span></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="eda.html#cb140-1" aria-hidden="true" tabindex="-1"></a>top_mean <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> </span>
+<span id="cb140-2"><a href="eda.html#cb140-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">%in%</span> top_countries) <span class="sc">%&gt;%</span> </span>
+<span id="cb140-3"><a href="eda.html#cb140-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span>  </span>
+<span id="cb140-4"><a href="eda.html#cb140-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">gdp_mean =</span> <span class="fu">mean</span>(gdpPercap))</span></code></pre></div>
 <pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="eda.html#cb143-1" aria-hidden="true" tabindex="-1"></a>top_mean</span></code></pre></div>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="eda.html#cb142-1" aria-hidden="true" tabindex="-1"></a>top_mean</span></code></pre></div>
 <pre><code>## # A tibble: 12 x 2
 ##     year gdp_mean
 ##    &lt;int&gt;    &lt;dbl&gt;
@@ -748,15 +782,15 @@ Wickham, H (2010), <em>“A layered Grammar of Graphics”</em>, Journal of Comp
 ## 10  1997   27633.
 ## 11  2002   29947.
 ## 12  2007   33389.</code></pre>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="eda.html#cb145-1" aria-hidden="true" tabindex="-1"></a>data_added_mean <span class="ot">&lt;-</span> kuwait_data <span class="sc">%&gt;%</span> <span class="fu">add_column</span>(</span>
-<span id="cb145-2"><a href="eda.html#cb145-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;mean&quot;</span> <span class="ot">=</span> top_mean<span class="sc">$</span>gdp_mean)</span>
-<span id="cb145-3"><a href="eda.html#cb145-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb145-4"><a href="eda.html#cb145-4" aria-hidden="true" tabindex="-1"></a>data_added_mean <span class="sc">%&gt;%</span> </span>
-<span id="cb145-5"><a href="eda.html#cb145-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year)) <span class="sc">+</span> </span>
-<span id="cb145-6"><a href="eda.html#cb145-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> gdpPercap), <span class="at">color =</span> <span class="st">&#39;red&#39;</span>) <span class="sc">+</span></span>
-<span id="cb145-7"><a href="eda.html#cb145-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> mean), <span class="at">color =</span> <span class="st">&#39;gray&#39;</span>) <span class="sc">+</span> </span>
-<span id="cb145-8"><a href="eda.html#cb145-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_identity</span>()</span></code></pre></div>
-<p><img src="ds-intro-till-r-bok_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="eda.html#cb144-1" aria-hidden="true" tabindex="-1"></a>data_added_mean <span class="ot">&lt;-</span> kuwait_data <span class="sc">%&gt;%</span> <span class="fu">add_column</span>(</span>
+<span id="cb144-2"><a href="eda.html#cb144-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;mean&quot;</span> <span class="ot">=</span> top_mean<span class="sc">$</span>gdp_mean)</span>
+<span id="cb144-3"><a href="eda.html#cb144-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb144-4"><a href="eda.html#cb144-4" aria-hidden="true" tabindex="-1"></a>data_added_mean <span class="sc">%&gt;%</span> </span>
+<span id="cb144-5"><a href="eda.html#cb144-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year)) <span class="sc">+</span> </span>
+<span id="cb144-6"><a href="eda.html#cb144-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> gdpPercap), <span class="at">color =</span> <span class="st">&#39;red&#39;</span>) <span class="sc">+</span></span>
+<span id="cb144-7"><a href="eda.html#cb144-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> mean), <span class="at">color =</span> <span class="st">&#39;gray&#39;</span>) <span class="sc">+</span> </span>
+<span id="cb144-8"><a href="eda.html#cb144-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_identity</span>()</span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
 </div>
 <div id="eda-är-en-nyfiken-process-utan-slut" class="section level2" number="4.8">
 <h2><span class="header-section-number">4.8</span> EDA är en nyfiken process utan slut!</h2>
@@ -779,6 +813,491 @@ Wickham, H (2010), <em>“A layered Grammar of Graphics”</em>, Journal of Comp
 <li><p><a href="https://ggplot2.tidyverse.org/">ggplot2</a> - dokumentation för ggplot2</p></li>
 <li><p><a href="https://www.kaggle.com/">kaggle</a> - Hemsida med AI/ML tävlingar och källa till gratis dataset</p></li>
 <li><p><a href="https://www.stackoverflow.com">stack overflow</a> - Forum för programmeringsfrågor, där svar på nästan alla problem man stöter på finns</p></li>
+</ul>
+</div>
+<div id="övningar-explorativ-dataanalys" class="section level2" number="4.10">
+<h2><span class="header-section-number">4.10</span> Övningar Explorativ dataanalys</h2>
+<p>Datan vi använder idag kommer från Hemnet!</p>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="eda.html#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)      <span class="co"># Innehåller många mindre paket bl.a ggplot2</span></span>
+<span id="cb145-2"><a href="eda.html#cb145-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)         <span class="co"># Färghanteringspaket</span></span>
+<span id="cb145-3"><a href="eda.html#cb145-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)      <span class="co"># Datasetet gapminder</span></span>
+<span id="cb145-4"><a href="eda.html#cb145-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(hrbrthemes)     <span class="co"># Teman till ggplot2</span></span>
+<span id="cb145-5"><a href="eda.html#cb145-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb145-6"><a href="eda.html#cb145-6" aria-hidden="true" tabindex="-1"></a>hem <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/Ferrologic/ds-program-block2/master/data/hemnet_data.csv&quot;</span>)</span>
+<span id="cb145-7"><a href="eda.html#cb145-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb145-8"><a href="eda.html#cb145-8" aria-hidden="true" tabindex="-1"></a>hem</span></code></pre></div>
+<pre><code>## # A tibble: 99,838 x 15
+##    sold_date  final_price square_m_price type  area  city   sq_m rooms   fee
+##    &lt;date&gt;           &lt;dbl&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1 2019-01-11     2800000          56000 bost… järv… solna    50     2  3087
+##  2 2019-01-11     1280000          18003 bost… östr… malmö   711     3  4346
+##  3 2019-01-11     7250000          76316 frit… sote… sote…    95     6    NA
+##  4 2019-01-11     2130000          38727 bost… väll… stoc…    55     2  3838
+##  5 2019-01-11      950000          11176 fril… cent… kil      85     3    NA
+##  6 2019-01-11     2195000          39909 bost… edsä… soll…    55     2  3208
+##  7 2019-01-11     2900000          30851 par/… bran… hani…    94     3    NA
+##  8 2019-01-11     4200000          46154 bost… minn… stoc…    91     4  4641
+##  9 2019-01-11     2825000          49045 bost… erik… göte…   576     2  2875
+## 10 2019-01-11     1995000          29556 bost… stoc… stoc…   675     2  5218
+## # … with 99,828 more rows, and 6 more variables: add_area_sqm &lt;dbl&gt;,
+## #   perc_change &lt;dbl&gt;, list_price &lt;dbl&gt;, price_diff &lt;dbl&gt;, month &lt;chr&gt;,
+## #   weekday &lt;chr&gt;</code></pre>
+<p>Vi kan börja med att använda <code>skim()</code> från <code>skimr</code> på vårt dataset.</p>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="eda.html#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(___)</span>
+<span id="cb147-2"><a href="eda.html#cb147-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb147-3"><a href="eda.html#cb147-3" aria-hidden="true" tabindex="-1"></a><span class="fu">skim</span>(___)</span></code></pre></div>
+<pre><code>## Error: &lt;text&gt;:1:9: unexpected input
+## 1: library(_
+##             ^</code></pre>
+<p>Det var mycket information. Men vi kan försöka plocka ut några delar.</p>
+<p>Hur många rader och kolumner har datasetet?</p>
+<p>Vad för typ av data är kolumnen <code>area</code>?</p>
+<p>I vilken kolumn saknas det flest värden?</p>
+<p>Men vad innehåller egentligen kolumnerna <code>area</code>, <code>type</code>? För att svara på det så kan vi titta på några rader av dataset med R:s inbyggda funktion <code>head()</code></p>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="eda.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(___)</span></code></pre></div>
+<pre><code>## Error: &lt;text&gt;:1:6: unexpected input
+## 1: head(_
+##          ^</code></pre>
+<p>Säg att det företag du jobbar på endast är intresserad av Stockholm, Malmö och Göteborg då börjar vi med att endast titta på de försäljningar som gjorts där:</p>
+<p>Om du känner att du hellre vill undersöka några andra städer så är det bara att skriva in dem istället, men försäkra dig om att städerna finns med genom att exempelvis använda <code>hem %&gt;% filter(city == 'din stad')</code> eller <code>hem[hem$city == 'din stad',]</code>.</p>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="eda.html#cb151-1" aria-hidden="true" tabindex="-1"></a>hem_storstad <span class="ot">&lt;-</span> hem <span class="sc">%&gt;%</span> <span class="fu">filter</span>(city <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&#39;stockholm&#39;</span>, <span class="st">&#39;malmö&#39;</span>, ___))</span></code></pre></div>
+<pre><code>## Error: &lt;text&gt;:1:66: unexpected input
+## 1: hem_storstad &lt;- hem %&gt;% filter(city %in% c(&#39;stockholm&#39;, &#39;malmö&#39;, _
+##                                                                      ^</code></pre>
+<p>Hur har de slutgiltiga priserna i storstäderna sett ut?</p>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="eda.html#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(___, </span>
+<span id="cb153-2"><a href="eda.html#cb153-2" aria-hidden="true" tabindex="-1"></a>          <span class="fu">aes</span>(<span class="at">x =</span> ___)) <span class="sc">+</span></span>
+<span id="cb153-3"><a href="eda.html#cb153-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()</span></code></pre></div>
+<pre><code>## Error: &lt;text&gt;:1:8: unexpected input
+## 1: ggplot(_
+##            ^</code></pre>
+<p>Är det nån skillnad mellan städerna? Det kan vi undersöka med hjälp av färg och en ridgeplot:</p>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="eda.html#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggridges)</span>
+<span id="cb155-2"><a href="eda.html#cb155-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(___, </span>
+<span id="cb155-3"><a href="eda.html#cb155-3" aria-hidden="true" tabindex="-1"></a>          <span class="fu">aes</span>(<span class="at">x =</span> ___, </span>
+<span id="cb155-4"><a href="eda.html#cb155-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">y =</span> city,</span>
+<span id="cb155-5"><a href="eda.html#cb155-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> ___,</span>
+<span id="cb155-6"><a href="eda.html#cb155-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">fill =</span> city)) <span class="sc">+</span> <span class="fu">geom_density_ridges</span>()</span></code></pre></div>
+<pre><code>## Error: &lt;text&gt;:2:8: unexpected input
+## 1: library(ggridges)
+## 2: ggplot(_
+##           ^</code></pre>
+<p>Vill vi göra en lättare jämförelse mellan städerna kan vi använda <code>geom_density()</code> istället och färg. Notera användandet av <code>alpha</code> och jämför med det tidigare kommandot. Det är också värt att notera användandet av parametern <code>alpha</code>, som styr hur genomskinliga de olika densiteterna är.</p>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="eda.html#cb157-1" aria-hidden="true" tabindex="-1"></a>___ <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> ___,</span>
+<span id="cb157-2"><a href="eda.html#cb157-2" aria-hidden="true" tabindex="-1"></a>                            <span class="at">color =</span> city, </span>
+<span id="cb157-3"><a href="eda.html#cb157-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">fill =</span> city)) <span class="sc">+</span></span>
+<span id="cb157-4"><a href="eda.html#cb157-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha=</span><span class="fl">0.5</span>)</span></code></pre></div>
+<pre><code>## Error: &lt;text&gt;:1:1: unexpected input
+## 1: _
+##     ^</code></pre>
+<p>Som i <code>gapminder</code>-exemplet från presentationen så är fördelningen för final price skev.
+Igen så kan vi använda en logaritmisk skala på x axeln <code>scale_x_log10()</code> för att motverka detta.</p>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="eda.html#cb159-1" aria-hidden="true" tabindex="-1"></a>hem_storstad <span class="ot">&lt;-</span> hem <span class="sc">%&gt;%</span> <span class="fu">filter</span>(city <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&#39;stockholm&#39;</span>, <span class="st">&#39;malmö&#39;</span>, <span class="st">&quot;göteborg&quot;</span>))</span>
+<span id="cb159-2"><a href="eda.html#cb159-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb159-3"><a href="eda.html#cb159-3" aria-hidden="true" tabindex="-1"></a>hem_storstad <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> final_price, </span>
+<span id="cb159-4"><a href="eda.html#cb159-4" aria-hidden="true" tabindex="-1"></a>                            <span class="at">color =</span> city, <span class="at">fill =</span> city)) <span class="sc">+</span></span>
+<span id="cb159-5"><a href="eda.html#cb159-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb159-6"><a href="eda.html#cb159-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>()</span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
+<p>Vad kan vi se för skillnader mellan fördelingen av slutpriser mellan de städerna?
+Vilken stad är dyrast?
+Vad är det vanligaste priset ungefär?
+Är det någon stad som är mer olik de andra?</p>
+<p>Det går självklart att fortsätta att ställa mera frågor och undersöka dem, men nu kommer resten av övningarna att fokusera på att introducera flera sorters visualiseringar!</p>
+</div>
+<div id="fördelningar" class="section level2" number="4.11">
+<h2><span class="header-section-number">4.11</span> Fördelningar</h2>
+<p>I de flesta fall är vi intresserade av fördelningar. De vanligaste typerna av visualiserings för fördelingar är dessa:</p>
+<p>Densitetsdiagram:</p>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="eda.html#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
+<span id="cb160-2"><a href="eda.html#cb160-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap)) <span class="sc">+</span></span>
+<span id="cb160-3"><a href="eda.html#cb160-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()</span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/p_den-1.png" width="672" /></p>
+<p>Histogram:</p>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="eda.html#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap)) <span class="sc">+</span></span>
+<span id="cb161-2"><a href="eda.html#cb161-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="ds-intro-till-r-bok_files/figure-html/p_hist-1.png" width="672" /></p>
+<p>Boxplots:</p>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="eda.html#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> gdpPercap)) <span class="sc">+</span></span>
+<span id="cb163-2"><a href="eda.html#cb163-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/p_box-1.png" width="672" /></p>
+<p>Fioldiagram:</p>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="eda.html#cb164-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> gdpPercap)) <span class="sc">+</span></span>
+<span id="cb164-2"><a href="eda.html#cb164-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>()</span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/p_fiol-1.png" width="672" /></p>
+<p>Ridgediagram:</p>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="eda.html#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggridges)</span>
+<span id="cb165-2"><a href="eda.html#cb165-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> continent, <span class="at">fill =</span> continent)) <span class="sc">+</span></span>
+<span id="cb165-3"><a href="eda.html#cb165-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges</span>() <span class="sc">+</span></span>
+<span id="cb165-4"><a href="eda.html#cb165-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_ridges</span>() <span class="sc">+</span> </span>
+<span id="cb165-5"><a href="eda.html#cb165-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<pre><code>## Picking joint bandwidth of 1650</code></pre>
+<p><img src="ds-intro-till-r-bok_files/figure-html/p_ridges-1.png" width="672" /></p>
+<p>För att direkt jämföra grupperna går även ett densitetsdiagram med färg att använda</p>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="eda.html#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">color =</span> continent)) <span class="sc">+</span></span>
+<span id="cb167-2"><a href="eda.html#cb167-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">fill =</span> continent, <span class="at">alpha =</span> <span class="fl">0.7</span>))</span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
+<div id="skalor-och-fördelningar" class="section level3" number="4.11.1">
+<h3><span class="header-section-number">4.11.1</span> Skalor och fördelningar</h3>
+<p>I verkligheten är data sällan normalt fördelad. Med den underliggande statistiska processen kan ofta vara det. Därför kan det vara klokt, om data är skevt fördelat, att testa att använda en annan skala på data. Det finns flera olika sätt att transformera data till en annan skala men ett av de vanligaste är att ta logaritmen.</p>
+<p>Nedan skalar vi x-axeln med <code>log10()</code>, som är den logaritm vi oftast använder i “verkligheten”.</p>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="eda.html#cb168-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap)) <span class="sc">+</span></span>
+<span id="cb168-2"><a href="eda.html#cb168-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb168-3"><a href="eda.html#cb168-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>()</span></code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="ds-intro-till-r-bok_files/figure-html/p_log-1.png" width="672" /></p>
+</div>
+<div id="övningar---fördelning" class="section level3" number="4.11.2">
+<h3><span class="header-section-number">4.11.2</span> Övningar - Fördelning</h3>
+<p>Nu är det din tur att prova på de här graferna på hemnetdatan <code>hem</code>.
+Hur ser fördelningen ut för <code>final_price</code>?</p>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="eda.html#cb170-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(_)) <span class="sc">+</span></span>
+<span id="cb170-2"><a href="eda.html#cb170-2" aria-hidden="true" tabindex="-1"></a>  geom_</span></code></pre></div>
+<pre><code>## Error: &lt;text&gt;:1:12: unexpected input
+## 1: ggplot(aes(_
+##                ^</code></pre>
+<p>Hur ser fördelningen ut för respektive <code>type</code>? Nedan använder du dig av en ridge-plot.</p>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="eda.html#cb172-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggridges)</span>
+<span id="cb172-2"><a href="eda.html#cb172-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(hem, <span class="fu">aes</span>(<span class="at">x =</span> final_price, <span class="at">y =</span> _, <span class="at">fill =</span> type)) <span class="sc">+</span></span>
+<span id="cb172-3"><a href="eda.html#cb172-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges</span>() <span class="sc">+</span></span>
+<span id="cb172-4"><a href="eda.html#cb172-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_ridges</span>() <span class="sc">+</span> </span>
+<span id="cb172-5"><a href="eda.html#cb172-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> _) <span class="sc">+</span></span>
+<span id="cb172-6"><a href="eda.html#cb172-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>number)</span></code></pre></div>
+<pre><code>## Error: &lt;text&gt;:2:38: unexpected input
+## 1: library(ggridges)
+## 2: ggplot(hem, aes(x = final_price, y = _
+##                                         ^</code></pre>
+<p>Boxplot är en annan värdefull visualiseringstyp. Den kalkylerar även outliers, som är de svarta prickarna. Outliers är här definierade som Q3 + 1.5*IQR, d.v.s. den tredje kvartilen + 1.5 gånger avståndet mellan kvartil 1 och kvartil 3.</p>
+<ul>
+<li>Visualisera slutpris per bostadstyp</li>
+<li>Notera att vi använder <code>scales</code> i <code>scale_x_continuous()</code> för att få snyggare formatering på x-axlen. <code>scales</code> har också formateringsalternativ för procent, kr/$/€ med mera.</li>
+</ul>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="eda.html#cb174-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(hem, <span class="fu">aes</span>(<span class="at">x =</span> final_price, <span class="at">y =</span> _, <span class="at">fill =</span> _)) <span class="sc">+</span></span>
+<span id="cb174-2"><a href="eda.html#cb174-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
+<span id="cb174-3"><a href="eda.html#cb174-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
+<span id="cb174-4"><a href="eda.html#cb174-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">number_format</span>(<span class="at">suffix =</span> <span class="st">&quot;kr&quot;</span>))</span></code></pre></div>
+<pre><code>## Error: &lt;text&gt;:1:38: unexpected input
+## 1: ggplot(hem, aes(x = final_price, y = _
+##                                          ^</code></pre>
+</div>
+</div>
+<div id="korrelation" class="section level2" number="4.12">
+<h2><span class="header-section-number">4.12</span> Korrelation</h2>
+<p>Visualisera relationen mellan <code>list_price</code> och <code>final_price</code>.</p>
+<ul>
+<li>Vad är dina <code>aesthetics</code>?</li>
+<li>Vilken <code>geom_</code> använder du?</li>
+<li>Passar skalan?</li>
+<li>Finns det någon passande statistic för att visuellt beskriva relationen?</li>
+</ul>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="eda.html#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(_, <span class="fu">aes</span>(<span class="at">x =</span> _, <span class="at">y =</span> _)) <span class="sc">+</span></span>
+<span id="cb176-2"><a href="eda.html#cb176-2" aria-hidden="true" tabindex="-1"></a>  geom_ <span class="sc">+</span></span>
+<span id="cb176-3"><a href="eda.html#cb176-3" aria-hidden="true" tabindex="-1"></a>  stat_</span></code></pre></div>
+<pre><code>## Error: &lt;text&gt;:1:8: unexpected input
+## 1: ggplot(_
+##            ^</code></pre>
+</div>
+<div id="pimp-my-plot" class="section level2" number="4.13">
+<h2><span class="header-section-number">4.13</span> Pimp my plot!</h2>
+<p>Vi kan addera titlar och data-etiketter med <code>labs()</code>.</p>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="eda.html#cb178-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(mpg, hp, <span class="at">color =</span> am)) <span class="sc">+</span></span>
+<span id="cb178-2"><a href="eda.html#cb178-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb178-3"><a href="eda.html#cb178-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Min titel&quot;</span>,</span>
+<span id="cb178-4"><a href="eda.html#cb178-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Min x-axel&quot;</span>,</span>
+<span id="cb178-5"><a href="eda.html#cb178-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Min y-axel&quot;</span>, </span>
+<span id="cb178-6"><a href="eda.html#cb178-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Min subtitle&quot;</span>,</span>
+<span id="cb178-7"><a href="eda.html#cb178-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">&quot;Källa: Min caption&quot;</span>,</span>
+<span id="cb178-8"><a href="eda.html#cb178-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;Legend-titel&quot;</span>)</span>
+<span id="cb178-9"><a href="eda.html#cb178-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb178-10"><a href="eda.html#cb178-10" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/p_labs-1.png" width="672" /></p>
+</div>
+<div id="vi-kan-ändra-tema-med-theme_..." class="section level2" number="4.14">
+<h2><span class="header-section-number">4.14</span> Vi kan ändra tema med <code>theme_...</code></h2>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="eda.html#cb179-1" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/p_theme-1.png" width="672" /></p>
+<p>Utgå från relationen mellan slutpris och listpris. Ändra labs och lägg till ett tema.</p>
+<p><em>OBS</em> Det finns en uppsjö av olika teman. Exempelvis i paketen <code>hrbrthemes</code>, <code>ggthemes</code>, <code>ggthemr</code> m.m. Du kan också skapa dina egna teman exempelvis med företagsfont och färger. Testa gärna exempelvis theme_economist() och theme_solarized_2()</p>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="eda.html#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
+<span id="cb180-2"><a href="eda.html#cb180-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(hem, <span class="fu">aes</span>(<span class="at">x =</span> list_price, <span class="at">y =</span> final_price)) <span class="sc">+</span></span>
+<span id="cb180-3"><a href="eda.html#cb180-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb180-4"><a href="eda.html#cb180-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_smooth</span>() <span class="sc">+</span></span>
+<span id="cb180-5"><a href="eda.html#cb180-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb180-6"><a href="eda.html#cb180-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb180-7"><a href="eda.html#cb180-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;&quot;</span>, </span>
+<span id="cb180-8"><a href="eda.html#cb180-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb180-9"><a href="eda.html#cb180-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
+<span id="cb180-10"><a href="eda.html#cb180-10" aria-hidden="true" tabindex="-1"></a>  theme_</span></code></pre></div>
+<pre><code>## Error in eval(expr, envir, enclos): object &#39;theme_&#39; not found</code></pre>
+</div>
+<div id="andra-aesthetics" class="section level2" number="4.15">
+<h2><span class="header-section-number">4.15</span> Andra aesthetics</h2>
+<ul>
+<li>Utgå från din visualisering av relationen mellan utropspris och slutpris</li>
+<li>Mappa vår aesthetic <code>color</code> till en numerisk variabel, exempelvis <code>fee</code>.</li>
+<li>Vad händer om vår data har stora outliers? (testa att mappa <code>color</code> till sq_m)</li>
+</ul>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="eda.html#cb182-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(hem, <span class="fu">aes</span>(<span class="at">x =</span> list_price, </span>
+<span id="cb182-2"><a href="eda.html#cb182-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> final_price,</span>
+<span id="cb182-3"><a href="eda.html#cb182-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">color =</span> ___)) <span class="sc">+</span></span>
+<span id="cb182-4"><a href="eda.html#cb182-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb182-5"><a href="eda.html#cb182-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_smooth</span>()</span></code></pre></div>
+<pre><code>## Error: &lt;text&gt;:3:25: unexpected input
+## 2:                 y = final_price,
+## 3:                 color = _
+##                            ^</code></pre>
+</div>
+<div id="diskreta-variabler" class="section level2" number="4.16">
+<h2><span class="header-section-number">4.16</span> Diskreta variabler</h2>
+<ul>
+<li>Utgå från din visualisering av relationen mellan utropspris och slutpris</li>
+<li>Mappa vår aesthetic <code>color</code> till en kategorisk variabel, notera att kategoriska variabler med fler än 30 kategorier kommer att bli svåra att visualisera. Se exempelvis city och area, som du därmed bör undvika.</li>
+<li>Om det är en kategorisk variabel som är numerisk behöver du ändra den med <code>as.factor()</code></li>
+</ul>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="eda.html#cb184-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(hem, <span class="fu">aes</span>(<span class="at">x =</span> list_price, </span>
+<span id="cb184-2"><a href="eda.html#cb184-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> final_price,</span>
+<span id="cb184-3"><a href="eda.html#cb184-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">color =</span> ...)) <span class="sc">+</span></span>
+<span id="cb184-4"><a href="eda.html#cb184-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb184-5"><a href="eda.html#cb184-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_smooth</span>()</span></code></pre></div>
+<pre><code>## Error in ggplot.default(hem, aes(x = list_price, y = final_price, color = ...)): &#39;...&#39; used in an incorrect context</code></pre>
+</div>
+<div id="facets-1" class="section level2" number="4.17">
+<h2><span class="header-section-number">4.17</span> Facets</h2>
+<ul>
+<li>Visualisera fördelningen per bostadstyp med sub-plots istället</li>
+<li>Hur hanterar du x-axeln? Finns det något sätt att göra den snyggare?</li>
+<li>För att hantera långa labels i <code>facet_wrap()</code> kan du använda funktionen <code>labeller</code> och <code>label_wrap_gen(10)</code>.</li>
+</ul>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="eda.html#cb186-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(hem, <span class="fu">aes</span>(final_price)) <span class="sc">+</span></span>
+<span id="cb186-2"><a href="eda.html#cb186-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb186-3"><a href="eda.html#cb186-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb186-4"><a href="eda.html#cb186-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>___, <span class="at">labeller =</span> <span class="fu">labeller</span>(<span class="at">type =</span> <span class="fu">label_wrap_gen</span>(<span class="dv">10</span>)), <span class="at">scales =</span> <span class="st">&quot;free&quot;</span>)</span></code></pre></div>
+<pre><code>## Error: &lt;text&gt;:4:15: unexpected input
+## 3:   scale_x_log10() +
+## 4:   facet_wrap(~_
+##                  ^</code></pre>
+</div>
+<div id="barcharts-på-aggregerade-tabeller" class="section level2" number="4.18">
+<h2><span class="header-section-number">4.18</span> Barcharts på aggregerade tabeller</h2>
+<p>Inte sällan har vi aggregerade tabeller som vi vill visualisera.</p>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="eda.html#cb188-1" aria-hidden="true" tabindex="-1"></a>gap_continent <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> </span>
+<span id="cb188-2"><a href="eda.html#cb188-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(continent) <span class="sc">%&gt;%</span> </span>
+<span id="cb188-3"><a href="eda.html#cb188-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_gdp_per_cap =</span> <span class="fu">mean</span>(gdpPercap))</span></code></pre></div>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="eda.html#cb190-1" aria-hidden="true" tabindex="-1"></a>gap_continent</span></code></pre></div>
+<pre><code>## # A tibble: 5 x 2
+##   continent mean_gdp_per_cap
+##   &lt;fct&gt;                &lt;dbl&gt;
+## 1 Africa               2194.
+## 2 Americas             7136.
+## 3 Asia                 7902.
+## 4 Europe              14469.
+## 5 Oceania             18622.</code></pre>
+<div id="geom_col" class="section level3" number="4.18.1">
+<h3><span class="header-section-number">4.18.1</span> geom_col()</h3>
+<ul>
+<li><code>geom_bar()</code> används när vi vill veta antalet rader per kategori</li>
+<li><code>geom_col()</code> används på färdiga tabeller</li>
+<li>Sorterar efter bokstavsordning på kategorier</li>
+</ul>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="eda.html#cb192-1" aria-hidden="true" tabindex="-1"></a>gap_continent <span class="sc">%&gt;%</span> </span>
+<span id="cb192-2"><a href="eda.html#cb192-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> mean_gdp_per_cap)) <span class="sc">+</span></span>
+<span id="cb192-3"><a href="eda.html#cb192-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/p_col-1.png" width="672" /></p>
+<p>Ibland har vi många kategorier, då kan vi bara byta plats på <code>x</code> och <code>y</code></p>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="eda.html#cb193-1" aria-hidden="true" tabindex="-1"></a>gap_continent <span class="sc">%&gt;%</span> </span>
+<span id="cb193-2"><a href="eda.html#cb193-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> continent, <span class="at">x =</span> mean_gdp_per_cap)) <span class="sc">+</span></span>
+<span id="cb193-3"><a href="eda.html#cb193-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/p_flip2-1.png" width="672" /></p>
+</div>
+<div id="hur-fördelar-sig-kvadratmeterpris-per-bostadstyp" class="section level3" number="4.18.2">
+<h3><span class="header-section-number">4.18.2</span> Hur fördelar sig kvadratmeterpris per bostadstyp?</h3>
+<ul>
+<li><p>Ta fram en aggregerad tabell med genomsnittligt kvadratmeterpris per bostadstyp</p></li>
+<li><p>Vilken funktion använder du för att kalkylera genomsnitt? Ha fördelningen i åtanke</p></li>
+<li><p>Visualisera med <code>geom_col()</code></p></li>
+</ul>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="eda.html#cb194-1" aria-hidden="true" tabindex="-1"></a>tbl_type <span class="ot">&lt;-</span> hem <span class="sc">%&gt;%</span> </span>
+<span id="cb194-2"><a href="eda.html#cb194-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(type) <span class="sc">%&gt;%</span> </span>
+<span id="cb194-3"><a href="eda.html#cb194-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">median_sq_m_price =</span> <span class="fu">median</span>(square_m_price, <span class="at">na.rm =</span> T))</span></code></pre></div>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="eda.html#cb196-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tbl_type, <span class="fu">aes</span>(<span class="at">y =</span> type, <span class="at">x =</span> _)) <span class="sc">+</span></span>
+<span id="cb196-2"><a href="eda.html#cb196-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code></pre></div>
+<pre><code>## Error: &lt;text&gt;:1:36: unexpected input
+## 1: ggplot(tbl_type, aes(y = type, x = _
+##                                        ^</code></pre>
+</div>
+</div>
+<div id="sortera-kategorier" class="section level2" number="4.19">
+<h2><span class="header-section-number">4.19</span> Sortera kategorier</h2>
+<ul>
+<li>Ofta vill vi sortera en kategori vi viusaliserar i fallande eller stigande ordning</li>
+<li>Då kan vi bara använda <code>reorder(x, X = sum)</code></li>
+</ul>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="eda.html#cb198-1" aria-hidden="true" tabindex="-1"></a>gap_continent <span class="sc">%&gt;%</span> </span>
+<span id="cb198-2"><a href="eda.html#cb198-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">reorder</span>(continent, mean_gdp_per_cap), <span class="at">x =</span> mean_gdp_per_cap)) <span class="sc">+</span></span>
+<span id="cb198-3"><a href="eda.html#cb198-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/p_reorder-1.png" width="672" /></p>
+</div>
+<div id="sortera-din-bar-chart-efter-medianpris" class="section level2" number="4.20">
+<h2><span class="header-section-number">4.20</span> Sortera din bar-chart efter medianpris</h2>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="eda.html#cb199-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tbl_type, </span>
+<span id="cb199-2"><a href="eda.html#cb199-2" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">reorder</span>(type, ___),</span>
+<span id="cb199-3"><a href="eda.html#cb199-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">x =</span> median_sq_m_price)) <span class="sc">+</span></span>
+<span id="cb199-4"><a href="eda.html#cb199-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code></pre></div>
+<pre><code>## Error: &lt;text&gt;:2:35: unexpected input
+## 1: ggplot(tbl_type, 
+## 2:             aes(y = reorder(type, _
+##                                      ^</code></pre>
+</div>
+<div id="tidsserier" class="section level2" number="4.21">
+<h2><span class="header-section-number">4.21</span> Tidsserier</h2>
+<p>Vi har någon form av tidsserie som vi vill visualisera. Oftast har vi då en tidskomponent, exempelvis dag eller månad. I vår hemnet-data har vi datum.</p>
+<ul>
+<li>Kalkylera genomsnittligt försäljningspris per dag och visualisera</li>
+<li>Vilken geom använder du?</li>
+<li>Vilken skala använder du?</li>
+</ul>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="eda.html#cb201-1" aria-hidden="true" tabindex="-1"></a> hem <span class="sc">%&gt;%</span> </span>
+<span id="cb201-2"><a href="eda.html#cb201-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sold_date) <span class="sc">%&gt;%</span> </span>
+<span id="cb201-3"><a href="eda.html#cb201-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">median_sq_m_price =</span> <span class="fu">median</span>(square_m_price, <span class="at">na.rm =</span> T)) <span class="sc">%&gt;%</span> </span>
+<span id="cb201-4"><a href="eda.html#cb201-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(_, <span class="at">y =</span> median_sq_m_price)) <span class="sc">+</span></span>
+<span id="cb201-5"><a href="eda.html#cb201-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_</span>()</span></code></pre></div>
+<pre><code>## Error: &lt;text&gt;:4:14: unexpected input
+## 3:   summarise(median_sq_m_price = median(square_m_price, na.rm = T)) %&gt;% 
+## 4:   ggplot(aes(_
+##                 ^</code></pre>
+<p>————————- OM DU HAR TID ÖVER ————————-
+Kolla på den här listan och gör det som verkar mest intressant!</p>
+<ol style="list-style-type: decimal">
+<li><p>Fri uppgift som går ut på att undersöka ett annat dataset själv och utforska det och se vad du hittar.</p></li>
+<li><p>Lite mera om tidsserier och hur du kan ändra granulariteten på dina tidserier</p></li>
+<li><p>Testa på enkel interaktivitet i dina grafer</p></li>
+<li><p>Läsa på från en rekommenderad lista</p></li>
+<li><p>Undersöka själv.
+Du kan självklart fortsätta att undersäka Hemnet datan!
+Men om du inte vill det så är lite exempel på dataset som du kan använda:
+<code>iris</code> - inbyggt dataset i r som innehåller mätdata om ett par olika blomarter.
+<code>iris</code> finns alltid tillgängligt i r och är bara att kalla på:</p></li>
+</ol>
+<p><code>mtcars</code> - inbyggt dataset i r som inehåller mätdata om 32 bilmodeller från 1974.
+<code>mtcars</code> finns alltid tillgängligt på samma sätt som <code>iris</code></p>
+<p>Pokemon - Dataset som innehåller statistik om alla Pokemon genom tiderna. Hämtat från Kaggl
+Laddas med <code>pokemon &lt;- read_csv('data/pokemon.csv)</code></p>
+<p>Temp - Globala temperaturer per land och datum från 1743 till 2013 mätt en gång i månaden.
+Laddas med <code>temp &lt;- read_csv('data/GlobalTemp.csv')</code></p>
+<p>Covid-19 - Dataset hämtat från Our World In Data (<a href="https://ourworldindata.org/coronavirus-source-data" class="uri">https://ourworldindata.org/coronavirus-source-data</a>), 15/11/2020,
+som får sin data från the European Center for Disease Control.
+Innehåller daglig data från hela världen.
+Det här datasetet är större och svårare att hantera än de andra.
+Datasetet laddas med <code>cov &lt;- read_csv('data/covid19-ECDC.csv')</code></p>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="eda.html#cb203-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Börja undersöka här!</span></span>
+<span id="cb203-2"><a href="eda.html#cb203-2" aria-hidden="true" tabindex="-1"></a><span class="co"># iris</span></span>
+<span id="cb203-3"><a href="eda.html#cb203-3" aria-hidden="true" tabindex="-1"></a><span class="co"># mtcars</span></span>
+<span id="cb203-4"><a href="eda.html#cb203-4" aria-hidden="true" tabindex="-1"></a><span class="co"># pokemon &lt;- read_csv(&#39;data/pokemon.csv&#39;)</span></span>
+<span id="cb203-5"><a href="eda.html#cb203-5" aria-hidden="true" tabindex="-1"></a><span class="co"># temp &lt;- read_csv(&#39;data/GlobalTemp.csv&#39;)</span></span>
+<span id="cb203-6"><a href="eda.html#cb203-6" aria-hidden="true" tabindex="-1"></a><span class="co"># cov &lt;- read_csv(&#39;data/covid19-ECDC.csv&#39;)</span></span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Mer stabila tidsserier</li>
+</ol>
+<ul>
+<li><p>Inte sällan vill vi ha lite mindre granulära tidsserier än det vi hade tidigare, exempelvis per vecka eller månad</p></li>
+<li><p>Vi kan då använda antigen <code>lubridate</code> för att få fram exempelvis <code>vecka</code> och <code>år</code></p></li>
+<li><p>Eller <code>tsibble</code> för att få fram <code>yearweek</code> eller <code>yearmonth</code>.</p></li>
+<li><p>Ladda <code>tsibble</code> och <code>lubridate</code></p></li>
+<li><p>Skapa en kolumn som representera vecka</p></li>
+<li><p>En som representerar år</p></li>
+<li><p>En som representerar år-vecka med <code>tsibble::yearweek()</code></p></li>
+<li><p>Visualisera per år-vecka</p></li>
+<li><p>Visualisera per vecka och sätt <code>color = år</code></p></li>
+</ul>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="eda.html#cb204-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span></code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;lubridate&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     date, intersect, setdiff, union</code></pre>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="eda.html#cb207-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tsibble)</span></code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;tsibble&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:lubridate&#39;:
+## 
+##     interval</code></pre>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="eda.html#cb210-1" aria-hidden="true" tabindex="-1"></a>weekly_sales <span class="ot">&lt;-</span> hem <span class="sc">%&gt;%</span> </span>
+<span id="cb210-2"><a href="eda.html#cb210-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb210-3"><a href="eda.html#cb210-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">year =</span> <span class="fu">as.factor</span>(<span class="fu">year</span>(sold_date)),</span>
+<span id="cb210-4"><a href="eda.html#cb210-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">week =</span> <span class="fu">week</span>(sold_date),</span>
+<span id="cb210-5"><a href="eda.html#cb210-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">yearweek =</span> <span class="fu">yearweek</span>(sold_date)</span>
+<span id="cb210-6"><a href="eda.html#cb210-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb210-7"><a href="eda.html#cb210-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb210-8"><a href="eda.html#cb210-8" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> weekly_sales <span class="sc">%&gt;%</span> </span>
+<span id="cb210-9"><a href="eda.html#cb210-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(yearweek) <span class="sc">%&gt;%</span> </span>
+<span id="cb210-10"><a href="eda.html#cb210-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">median_sq_m_price =</span> <span class="fu">median</span>(square_m_price, <span class="at">na.rm =</span> T)) <span class="sc">%&gt;%</span> </span>
+<span id="cb210-11"><a href="eda.html#cb210-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(yearweek, median_sq_m_price)) <span class="sc">+</span></span>
+<span id="cb210-12"><a href="eda.html#cb210-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() </span></code></pre></div>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="eda.html#cb212-1" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
+<p><img src="ds-intro-till-r-bok_files/figure-html/p_ts2-1.png" width="672" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Interaktivitet</li>
+</ol>
+<p>Med paketet <code>plotly</code> kan du ta ett <code>ggplot2</code>-objekt och göra om det till en interaktiv graf, som kräver en hemsida.</p>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="eda.html#cb213-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span></code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;plotly&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:ggplot2&#39;:
+## 
+##     last_plot</code></pre>
+<pre><code>## The following object is masked from &#39;package:stats&#39;:
+## 
+##     filter</code></pre>
+<pre><code>## The following object is masked from &#39;package:graphics&#39;:
+## 
+##     layout</code></pre>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="eda.html#cb218-1" aria-hidden="true" tabindex="-1"></a>plot <span class="ot">&lt;-</span>  hem <span class="sc">%&gt;%</span> </span>
+<span id="cb218-2"><a href="eda.html#cb218-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sold_date) <span class="sc">%&gt;%</span> </span>
+<span id="cb218-3"><a href="eda.html#cb218-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">median_sq_m_price =</span> <span class="fu">median</span>(square_m_price, <span class="at">na.rm =</span> T)) <span class="sc">%&gt;%</span> </span>
+<span id="cb218-4"><a href="eda.html#cb218-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(sold_date, <span class="at">y =</span> median_sq_m_price)) <span class="sc">+</span></span>
+<span id="cb218-5"><a href="eda.html#cb218-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="eda.html#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(plot)</span></code></pre></div>
+<div id="htmlwidget-ef9ae5f51240b635a9f4" style="width:100%;height:100%;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ef9ae5f51240b635a9f4">{"x":{"data":[{"x":[17777,17778,17779,17780,17781,17782,17783,17784,17785,17786,17787,17788,17789,17790,17791,17792,17793,17794,17795,17796,17797,17798,17799,17800,17801,17802,17803,17804,17805,17806,17807,17808,17809,17810,17811,17812,17813,17814,17815,17816,17817,17818,17819,17820,17821,17822,17823,17824,17825,17826,17827,17828,17829,17830,17831,17832,17833,17834,17835,17836,17837,17838,17839,17840,17841,17842,17843,17844,17845,17846,17847,17848,17849,17850,17851,17852,17853,17854,17855,17856,17857,17858,17859,17860,17861,17862,17863,17864,17865,17866,17867,17868,17869,17870,17871,17872,17873,17874,17875,17876,17877,17878,17879,17880,17881,17882,17883,17884,17885,17886,17887,17888,17889,17890,17891,17892,17893,17894,17895,17896,17897,17898,17899,17900,17901,17902,17903,17904,17905,17906,17907,17908,17909,17910,17911,17912,17913,17914,17915,17916,17917,17918,17919,17920,17921,17922,17923,17924,17925,17926,17927,17928,17929,17930,17931,17932,17933,17934,17935,17936,17937,17938,17939,17940,17941,17942,17943,17944,17945,17946,17947,17948,17949,17950,17951,17952,17953,17954,17955,17956,17957,17958,17959,17960,17961,17962,17963,17964,17965,17966,17967,17968,17969,17970,17971,17972,17973,17974,17975,17976,17977,17978,17979,17980,17981,17982,17983,17984,17985,17986,17987,17988,17989,17990,17991,17992,17993,17994,17995,17996,17997,17998,17999,18000,18001,18002,18003,18004,18005,18006,18007,18008,18009,18010,18011,18012,18013,18014,18015,18016,18017,18018,18019,18020,18021,18022,18023,18024,18025,18026,18027,18028,18029,18030,18031,18032,18033,18034,18035,18036,18037,18038,18039,18040,18041,18042,18043,18044,18045,18046,18047,18048,18049,18050,18051,18052,18053,18054,18055,18056,18057,18058,18059,18060,18061,18062,18063,18064,18065,18066,18067,18068,18069,18070,18071,18072,18073,18074,18075,18076,18077,18078,18079,18080,18081,18082],"y":[19510,27302.5,29372,28313,27943,31818,24147,21803,25782,30702,27087,25767,31480,29352.5,21250,25754.5,29030,30000,25342,27105.5,28678,23927.5,27054,30000,28511,25321,29854,23622.5,24038,26687,30769,29545,26667,31662.5,25906.5,22115,27362,30161.5,28444,27500,25652,28348,25703,26765,29932,30000,27273,28670,29815,26008,27744,28000,28947,25373,32500,28790,23007.5,25937.5,27511,28082,29025,31731,28523,21121,23101.5,27262.5,27954.5,25862,29717.5,27907,22083,26819,28169,30581,26957,33573,30351,23973,25500,29721.5,27193,26575,32275.5,27224,22546,23291.5,25810,26583,28641,27520,31389,23656,25367.5,27806,25000,24790,31409,28125,21795,22595.5,32967.5,27491.5,24545,34326,32578,23188,24474,23246,22131,22859.5,25455.5,24655,44526.5,27500,21557,18103,16101.5,18706,33556,13426,28440,17442,23361,25342,27215,29889,20000,27660,33085,31981,28802,30245,30764,25223,27812,37563,32667,29710,30120,25738,27206,22716.5,28041,31818,30128,34146,25072,23701,27545,29302.5,29167,28218,33319,31055,24743,28678,30400,31961.5,26683.5,25192.5,28758,23686.5,29659,29471.5,31643,27288,27785,37062.5,25922,30380,30719,31100,29891,28136,29524,24460,26994,30769,29086,24085,30190,29790.5,23169,28191,29241,31771,27578,26392,29245,24901.5,30213.5,30000,27778,29259,27529,30581,24233.5,30079,30397,27097,29432,32596,29175,24490,29629.5,30556,30059,26786,32692,27902,24038,30315,30233,31172,27907,40274,31250,26553,27619,34091,31333,30454.5,27468.5,29886.5,26786,28206,29412,25357,26899,25742,28214.5,25435,27045,27414,27095,27826,27586,25155,23563,24938,31261.5,33263,31140,29615,32114,22986,27184,32910.5,29786,28155,27533,30005,24211,29441.5,30769,29741,25458.5,30806,25816,27234,26961,30735.5,32484,27820,28526,30556,24545,28169,30303,32403,26692,32853,32565,24691,27439,30457,29726.5,27539,30738,27750,21849,27679,28879,27528,25171,31933,28323.5,24000,26119,27000,25598.5,21875,25714,27742,24538,24381,22600,24361.5,24194,31637,23045.5,23148,23480,26531,23429,25440],"text":["sold_date: 2018-09-03<br />median_sq_m_price: 19510.0","sold_date: 2018-09-04<br />median_sq_m_price: 27302.5","sold_date: 2018-09-05<br />median_sq_m_price: 29372.0","sold_date: 2018-09-06<br />median_sq_m_price: 28313.0","sold_date: 2018-09-07<br />median_sq_m_price: 27943.0","sold_date: 2018-09-08<br />median_sq_m_price: 31818.0","sold_date: 2018-09-09<br />median_sq_m_price: 24147.0","sold_date: 2018-09-10<br />median_sq_m_price: 21803.0","sold_date: 2018-09-11<br />median_sq_m_price: 25782.0","sold_date: 2018-09-12<br />median_sq_m_price: 30702.0","sold_date: 2018-09-13<br />median_sq_m_price: 27087.0","sold_date: 2018-09-14<br />median_sq_m_price: 25767.0","sold_date: 2018-09-15<br />median_sq_m_price: 31480.0","sold_date: 2018-09-16<br />median_sq_m_price: 29352.5","sold_date: 2018-09-17<br />median_sq_m_price: 21250.0","sold_date: 2018-09-18<br />median_sq_m_price: 25754.5","sold_date: 2018-09-19<br />median_sq_m_price: 29030.0","sold_date: 2018-09-20<br />median_sq_m_price: 30000.0","sold_date: 2018-09-21<br />median_sq_m_price: 25342.0","sold_date: 2018-09-22<br />median_sq_m_price: 27105.5","sold_date: 2018-09-23<br />median_sq_m_price: 28678.0","sold_date: 2018-09-24<br />median_sq_m_price: 23927.5","sold_date: 2018-09-25<br />median_sq_m_price: 27054.0","sold_date: 2018-09-26<br />median_sq_m_price: 30000.0","sold_date: 2018-09-27<br />median_sq_m_price: 28511.0","sold_date: 2018-09-28<br />median_sq_m_price: 25321.0","sold_date: 2018-09-29<br />median_sq_m_price: 29854.0","sold_date: 2018-09-30<br />median_sq_m_price: 23622.5","sold_date: 2018-10-01<br />median_sq_m_price: 24038.0","sold_date: 2018-10-02<br />median_sq_m_price: 26687.0","sold_date: 2018-10-03<br />median_sq_m_price: 30769.0","sold_date: 2018-10-04<br />median_sq_m_price: 29545.0","sold_date: 2018-10-05<br />median_sq_m_price: 26667.0","sold_date: 2018-10-06<br />median_sq_m_price: 31662.5","sold_date: 2018-10-07<br />median_sq_m_price: 25906.5","sold_date: 2018-10-08<br />median_sq_m_price: 22115.0","sold_date: 2018-10-09<br />median_sq_m_price: 27362.0","sold_date: 2018-10-10<br />median_sq_m_price: 30161.5","sold_date: 2018-10-11<br />median_sq_m_price: 28444.0","sold_date: 2018-10-12<br />median_sq_m_price: 27500.0","sold_date: 2018-10-13<br />median_sq_m_price: 25652.0","sold_date: 2018-10-14<br />median_sq_m_price: 28348.0","sold_date: 2018-10-15<br />median_sq_m_price: 25703.0","sold_date: 2018-10-16<br />median_sq_m_price: 26765.0","sold_date: 2018-10-17<br />median_sq_m_price: 29932.0","sold_date: 2018-10-18<br />median_sq_m_price: 30000.0","sold_date: 2018-10-19<br />median_sq_m_price: 27273.0","sold_date: 2018-10-20<br />median_sq_m_price: 28670.0","sold_date: 2018-10-21<br />median_sq_m_price: 29815.0","sold_date: 2018-10-22<br />median_sq_m_price: 26008.0","sold_date: 2018-10-23<br />median_sq_m_price: 27744.0","sold_date: 2018-10-24<br />median_sq_m_price: 28000.0","sold_date: 2018-10-25<br />median_sq_m_price: 28947.0","sold_date: 2018-10-26<br />median_sq_m_price: 25373.0","sold_date: 2018-10-27<br />median_sq_m_price: 32500.0","sold_date: 2018-10-28<br />median_sq_m_price: 28790.0","sold_date: 2018-10-29<br />median_sq_m_price: 23007.5","sold_date: 2018-10-30<br />median_sq_m_price: 25937.5","sold_date: 2018-10-31<br />median_sq_m_price: 27511.0","sold_date: 2018-11-01<br />median_sq_m_price: 28082.0","sold_date: 2018-11-02<br />median_sq_m_price: 29025.0","sold_date: 2018-11-03<br />median_sq_m_price: 31731.0","sold_date: 2018-11-04<br />median_sq_m_price: 28523.0","sold_date: 2018-11-05<br />median_sq_m_price: 21121.0","sold_date: 2018-11-06<br />median_sq_m_price: 23101.5","sold_date: 2018-11-07<br />median_sq_m_price: 27262.5","sold_date: 2018-11-08<br />median_sq_m_price: 27954.5","sold_date: 2018-11-09<br />median_sq_m_price: 25862.0","sold_date: 2018-11-10<br />median_sq_m_price: 29717.5","sold_date: 2018-11-11<br />median_sq_m_price: 27907.0","sold_date: 2018-11-12<br />median_sq_m_price: 22083.0","sold_date: 2018-11-13<br />median_sq_m_price: 26819.0","sold_date: 2018-11-14<br />median_sq_m_price: 28169.0","sold_date: 2018-11-15<br />median_sq_m_price: 30581.0","sold_date: 2018-11-16<br />median_sq_m_price: 26957.0","sold_date: 2018-11-17<br />median_sq_m_price: 33573.0","sold_date: 2018-11-18<br />median_sq_m_price: 30351.0","sold_date: 2018-11-19<br />median_sq_m_price: 23973.0","sold_date: 2018-11-20<br />median_sq_m_price: 25500.0","sold_date: 2018-11-21<br />median_sq_m_price: 29721.5","sold_date: 2018-11-22<br />median_sq_m_price: 27193.0","sold_date: 2018-11-23<br />median_sq_m_price: 26575.0","sold_date: 2018-11-24<br />median_sq_m_price: 32275.5","sold_date: 2018-11-25<br />median_sq_m_price: 27224.0","sold_date: 2018-11-26<br />median_sq_m_price: 22546.0","sold_date: 2018-11-27<br />median_sq_m_price: 23291.5","sold_date: 2018-11-28<br />median_sq_m_price: 25810.0","sold_date: 2018-11-29<br />median_sq_m_price: 26583.0","sold_date: 2018-11-30<br />median_sq_m_price: 28641.0","sold_date: 2018-12-01<br />median_sq_m_price: 27520.0","sold_date: 2018-12-02<br />median_sq_m_price: 31389.0","sold_date: 2018-12-03<br />median_sq_m_price: 23656.0","sold_date: 2018-12-04<br />median_sq_m_price: 25367.5","sold_date: 2018-12-05<br />median_sq_m_price: 27806.0","sold_date: 2018-12-06<br />median_sq_m_price: 25000.0","sold_date: 2018-12-07<br />median_sq_m_price: 24790.0","sold_date: 2018-12-08<br />median_sq_m_price: 31409.0","sold_date: 2018-12-09<br />median_sq_m_price: 28125.0","sold_date: 2018-12-10<br />median_sq_m_price: 21795.0","sold_date: 2018-12-11<br />median_sq_m_price: 22595.5","sold_date: 2018-12-12<br />median_sq_m_price: 32967.5","sold_date: 2018-12-13<br />median_sq_m_price: 27491.5","sold_date: 2018-12-14<br />median_sq_m_price: 24545.0","sold_date: 2018-12-15<br />median_sq_m_price: 34326.0","sold_date: 2018-12-16<br />median_sq_m_price: 32578.0","sold_date: 2018-12-17<br />median_sq_m_price: 23188.0","sold_date: 2018-12-18<br />median_sq_m_price: 24474.0","sold_date: 2018-12-19<br />median_sq_m_price: 23246.0","sold_date: 2018-12-20<br />median_sq_m_price: 22131.0","sold_date: 2018-12-21<br />median_sq_m_price: 22859.5","sold_date: 2018-12-22<br />median_sq_m_price: 25455.5","sold_date: 2018-12-23<br />median_sq_m_price: 24655.0","sold_date: 2018-12-24<br />median_sq_m_price: 44526.5","sold_date: 2018-12-25<br />median_sq_m_price: 27500.0","sold_date: 2018-12-26<br />median_sq_m_price: 21557.0","sold_date: 2018-12-27<br />median_sq_m_price: 18103.0","sold_date: 2018-12-28<br />median_sq_m_price: 16101.5","sold_date: 2018-12-29<br />median_sq_m_price: 18706.0","sold_date: 2018-12-30<br />median_sq_m_price: 33556.0","sold_date: 2018-12-31<br />median_sq_m_price: 13426.0","sold_date: 2019-01-01<br />median_sq_m_price: 28440.0","sold_date: 2019-01-02<br />median_sq_m_price: 17442.0","sold_date: 2019-01-03<br />median_sq_m_price: 23361.0","sold_date: 2019-01-04<br />median_sq_m_price: 25342.0","sold_date: 2019-01-05<br />median_sq_m_price: 27215.0","sold_date: 2019-01-06<br />median_sq_m_price: 29889.0","sold_date: 2019-01-07<br />median_sq_m_price: 20000.0","sold_date: 2019-01-08<br />median_sq_m_price: 27660.0","sold_date: 2019-01-09<br />median_sq_m_price: 33085.0","sold_date: 2019-01-10<br />median_sq_m_price: 31981.0","sold_date: 2019-01-11<br />median_sq_m_price: 28802.0","sold_date: 2019-01-12<br />median_sq_m_price: 30245.0","sold_date: 2019-01-13<br />median_sq_m_price: 30764.0","sold_date: 2019-01-14<br />median_sq_m_price: 25223.0","sold_date: 2019-01-15<br />median_sq_m_price: 27812.0","sold_date: 2019-01-16<br />median_sq_m_price: 37563.0","sold_date: 2019-01-17<br />median_sq_m_price: 32667.0","sold_date: 2019-01-18<br />median_sq_m_price: 29710.0","sold_date: 2019-01-19<br />median_sq_m_price: 30120.0","sold_date: 2019-01-20<br />median_sq_m_price: 25738.0","sold_date: 2019-01-21<br />median_sq_m_price: 27206.0","sold_date: 2019-01-22<br />median_sq_m_price: 22716.5","sold_date: 2019-01-23<br />median_sq_m_price: 28041.0","sold_date: 2019-01-24<br />median_sq_m_price: 31818.0","sold_date: 2019-01-25<br />median_sq_m_price: 30128.0","sold_date: 2019-01-26<br />median_sq_m_price: 34146.0","sold_date: 2019-01-27<br />median_sq_m_price: 25072.0","sold_date: 2019-01-28<br />median_sq_m_price: 23701.0","sold_date: 2019-01-29<br />median_sq_m_price: 27545.0","sold_date: 2019-01-30<br />median_sq_m_price: 29302.5","sold_date: 2019-01-31<br />median_sq_m_price: 29167.0","sold_date: 2019-02-01<br />median_sq_m_price: 28218.0","sold_date: 2019-02-02<br />median_sq_m_price: 33319.0","sold_date: 2019-02-03<br />median_sq_m_price: 31055.0","sold_date: 2019-02-04<br />median_sq_m_price: 24743.0","sold_date: 2019-02-05<br />median_sq_m_price: 28678.0","sold_date: 2019-02-06<br />median_sq_m_price: 30400.0","sold_date: 2019-02-07<br />median_sq_m_price: 31961.5","sold_date: 2019-02-08<br />median_sq_m_price: 26683.5","sold_date: 2019-02-09<br />median_sq_m_price: 25192.5","sold_date: 2019-02-10<br />median_sq_m_price: 28758.0","sold_date: 2019-02-11<br />median_sq_m_price: 23686.5","sold_date: 2019-02-12<br />median_sq_m_price: 29659.0","sold_date: 2019-02-13<br />median_sq_m_price: 29471.5","sold_date: 2019-02-14<br />median_sq_m_price: 31643.0","sold_date: 2019-02-15<br />median_sq_m_price: 27288.0","sold_date: 2019-02-16<br />median_sq_m_price: 27785.0","sold_date: 2019-02-17<br />median_sq_m_price: 37062.5","sold_date: 2019-02-18<br />median_sq_m_price: 25922.0","sold_date: 2019-02-19<br />median_sq_m_price: 30380.0","sold_date: 2019-02-20<br />median_sq_m_price: 30719.0","sold_date: 2019-02-21<br />median_sq_m_price: 31100.0","sold_date: 2019-02-22<br />median_sq_m_price: 29891.0","sold_date: 2019-02-23<br />median_sq_m_price: 28136.0","sold_date: 2019-02-24<br />median_sq_m_price: 29524.0","sold_date: 2019-02-25<br />median_sq_m_price: 24460.0","sold_date: 2019-02-26<br />median_sq_m_price: 26994.0","sold_date: 2019-02-27<br />median_sq_m_price: 30769.0","sold_date: 2019-02-28<br />median_sq_m_price: 29086.0","sold_date: 2019-03-01<br />median_sq_m_price: 24085.0","sold_date: 2019-03-02<br />median_sq_m_price: 30190.0","sold_date: 2019-03-03<br />median_sq_m_price: 29790.5","sold_date: 2019-03-04<br />median_sq_m_price: 23169.0","sold_date: 2019-03-05<br />median_sq_m_price: 28191.0","sold_date: 2019-03-06<br />median_sq_m_price: 29241.0","sold_date: 2019-03-07<br />median_sq_m_price: 31771.0","sold_date: 2019-03-08<br />median_sq_m_price: 27578.0","sold_date: 2019-03-09<br />median_sq_m_price: 26392.0","sold_date: 2019-03-10<br />median_sq_m_price: 29245.0","sold_date: 2019-03-11<br />median_sq_m_price: 24901.5","sold_date: 2019-03-12<br />median_sq_m_price: 30213.5","sold_date: 2019-03-13<br />median_sq_m_price: 30000.0","sold_date: 2019-03-14<br />median_sq_m_price: 27778.0","sold_date: 2019-03-15<br />median_sq_m_price: 29259.0","sold_date: 2019-03-16<br />median_sq_m_price: 27529.0","sold_date: 2019-03-17<br />median_sq_m_price: 30581.0","sold_date: 2019-03-18<br />median_sq_m_price: 24233.5","sold_date: 2019-03-19<br />median_sq_m_price: 30079.0","sold_date: 2019-03-20<br />median_sq_m_price: 30397.0","sold_date: 2019-03-21<br />median_sq_m_price: 27097.0","sold_date: 2019-03-22<br />median_sq_m_price: 29432.0","sold_date: 2019-03-23<br />median_sq_m_price: 32596.0","sold_date: 2019-03-24<br />median_sq_m_price: 29175.0","sold_date: 2019-03-25<br />median_sq_m_price: 24490.0","sold_date: 2019-03-26<br />median_sq_m_price: 29629.5","sold_date: 2019-03-27<br />median_sq_m_price: 30556.0","sold_date: 2019-03-28<br />median_sq_m_price: 30059.0","sold_date: 2019-03-29<br />median_sq_m_price: 26786.0","sold_date: 2019-03-30<br />median_sq_m_price: 32692.0","sold_date: 2019-03-31<br />median_sq_m_price: 27902.0","sold_date: 2019-04-01<br />median_sq_m_price: 24038.0","sold_date: 2019-04-02<br />median_sq_m_price: 30315.0","sold_date: 2019-04-03<br />median_sq_m_price: 30233.0","sold_date: 2019-04-04<br />median_sq_m_price: 31172.0","sold_date: 2019-04-05<br />median_sq_m_price: 27907.0","sold_date: 2019-04-06<br />median_sq_m_price: 40274.0","sold_date: 2019-04-07<br />median_sq_m_price: 31250.0","sold_date: 2019-04-08<br />median_sq_m_price: 26553.0","sold_date: 2019-04-09<br />median_sq_m_price: 27619.0","sold_date: 2019-04-10<br />median_sq_m_price: 34091.0","sold_date: 2019-04-11<br />median_sq_m_price: 31333.0","sold_date: 2019-04-12<br />median_sq_m_price: 30454.5","sold_date: 2019-04-13<br />median_sq_m_price: 27468.5","sold_date: 2019-04-14<br />median_sq_m_price: 29886.5","sold_date: 2019-04-15<br />median_sq_m_price: 26786.0","sold_date: 2019-04-16<br />median_sq_m_price: 28206.0","sold_date: 2019-04-17<br />median_sq_m_price: 29412.0","sold_date: 2019-04-18<br />median_sq_m_price: 25357.0","sold_date: 2019-04-19<br />median_sq_m_price: 26899.0","sold_date: 2019-04-20<br />median_sq_m_price: 25742.0","sold_date: 2019-04-21<br />median_sq_m_price: 28214.5","sold_date: 2019-04-22<br />median_sq_m_price: 25435.0","sold_date: 2019-04-23<br />median_sq_m_price: 27045.0","sold_date: 2019-04-24<br />median_sq_m_price: 27414.0","sold_date: 2019-04-25<br />median_sq_m_price: 27095.0","sold_date: 2019-04-26<br />median_sq_m_price: 27826.0","sold_date: 2019-04-27<br />median_sq_m_price: 27586.0","sold_date: 2019-04-28<br />median_sq_m_price: 25155.0","sold_date: 2019-04-29<br />median_sq_m_price: 23563.0","sold_date: 2019-04-30<br />median_sq_m_price: 24938.0","sold_date: 2019-05-01<br />median_sq_m_price: 31261.5","sold_date: 2019-05-02<br />median_sq_m_price: 33263.0","sold_date: 2019-05-03<br />median_sq_m_price: 31140.0","sold_date: 2019-05-04<br />median_sq_m_price: 29615.0","sold_date: 2019-05-05<br />median_sq_m_price: 32114.0","sold_date: 2019-05-06<br />median_sq_m_price: 22986.0","sold_date: 2019-05-07<br />median_sq_m_price: 27184.0","sold_date: 2019-05-08<br />median_sq_m_price: 32910.5","sold_date: 2019-05-09<br />median_sq_m_price: 29786.0","sold_date: 2019-05-10<br />median_sq_m_price: 28155.0","sold_date: 2019-05-11<br />median_sq_m_price: 27533.0","sold_date: 2019-05-12<br />median_sq_m_price: 30005.0","sold_date: 2019-05-13<br />median_sq_m_price: 24211.0","sold_date: 2019-05-14<br />median_sq_m_price: 29441.5","sold_date: 2019-05-15<br />median_sq_m_price: 30769.0","sold_date: 2019-05-16<br />median_sq_m_price: 29741.0","sold_date: 2019-05-17<br />median_sq_m_price: 25458.5","sold_date: 2019-05-18<br />median_sq_m_price: 30806.0","sold_date: 2019-05-19<br />median_sq_m_price: 25816.0","sold_date: 2019-05-20<br />median_sq_m_price: 27234.0","sold_date: 2019-05-21<br />median_sq_m_price: 26961.0","sold_date: 2019-05-22<br />median_sq_m_price: 30735.5","sold_date: 2019-05-23<br />median_sq_m_price: 32484.0","sold_date: 2019-05-24<br />median_sq_m_price: 27820.0","sold_date: 2019-05-25<br />median_sq_m_price: 28526.0","sold_date: 2019-05-26<br />median_sq_m_price: 30556.0","sold_date: 2019-05-27<br />median_sq_m_price: 24545.0","sold_date: 2019-05-28<br />median_sq_m_price: 28169.0","sold_date: 2019-05-29<br />median_sq_m_price: 30303.0","sold_date: 2019-05-30<br />median_sq_m_price: 32403.0","sold_date: 2019-05-31<br />median_sq_m_price: 26692.0","sold_date: 2019-06-01<br />median_sq_m_price: 32853.0","sold_date: 2019-06-02<br />median_sq_m_price: 32565.0","sold_date: 2019-06-03<br />median_sq_m_price: 24691.0","sold_date: 2019-06-04<br />median_sq_m_price: 27439.0","sold_date: 2019-06-05<br />median_sq_m_price: 30457.0","sold_date: 2019-06-06<br />median_sq_m_price: 29726.5","sold_date: 2019-06-07<br />median_sq_m_price: 27539.0","sold_date: 2019-06-08<br />median_sq_m_price: 30738.0","sold_date: 2019-06-09<br />median_sq_m_price: 27750.0","sold_date: 2019-06-10<br />median_sq_m_price: 21849.0","sold_date: 2019-06-11<br />median_sq_m_price: 27679.0","sold_date: 2019-06-12<br />median_sq_m_price: 28879.0","sold_date: 2019-06-13<br />median_sq_m_price: 27528.0","sold_date: 2019-06-14<br />median_sq_m_price: 25171.0","sold_date: 2019-06-15<br />median_sq_m_price: 31933.0","sold_date: 2019-06-16<br />median_sq_m_price: 28323.5","sold_date: 2019-06-17<br />median_sq_m_price: 24000.0","sold_date: 2019-06-18<br />median_sq_m_price: 26119.0","sold_date: 2019-06-19<br />median_sq_m_price: 27000.0","sold_date: 2019-06-20<br />median_sq_m_price: 25598.5","sold_date: 2019-06-21<br />median_sq_m_price: 21875.0","sold_date: 2019-06-22<br />median_sq_m_price: 25714.0","sold_date: 2019-06-23<br />median_sq_m_price: 27742.0","sold_date: 2019-06-24<br />median_sq_m_price: 24538.0","sold_date: 2019-06-25<br />median_sq_m_price: 24381.0","sold_date: 2019-06-26<br />median_sq_m_price: 22600.0","sold_date: 2019-06-27<br />median_sq_m_price: 24361.5","sold_date: 2019-06-28<br />median_sq_m_price: 24194.0","sold_date: 2019-06-29<br />median_sq_m_price: 31637.0","sold_date: 2019-06-30<br />median_sq_m_price: 23045.5","sold_date: 2019-07-01<br />median_sq_m_price: 23148.0","sold_date: 2019-07-02<br />median_sq_m_price: 23480.0","sold_date: 2019-07-03<br />median_sq_m_price: 26531.0","sold_date: 2019-07-04<br />median_sq_m_price: 23429.0","sold_date: 2019-07-05<br />median_sq_m_price: 25440.0"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":26.2283105022831,"r":7.30593607305936,"b":40.1826484018265,"l":54.7945205479452},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[17761.75,18097.25],"tickmode":"array","ticktext":["Okt","Jan","Apr","Jul"],"tickvals":[17805,17897,17987,18078],"categoryorder":"array","categoryarray":["Okt","Jan","Apr","Jul"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"sold_date","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[11870.975,46081.525],"tickmode":"array","ticktext":["20000","30000","40000"],"tickvals":[20000,30000,40000],"categoryorder":"array","categoryarray":["20000","30000","40000"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"median_sq_m_price","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false},"source":"A","attrs":{"6763163fb8c0":{"x":{},"y":{},"type":"scatter"}},"cur_data":"6763163fb8c0","visdat":{"6763163fb8c0":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<ol start="4" style="list-style-type: decimal">
+<li>Läslista</li>
+</ol>
+</div>
+<div id="grammar-of-graphics---artikel-om-the-grammar-of-graphics-som-ggplot-bygger-på" class="section level2" number="4.22">
+<h2><span class="header-section-number">4.22</span> Grammar of Graphics - Artikel om the grammar of graphics som ggplot bygger på</h2>
+<ul>
+<li><a href="https://towardsdatascience.com/a-comprehensive-guide-to-the-grammar-of-graphics-for-effective-visualization-of-multi-dimensional-1f92b4ed4149" class="uri">https://towardsdatascience.com/a-comprehensive-guide-to-the-grammar-of-graphics-for-effective-visualization-of-multi-dimensional-1f92b4ed4149</a></li>
+</ul>
+</div>
+<div id="r-for-data-science" class="section level2" number="4.23">
+<h2><span class="header-section-number">4.23</span> R for Data Science</h2>
+<ul>
+<li>Både kapitel 3 - Data Visualisation och Kapitel 7 - Exploratory Data Analysis är väldigt relevanta</li>
+</ul>
+</div>
+<div id="ggplot2-extensions" class="section level2" number="4.24">
+<h2><span class="header-section-number">4.24</span> ggplot2 extensions</h2>
+<ul>
+<li>Det finns ett flertal extensions till ggplot</li>
+<li>Gå in och kolla på några på <a href="https://exts.ggplot2.tidyverse.org/gallery/" class="uri">https://exts.ggplot2.tidyverse.org/gallery/</a></li>
+</ul>
+</div>
+<div id="shiny" class="section level2" number="4.25">
+<h2><span class="header-section-number">4.25</span> Shiny</h2>
+<ul>
+<li>Ett ramverk för att bygga skräddarsydda applikationer i R</li>
+<li>Har likheter med traditionella BI-verktyg men är Open Source och därmed kostnadsfritt</li>
+<li>Är mer flexibelt än ett traditionellt BI-verktyg - allt du kan göra i HTML kan du göra i Shiny.</li>
+<li>Ett otroligt kraftig verktyg för en Data Scientist - automatisera mera</li>
+<li>Innebär att vi kan paketera analyser som applikationer som användare kan agera med</li>
+<li>Exempelvis ta fram en prognosmodell och låta användare testa att själva ändra paramterar i den, exempelvis vilken typ av säsongsvariation</li>
+<li><a href="https://shiny.rstudio.com/gallery/" class="uri">https://shiny.rstudio.com/gallery/</a></li>
+<li><a href="https://shiny.rstudio.com/tutorial/" class="uri">https://shiny.rstudio.com/tutorial/</a></li>
 </ul>
 
 </div>

@@ -24,7 +24,7 @@
 <meta name="author" content="Filip Wästberg &amp; Torbjörn Sjöberg, Solita" />
 
 
-<meta name="date" content="2020-11-13" />
+<meta name="date" content="2020-11-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,6 +53,13 @@
 
 <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -152,8 +159,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#tidyverse-and-friends"><i class="fa fa-check"></i><b>2.5</b> tidyverse and friends</a></li>
 <li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#workflow-i-r"><i class="fa fa-check"></i><b>2.6</b> Workflow i R</a></li>
-<li class="chapter" data-level="2.7" data-path="intro.html"><a href="intro.html#att-skriva-kod-i-r"><i class="fa fa-check"></i><b>2.7</b> Att skriva kod i R</a></li>
-<li class="chapter" data-level="2.8" data-path="intro.html"><a href="intro.html#rmarkdown"><i class="fa fa-check"></i><b>2.8</b> Rmarkdown</a></li>
+<li class="chapter" data-level="2.7" data-path="intro.html"><a href="intro.html#r-markdown"><i class="fa fa-check"></i><b>2.7</b> R Markdown</a></li>
+<li class="chapter" data-level="2.8" data-path="intro.html"><a href="intro.html#kodstil-att-skriva-kod-i-r"><i class="fa fa-check"></i><b>2.8</b> Kodstil: Att skriva kod i R</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="databearbetning.html"><a href="databearbetning.html"><i class="fa fa-check"></i><b>3</b> Datamanipulering med dplyr</a>
 <ul>
@@ -169,16 +176,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="3.3.1" data-path="databearbetning.html"><a href="databearbetning.html#övning-2"><i class="fa fa-check"></i><b>3.3.1</b> Övning</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="databearbetning.html"><a href="databearbetning.html#mutate"><i class="fa fa-check"></i><b>3.4</b> Mutate</a>
+<li class="chapter" data-level="3.4" data-path="databearbetning.html"><a href="databearbetning.html#kallad-the-pipe"><i class="fa fa-check"></i><b>3.4</b> <code>%&gt;%</code> kallad “the pipe”</a></li>
+<li class="chapter" data-level="3.5" data-path="databearbetning.html"><a href="databearbetning.html#mutate"><i class="fa fa-check"></i><b>3.5</b> Mutate</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="databearbetning.html"><a href="databearbetning.html#if_else"><i class="fa fa-check"></i><b>3.4.1</b> if_else()</a></li>
-<li class="chapter" data-level="3.4.2" data-path="databearbetning.html"><a href="databearbetning.html#andra-funktioner"><i class="fa fa-check"></i><b>3.4.2</b> Andra funktioner</a></li>
-<li class="chapter" data-level="3.4.3" data-path="databearbetning.html"><a href="databearbetning.html#övningar"><i class="fa fa-check"></i><b>3.4.3</b> Övningar</a></li>
+<li class="chapter" data-level="3.5.1" data-path="databearbetning.html"><a href="databearbetning.html#if_else"><i class="fa fa-check"></i><b>3.5.1</b> if_else()</a></li>
+<li class="chapter" data-level="3.5.2" data-path="databearbetning.html"><a href="databearbetning.html#case_when"><i class="fa fa-check"></i><b>3.5.2</b> case_when()</a></li>
+<li class="chapter" data-level="3.5.3" data-path="databearbetning.html"><a href="databearbetning.html#andra-funktioner"><i class="fa fa-check"></i><b>3.5.3</b> Andra funktioner</a></li>
+<li class="chapter" data-level="3.5.4" data-path="databearbetning.html"><a href="databearbetning.html#övningar"><i class="fa fa-check"></i><b>3.5.4</b> Övningar</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="databearbetning.html"><a href="databearbetning.html#summarise"><i class="fa fa-check"></i><b>3.5</b> Summarise</a></li>
-<li class="chapter" data-level="3.6" data-path="databearbetning.html"><a href="databearbetning.html#sample_n"><i class="fa fa-check"></i><b>3.6</b> sample_n()</a>
+<li class="chapter" data-level="3.6" data-path="databearbetning.html"><a href="databearbetning.html#summarise"><i class="fa fa-check"></i><b>3.6</b> Summarise</a>
 <ul>
-<li class="chapter" data-level="3.6.1" data-path="databearbetning.html"><a href="databearbetning.html#övning-3"><i class="fa fa-check"></i><b>3.6.1</b> Övning</a></li>
+<li class="chapter" data-level="3.6.1" data-path="databearbetning.html"><a href="databearbetning.html#count"><i class="fa fa-check"></i><b>3.6.1</b> count()</a></li>
+<li class="chapter" data-level="3.6.2" data-path="databearbetning.html"><a href="databearbetning.html#sample_n"><i class="fa fa-check"></i><b>3.6.2</b> <code>sample_n()</code></a></li>
+<li class="chapter" data-level="3.6.3" data-path="databearbetning.html"><a href="databearbetning.html#övning---väv-ihop-allt-du-lärt-dig"><i class="fa fa-check"></i><b>3.6.3</b> Övning - väv ihop allt du lärt dig</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="eda.html"><a href="eda.html"><i class="fa fa-check"></i><b>4</b> Explorativ dataanalys</a>
@@ -219,6 +229,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.8.1" data-path="eda.html"><a href="eda.html#det-ni-ska-ta-med-er-idag-är-inte-de-specifika-sakerna-vi-har-undersökt-utan-ett-mindset"><i class="fa fa-check"></i><b>4.8.1</b> Det ni ska ta med er idag är inte de specifika sakerna vi har undersökt, utan ett mindset!</a></li>
 </ul></li>
 <li class="chapter" data-level="4.9" data-path="eda.html"><a href="eda.html#länkar-till-resurser"><i class="fa fa-check"></i><b>4.9</b> Länkar till resurser</a></li>
+<li class="chapter" data-level="4.10" data-path="eda.html"><a href="eda.html#övningar-explorativ-dataanalys"><i class="fa fa-check"></i><b>4.10</b> Övningar Explorativ dataanalys</a></li>
+<li class="chapter" data-level="4.11" data-path="eda.html"><a href="eda.html#fördelningar"><i class="fa fa-check"></i><b>4.11</b> Fördelningar</a>
+<ul>
+<li class="chapter" data-level="4.11.1" data-path="eda.html"><a href="eda.html#skalor-och-fördelningar"><i class="fa fa-check"></i><b>4.11.1</b> Skalor och fördelningar</a></li>
+<li class="chapter" data-level="4.11.2" data-path="eda.html"><a href="eda.html#övningar---fördelning"><i class="fa fa-check"></i><b>4.11.2</b> Övningar - Fördelning</a></li>
+</ul></li>
+<li class="chapter" data-level="4.12" data-path="eda.html"><a href="eda.html#korrelation"><i class="fa fa-check"></i><b>4.12</b> Korrelation</a></li>
+<li class="chapter" data-level="4.13" data-path="eda.html"><a href="eda.html#pimp-my-plot"><i class="fa fa-check"></i><b>4.13</b> Pimp my plot!</a></li>
+<li class="chapter" data-level="4.14" data-path="eda.html"><a href="eda.html#vi-kan-ändra-tema-med-theme_..."><i class="fa fa-check"></i><b>4.14</b> Vi kan ändra tema med <code>theme_...</code></a></li>
+<li class="chapter" data-level="4.15" data-path="eda.html"><a href="eda.html#andra-aesthetics"><i class="fa fa-check"></i><b>4.15</b> Andra aesthetics</a></li>
+<li class="chapter" data-level="4.16" data-path="eda.html"><a href="eda.html#diskreta-variabler"><i class="fa fa-check"></i><b>4.16</b> Diskreta variabler</a></li>
+<li class="chapter" data-level="4.17" data-path="eda.html"><a href="eda.html#facets-1"><i class="fa fa-check"></i><b>4.17</b> Facets</a></li>
+<li class="chapter" data-level="4.18" data-path="eda.html"><a href="eda.html#barcharts-på-aggregerade-tabeller"><i class="fa fa-check"></i><b>4.18</b> Barcharts på aggregerade tabeller</a>
+<ul>
+<li class="chapter" data-level="4.18.1" data-path="eda.html"><a href="eda.html#geom_col"><i class="fa fa-check"></i><b>4.18.1</b> geom_col()</a></li>
+<li class="chapter" data-level="4.18.2" data-path="eda.html"><a href="eda.html#hur-fördelar-sig-kvadratmeterpris-per-bostadstyp"><i class="fa fa-check"></i><b>4.18.2</b> Hur fördelar sig kvadratmeterpris per bostadstyp?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.19" data-path="eda.html"><a href="eda.html#sortera-kategorier"><i class="fa fa-check"></i><b>4.19</b> Sortera kategorier</a></li>
+<li class="chapter" data-level="4.20" data-path="eda.html"><a href="eda.html#sortera-din-bar-chart-efter-medianpris"><i class="fa fa-check"></i><b>4.20</b> Sortera din bar-chart efter medianpris</a></li>
+<li class="chapter" data-level="4.21" data-path="eda.html"><a href="eda.html#tidsserier"><i class="fa fa-check"></i><b>4.21</b> Tidsserier</a></li>
+<li class="chapter" data-level="4.22" data-path="eda.html"><a href="eda.html#grammar-of-graphics---artikel-om-the-grammar-of-graphics-som-ggplot-bygger-på"><i class="fa fa-check"></i><b>4.22</b> Grammar of Graphics - Artikel om the grammar of graphics som ggplot bygger på</a></li>
+<li class="chapter" data-level="4.23" data-path="eda.html"><a href="eda.html#r-for-data-science"><i class="fa fa-check"></i><b>4.23</b> R for Data Science</a></li>
+<li class="chapter" data-level="4.24" data-path="eda.html"><a href="eda.html#ggplot2-extensions"><i class="fa fa-check"></i><b>4.24</b> ggplot2 extensions</a></li>
+<li class="chapter" data-level="4.25" data-path="eda.html"><a href="eda.html#shiny"><i class="fa fa-check"></i><b>4.25</b> Shiny</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="bilaga.html"><a href="bilaga.html"><i class="fa fa-check"></i><b>5</b> Bilaga</a>
 <ul>
@@ -341,9 +375,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>PS: Det vanligaste misstaget i början av din R-karriär är att skriva <code>=</code> istället för <code>==</code>.</strong></p>
 <p>Så här använder du operatorerna:</p>
 <p>Hitta alla flyg som kom fram 08:30 under februari</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="databearbetning.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb41-2"><a href="databearbetning.html#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nycflights13)</span>
-<span id="cb41-3"><a href="databearbetning.html#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(flights, month <span class="sc">==</span> <span class="dv">2</span>, arr_time <span class="sc">==</span> <span class="dv">830</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="databearbetning.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb43-2"><a href="databearbetning.html#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nycflights13)</span>
+<span id="cb43-3"><a href="databearbetning.html#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(flights, month <span class="sc">==</span> <span class="dv">2</span>, arr_time <span class="sc">==</span> <span class="dv">830</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 9 x 19
 ##    year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
 ##   &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
@@ -360,7 +394,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## #   tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,
 ## #   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</code></pre>
 <p>Hitta alla flygbolag som finns i <code>c("UA", "DL")</code> i februari eller mars och som inte var försenade.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="databearbetning.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(flights, carrier <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;UA&quot;</span>, <span class="st">&quot;DL&quot;</span>), month <span class="sc">==</span> <span class="dv">2</span> <span class="sc">|</span> month <span class="sc">==</span> <span class="dv">3</span>, dep_delay <span class="sc">&lt;=</span> <span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="databearbetning.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(flights, carrier <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;UA&quot;</span>, <span class="st">&quot;DL&quot;</span>), month <span class="sc">==</span> <span class="dv">2</span> <span class="sc">|</span> month <span class="sc">==</span> <span class="dv">3</span>, dep_delay <span class="sc">&lt;=</span> <span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 10,346 x 19
 ##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
 ##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
@@ -379,6 +413,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</code></pre>
 <div id="övning" class="section level3" number="3.1.1">
 <h3><span class="header-section-number">3.1.1</span> Övning</h3>
+<ul>
+<li><p>Öppna dokumentet <code>databearbetning-övningar.Rmd</code></p></li>
+<li><p>Börja med att ladda <code>tidyverse</code> och <code>nycflights13</code></p></li>
+<li><p>Spara <code>flights</code> som en data.frame i din <code>environment</code>, genom <code>flights &lt;- flights</code></p></li>
+</ul>
+<p>PS. <code>flights</code> är en <code>tibble</code> som bara är en lite snyggare variant av en <code>data.frame</code>.</p>
+<p>Nu till övningarna:</p>
 <p>Hur många plan…</p>
 <ol style="list-style-type: decimal">
 <li>var försenade mer än 1 timme?</li>
@@ -393,7 +434,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="arrange" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Arrange</h2>
 <p><code>arrange()</code> kastar om ordningen på dina rader enligt en av dig vald variabel. Exempelvis kanske vi vill sortera data på försenade avgångar <code>dep_delay</code>.</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="databearbetning.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(flights, dep_delay)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="databearbetning.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(flights, dep_delay)</span></code></pre></div>
 <pre><code>## # A tibble: 336,776 x 19
 ##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
 ##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
@@ -411,7 +452,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
 ## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</code></pre>
 <p><code>arrange()</code> sorterar per default på sjunkande värde (ascending). Vill du sortera på stigande värde (descending) sätter du <code>desc()</code> runt din variabel.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="databearbetning.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(flights, <span class="fu">desc</span>(dep_delay))</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="databearbetning.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(flights, <span class="fu">desc</span>(dep_delay))</span></code></pre></div>
 <pre><code>## # A tibble: 336,776 x 19
 ##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
 ##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
@@ -440,7 +481,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="select" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Select</h2>
 <p>Medan <code>arrange()</code> kastar om raderna så kastar <code>select()</code> om kolumnerna. Men mest används den för att välja ut kolumner av intresse.</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="databearbetning.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(flights, dep_delay, carrier)</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="databearbetning.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(flights, dep_delay, carrier)</span></code></pre></div>
 <pre><code>## # A tibble: 336,776 x 2
 ##    dep_delay carrier
 ##        &lt;dbl&gt; &lt;chr&gt;  
@@ -456,7 +497,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10        -2 AA     
 ## # … with 336,766 more rows</code></pre>
 <p>Om du av något skäl vill flytta en kolumn till början kan du skriva:</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="databearbetning.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(flights, carrier, <span class="fu">everything</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="databearbetning.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(flights, carrier, <span class="fu">everything</span>())</span></code></pre></div>
 <pre><code>## # A tibble: 336,776 x 19
 ##    carrier  year month   day dep_time sched_dep_time dep_delay arr_time
 ##    &lt;chr&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;
@@ -474,7 +515,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## #   arr_delay &lt;dbl&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
 ## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</code></pre>
 <p>Du kan även välja alla kolumner mellan två kolumner:</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="databearbetning.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(flights, year<span class="sc">:</span>day)</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="databearbetning.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(flights, year<span class="sc">:</span>day)</span></code></pre></div>
 <pre><code>## # A tibble: 336,776 x 3
 ##     year month   day
 ##    &lt;int&gt; &lt;int&gt; &lt;int&gt;
@@ -490,7 +531,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10  2013     1     1
 ## # … with 336,766 more rows</code></pre>
 <p>Genom att sätta ett minus framför variabelnamnet exkluderar du variabeln.</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="databearbetning.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(flights, <span class="sc">-</span>year)</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="databearbetning.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(flights, <span class="sc">-</span>year)</span></code></pre></div>
 <pre><code>## # A tibble: 336,776 x 18
 ##    month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
 ##    &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
@@ -519,7 +560,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>De används för att identifiera kolumner baserat på text.</p>
 <p>Exempelvis kan du hitta alla delay-kolumner med <code>contains</code>.</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="databearbetning.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(flights, <span class="fu">contains</span>(<span class="st">&quot;delay&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="databearbetning.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(flights, <span class="fu">contains</span>(<span class="st">&quot;delay&quot;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 336,776 x 2
 ##    dep_delay arr_delay
 ##        &lt;dbl&gt;     &lt;dbl&gt;
@@ -543,17 +584,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="övning-2" class="section level3" number="3.3.1">
 <h3><span class="header-section-number">3.3.1</span> Övning</h3>
 <ol style="list-style-type: decimal">
-<li>Som innehåller “dep”</li>
-<li>Som börjar med “dep”</li>
-<li>Döp om <code>dep_delay</code> till <code>försenad_avgång</code></li>
+<li><p>Som innehåller “dep”</p></li>
+<li><p>Som börjar med “dep”</p></li>
+<li><p>Som är numeriska</p></li>
+<li><p>Döp om <code>dep_delay</code> till <code>försenad_avgång</code></p></li>
 </ol>
 </div>
 </div>
-<div id="mutate" class="section level2" number="3.4">
-<h2><span class="header-section-number">3.4</span> Mutate</h2>
+<div id="kallad-the-pipe" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> <code>%&gt;%</code> kallad “the pipe”</h2>
+<ul>
+<li><p>Används för att länka ihop flera uttryck i <em>R</em>.</p></li>
+<li><p><code>ctrl + shift + m</code> (i Windows) och <code>ctrl + command + m</code> (Mac)</p></li>
+</ul>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="databearbetning.html#cb61-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span> </span>
+<span id="cb61-2"><a href="databearbetning.html#cb61-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(month <span class="sc">==</span> <span class="dv">2</span>, arr_time <span class="sc">==</span> <span class="dv">830</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb61-3"><a href="databearbetning.html#cb61-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(dest, year, month, day, arr_time)</span></code></pre></div>
+<pre><code>## # A tibble: 9 x 5
+##   dest   year month   day arr_time
+##   &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;
+## 1 ORD    2013     2     2      830
+## 2 DTW    2013     2     4      830
+## 3 CLT    2013     2     6      830
+## 4 BNA    2013     2    13      830
+## 5 BNA    2013     2    18      830
+## 6 ATL    2013     2    24      830
+## 7 MIA    2013     2    25      830
+## 8 CLT    2013     2    26      830
+## 9 CLT    2013     2    28      830</code></pre>
+</div>
+<div id="mutate" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Mutate</h2>
 <p><code>mutate()</code> används för att skapa nya variabler.</p>
 <p>Exempelvis kan vi räkna ut hur mycket tid man vunnit om exempelvis flyget landar tidigare än avsett.</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="databearbetning.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(flights, <span class="at">beer_time =</span> dep_delay <span class="sc">-</span> arr_delay)</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="databearbetning.html#cb63-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span> </span>
+<span id="cb63-2"><a href="databearbetning.html#cb63-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">beer_time =</span> dep_delay <span class="sc">-</span> arr_delay)</span></code></pre></div>
 <pre><code>## # A tibble: 336,776 x 20
 ##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
 ##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
@@ -571,31 +636,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
 ## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;,
 ## #   beer_time &lt;dbl&gt;</code></pre>
+<p><code>mutate()</code> kan användas för att slå ihop variabler</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="databearbetning.html#cb65-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span> </span>
+<span id="cb65-2"><a href="databearbetning.html#cb65-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">paste</span>(year, month, day, <span class="at">sep =</span> <span class="st">&quot;-&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb65-3"><a href="databearbetning.html#cb65-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year, month, day, date)</span></code></pre></div>
+<pre><code>## # A tibble: 336,776 x 4
+##     year month   day date    
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;   
+##  1  2013     1     1 2013-1-1
+##  2  2013     1     1 2013-1-1
+##  3  2013     1     1 2013-1-1
+##  4  2013     1     1 2013-1-1
+##  5  2013     1     1 2013-1-1
+##  6  2013     1     1 2013-1-1
+##  7  2013     1     1 2013-1-1
+##  8  2013     1     1 2013-1-1
+##  9  2013     1     1 2013-1-1
+## 10  2013     1     1 2013-1-1
+## # … with 336,766 more rows</code></pre>
 <p>I <code>mutate()</code> kan du även använda funktioner såsom <code>mean()</code>.</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="databearbetning.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(flights, <span class="at">mean_delay =</span> <span class="fu">mean</span>(dep_delay, <span class="at">na.rm =</span> T))</span></code></pre></div>
-<pre><code>## # A tibble: 336,776 x 20
-##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
-##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
-##  1  2013     1     1      517            515         2      830            819
-##  2  2013     1     1      533            529         4      850            830
-##  3  2013     1     1      542            540         2      923            850
-##  4  2013     1     1      544            545        -1     1004           1022
-##  5  2013     1     1      554            600        -6      812            837
-##  6  2013     1     1      554            558        -4      740            728
-##  7  2013     1     1      555            600        -5      913            854
-##  8  2013     1     1      557            600        -3      709            723
-##  9  2013     1     1      557            600        -3      838            846
-## 10  2013     1     1      558            600        -2      753            745
-## # … with 336,766 more rows, and 12 more variables: arr_delay &lt;dbl&gt;,
-## #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
-## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;,
-## #   mean_delay &lt;dbl&gt;</code></pre>
-<div id="if_else" class="section level3" number="3.4.1">
-<h3><span class="header-section-number">3.4.1</span> if_else()</h3>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="databearbetning.html#cb67-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span> </span>
+<span id="cb67-2"><a href="databearbetning.html#cb67-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mean_delay =</span> <span class="fu">mean</span>(dep_delay, <span class="at">na.rm =</span> T)) <span class="sc">%&gt;%</span> </span>
+<span id="cb67-3"><a href="databearbetning.html#cb67-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year, month, day, mean_delay)</span></code></pre></div>
+<pre><code>## # A tibble: 336,776 x 4
+##     year month   day mean_delay
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;      &lt;dbl&gt;
+##  1  2013     1     1       12.6
+##  2  2013     1     1       12.6
+##  3  2013     1     1       12.6
+##  4  2013     1     1       12.6
+##  5  2013     1     1       12.6
+##  6  2013     1     1       12.6
+##  7  2013     1     1       12.6
+##  8  2013     1     1       12.6
+##  9  2013     1     1       12.6
+## 10  2013     1     1       12.6
+## # … with 336,766 more rows</code></pre>
+<div id="if_else" class="section level3" number="3.5.1">
+<h3><span class="header-section-number">3.5.1</span> if_else()</h3>
 <p>En vanlig funktion i databearbetning är ifelse-satser.</p>
 <p>I R gör du det enklast med funktionen <code>if_else()</code> från <code>dplyr</code>. Det finns även en inbyggd funktion som heter <code>ifelse()</code> som mestadels fungerar bra men den från <code>dplyr</code> är något mer stabil.</p>
 <p>Du kan använda den i mutate:</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="databearbetning.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(flights, försenad <span class="ot">=</span> <span class="fu">if_else</span>(dep_delay  <span class="sc">&gt;</span> <span class="dv">5</span>, <span class="st">&quot;försenad&quot;</span>, <span class="st">&quot;ej försenad&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="databearbetning.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(flights, försenad <span class="ot">=</span> <span class="fu">if_else</span>(dep_delay  <span class="sc">&gt;</span> <span class="dv">5</span>, <span class="st">&quot;försenad&quot;</span>, <span class="st">&quot;ej försenad&quot;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 336,776 x 20
 ##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
 ##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
@@ -613,11 +695,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
 ## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;,
 ## #   försenad &lt;chr&gt;</code></pre>
+</div>
+<div id="case_when" class="section level3" number="3.5.2">
+<h3><span class="header-section-number">3.5.2</span> case_when()</h3>
 <p>Ibland vill man göra flera stycken <code>if_else()</code> i samma, exempelvis om man vill dela upp en variabel i flera kategorier beroende på ett logiskt villkor. För att göra det kan du använda funktionen <code>case_when()</code>.</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="databearbetning.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(flights, försenad<span class="at">_kat =</span> <span class="fu">case_when</span>(</span>
-<span id="cb65-2"><a href="databearbetning.html#cb65-2" aria-hidden="true" tabindex="-1"></a>dep_delay <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">&quot;före tid&quot;</span>,</span>
-<span id="cb65-3"><a href="databearbetning.html#cb65-3" aria-hidden="true" tabindex="-1"></a>dep_delay <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">&quot;i tid&quot;</span>,</span>
-<span id="cb65-4"><a href="databearbetning.html#cb65-4" aria-hidden="true" tabindex="-1"></a>dep_delay <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">&quot;försenad&quot;</span>)) </span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="databearbetning.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(flights, försenad<span class="at">_kat =</span> <span class="fu">case_when</span>(</span>
+<span id="cb71-2"><a href="databearbetning.html#cb71-2" aria-hidden="true" tabindex="-1"></a>dep_delay <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">&quot;före tid&quot;</span>,</span>
+<span id="cb71-3"><a href="databearbetning.html#cb71-3" aria-hidden="true" tabindex="-1"></a>dep_delay <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">&quot;i tid&quot;</span>,</span>
+<span id="cb71-4"><a href="databearbetning.html#cb71-4" aria-hidden="true" tabindex="-1"></a>dep_delay <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">&quot;försenad&quot;</span>)) </span></code></pre></div>
 <pre><code>## # A tibble: 336,776 x 20
 ##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
 ##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
@@ -636,8 +721,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;,
 ## #   försenad_kat &lt;chr&gt;</code></pre>
 </div>
-<div id="andra-funktioner" class="section level3" number="3.4.2">
-<h3><span class="header-section-number">3.4.2</span> Andra funktioner</h3>
+<div id="andra-funktioner" class="section level3" number="3.5.3">
+<h3><span class="header-section-number">3.5.3</span> Andra funktioner</h3>
 <p>I <code>mutate()</code> kan du använda de allra flesta funktionerna i R. Här är exempel på några funktioner som kan vara nyttiga i databearbetning:</p>
 <ul>
 <li>Funktioner för att ranka variabler: <code>rank()</code>, <code>min_rank()</code>, <code>dense_rank()</code>, <code>percent_rank()</code></li>
@@ -648,138 +733,83 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>För skapa variabler baserat på värde i andra variabler <code>if_else()</code> och <code>case_when()</code></li>
 </ul>
 </div>
-<div id="övningar" class="section level3" number="3.4.3">
-<h3><span class="header-section-number">3.4.3</span> Övningar</h3>
+<div id="övningar" class="section level3" number="3.5.4">
+<h3><span class="header-section-number">3.5.4</span> Övningar</h3>
 <ol style="list-style-type: decimal">
-<li>Skapa en variabel som innehåller den totala förseningen</li>
-<li>Rangordna flygens distans. Hur hanterar du fall där distansen är lika lång?</li>
-<li>Skapa en variabel som anger om flyget går på våren, hösten, vintern eller sommaren.</li>
+<li><p>Skapa en variabel med <code>dep_delay</code> <em>minus</em> medelvärdet för <code>dep_delay</code></p></li>
+<li><p>Rangordna flygens distans med <code>dense_rank()</code>. Hur hanterar den distanser är lika långa? Vilka fler rankingfunktioner skulle du kunna använda? Se <code>?dense_rank()</code></p></li>
+<li><p>Skapa en variabel som anger om flyget går på våren, hösten, vintern eller sommaren med <code>case_when()</code></p></li>
 </ol>
 </div>
 </div>
-<div id="summarise" class="section level2" number="3.5">
-<h2><span class="header-section-number">3.5</span> Summarise</h2>
+<div id="summarise" class="section level2" number="3.6">
+<h2><span class="header-section-number">3.6</span> Summarise</h2>
 <p>Ofta vill man summera variabler för att få ut intressant information. Exempelvis vill vi här kanske veta en rad medelvärden.</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="databearbetning.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(flights, <span class="at">mean_dist =</span> <span class="fu">mean</span>(distance, <span class="at">na.rm =</span> T))</span></code></pre></div>
-<pre><code>## # A tibble: 1 x 1
-##   mean_dist
-##       &lt;dbl&gt;
-## 1     1040.</code></pre>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="databearbetning.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(flights, <span class="at">sum_dist =</span> <span class="fu">sum</span>(distance, <span class="at">na.rm =</span> T))</span></code></pre></div>
-<pre><code>## # A tibble: 1 x 1
-##    sum_dist
-##       &lt;dbl&gt;
-## 1 350217607</code></pre>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="databearbetning.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(flights, <span class="at">count =</span> <span class="fu">n</span>())</span></code></pre></div>
-<pre><code>## # A tibble: 1 x 1
-##    count
-##    &lt;int&gt;
-## 1 336776</code></pre>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="databearbetning.html#cb73-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span> </span>
+<span id="cb73-2"><a href="databearbetning.html#cb73-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb73-3"><a href="databearbetning.html#cb73-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_air_time =</span> <span class="fu">mean</span>(air_time, <span class="at">na.rm =</span> T),</span>
+<span id="cb73-4"><a href="databearbetning.html#cb73-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_dep_delay =</span> <span class="fu">mean</span>(dep_delay, <span class="at">na.rm =</span> T),</span>
+<span id="cb73-5"><a href="databearbetning.html#cb73-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_arr_delay =</span> <span class="fu">mean</span>(arr_delay, <span class="at">na.rm =</span> T)</span>
+<span id="cb73-6"><a href="databearbetning.html#cb73-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## # A tibble: 1 x 3
+##   mean_air_time mean_dep_delay mean_arr_delay
+##           &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt;
+## 1          151.           12.6           6.90</code></pre>
 <p>Men dessa värden är inte så intressanta i sig, utan vi vill kunna göra jämförelse. Då använder vi <code>group_by()</code>.</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="databearbetning.html#cb73-1" aria-hidden="true" tabindex="-1"></a>group_by_flights <span class="ot">&lt;-</span> <span class="fu">group_by</span>(flights, carrier)</span>
-<span id="cb73-2"><a href="databearbetning.html#cb73-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-3"><a href="databearbetning.html#cb73-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(group_by_flights, </span>
-<span id="cb73-4"><a href="databearbetning.html#cb73-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">mean_air_time =</span> <span class="fu">mean</span>(air_time, <span class="at">na.rm =</span> T),</span>
-<span id="cb73-5"><a href="databearbetning.html#cb73-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">mean_dep_delay =</span> <span class="fu">mean</span>(dep_delay, <span class="at">na.rm =</span> T),</span>
-<span id="cb73-6"><a href="databearbetning.html#cb73-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">mean_arr_delay =</span> <span class="fu">mean</span>(arr_delay, <span class="at">na.rm =</span> T))</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="databearbetning.html#cb75-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span> </span>
+<span id="cb75-2"><a href="databearbetning.html#cb75-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(dest) <span class="sc">%&gt;%</span></span>
+<span id="cb75-3"><a href="databearbetning.html#cb75-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_air_time =</span> <span class="fu">mean</span>(air_time, <span class="at">na.rm =</span> T),</span>
+<span id="cb75-4"><a href="databearbetning.html#cb75-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">mean_dep_delay =</span> <span class="fu">mean</span>(dep_delay, <span class="at">na.rm =</span> T),</span>
+<span id="cb75-5"><a href="databearbetning.html#cb75-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">mean_arr_delay =</span> <span class="fu">mean</span>(arr_delay, <span class="at">na.rm =</span> T)) <span class="sc">%&gt;%</span> </span>
+<span id="cb75-6"><a href="databearbetning.html#cb75-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_arr_delay))</span></code></pre></div>
 <pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<pre><code>## # A tibble: 16 x 4
-##    carrier mean_air_time mean_dep_delay mean_arr_delay
-##    &lt;chr&gt;           &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt;
-##  1 9E               86.8          16.7           7.38 
-##  2 AA              189.            8.59          0.364
-##  3 AS              326.            5.80         -9.93 
-##  4 B6              151.           13.0           9.46 
-##  5 DL              174.            9.26          1.64 
-##  6 EV               90.1          20.0          15.8  
-##  7 F9              230.           20.2          21.9  
-##  8 FL              101.           18.7          20.1  
-##  9 HA              623.            4.90         -6.92 
-## 10 MQ               91.2          10.6          10.8  
-## 11 OO               83.5          12.6          11.9  
-## 12 UA              212.           12.1           3.56 
-## 13 US               88.6           3.78          2.13 
-## 14 VX              337.           12.9           1.76 
-## 15 WN              148.           17.7           9.65 
-## 16 YV               65.7          19.0          15.6</code></pre>
-<p>I <code>summarise()</code> kan du använda en rad olika funktioner såsom <code>sum()</code> för summeringar, <code>median()</code> etc.</p>
-<div id="övningar-1" class="section level4" number="3.5.0.1">
-<h4><span class="header-section-number">3.5.0.1</span> Övningar</h4>
-<ol style="list-style-type: decimal">
-<li>Vilken flygplats har högst medelvärde förförseningar från flygplatsen?</li>
-<li>Vilken flygplats tar emot minst flyg?</li>
-</ol>
-</div>
-<div id="väv-ihop-verben-med" class="section level4" number="3.5.0.2">
-<h4><span class="header-section-number">3.5.0.2</span> Väv ihop verben med %&gt;%</h4>
-<p>Med <code>%&gt;%</code> (som kallas för <code>pipe</code> and kan uttalas som <code>and then</code>) kan länka ihop flera uttryck i <em>R</em>. Det gör framför allt din kod mer lättläst.</p>
-<p>Med <code>%&gt;%</code> kan du exempelvis först filtrera, sen gruppera och till sist summera, allt i samma uttryck.</p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="databearbetning.html#cb76-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span></span>
-<span id="cb76-2"><a href="databearbetning.html#cb76-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(dep_delay <span class="sc">&lt;</span> <span class="dv">60</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb76-3"><a href="databearbetning.html#cb76-3" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(carrier) <span class="sc">%&gt;%</span></span>
-<span id="cb76-4"><a href="databearbetning.html#cb76-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(<span class="at">mean_dep_delay =</span> <span class="fu">mean</span>(dep_delay, <span class="at">na.rm =</span> T))</span></code></pre></div>
+<pre><code>## # A tibble: 105 x 4
+##    dest  mean_air_time mean_dep_delay mean_arr_delay
+##    &lt;chr&gt;         &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt;
+##  1 CAE            93.2           35.6           41.8
+##  2 TUL           178.            34.9           33.7
+##  3 OKC           193.            30.6           30.6
+##  4 JAC           264.            26.5           28.1
+##  5 TYS            97.7           28.5           24.1
+##  6 MSN           123.            23.6           20.2
+##  7 RIC            54.0           23.6           20.1
+##  8 CAK            64.0           20.8           19.7
+##  9 DSM           149.            26.2           19.0
+## 10 GRR            97             19.5           18.2
+## # … with 95 more rows</code></pre>
+<p>I <code>summarise()</code> kan du använda en rad olika funktioner såsom <code>sum()</code> för summeringar, <code>n()</code> för antal rader, <code>median()</code> för median etc.</p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="databearbetning.html#cb78-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span> </span>
+<span id="cb78-2"><a href="databearbetning.html#cb78-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">group_by</span>(dest) <span class="sc">%&gt;%</span> </span>
+<span id="cb78-3"><a href="databearbetning.html#cb78-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb78-4"><a href="databearbetning.html#cb78-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_rows =</span> <span class="fu">n</span>(),</span>
+<span id="cb78-5"><a href="databearbetning.html#cb78-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">sum_air_time =</span> <span class="fu">sum</span>(air_time, <span class="at">na.rm =</span> T),</span>
+<span id="cb78-6"><a href="databearbetning.html#cb78-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_air_time =</span> <span class="fu">median</span>(air_time, <span class="at">na.rm =</span> T)) <span class="sc">%&gt;%</span> </span>
+<span id="cb78-7"><a href="databearbetning.html#cb78-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(sum_air_time))</span></code></pre></div>
 <pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<pre><code>## # A tibble: 16 x 2
-##    carrier mean_dep_delay
-##    &lt;chr&gt;            &lt;dbl&gt;
-##  1 9E               2.96 
-##  2 AA               0.890
-##  3 AS              -0.719
-##  4 B6               3.26 
-##  5 DL               1.76 
-##  6 EV               4.65 
-##  7 F9               5.09 
-##  8 FL               4.72 
-##  9 HA              -2.47 
-## 10 MQ               1.48 
-## 11 OO              -2.88 
-## 12 UA               4.33 
-## 13 US              -0.744
-## 14 VX               2.70 
-## 15 WN               6.60 
-## 16 YV               2.25</code></pre>
-<p>Du läser alltså:
-Första tar vi <code>flights</code> <em>and then</em>
-filtrerar vi på <code>dep_delay</code> <em>and then</em>
-grupperar vi på <code>carrier</code> <em>and then</em>
-räknar vi ut medelvärde på <code>dep_delay</code>.</p>
-<p>Vilket är mycket mer lättläst än motsvarigheten med parenteser:</p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="databearbetning.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(</span>
-<span id="cb79-2"><a href="databearbetning.html#cb79-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(</span>
-<span id="cb79-3"><a href="databearbetning.html#cb79-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(flights, dep_delay <span class="sc">&gt;</span> <span class="dv">60</span>),</span>
-<span id="cb79-4"><a href="databearbetning.html#cb79-4" aria-hidden="true" tabindex="-1"></a>    carrier),</span>
-<span id="cb79-5"><a href="databearbetning.html#cb79-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">mean_dep_delay =</span> <span class="fu">mean</span>(dep_delay, <span class="at">na.rm =</span> T))</span></code></pre></div>
-</div>
-<div id="count" class="section level4" number="3.5.0.3">
-<h4><span class="header-section-number">3.5.0.3</span> count()</h4>
+<pre><code>## # A tibble: 105 x 4
+##    dest  n_rows sum_air_time median_air_time
+##    &lt;chr&gt;  &lt;int&gt;        &lt;dbl&gt;           &lt;dbl&gt;
+##  1 LAX    16174      5258470             328
+##  2 SFO    13331      4553684             345
+##  3 ORD    17283      1914833             114
+##  4 ATL    17215      1901410             112
+##  5 MCO    14082      1882381             133
+##  6 FLL    12055      1811271             151
+##  7 LAS     5997      1795662             301
+##  8 MIA    11728      1775327             152
+##  9 DFW     8738      1667341             198
+## 10 DEN     7266      1623626             225
+## # … with 95 more rows</code></pre>
+<div id="count" class="section level3" number="3.6.1">
+<h3><span class="header-section-number">3.6.1</span> count()</h3>
 <p>Du kan i <code>summarise()</code> räkna antalet observationer med funktionen <code>n()</code>.</p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="databearbetning.html#cb80-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span></span>
-<span id="cb80-2"><a href="databearbetning.html#cb80-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(carrier) <span class="sc">%&gt;%</span></span>
-<span id="cb80-3"><a href="databearbetning.html#cb80-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>())</span></code></pre></div>
-<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<pre><code>## # A tibble: 16 x 2
-##    carrier count
-##    &lt;chr&gt;   &lt;int&gt;
-##  1 9E      18460
-##  2 AA      32729
-##  3 AS        714
-##  4 B6      54635
-##  5 DL      48110
-##  6 EV      54173
-##  7 F9        685
-##  8 FL       3260
-##  9 HA        342
-## 10 MQ      26397
-## 11 OO         32
-## 12 UA      58665
-## 13 US      20536
-## 14 VX       5162
-## 15 WN      12275
-## 16 YV        601</code></pre>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="databearbetning.html#cb81-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span></span>
+<span id="cb81-2"><a href="databearbetning.html#cb81-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(carrier) <span class="sc">%&gt;%</span></span>
+<span id="cb81-3"><a href="databearbetning.html#cb81-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>())</span></code></pre></div>
 <p>Men istället för att göra det här kan du använda funktionen <code>count()</code></p>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="databearbetning.html#cb83-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span></span>
-<span id="cb83-2"><a href="databearbetning.html#cb83-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(carrier) <span class="sc">%&gt;%</span></span>
-<span id="cb83-3"><a href="databearbetning.html#cb83-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="databearbetning.html#cb82-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span></span>
+<span id="cb82-2"><a href="databearbetning.html#cb82-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(carrier) <span class="sc">%&gt;%</span></span>
+<span id="cb82-3"><a href="databearbetning.html#cb82-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>()</span></code></pre></div>
 <pre><code>## # A tibble: 16 x 2
 ## # Groups:   carrier [16]
 ##    carrier     n
@@ -801,48 +831,55 @@ räknar vi ut medelvärde på <code>dep_delay</code>.</p>
 ## 15 WN      12275
 ## 16 YV        601</code></pre>
 </div>
-</div>
-<div id="sample_n" class="section level2" number="3.6">
-<h2><span class="header-section-number">3.6</span> sample_n()</h2>
+<div id="sample_n" class="section level3" number="3.6.2">
+<h3><span class="header-section-number">3.6.2</span> <code>sample_n()</code></h3>
 <p>Att göra slumpmässiga urval är en vanlig arbetsuppgift för en data scientist. Det gör du enkelt med <code>sample_n()</code> från <code>dplyr</code>.</p>
 <p>Om du vill ta ett slumpmässigt urval om 10 från exempelvis <code>flights</code> gör du bara:</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="databearbetning.html#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample_n</span>(flights, <span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="databearbetning.html#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample_n</span>(flights, <span class="dv">10</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 10 x 19
 ##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
 ##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
-##  1  2013     4    29     1534           1535        -1     1633           1655
-##  2  2013     7    17     1408           1410        -2     1730           1630
-##  3  2013     6     1     1740           1745        -5     2009           2047
-##  4  2013     5    11     1005           1015       -10     1205           1241
-##  5  2013    11    17     1216           1220        -4     1332           1335
-##  6  2013    10     8     1458           1505        -7     1856           1830
-##  7  2013    12    13     2156           2106        50     2251           2213
-##  8  2013     4    20     1930           1935        -5     2040           2100
-##  9  2013     1     2      959           1002        -3     1312           1319
-## 10  2013    10     3     1646           1655        -9     1836           1840
+##  1  2013     3    21     1153           1200        -7     1452           1510
+##  2  2013     9    15      735            740        -5     1034           1055
+##  3  2013     7     3     2035           2028         7     2346           2341
+##  4  2013    11    30     1211           1215        -4     1414           1445
+##  5  2013     6    13     1548           1520        28     1835           1805
+##  6  2013     5    23      912            920        -8     1231           1225
+##  7  2013     4    19     1025           1030        -5     1239           1248
+##  8  2013    12    12     1126           1130        -4     1348           1342
+##  9  2013     9    13     1326           1329        -3     1604           1625
+## 10  2013    12    16      954           1000        -6     1324           1335
 ## # … with 11 more variables: arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;,
 ## #   tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,
 ## #   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</code></pre>
-<p>Om du istället vill ta ett urval som baseras på <em>procent</em> kan du använda <code>sample_frac</code>, här för <em>0.01%</em></p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="databearbetning.html#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample_frac</span>(flights, <span class="fl">0.001</span>)</span></code></pre></div>
+<p>Om du istället vill ta ett urval som baseras på <em>procent</em> kan du använda <code>sample_frac</code>, här för <em>0.1%</em></p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="databearbetning.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample_frac</span>(flights, <span class="fl">0.001</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 337 x 19
 ##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
 ##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
-##  1  2013    12     4      854            900        -6     1148           1220
-##  2  2013    10    23      545            550        -5      930            932
-##  3  2013     3    22     1705           1710        -5     2020           2015
-##  4  2013     2    18      821            810        11     1050           1043
-##  5  2013    12    24     1629           1556        33     1944           1914
-##  6  2013     2    16     1850           1855        -5     2108           2141
-##  7  2013     4    30       NA           1259        NA       NA           1456
-##  8  2013     7     1      659            705        -6      927           1004
-##  9  2013    12     7       NA            945        NA       NA           1300
-## 10  2013    10     9      854            855        -1     1230           1251
+##  1  2013     6    30      811            815        -4      933            935
+##  2  2013    12     6       NA           1300        NA       NA           1605
+##  3  2013    11     3     1317           1259        18     1511           1501
+##  4  2013    12    11     1453           1259       114     1805           1614
+##  5  2013     1    23     1139           1015        84     1250           1131
+##  6  2013     7    23     1903           1830        33     2300           2155
+##  7  2013     5    25     2143           1940       123     2251           2100
+##  8  2013     9    10     1657           1700        -3     1941           2000
+##  9  2013     3     9      737            740        -3     1022           1044
+## 10  2013    12    18     2352           2359        -7      441            440
 ## # … with 327 more rows, and 11 more variables: arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;,
 ## #   flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;,
 ## #   distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</code></pre>
-<div id="övning-3" class="section level3" number="3.6.1">
-<h3><span class="header-section-number">3.6.1</span> Övning</h3>
+<div id="övningar-1" class="section level4" number="3.6.2.1">
+<h4><span class="header-section-number">3.6.2.1</span> Övningar</h4>
+<ol style="list-style-type: decimal">
+<li>Vilken flygplats har högst medelvärde förförseningar från flygplatsen?</li>
+<li>Vilken flygplats tar emot minst flyg?</li>
+</ol>
+</div>
+</div>
+<div id="övning---väv-ihop-allt-du-lärt-dig" class="section level3" number="3.6.3">
+<h3><span class="header-section-number">3.6.3</span> Övning - väv ihop allt du lärt dig</h3>
 <ol style="list-style-type: decimal">
 <li>Vilken månad ska du flyga under för att undvika förseningar?</li>
 <li>Vilken tid ska du flyga för att undvika förseningar?</li>

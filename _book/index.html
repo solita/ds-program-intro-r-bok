@@ -24,7 +24,7 @@
 <meta name="author" content="Filip Wästberg &amp; Torbjörn Sjöberg, Solita" />
 
 
-<meta name="date" content="2020-11-13" />
+<meta name="date" content="2020-11-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,6 +53,13 @@
 
 <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -152,8 +159,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#tidyverse-and-friends"><i class="fa fa-check"></i><b>2.5</b> tidyverse and friends</a></li>
 <li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#workflow-i-r"><i class="fa fa-check"></i><b>2.6</b> Workflow i R</a></li>
-<li class="chapter" data-level="2.7" data-path="intro.html"><a href="intro.html#att-skriva-kod-i-r"><i class="fa fa-check"></i><b>2.7</b> Att skriva kod i R</a></li>
-<li class="chapter" data-level="2.8" data-path="intro.html"><a href="intro.html#rmarkdown"><i class="fa fa-check"></i><b>2.8</b> Rmarkdown</a></li>
+<li class="chapter" data-level="2.7" data-path="intro.html"><a href="intro.html#r-markdown"><i class="fa fa-check"></i><b>2.7</b> R Markdown</a></li>
+<li class="chapter" data-level="2.8" data-path="intro.html"><a href="intro.html#kodstil-att-skriva-kod-i-r"><i class="fa fa-check"></i><b>2.8</b> Kodstil: Att skriva kod i R</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="databearbetning.html"><a href="databearbetning.html"><i class="fa fa-check"></i><b>3</b> Datamanipulering med dplyr</a>
 <ul>
@@ -169,16 +176,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="3.3.1" data-path="databearbetning.html"><a href="databearbetning.html#övning-2"><i class="fa fa-check"></i><b>3.3.1</b> Övning</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="databearbetning.html"><a href="databearbetning.html#mutate"><i class="fa fa-check"></i><b>3.4</b> Mutate</a>
+<li class="chapter" data-level="3.4" data-path="databearbetning.html"><a href="databearbetning.html#kallad-the-pipe"><i class="fa fa-check"></i><b>3.4</b> <code>%&gt;%</code> kallad “the pipe”</a></li>
+<li class="chapter" data-level="3.5" data-path="databearbetning.html"><a href="databearbetning.html#mutate"><i class="fa fa-check"></i><b>3.5</b> Mutate</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="databearbetning.html"><a href="databearbetning.html#if_else"><i class="fa fa-check"></i><b>3.4.1</b> if_else()</a></li>
-<li class="chapter" data-level="3.4.2" data-path="databearbetning.html"><a href="databearbetning.html#andra-funktioner"><i class="fa fa-check"></i><b>3.4.2</b> Andra funktioner</a></li>
-<li class="chapter" data-level="3.4.3" data-path="databearbetning.html"><a href="databearbetning.html#övningar"><i class="fa fa-check"></i><b>3.4.3</b> Övningar</a></li>
+<li class="chapter" data-level="3.5.1" data-path="databearbetning.html"><a href="databearbetning.html#if_else"><i class="fa fa-check"></i><b>3.5.1</b> if_else()</a></li>
+<li class="chapter" data-level="3.5.2" data-path="databearbetning.html"><a href="databearbetning.html#case_when"><i class="fa fa-check"></i><b>3.5.2</b> case_when()</a></li>
+<li class="chapter" data-level="3.5.3" data-path="databearbetning.html"><a href="databearbetning.html#andra-funktioner"><i class="fa fa-check"></i><b>3.5.3</b> Andra funktioner</a></li>
+<li class="chapter" data-level="3.5.4" data-path="databearbetning.html"><a href="databearbetning.html#övningar"><i class="fa fa-check"></i><b>3.5.4</b> Övningar</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="databearbetning.html"><a href="databearbetning.html#summarise"><i class="fa fa-check"></i><b>3.5</b> Summarise</a></li>
-<li class="chapter" data-level="3.6" data-path="databearbetning.html"><a href="databearbetning.html#sample_n"><i class="fa fa-check"></i><b>3.6</b> sample_n()</a>
+<li class="chapter" data-level="3.6" data-path="databearbetning.html"><a href="databearbetning.html#summarise"><i class="fa fa-check"></i><b>3.6</b> Summarise</a>
 <ul>
-<li class="chapter" data-level="3.6.1" data-path="databearbetning.html"><a href="databearbetning.html#övning-3"><i class="fa fa-check"></i><b>3.6.1</b> Övning</a></li>
+<li class="chapter" data-level="3.6.1" data-path="databearbetning.html"><a href="databearbetning.html#count"><i class="fa fa-check"></i><b>3.6.1</b> count()</a></li>
+<li class="chapter" data-level="3.6.2" data-path="databearbetning.html"><a href="databearbetning.html#sample_n"><i class="fa fa-check"></i><b>3.6.2</b> <code>sample_n()</code></a></li>
+<li class="chapter" data-level="3.6.3" data-path="databearbetning.html"><a href="databearbetning.html#övning---väv-ihop-allt-du-lärt-dig"><i class="fa fa-check"></i><b>3.6.3</b> Övning - väv ihop allt du lärt dig</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="eda.html"><a href="eda.html"><i class="fa fa-check"></i><b>4</b> Explorativ dataanalys</a>
@@ -219,6 +229,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.8.1" data-path="eda.html"><a href="eda.html#det-ni-ska-ta-med-er-idag-är-inte-de-specifika-sakerna-vi-har-undersökt-utan-ett-mindset"><i class="fa fa-check"></i><b>4.8.1</b> Det ni ska ta med er idag är inte de specifika sakerna vi har undersökt, utan ett mindset!</a></li>
 </ul></li>
 <li class="chapter" data-level="4.9" data-path="eda.html"><a href="eda.html#länkar-till-resurser"><i class="fa fa-check"></i><b>4.9</b> Länkar till resurser</a></li>
+<li class="chapter" data-level="4.10" data-path="eda.html"><a href="eda.html#övningar-explorativ-dataanalys"><i class="fa fa-check"></i><b>4.10</b> Övningar Explorativ dataanalys</a></li>
+<li class="chapter" data-level="4.11" data-path="eda.html"><a href="eda.html#fördelningar"><i class="fa fa-check"></i><b>4.11</b> Fördelningar</a>
+<ul>
+<li class="chapter" data-level="4.11.1" data-path="eda.html"><a href="eda.html#skalor-och-fördelningar"><i class="fa fa-check"></i><b>4.11.1</b> Skalor och fördelningar</a></li>
+<li class="chapter" data-level="4.11.2" data-path="eda.html"><a href="eda.html#övningar---fördelning"><i class="fa fa-check"></i><b>4.11.2</b> Övningar - Fördelning</a></li>
+</ul></li>
+<li class="chapter" data-level="4.12" data-path="eda.html"><a href="eda.html#korrelation"><i class="fa fa-check"></i><b>4.12</b> Korrelation</a></li>
+<li class="chapter" data-level="4.13" data-path="eda.html"><a href="eda.html#pimp-my-plot"><i class="fa fa-check"></i><b>4.13</b> Pimp my plot!</a></li>
+<li class="chapter" data-level="4.14" data-path="eda.html"><a href="eda.html#vi-kan-ändra-tema-med-theme_..."><i class="fa fa-check"></i><b>4.14</b> Vi kan ändra tema med <code>theme_...</code></a></li>
+<li class="chapter" data-level="4.15" data-path="eda.html"><a href="eda.html#andra-aesthetics"><i class="fa fa-check"></i><b>4.15</b> Andra aesthetics</a></li>
+<li class="chapter" data-level="4.16" data-path="eda.html"><a href="eda.html#diskreta-variabler"><i class="fa fa-check"></i><b>4.16</b> Diskreta variabler</a></li>
+<li class="chapter" data-level="4.17" data-path="eda.html"><a href="eda.html#facets-1"><i class="fa fa-check"></i><b>4.17</b> Facets</a></li>
+<li class="chapter" data-level="4.18" data-path="eda.html"><a href="eda.html#barcharts-på-aggregerade-tabeller"><i class="fa fa-check"></i><b>4.18</b> Barcharts på aggregerade tabeller</a>
+<ul>
+<li class="chapter" data-level="4.18.1" data-path="eda.html"><a href="eda.html#geom_col"><i class="fa fa-check"></i><b>4.18.1</b> geom_col()</a></li>
+<li class="chapter" data-level="4.18.2" data-path="eda.html"><a href="eda.html#hur-fördelar-sig-kvadratmeterpris-per-bostadstyp"><i class="fa fa-check"></i><b>4.18.2</b> Hur fördelar sig kvadratmeterpris per bostadstyp?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.19" data-path="eda.html"><a href="eda.html#sortera-kategorier"><i class="fa fa-check"></i><b>4.19</b> Sortera kategorier</a></li>
+<li class="chapter" data-level="4.20" data-path="eda.html"><a href="eda.html#sortera-din-bar-chart-efter-medianpris"><i class="fa fa-check"></i><b>4.20</b> Sortera din bar-chart efter medianpris</a></li>
+<li class="chapter" data-level="4.21" data-path="eda.html"><a href="eda.html#tidsserier"><i class="fa fa-check"></i><b>4.21</b> Tidsserier</a></li>
+<li class="chapter" data-level="4.22" data-path="eda.html"><a href="eda.html#grammar-of-graphics---artikel-om-the-grammar-of-graphics-som-ggplot-bygger-på"><i class="fa fa-check"></i><b>4.22</b> Grammar of Graphics - Artikel om the grammar of graphics som ggplot bygger på</a></li>
+<li class="chapter" data-level="4.23" data-path="eda.html"><a href="eda.html#r-for-data-science"><i class="fa fa-check"></i><b>4.23</b> R for Data Science</a></li>
+<li class="chapter" data-level="4.24" data-path="eda.html"><a href="eda.html#ggplot2-extensions"><i class="fa fa-check"></i><b>4.24</b> ggplot2 extensions</a></li>
+<li class="chapter" data-level="4.25" data-path="eda.html"><a href="eda.html#shiny"><i class="fa fa-check"></i><b>4.25</b> Shiny</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="bilaga.html"><a href="bilaga.html"><i class="fa fa-check"></i><b>5</b> Bilaga</a>
 <ul>
@@ -261,7 +295,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Kursmaterial Introduktion till R - Certifierad Data Scientist</h1>
 <p class="author"><em>Filip Wästberg &amp; Torbjörn Sjöberg, Solita</em></p>
-<p class="date"><em>2020-11-13</em></p>
+<p class="date"><em>2020-11-16</em></p>
 </div>
 <div id="om-dokumentet" class="section level1" number="1">
 <h1><span class="header-section-number">Kapitel 1</span> Om dokumentet</h1>

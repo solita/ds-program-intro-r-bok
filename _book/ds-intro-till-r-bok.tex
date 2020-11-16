@@ -116,7 +116,7 @@
 
 \title{Kursmaterial Introduktion till R - Certifierad Data Scientist}
 \author{Filip Wästberg \& Torbjörn Sjöberg, Solita}
-\date{2020-11-13}
+\date{2020-11-16}
 
 \begin{document}
 \maketitle
@@ -425,11 +425,11 @@ Vi kan enkelt skapa våra egna data.frames.
 
 \begin{verbatim}
 ##   random_number
-## 1    -0.1777173
-## 2     0.2632562
-## 3     1.2853151
-## 4    -0.6514535
-## 5     0.1871401
+## 1    -0.1351667
+## 2    -1.4240132
+## 3     0.2962874
+## 4     1.8660142
+## 5     0.7850128
 \end{verbatim}
 
 En data.frame är ett bra sätt att spara en eller flera vektorer. De måste då vara exakt lika långa.
@@ -497,8 +497,61 @@ Vi kommer här att fokusera på \texttt{tidyverse} eftersom det är ett bra sät
 
 I R så jobbar vi med så kallade R-projects. I Rstudio kan du klicka på \emph{file -\textgreater{} New Project -\textgreater{} New Directory -\textgreater{} Create Project} för att skapa ett nytt projekt. Genom att skapa ett projekt vet R alltid var filerna för det projektet är och det blir enklare för dig att jobba.
 
-\hypertarget{att-skriva-kod-i-r}{%
-\section{Att skriva kod i R}\label{att-skriva-kod-i-r}}
+\hypertarget{r-markdown}{%
+\section{R Markdown}\label{r-markdown}}
+
+R Markdown är ett fil-format för att bygga dynamiska rapporter och dokument i R. R Markdown är skrivet i \emph{markdown}, som är ett enkelt dokumentformat, och innehåller inbäddad R-kod, i form av kodblock. Du kan enkelt infoga ett kodblock i ditt R Markdown genom \texttt{ctrl\ +\ alt\ +\ i} på Windows och \texttt{alt\ +\ command\ +\ i} på Mac.
+
+En R Markdown-fil kan exporteras till HTML, PDF, Word eller Powerpoint samt en rad andra format.
+
+Längst upp i ett R Markdown-dokument finns en \texttt{YAML}. I den skriver du titel på dokumentet, författare och output-format. Om du exempelvis vill ha ett word-dokument skriver du:
+
+\begin{verbatim}
+---
+title: "Min titel"
+author: "Mitt namn"
+output: word_document
+---
+\end{verbatim}
+
+Men det vanligaste, och enklaste formatet att arbeta med är \texttt{html\_document}.
+
+Nedan har du ett exempel ett sådant dokument:
+
+\begin{verbatim}
+---
+title: "Min titel"
+author: "Mitt namn"
+output: html_document
+---
+
+Det här är ett R Markdown-dokument, här kan vi kombinera skriven text med inbäddad R-kod. Vi kan skapa sofistikerade rapporter och dashboards. Eftersom allt är kod kan vi följa hur ett dokument förändras över tid. Vi behöver inte spara massa olika versioner. 
+
+```{r, eval=TRUE}
+library(tidyverse)
+penguins <- palmerpenguins::penguins
+
+ggplot(data = penguins, aes(x = bill_depth_mm,
+                           y = bill_length_mm,
+                           color = species)) +
+  geom_point(size = 3, alpha = 0.8) +
+  geom_smooth(method = "lm", se = FALSE, aes(color = species)) +
+  theme_minimal() +
+  ggthemes::scale_color_tableau() +
+  labs(title = "Längd och bredd pingvinnäbbar",
+       subtitle = "För pingvinsorterna Adelie, Chinstrap and Gentoo Penguins på Palmer Station LTER",
+       x = "Näbbdjup (mm)",
+       y = "Näbblängd (mm)",
+       color = "Pingvinart")
+```
+\end{verbatim}
+
+Klickar du sedan på \texttt{Knit} längst upp till vänster i dokumentet, eller kör \texttt{knitr::render("filnamn.rmd")} så blir resultatet:
+
+\includegraphics{images/rmd-knitted.png}
+
+\hypertarget{kodstil-att-skriva-kod-i-r}{%
+\section{Kodstil: Att skriva kod i R}\label{kodstil-att-skriva-kod-i-r}}
 
 När du skriver kod gör du det dels med hänsyn dels till andra men framför allt med hänsyn till ditt framtida jag. Koden ska med andra ord vara enkel att läsa.
 
@@ -571,11 +624,6 @@ Det här är mycket svårare att läsa:
 \NormalTok{  ) }
 \end{Highlighting}
 \end{Shaded}
-
-\hypertarget{rmarkdown}{%
-\section{Rmarkdown}\label{rmarkdown}}
-
-Rmarkdown är ett format som tillåter dig varva r-kod med skriven text. Du kan sedan rendera filen till antigen HTML, PDF, Word, PowerPoint samt en rad andra format.
 
 \hypertarget{databearbetning}{%
 \chapter{Datamanipulering med dplyr}\label{databearbetning}}
@@ -708,6 +756,19 @@ Hitta alla flygbolag som finns i \texttt{c("UA",\ "DL")} i februari eller mars o
 
 \hypertarget{uxf6vning}{%
 \subsection{Övning}\label{uxf6vning}}
+
+\begin{itemize}
+\item
+  Öppna dokumentet \texttt{databearbetning-övningar.Rmd}
+\item
+  Börja med att ladda \texttt{tidyverse} och \texttt{nycflights13}
+\item
+  Spara \texttt{flights} som en data.frame i din \texttt{environment}, genom \texttt{flights\ \textless{}-\ flights}
+\end{itemize}
+
+PS. \texttt{flights} är en \texttt{tibble} som bara är en lite snyggare variant av en \texttt{data.frame}.
+
+Nu till övningarna:
 
 Hur många plan\ldots{}
 
@@ -964,14 +1025,48 @@ Formeln är \texttt{rename(data,\ ny\_variabel\ =\ gammal\_variabel)}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   Som innehåller ``dep''
 \item
   Som börjar med ``dep''
 \item
+  Som är numeriska
+\item
   Döp om \texttt{dep\_delay} till \texttt{försenad\_avgång}
 \end{enumerate}
+
+\hypertarget{kallad-the-pipe}{%
+\section{\texorpdfstring{\texttt{\%\textgreater{}\%} kallad ``the pipe''}{\%\textgreater\% kallad ``the pipe''}}\label{kallad-the-pipe}}
+
+\begin{itemize}
+\item
+  Används för att länka ihop flera uttryck i \emph{R}.
+\item
+  \texttt{ctrl\ +\ shift\ +\ m} (i Windows) och \texttt{ctrl\ +\ command\ +\ m} (Mac)
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(month }\SpecialCharTok{==} \DecValTok{2}\NormalTok{, arr\_time }\SpecialCharTok{==} \DecValTok{830}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(dest, year, month, day, arr\_time)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 9 x 5
+##   dest   year month   day arr_time
+##   <chr> <int> <int> <int>    <int>
+## 1 ORD    2013     2     2      830
+## 2 DTW    2013     2     4      830
+## 3 CLT    2013     2     6      830
+## 4 BNA    2013     2    13      830
+## 5 BNA    2013     2    18      830
+## 6 ATL    2013     2    24      830
+## 7 MIA    2013     2    25      830
+## 8 CLT    2013     2    26      830
+## 9 CLT    2013     2    28      830
+\end{verbatim}
 
 \hypertarget{mutate}{%
 \section{Mutate}\label{mutate}}
@@ -982,7 +1077,8 @@ Exempelvis kan vi räkna ut hur mycket tid man vunnit om exempelvis flyget landa
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{mutate}\NormalTok{(flights, }\AttributeTok{beer\_time =}\NormalTok{ dep\_delay }\SpecialCharTok{{-}}\NormalTok{ arr\_delay)}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{beer\_time =}\NormalTok{ dep\_delay }\SpecialCharTok{{-}}\NormalTok{ arr\_delay)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1006,32 +1102,58 @@ Exempelvis kan vi räkna ut hur mycket tid man vunnit om exempelvis flyget landa
 ## #   beer_time <dbl>
 \end{verbatim}
 
-I \texttt{mutate()} kan du även använda funktioner såsom \texttt{mean()}.
+\texttt{mutate()} kan användas för att slå ihop variabler
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{mutate}\NormalTok{(flights, }\AttributeTok{mean\_delay =} \FunctionTok{mean}\NormalTok{(dep\_delay, }\AttributeTok{na.rm =}\NormalTok{ T))}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{date =} \FunctionTok{paste}\NormalTok{(year, month, day, }\AttributeTok{sep =} \StringTok{"{-}"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(year, month, day, date)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## # A tibble: 336,776 x 20
-##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
-##    <int> <int> <int>    <int>          <int>     <dbl>    <int>          <int>
-##  1  2013     1     1      517            515         2      830            819
-##  2  2013     1     1      533            529         4      850            830
-##  3  2013     1     1      542            540         2      923            850
-##  4  2013     1     1      544            545        -1     1004           1022
-##  5  2013     1     1      554            600        -6      812            837
-##  6  2013     1     1      554            558        -4      740            728
-##  7  2013     1     1      555            600        -5      913            854
-##  8  2013     1     1      557            600        -3      709            723
-##  9  2013     1     1      557            600        -3      838            846
-## 10  2013     1     1      558            600        -2      753            745
-## # ... with 336,766 more rows, and 12 more variables: arr_delay <dbl>,
-## #   carrier <chr>, flight <int>, tailnum <chr>, origin <chr>, dest <chr>,
-## #   air_time <dbl>, distance <dbl>, hour <dbl>, minute <dbl>, time_hour <dttm>,
-## #   mean_delay <dbl>
+## # A tibble: 336,776 x 4
+##     year month   day date    
+##    <int> <int> <int> <chr>   
+##  1  2013     1     1 2013-1-1
+##  2  2013     1     1 2013-1-1
+##  3  2013     1     1 2013-1-1
+##  4  2013     1     1 2013-1-1
+##  5  2013     1     1 2013-1-1
+##  6  2013     1     1 2013-1-1
+##  7  2013     1     1 2013-1-1
+##  8  2013     1     1 2013-1-1
+##  9  2013     1     1 2013-1-1
+## 10  2013     1     1 2013-1-1
+## # ... with 336,766 more rows
+\end{verbatim}
+
+I \texttt{mutate()} kan du även använda funktioner såsom \texttt{mean()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{mean\_delay =} \FunctionTok{mean}\NormalTok{(dep\_delay, }\AttributeTok{na.rm =}\NormalTok{ T)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(year, month, day, mean\_delay)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 336,776 x 4
+##     year month   day mean_delay
+##    <int> <int> <int>      <dbl>
+##  1  2013     1     1       12.6
+##  2  2013     1     1       12.6
+##  3  2013     1     1       12.6
+##  4  2013     1     1       12.6
+##  5  2013     1     1       12.6
+##  6  2013     1     1       12.6
+##  7  2013     1     1       12.6
+##  8  2013     1     1       12.6
+##  9  2013     1     1       12.6
+## 10  2013     1     1       12.6
+## # ... with 336,766 more rows
 \end{verbatim}
 
 \hypertarget{if_else}{%
@@ -1068,6 +1190,9 @@ Du kan använda den i mutate:
 ## #   air_time <dbl>, distance <dbl>, hour <dbl>, minute <dbl>, time_hour <dttm>,
 ## #   försenad <chr>
 \end{verbatim}
+
+\hypertarget{case_when}{%
+\subsection{case\_when()}\label{case_when}}
 
 Ibland vill man göra flera stycken \texttt{if\_else()} i samma, exempelvis om man vill dela upp en variabel i flera kategorier beroende på ett logiskt villkor. För att göra det kan du använda funktionen \texttt{case\_when()}.
 
@@ -1126,13 +1251,12 @@ I \texttt{mutate()} kan du använda de allra flesta funktionerna i R. Här är e
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
-  Skapa en variabel som innehåller den totala förseningen
+  Skapa en variabel med \texttt{dep\_delay} \emph{minus} medelvärdet för \texttt{dep\_delay}
 \item
-  Rangordna flygens distans. Hur hanterar du fall där distansen är lika lång?
+  Rangordna flygens distans med \texttt{dense\_rank()}. Hur hanterar den distanser är lika långa? Vilka fler rankingfunktioner skulle du kunna använda? Se \texttt{?dense\_rank()}
 \item
-  Skapa en variabel som anger om flyget går på våren, hösten, vintern eller sommaren.
+  Skapa en variabel som anger om flyget går på våren, hösten, vintern eller sommaren med \texttt{case\_when()}
 \end{enumerate}
 
 \hypertarget{summarise}{%
@@ -1142,53 +1266,32 @@ Ofta vill man summera variabler för att få ut intressant information. Exempelv
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{summarise}\NormalTok{(flights, }\AttributeTok{mean\_dist =} \FunctionTok{mean}\NormalTok{(distance, }\AttributeTok{na.rm =}\NormalTok{ T))}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}
+    \AttributeTok{mean\_air\_time =} \FunctionTok{mean}\NormalTok{(air\_time, }\AttributeTok{na.rm =}\NormalTok{ T),}
+    \AttributeTok{mean\_dep\_delay =} \FunctionTok{mean}\NormalTok{(dep\_delay, }\AttributeTok{na.rm =}\NormalTok{ T),}
+    \AttributeTok{mean\_arr\_delay =} \FunctionTok{mean}\NormalTok{(arr\_delay, }\AttributeTok{na.rm =}\NormalTok{ T)}
+\NormalTok{  )}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## # A tibble: 1 x 1
-##   mean_dist
-##       <dbl>
-## 1     1040.
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{summarise}\NormalTok{(flights, }\AttributeTok{sum\_dist =} \FunctionTok{sum}\NormalTok{(distance, }\AttributeTok{na.rm =}\NormalTok{ T))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## # A tibble: 1 x 1
-##    sum_dist
-##       <dbl>
-## 1 350217607
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{summarise}\NormalTok{(flights, }\AttributeTok{count =} \FunctionTok{n}\NormalTok{())}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## # A tibble: 1 x 1
-##    count
-##    <int>
-## 1 336776
+## # A tibble: 1 x 3
+##   mean_air_time mean_dep_delay mean_arr_delay
+##           <dbl>          <dbl>          <dbl>
+## 1          151.           12.6           6.90
 \end{verbatim}
 
 Men dessa värden är inte så intressanta i sig, utan vi vill kunna göra jämförelse. Då använder vi \texttt{group\_by()}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{group\_by\_flights }\OtherTok{\textless{}{-}} \FunctionTok{group\_by}\NormalTok{(flights, carrier)}
-
-\FunctionTok{summarise}\NormalTok{(group\_by\_flights, }
-          \AttributeTok{mean\_air\_time =} \FunctionTok{mean}\NormalTok{(air\_time, }\AttributeTok{na.rm =}\NormalTok{ T),}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(dest) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{mean\_air\_time =} \FunctionTok{mean}\NormalTok{(air\_time, }\AttributeTok{na.rm =}\NormalTok{ T),}
           \AttributeTok{mean\_dep\_delay =} \FunctionTok{mean}\NormalTok{(dep\_delay, }\AttributeTok{na.rm =}\NormalTok{ T),}
-          \AttributeTok{mean\_arr\_delay =} \FunctionTok{mean}\NormalTok{(arr\_delay, }\AttributeTok{na.rm =}\NormalTok{ T))}
+          \AttributeTok{mean\_arr\_delay =} \FunctionTok{mean}\NormalTok{(arr\_delay, }\AttributeTok{na.rm =}\NormalTok{ T)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(mean\_arr\_delay))}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1197,54 +1300,33 @@ Men dessa värden är inte så intressanta i sig, utan vi vill kunna göra jämf
 \end{verbatim}
 
 \begin{verbatim}
-## # A tibble: 16 x 4
-##    carrier mean_air_time mean_dep_delay mean_arr_delay
-##    <chr>           <dbl>          <dbl>          <dbl>
-##  1 9E               86.8          16.7           7.38 
-##  2 AA              189.            8.59          0.364
-##  3 AS              326.            5.80         -9.93 
-##  4 B6              151.           13.0           9.46 
-##  5 DL              174.            9.26          1.64 
-##  6 EV               90.1          20.0          15.8  
-##  7 F9              230.           20.2          21.9  
-##  8 FL              101.           18.7          20.1  
-##  9 HA              623.            4.90         -6.92 
-## 10 MQ               91.2          10.6          10.8  
-## 11 OO               83.5          12.6          11.9  
-## 12 UA              212.           12.1           3.56 
-## 13 US               88.6           3.78          2.13 
-## 14 VX              337.           12.9           1.76 
-## 15 WN              148.           17.7           9.65 
-## 16 YV               65.7          19.0          15.6
+## # A tibble: 105 x 4
+##    dest  mean_air_time mean_dep_delay mean_arr_delay
+##    <chr>         <dbl>          <dbl>          <dbl>
+##  1 CAE            93.2           35.6           41.8
+##  2 TUL           178.            34.9           33.7
+##  3 OKC           193.            30.6           30.6
+##  4 JAC           264.            26.5           28.1
+##  5 TYS            97.7           28.5           24.1
+##  6 MSN           123.            23.6           20.2
+##  7 RIC            54.0           23.6           20.1
+##  8 CAK            64.0           20.8           19.7
+##  9 DSM           149.            26.2           19.0
+## 10 GRR            97             19.5           18.2
+## # ... with 95 more rows
 \end{verbatim}
 
-I \texttt{summarise()} kan du använda en rad olika funktioner såsom \texttt{sum()} för summeringar, \texttt{median()} etc.
-
-\hypertarget{uxf6vningar-1}{%
-\subsubsection{Övningar}\label{uxf6vningar-1}}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Vilken flygplats har högst medelvärde förförseningar från flygplatsen?
-\item
-  Vilken flygplats tar emot minst flyg?
-\end{enumerate}
-
-\hypertarget{vuxe4v-ihop-verben-med}{%
-\subsubsection{Väv ihop verben med \%\textgreater\%}\label{vuxe4v-ihop-verben-med}}
-
-Med \texttt{\%\textgreater{}\%} (som kallas för \texttt{pipe} and kan uttalas som \texttt{and\ then}) kan länka ihop flera uttryck i \emph{R}. Det gör framför allt din kod mer lättläst.
-
-Med \texttt{\%\textgreater{}\%} kan du exempelvis först filtrera, sen gruppera och till sist summera, allt i samma uttryck.
+I \texttt{summarise()} kan du använda en rad olika funktioner såsom \texttt{sum()} för summeringar, \texttt{n()} för antal rader, \texttt{median()} för median etc.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%}
-\FunctionTok{filter}\NormalTok{(dep\_delay }\SpecialCharTok{\textless{}} \DecValTok{60}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
-\FunctionTok{group\_by}\NormalTok{(carrier) }\SpecialCharTok{\%\textgreater{}\%}
-\FunctionTok{summarise}\NormalTok{(}\AttributeTok{mean\_dep\_delay =} \FunctionTok{mean}\NormalTok{(dep\_delay, }\AttributeTok{na.rm =}\NormalTok{ T))}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} 
+ \FunctionTok{group\_by}\NormalTok{(dest) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}
+    \AttributeTok{n\_rows =} \FunctionTok{n}\NormalTok{(),}
+    \AttributeTok{sum\_air\_time =} \FunctionTok{sum}\NormalTok{(air\_time, }\AttributeTok{na.rm =}\NormalTok{ T),}
+    \AttributeTok{median\_air\_time =} \FunctionTok{median}\NormalTok{(air\_time, }\AttributeTok{na.rm =}\NormalTok{ T)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(sum\_air\_time))}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1253,47 +1335,24 @@ Med \texttt{\%\textgreater{}\%} kan du exempelvis först filtrera, sen gruppera 
 \end{verbatim}
 
 \begin{verbatim}
-## # A tibble: 16 x 2
-##    carrier mean_dep_delay
-##    <chr>            <dbl>
-##  1 9E               2.96 
-##  2 AA               0.890
-##  3 AS              -0.719
-##  4 B6               3.26 
-##  5 DL               1.76 
-##  6 EV               4.65 
-##  7 F9               5.09 
-##  8 FL               4.72 
-##  9 HA              -2.47 
-## 10 MQ               1.48 
-## 11 OO              -2.88 
-## 12 UA               4.33 
-## 13 US              -0.744
-## 14 VX               2.70 
-## 15 WN               6.60 
-## 16 YV               2.25
+## # A tibble: 105 x 4
+##    dest  n_rows sum_air_time median_air_time
+##    <chr>  <int>        <dbl>           <dbl>
+##  1 LAX    16174      5258470             328
+##  2 SFO    13331      4553684             345
+##  3 ORD    17283      1914833             114
+##  4 ATL    17215      1901410             112
+##  5 MCO    14082      1882381             133
+##  6 FLL    12055      1811271             151
+##  7 LAS     5997      1795662             301
+##  8 MIA    11728      1775327             152
+##  9 DFW     8738      1667341             198
+## 10 DEN     7266      1623626             225
+## # ... with 95 more rows
 \end{verbatim}
-
-Du läser alltså:
-Första tar vi \texttt{flights} \emph{and then}
-filtrerar vi på \texttt{dep\_delay} \emph{and then}
-grupperar vi på \texttt{carrier} \emph{and then}
-räknar vi ut medelvärde på \texttt{dep\_delay}.
-
-Vilket är mycket mer lättläst än motsvarigheten med parenteser:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{summarise}\NormalTok{(}
-  \FunctionTok{group\_by}\NormalTok{(}
-    \FunctionTok{filter}\NormalTok{(flights, dep\_delay }\SpecialCharTok{\textgreater{}} \DecValTok{60}\NormalTok{),}
-\NormalTok{    carrier),}
-  \AttributeTok{mean\_dep\_delay =} \FunctionTok{mean}\NormalTok{(dep\_delay, }\AttributeTok{na.rm =}\NormalTok{ T))}
-\end{Highlighting}
-\end{Shaded}
 
 \hypertarget{count}{%
-\subsubsection{count()}\label{count}}
+\subsection{count()}\label{count}}
 
 Du kan i \texttt{summarise()} räkna antalet observationer med funktionen \texttt{n()}.
 
@@ -1304,32 +1363,6 @@ Du kan i \texttt{summarise()} räkna antalet observationer med funktionen \textt
   \FunctionTok{summarise}\NormalTok{(}\AttributeTok{count =} \FunctionTok{n}\NormalTok{())}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{verbatim}
-## `summarise()` ungrouping output (override with `.groups` argument)
-\end{verbatim}
-
-\begin{verbatim}
-## # A tibble: 16 x 2
-##    carrier count
-##    <chr>   <int>
-##  1 9E      18460
-##  2 AA      32729
-##  3 AS        714
-##  4 B6      54635
-##  5 DL      48110
-##  6 EV      54173
-##  7 F9        685
-##  8 FL       3260
-##  9 HA        342
-## 10 MQ      26397
-## 11 OO         32
-## 12 UA      58665
-## 13 US      20536
-## 14 VX       5162
-## 15 WN      12275
-## 16 YV        601
-\end{verbatim}
 
 Men istället för att göra det här kan du använda funktionen \texttt{count()}
 
@@ -1365,7 +1398,7 @@ Men istället för att göra det här kan du använda funktionen \texttt{count()
 \end{verbatim}
 
 \hypertarget{sample_n}{%
-\section{sample\_n()}\label{sample_n}}
+\subsection{\texorpdfstring{\texttt{sample\_n()}}{sample\_n()}}\label{sample_n}}
 
 Att göra slumpmässiga urval är en vanlig arbetsuppgift för en data scientist. Det gör du enkelt med \texttt{sample\_n()} från \texttt{dplyr}.
 
@@ -1381,22 +1414,22 @@ Om du vill ta ett slumpmässigt urval om 10 från exempelvis \texttt{flights} g�
 ## # A tibble: 10 x 19
 ##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
 ##    <int> <int> <int>    <int>          <int>     <dbl>    <int>          <int>
-##  1  2013     6     3      801            805        -4     1050           1102
-##  2  2013     9    17     1335           1330         5     1536           1545
-##  3  2013     8    26      909            915        -6     1008           1039
-##  4  2013     5    15     1832           1715        77     2147           2000
-##  5  2013     6     7     1050           1050         0     1249           1300
-##  6  2013     1    31     1745           1745         0     2116           2117
-##  7  2013     5    17     1154            955       119     1334           1139
-##  8  2013     4    22       NA           1738        NA       NA           1926
-##  9  2013     2    17      739            740        -1     1034           1044
-## 10  2013    12    17     1743           1556       107     2121           1914
+##  1  2013     1     8     1942           1935         7     2140           2145
+##  2  2013    11    20     1800           1801        -1     1946           1944
+##  3  2013     2    19     1919           1855        24     2058           2100
+##  4  2013     8    26     1550           1550         0     1735           1749
+##  5  2013    11    11     2104           2107        -3     2218           2226
+##  6  2013    10    24     1618           1615         3     1909           1915
+##  7  2013     7    11     1132           1130         2     1333           1327
+##  8  2013     1    21     1123           1130        -7     1412           1422
+##  9  2013     3    14     1427           1415        12     1632           1631
+## 10  2013     6    27     1951           1723       148       NA           2013
 ## # ... with 11 more variables: arr_delay <dbl>, carrier <chr>, flight <int>,
 ## #   tailnum <chr>, origin <chr>, dest <chr>, air_time <dbl>, distance <dbl>,
 ## #   hour <dbl>, minute <dbl>, time_hour <dttm>
 \end{verbatim}
 
-Om du istället vill ta ett urval som baseras på \emph{procent} kan du använda \texttt{sample\_frac}, här för \emph{0.01\%}
+Om du istället vill ta ett urval som baseras på \emph{procent} kan du använda \texttt{sample\_frac}, här för \emph{0.1\%}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1408,23 +1441,35 @@ Om du istället vill ta ett urval som baseras på \emph{procent} kan du använda
 ## # A tibble: 337 x 19
 ##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
 ##    <int> <int> <int>    <int>          <int>     <dbl>    <int>          <int>
-##  1  2013     1    11     1614           1605         9     1852           1925
-##  2  2013     1    29     1716           1719        -3     1940           1945
-##  3  2013     7    21     1826           1620       126     2219           1945
-##  4  2013    12     1     1627           1630        -3     1935           1957
-##  5  2013     8    15     1912           1827        45     2106           2033
-##  6  2013     5     1     1500           1500         0     1712           1722
-##  7  2013     8    13     1237           1100        97     1338           1215
-##  8  2013     4    21     1409           1359        10     1730           1715
-##  9  2013     9    16     1530           1530         0     1657           1645
-## 10  2013     7    27     1236           1240        -4     1427           1445
+##  1  2013     5    23     2343           2159       104       52           2326
+##  2  2013     9    26     1827           1829        -2     2016           2011
+##  3  2013     3     9     1137           1139        -2     1430           1446
+##  4  2013    10    31      840            630       130     1114            839
+##  5  2013     5    22     1835           1700        95     2006           1819
+##  6  2013     8     1     1344           1338         6     1642           1634
+##  7  2013     1    11      757            755         2      909            930
+##  8  2013     3    26     1730           1730         0     1923           1923
+##  9  2013     8     5     1513           1520        -7     1705           1710
+## 10  2013     8    25     1729           1735        -6     1918           1929
 ## # ... with 327 more rows, and 11 more variables: arr_delay <dbl>,
 ## #   carrier <chr>, flight <int>, tailnum <chr>, origin <chr>, dest <chr>,
 ## #   air_time <dbl>, distance <dbl>, hour <dbl>, minute <dbl>, time_hour <dttm>
 \end{verbatim}
 
-\hypertarget{uxf6vning-3}{%
-\subsection{Övning}\label{uxf6vning-3}}
+\hypertarget{uxf6vningar-1}{%
+\subsubsection{Övningar}\label{uxf6vningar-1}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Vilken flygplats har högst medelvärde förförseningar från flygplatsen?
+\item
+  Vilken flygplats tar emot minst flyg?
+\end{enumerate}
+
+\hypertarget{uxf6vning---vuxe4v-ihop-allt-du-luxe4rt-dig}{%
+\subsection{Övning - väv ihop allt du lärt dig}\label{uxf6vning---vuxe4v-ihop-allt-du-luxe4rt-dig}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1689,7 +1734,7 @@ Datasaurus Dozen
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-25-1.pdf}
+\includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-1.pdf}
 
 Eller som animering:
 
@@ -1707,7 +1752,7 @@ Eller som animering:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-1.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-2.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-3.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-4.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-5.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-6.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-7.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-8.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-9.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-10.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-11.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-12.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-13.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-14.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-15.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-16.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-17.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-18.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-19.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-20.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-21.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-22.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-23.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-24.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-25.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-26.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-27.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-28.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-29.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-30.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-31.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-32.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-33.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-34.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-35.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-36.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-37.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-38.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-39.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-40.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-41.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-42.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-43.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-44.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-45.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-46.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-47.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-48.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-49.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-50.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-51.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-52.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-53.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-54.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-55.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-56.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-57.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-58.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-59.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-60.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-61.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-62.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-63.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-64.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-65.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-66.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-67.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-68.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-69.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-70.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-71.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-72.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-73.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-74.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-75.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-76.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-77.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-78.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-79.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-80.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-81.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-82.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-83.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-84.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-85.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-86.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-87.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-88.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-89.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-90.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-91.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-92.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-93.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-94.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-95.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-96.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-97.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-98.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-99.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-100.pdf}
+\includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-1.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-2.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-3.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-4.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-5.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-6.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-7.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-8.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-9.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-10.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-11.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-12.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-13.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-14.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-15.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-16.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-17.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-18.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-19.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-20.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-21.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-22.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-23.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-24.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-25.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-26.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-27.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-28.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-29.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-30.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-31.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-32.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-33.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-34.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-35.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-36.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-37.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-38.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-39.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-40.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-41.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-42.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-43.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-44.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-45.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-46.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-47.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-48.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-49.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-50.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-51.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-52.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-53.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-54.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-55.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-56.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-57.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-58.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-59.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-60.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-61.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-62.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-63.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-64.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-65.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-66.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-67.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-68.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-69.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-70.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-71.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-72.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-73.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-74.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-75.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-76.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-77.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-78.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-79.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-80.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-81.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-82.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-83.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-84.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-85.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-86.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-87.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-88.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-89.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-90.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-91.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-92.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-93.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-94.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-95.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-96.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-97.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-98.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-99.pdf} \includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-100.pdf}
 
 \hypertarget{workflow-fuxf6r-nytt-dataset}{%
 \section{Workflow för nytt dataset}\label{workflow-fuxf6r-nytt-dataset}}
@@ -1910,7 +1955,7 @@ Mer \texttt{aesthetics}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-28-1.pdf}
+\includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-29-1.pdf}
 
 \hypertarget{storlek-invuxe5nare}{%
 \subsubsection{Storlek \textasciitilde{} invånare}\label{storlek-invuxe5nare}}
@@ -2180,7 +2225,7 @@ Som kan manipuleras för att skapa de visualiseringar vi vill ha
 
 Vi såg att det fanns en outlier i \texttt{gdpPercap} per \texttt{lifeExp}
 
-\includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-29-1.pdf}
+\includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-30-1.pdf}
 
 Vilket land är det?
 
@@ -2220,7 +2265,7 @@ Vilket land är det?
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-31-1.pdf}
+\includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-32-1.pdf}
 
 I jämförelse med utveckingen i resten av toppländerna 1972?
 
@@ -2289,7 +2334,7 @@ I jämförelse med utveckingen i resten av toppländerna 1972?
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-32-1.pdf}
+\includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-33-1.pdf}
 
 \hypertarget{eda-uxe4r-en-nyfiken-process-utan-slut}{%
 \section{EDA är en nyfiken process utan slut!}\label{eda-uxe4r-en-nyfiken-process-utan-slut}}
@@ -2324,6 +2369,893 @@ Det finns i princip alltid mera saker man skulle kunna undersöka som:
   \href{https://www.kaggle.com/}{kaggle} - Hemsida med AI/ML tävlingar och källa till gratis dataset
 \item
   \href{https://www.stackoverflow.com}{stack overflow} - Forum för programmeringsfrågor, där svar på nästan alla problem man stöter på finns
+\end{itemize}
+
+\hypertarget{uxf6vningar-explorativ-dataanalys}{%
+\section{Övningar Explorativ dataanalys}\label{uxf6vningar-explorativ-dataanalys}}
+
+Datan vi använder idag kommer från Hemnet!
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)      }\CommentTok{\# Innehåller många mindre paket bl.a ggplot2}
+\FunctionTok{library}\NormalTok{(scales)         }\CommentTok{\# Färghanteringspaket}
+\FunctionTok{library}\NormalTok{(gapminder)      }\CommentTok{\# Datasetet gapminder}
+\FunctionTok{library}\NormalTok{(hrbrthemes)     }\CommentTok{\# Teman till ggplot2}
+
+\NormalTok{hem }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/Ferrologic/ds{-}program{-}block2/master/data/hemnet\_data.csv"}\NormalTok{)}
+
+\NormalTok{hem}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 99,838 x 15
+##    sold_date  final_price square_m_price type  area  city   sq_m rooms   fee
+##    <date>           <dbl>          <dbl> <chr> <chr> <chr> <dbl> <dbl> <dbl>
+##  1 2019-01-11     2800000          56000 bost~ järv~ solna    50     2  3087
+##  2 2019-01-11     1280000          18003 bost~ östr~ malmö   711     3  4346
+##  3 2019-01-11     7250000          76316 frit~ sote~ sote~    95     6    NA
+##  4 2019-01-11     2130000          38727 bost~ väll~ stoc~    55     2  3838
+##  5 2019-01-11      950000          11176 fril~ cent~ kil      85     3    NA
+##  6 2019-01-11     2195000          39909 bost~ edsä~ soll~    55     2  3208
+##  7 2019-01-11     2900000          30851 par/~ bran~ hani~    94     3    NA
+##  8 2019-01-11     4200000          46154 bost~ minn~ stoc~    91     4  4641
+##  9 2019-01-11     2825000          49045 bost~ erik~ göte~   576     2  2875
+## 10 2019-01-11     1995000          29556 bost~ stoc~ stoc~   675     2  5218
+## # ... with 99,828 more rows, and 6 more variables: add_area_sqm <dbl>,
+## #   perc_change <dbl>, list_price <dbl>, price_diff <dbl>, month <chr>,
+## #   weekday <chr>
+\end{verbatim}
+
+Vi kan börja med att använda \texttt{skim()} från \texttt{skimr} på vårt dataset.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(\_\_\_)}
+
+\FunctionTok{skim}\NormalTok{(\_\_\_)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Error: <text>:1:9: unexpected input
+## 1: library(_
+##             ^
+\end{verbatim}
+
+Det var mycket information. Men vi kan försöka plocka ut några delar.
+
+Hur många rader och kolumner har datasetet?
+
+Vad för typ av data är kolumnen \texttt{area}?
+
+I vilken kolumn saknas det flest värden?
+
+Men vad innehåller egentligen kolumnerna \texttt{area}, \texttt{type}? För att svara på det så kan vi titta på några rader av dataset med R:s inbyggda funktion \texttt{head()}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(\_\_\_)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Error: <text>:1:6: unexpected input
+## 1: head(_
+##          ^
+\end{verbatim}
+
+Säg att det företag du jobbar på endast är intresserad av Stockholm, Malmö och Göteborg då börjar vi med att endast titta på de försäljningar som gjorts där:
+
+Om du känner att du hellre vill undersöka några andra städer så är det bara att skriva in dem istället, men försäkra dig om att städerna finns med genom att exempelvis använda \texttt{hem\ \%\textgreater{}\%\ filter(city\ ==\ \textquotesingle{}din\ stad\textquotesingle{})} eller \texttt{hem{[}hem\$city\ ==\ \textquotesingle{}din\ stad\textquotesingle{},{]}}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{hem\_storstad }\OtherTok{\textless{}{-}}\NormalTok{ hem }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(city }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}stockholm\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}malmö\textquotesingle{}}\NormalTok{, \_\_\_))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Error: <text>:1:66: unexpected input
+## 1: hem_storstad <- hem %>% filter(city %in% c('stockholm', 'malmö', _
+##                                                                      ^
+\end{verbatim}
+
+Hur har de slutgiltiga priserna i storstäderna sett ut?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(\_\_\_, }
+          \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ \_\_\_)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_density}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Error: <text>:1:8: unexpected input
+## 1: ggplot(_
+##            ^
+\end{verbatim}
+
+Är det nån skillnad mellan städerna? Det kan vi undersöka med hjälp av färg och en ridgeplot:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggridges)}
+\FunctionTok{ggplot}\NormalTok{(\_\_\_, }
+          \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ \_\_\_, }
+              \AttributeTok{y =}\NormalTok{ city,}
+              \AttributeTok{color =}\NormalTok{ \_\_\_,}
+              \AttributeTok{fill =}\NormalTok{ city)) }\SpecialCharTok{+} \FunctionTok{geom\_density\_ridges}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Error: <text>:2:8: unexpected input
+## 1: library(ggridges)
+## 2: ggplot(_
+##           ^
+\end{verbatim}
+
+Vill vi göra en lättare jämförelse mellan städerna kan vi använda \texttt{geom\_density()} istället och färg. Notera användandet av \texttt{alpha} och jämför med det tidigare kommandot. Det är också värt att notera användandet av parametern \texttt{alpha}, som styr hur genomskinliga de olika densiteterna är.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\_\_\_ }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ \_\_\_,}
+                            \AttributeTok{color =}\NormalTok{ city, }
+                            \AttributeTok{fill =}\NormalTok{ city)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_density}\NormalTok{(}\AttributeTok{alpha=}\FloatTok{0.5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Error: <text>:1:1: unexpected input
+## 1: _
+##     ^
+\end{verbatim}
+
+Som i \texttt{gapminder}-exemplet från presentationen så är fördelningen för final price skev.
+Igen så kan vi använda en logaritmisk skala på x axeln \texttt{scale\_x\_log10()} för att motverka detta.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{hem\_storstad }\OtherTok{\textless{}{-}}\NormalTok{ hem }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(city }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}stockholm\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}malmö\textquotesingle{}}\NormalTok{, }\StringTok{"göteborg"}\NormalTok{))}
+
+\NormalTok{hem\_storstad }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ final\_price, }
+                            \AttributeTok{color =}\NormalTok{ city, }\AttributeTok{fill =}\NormalTok{ city)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_density}\NormalTok{(}\AttributeTok{alpha =} \FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_log10}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-35-1.pdf}
+
+Vad kan vi se för skillnader mellan fördelingen av slutpriser mellan de städerna?
+Vilken stad är dyrast?
+Vad är det vanligaste priset ungefär?
+Är det någon stad som är mer olik de andra?
+
+Det går självklart att fortsätta att ställa mera frågor och undersöka dem, men nu kommer resten av övningarna att fokusera på att introducera flera sorters visualiseringar!
+
+\hypertarget{fuxf6rdelningar}{%
+\section{Fördelningar}\label{fuxf6rdelningar}}
+
+I de flesta fall är vi intresserade av fördelningar. De vanligaste typerna av visualiserings för fördelingar är dessa:
+
+Densitetsdiagram:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(gapminder)}
+\FunctionTok{ggplot}\NormalTok{(gapminder, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ gdpPercap)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_density}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{ds-intro-till-r-bok_files/figure-latex/p_den-1.pdf}
+
+Histogram:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(gapminder, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ gdpPercap)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+\end{verbatim}
+
+\includegraphics{ds-intro-till-r-bok_files/figure-latex/p_hist-1.pdf}
+
+Boxplots:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(gapminder, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ continent, }\AttributeTok{y =}\NormalTok{ gdpPercap)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{ds-intro-till-r-bok_files/figure-latex/p_box-1.pdf}
+
+Fioldiagram:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(gapminder, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ continent, }\AttributeTok{y =}\NormalTok{ gdpPercap)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_violin}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{ds-intro-till-r-bok_files/figure-latex/p_fiol-1.pdf}
+
+Ridgediagram:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggridges)}
+\FunctionTok{ggplot}\NormalTok{(gapminder, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ gdpPercap, }\AttributeTok{y =}\NormalTok{ continent, }\AttributeTok{fill =}\NormalTok{ continent)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_density\_ridges}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{theme\_ridges}\NormalTok{() }\SpecialCharTok{+} 
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \StringTok{"none"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Picking joint bandwidth of 1650
+\end{verbatim}
+
+\includegraphics{ds-intro-till-r-bok_files/figure-latex/p_ridges-1.pdf}
+
+För att direkt jämföra grupperna går även ett densitetsdiagram med färg att använda
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(gapminder, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ gdpPercap, }\AttributeTok{color =}\NormalTok{ continent)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_density}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =}\NormalTok{ continent, }\AttributeTok{alpha =} \FloatTok{0.7}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-36-1.pdf}
+
+\hypertarget{skalor-och-fuxf6rdelningar}{%
+\subsection{Skalor och fördelningar}\label{skalor-och-fuxf6rdelningar}}
+
+I verkligheten är data sällan normalt fördelad. Med den underliggande statistiska processen kan ofta vara det. Därför kan det vara klokt, om data är skevt fördelat, att testa att använda en annan skala på data. Det finns flera olika sätt att transformera data till en annan skala men ett av de vanligaste är att ta logaritmen.
+
+Nedan skalar vi x-axeln med \texttt{log10()}, som är den logaritm vi oftast använder i ``verkligheten''.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(gapminder, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ gdpPercap)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_log10}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+\end{verbatim}
+
+\includegraphics{ds-intro-till-r-bok_files/figure-latex/p_log-1.pdf}
+
+\hypertarget{uxf6vningar---fuxf6rdelning}{%
+\subsection{Övningar - Fördelning}\label{uxf6vningar---fuxf6rdelning}}
+
+Nu är det din tur att prova på de här graferna på hemnetdatan \texttt{hem}.
+Hur ser fördelningen ut för \texttt{final\_price}?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(\_)) }\SpecialCharTok{+}
+\NormalTok{  geom\_}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Error: <text>:1:12: unexpected input
+## 1: ggplot(aes(_
+##                ^
+\end{verbatim}
+
+Hur ser fördelningen ut för respektive \texttt{type}? Nedan använder du dig av en ridge-plot.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggridges)}
+\FunctionTok{ggplot}\NormalTok{(hem, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ final\_price, }\AttributeTok{y =}\NormalTok{ \_, }\AttributeTok{fill =}\NormalTok{ type)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_density\_ridges}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{theme\_ridges}\NormalTok{() }\SpecialCharTok{+} 
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =}\NormalTok{ \_) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{labels =}\NormalTok{ scales}\SpecialCharTok{::}\NormalTok{number)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Error: <text>:2:38: unexpected input
+## 1: library(ggridges)
+## 2: ggplot(hem, aes(x = final_price, y = _
+##                                         ^
+\end{verbatim}
+
+Boxplot är en annan värdefull visualiseringstyp. Den kalkylerar även outliers, som är de svarta prickarna. Outliers är här definierade som Q3 + 1.5*IQR, d.v.s. den tredje kvartilen + 1.5 gånger avståndet mellan kvartil 1 och kvartil 3.
+
+\begin{itemize}
+\tightlist
+\item
+  Visualisera slutpris per bostadstyp
+\item
+  Notera att vi använder \texttt{scales} i \texttt{scale\_x\_continuous()} för att få snyggare formatering på x-axlen. \texttt{scales} har också formateringsalternativ för procent, kr/\$/€ med mera.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(hem, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ final\_price, }\AttributeTok{y =}\NormalTok{ \_, }\AttributeTok{fill =}\NormalTok{ \_)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+} 
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \StringTok{"none"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{labels =}\NormalTok{ scales}\SpecialCharTok{::}\FunctionTok{number\_format}\NormalTok{(}\AttributeTok{suffix =} \StringTok{"kr"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Error: <text>:1:38: unexpected input
+## 1: ggplot(hem, aes(x = final_price, y = _
+##                                          ^
+\end{verbatim}
+
+\hypertarget{korrelation}{%
+\section{Korrelation}\label{korrelation}}
+
+Visualisera relationen mellan \texttt{list\_price} och \texttt{final\_price}.
+
+\begin{itemize}
+\tightlist
+\item
+  Vad är dina \texttt{aesthetics}?
+\item
+  Vilken \texttt{geom\_} använder du?
+\item
+  Passar skalan?
+\item
+  Finns det någon passande statistic för att visuellt beskriva relationen?
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(\_, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ \_, }\AttributeTok{y =}\NormalTok{ \_)) }\SpecialCharTok{+}
+\NormalTok{  geom\_ }\SpecialCharTok{+}
+\NormalTok{  stat\_}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Error: <text>:1:8: unexpected input
+## 1: ggplot(_
+##            ^
+\end{verbatim}
+
+\hypertarget{pimp-my-plot}{%
+\section{Pimp my plot!}\label{pimp-my-plot}}
+
+Vi kan addera titlar och data-etiketter med \texttt{labs()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(mtcars, }\FunctionTok{aes}\NormalTok{(mpg, hp, }\AttributeTok{color =}\NormalTok{ am)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Min titel"}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{"Min x{-}axel"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Min y{-}axel"}\NormalTok{, }
+       \AttributeTok{subtitle =} \StringTok{"Min subtitle"}\NormalTok{,}
+       \AttributeTok{caption =} \StringTok{"Källa: Min caption"}\NormalTok{,}
+       \AttributeTok{color =} \StringTok{"Legend{-}titel"}\NormalTok{)}
+
+\NormalTok{p}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{ds-intro-till-r-bok_files/figure-latex/p_labs-1.pdf}
+
+\hypertarget{vi-kan-uxe4ndra-tema-med-theme_...}{%
+\section{\texorpdfstring{Vi kan ändra tema med \texttt{theme\_...}}{Vi kan ändra tema med theme\_...}}\label{vi-kan-uxe4ndra-tema-med-theme_...}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p }\SpecialCharTok{+} \FunctionTok{theme\_minimal}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{ds-intro-till-r-bok_files/figure-latex/p_theme-1.pdf}
+
+Utgå från relationen mellan slutpris och listpris. Ändra labs och lägg till ett tema.
+
+\emph{OBS} Det finns en uppsjö av olika teman. Exempelvis i paketen \texttt{hrbrthemes}, \texttt{ggthemes}, \texttt{ggthemr} m.m. Du kan också skapa dina egna teman exempelvis med företagsfont och färger. Testa gärna exempelvis theme\_economist() och theme\_solarized\_2()
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggthemes)}
+\FunctionTok{ggplot}\NormalTok{(hem, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ list\_price, }\AttributeTok{y =}\NormalTok{ final\_price)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{stat\_smooth}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{""}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{""}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{""}\NormalTok{, }
+       \AttributeTok{subtitle =} \StringTok{""}\NormalTok{,}
+       \AttributeTok{caption =} \StringTok{""}\NormalTok{) }\SpecialCharTok{+}
+\NormalTok{  theme\_}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Error in eval(expr, envir, enclos): object 'theme_' not found
+\end{verbatim}
+
+\hypertarget{andra-aesthetics}{%
+\section{Andra aesthetics}\label{andra-aesthetics}}
+
+\begin{itemize}
+\tightlist
+\item
+  Utgå från din visualisering av relationen mellan utropspris och slutpris
+\item
+  Mappa vår aesthetic \texttt{color} till en numerisk variabel, exempelvis \texttt{fee}.
+\item
+  Vad händer om vår data har stora outliers? (testa att mappa \texttt{color} till sq\_m)
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(hem, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ list\_price, }
+                \AttributeTok{y =}\NormalTok{ final\_price,}
+                \AttributeTok{color =}\NormalTok{ \_\_\_)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{stat\_smooth}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Error: <text>:3:25: unexpected input
+## 2:                 y = final_price,
+## 3:                 color = _
+##                            ^
+\end{verbatim}
+
+\hypertarget{diskreta-variabler}{%
+\section{Diskreta variabler}\label{diskreta-variabler}}
+
+\begin{itemize}
+\tightlist
+\item
+  Utgå från din visualisering av relationen mellan utropspris och slutpris
+\item
+  Mappa vår aesthetic \texttt{color} till en kategorisk variabel, notera att kategoriska variabler med fler än 30 kategorier kommer att bli svåra att visualisera. Se exempelvis city och area, som du därmed bör undvika.
+\item
+  Om det är en kategorisk variabel som är numerisk behöver du ändra den med \texttt{as.factor()}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(hem, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ list\_price, }
+                \AttributeTok{y =}\NormalTok{ final\_price,}
+                \AttributeTok{color =}\NormalTok{ ...)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{stat\_smooth}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Error in ggplot.default(hem, aes(x = list_price, y = final_price, color = ...)): '...' used in an incorrect context
+\end{verbatim}
+
+\hypertarget{facets-1}{%
+\section{Facets}\label{facets-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  Visualisera fördelningen per bostadstyp med sub-plots istället
+\item
+  Hur hanterar du x-axeln? Finns det något sätt att göra den snyggare?
+\item
+  För att hantera långa labels i \texttt{facet\_wrap()} kan du använda funktionen \texttt{labeller} och \texttt{label\_wrap\_gen(10)}.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(hem, }\FunctionTok{aes}\NormalTok{(final\_price)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_log10}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{\_\_\_, }\AttributeTok{labeller =} \FunctionTok{labeller}\NormalTok{(}\AttributeTok{type =} \FunctionTok{label\_wrap\_gen}\NormalTok{(}\DecValTok{10}\NormalTok{)), }\AttributeTok{scales =} \StringTok{"free"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Error: <text>:4:15: unexpected input
+## 3:   scale_x_log10() +
+## 4:   facet_wrap(~_
+##                  ^
+\end{verbatim}
+
+\hypertarget{barcharts-puxe5-aggregerade-tabeller}{%
+\section{Barcharts på aggregerade tabeller}\label{barcharts-puxe5-aggregerade-tabeller}}
+
+Inte sällan har vi aggregerade tabeller som vi vill visualisera.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{gap\_continent }\OtherTok{\textless{}{-}}\NormalTok{ gapminder }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(continent) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{mean\_gdp\_per\_cap =} \FunctionTok{mean}\NormalTok{(gdpPercap))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `summarise()` ungrouping output (override with `.groups` argument)
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{gap\_continent}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 5 x 2
+##   continent mean_gdp_per_cap
+##   <fct>                <dbl>
+## 1 Africa               2194.
+## 2 Americas             7136.
+## 3 Asia                 7902.
+## 4 Europe              14469.
+## 5 Oceania             18622.
+\end{verbatim}
+
+\hypertarget{geom_col}{%
+\subsection{geom\_col()}\label{geom_col}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{geom\_bar()} används när vi vill veta antalet rader per kategori
+\item
+  \texttt{geom\_col()} används på färdiga tabeller
+\item
+  Sorterar efter bokstavsordning på kategorier
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{gap\_continent }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ continent, }\AttributeTok{y =}\NormalTok{ mean\_gdp\_per\_cap)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{ds-intro-till-r-bok_files/figure-latex/p_col-1.pdf}
+
+Ibland har vi många kategorier, då kan vi bara byta plats på \texttt{x} och \texttt{y}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{gap\_continent }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ continent, }\AttributeTok{x =}\NormalTok{ mean\_gdp\_per\_cap)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{ds-intro-till-r-bok_files/figure-latex/p_flip2-1.pdf}
+
+\hypertarget{hur-fuxf6rdelar-sig-kvadratmeterpris-per-bostadstyp}{%
+\subsection{Hur fördelar sig kvadratmeterpris per bostadstyp?}\label{hur-fuxf6rdelar-sig-kvadratmeterpris-per-bostadstyp}}
+
+\begin{itemize}
+\item
+  Ta fram en aggregerad tabell med genomsnittligt kvadratmeterpris per bostadstyp
+\item
+  Vilken funktion använder du för att kalkylera genomsnitt? Ha fördelningen i åtanke
+\item
+  Visualisera med \texttt{geom\_col()}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tbl\_type }\OtherTok{\textless{}{-}}\NormalTok{ hem }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(type) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{median\_sq\_m\_price =} \FunctionTok{median}\NormalTok{(square\_m\_price, }\AttributeTok{na.rm =}\NormalTok{ T))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `summarise()` ungrouping output (override with `.groups` argument)
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(tbl\_type, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ type, }\AttributeTok{x =}\NormalTok{ \_)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Error: <text>:1:36: unexpected input
+## 1: ggplot(tbl_type, aes(y = type, x = _
+##                                        ^
+\end{verbatim}
+
+\hypertarget{sortera-kategorier}{%
+\section{Sortera kategorier}\label{sortera-kategorier}}
+
+\begin{itemize}
+\tightlist
+\item
+  Ofta vill vi sortera en kategori vi viusaliserar i fallande eller stigande ordning
+\item
+  Då kan vi bara använda \texttt{reorder(x,\ X\ =\ sum)}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{gap\_continent }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =} \FunctionTok{reorder}\NormalTok{(continent, mean\_gdp\_per\_cap), }\AttributeTok{x =}\NormalTok{ mean\_gdp\_per\_cap)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{ds-intro-till-r-bok_files/figure-latex/p_reorder-1.pdf}
+
+\hypertarget{sortera-din-bar-chart-efter-medianpris}{%
+\section{Sortera din bar-chart efter medianpris}\label{sortera-din-bar-chart-efter-medianpris}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(tbl\_type, }
+            \FunctionTok{aes}\NormalTok{(}\AttributeTok{y =} \FunctionTok{reorder}\NormalTok{(type, \_\_\_),}
+                \AttributeTok{x =}\NormalTok{ median\_sq\_m\_price)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Error: <text>:2:35: unexpected input
+## 1: ggplot(tbl_type, 
+## 2:             aes(y = reorder(type, _
+##                                      ^
+\end{verbatim}
+
+\hypertarget{tidsserier}{%
+\section{Tidsserier}\label{tidsserier}}
+
+Vi har någon form av tidsserie som vi vill visualisera. Oftast har vi då en tidskomponent, exempelvis dag eller månad. I vår hemnet-data har vi datum.
+
+\begin{itemize}
+\tightlist
+\item
+  Kalkylera genomsnittligt försäljningspris per dag och visualisera
+\item
+  Vilken geom använder du?
+\item
+  Vilken skala använder du?
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ hem }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(sold\_date) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{median\_sq\_m\_price =} \FunctionTok{median}\NormalTok{(square\_m\_price, }\AttributeTok{na.rm =}\NormalTok{ T)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(\_, }\AttributeTok{y =}\NormalTok{ median\_sq\_m\_price)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Error: <text>:4:14: unexpected input
+## 3:   summarise(median_sq_m_price = median(square_m_price, na.rm = T)) %>% 
+## 4:   ggplot(aes(_
+##                 ^
+\end{verbatim}
+
+------------------------- OM DU HAR TID ÖVER -------------------------
+Kolla på den här listan och gör det som verkar mest intressant!
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Fri uppgift som går ut på att undersöka ett annat dataset själv och utforska det och se vad du hittar.
+\item
+  Lite mera om tidsserier och hur du kan ändra granulariteten på dina tidserier
+\item
+  Testa på enkel interaktivitet i dina grafer
+\item
+  Läsa på från en rekommenderad lista
+\item
+  Undersöka själv.
+  Du kan självklart fortsätta att undersäka Hemnet datan!
+  Men om du inte vill det så är lite exempel på dataset som du kan använda:
+  \texttt{iris} - inbyggt dataset i r som innehåller mätdata om ett par olika blomarter.
+  \texttt{iris} finns alltid tillgängligt i r och är bara att kalla på:
+\end{enumerate}
+
+\texttt{mtcars} - inbyggt dataset i r som inehåller mätdata om 32 bilmodeller från 1974.
+\texttt{mtcars} finns alltid tillgängligt på samma sätt som \texttt{iris}
+
+Pokemon - Dataset som innehåller statistik om alla Pokemon genom tiderna. Hämtat från Kaggl
+Laddas med \texttt{pokemon\ \textless{}-\ read\_csv(\textquotesingle{}data/pokemon.csv)}
+
+Temp - Globala temperaturer per land och datum från 1743 till 2013 mätt en gång i månaden.
+Laddas med \texttt{temp\ \textless{}-\ read\_csv(\textquotesingle{}data/GlobalTemp.csv\textquotesingle{})}
+
+Covid-19 - Dataset hämtat från Our World In Data (\url{https://ourworldindata.org/coronavirus-source-data}), 15/11/2020,
+som får sin data från the European Center for Disease Control.
+Innehåller daglig data från hela världen.
+Det här datasetet är större och svårare att hantera än de andra.
+Datasetet laddas med \texttt{cov\ \textless{}-\ read\_csv(\textquotesingle{}data/covid19-ECDC.csv\textquotesingle{})}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Börja undersöka här!}
+\CommentTok{\# iris}
+\CommentTok{\# mtcars}
+\CommentTok{\# pokemon \textless{}{-} read\_csv(\textquotesingle{}data/pokemon.csv\textquotesingle{})}
+\CommentTok{\# temp \textless{}{-} read\_csv(\textquotesingle{}data/GlobalTemp.csv\textquotesingle{})}
+\CommentTok{\# cov \textless{}{-} read\_csv(\textquotesingle{}data/covid19{-}ECDC.csv\textquotesingle{})}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Mer stabila tidsserier
+\end{enumerate}
+
+\begin{itemize}
+\item
+  Inte sällan vill vi ha lite mindre granulära tidsserier än det vi hade tidigare, exempelvis per vecka eller månad
+\item
+  Vi kan då använda antigen \texttt{lubridate} för att få fram exempelvis \texttt{vecka} och \texttt{år}
+\item
+  Eller \texttt{tsibble} för att få fram \texttt{yearweek} eller \texttt{yearmonth}.
+\item
+  Ladda \texttt{tsibble} och \texttt{lubridate}
+\item
+  Skapa en kolumn som representera vecka
+\item
+  En som representerar år
+\item
+  En som representerar år-vecka med \texttt{tsibble::yearweek()}
+\item
+  Visualisera per år-vecka
+\item
+  Visualisera per vecka och sätt \texttt{color\ =\ år}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(lubridate)}
+\FunctionTok{library}\NormalTok{(tsibble)}
+
+\NormalTok{weekly\_sales }\OtherTok{\textless{}{-}}\NormalTok{ hem }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}
+    \AttributeTok{year =} \FunctionTok{as.factor}\NormalTok{(}\FunctionTok{year}\NormalTok{(sold\_date)),}
+    \AttributeTok{week =} \FunctionTok{week}\NormalTok{(sold\_date),}
+    \AttributeTok{yearweek =} \FunctionTok{yearweek}\NormalTok{(sold\_date)}
+\NormalTok{  )}
+
+\NormalTok{p }\OtherTok{\textless{}{-}}\NormalTok{ weekly\_sales }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(yearweek) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{median\_sq\_m\_price =} \FunctionTok{median}\NormalTok{(square\_m\_price, }\AttributeTok{na.rm =}\NormalTok{ T)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(yearweek, median\_sq\_m\_price)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{() }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `summarise()` ungrouping output (override with `.groups` argument)
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{ds-intro-till-r-bok_files/figure-latex/p_ts2-1.pdf}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Interaktivitet
+\end{enumerate}
+
+Med paketet \texttt{plotly} kan du ta ett \texttt{ggplot2}-objekt och göra om det till en interaktiv graf, som kräver en hemsida.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(plotly)}
+\NormalTok{plot }\OtherTok{\textless{}{-}}\NormalTok{  hem }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(sold\_date) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{median\_sq\_m\_price =} \FunctionTok{median}\NormalTok{(square\_m\_price, }\AttributeTok{na.rm =}\NormalTok{ T)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(sold\_date, }\AttributeTok{y =}\NormalTok{ median\_sq\_m\_price)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `summarise()` ungrouping output (override with `.groups` argument)
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplotly}\NormalTok{(plot)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth,height=1\textheight]{ds-intro-till-r-bok_files/figure-latex/p_plotly-1}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Läslista
+\end{enumerate}
+
+\hypertarget{grammar-of-graphics---artikel-om-the-grammar-of-graphics-som-ggplot-bygger-puxe5}{%
+\section{Grammar of Graphics - Artikel om the grammar of graphics som ggplot bygger på}\label{grammar-of-graphics---artikel-om-the-grammar-of-graphics-som-ggplot-bygger-puxe5}}
+
+\begin{itemize}
+\tightlist
+\item
+  \url{https://towardsdatascience.com/a-comprehensive-guide-to-the-grammar-of-graphics-for-effective-visualization-of-multi-dimensional-1f92b4ed4149}
+\end{itemize}
+
+\hypertarget{r-for-data-science}{%
+\section{R for Data Science}\label{r-for-data-science}}
+
+\begin{itemize}
+\tightlist
+\item
+  Både kapitel 3 - Data Visualisation och Kapitel 7 - Exploratory Data Analysis är väldigt relevanta
+\end{itemize}
+
+\hypertarget{ggplot2-extensions}{%
+\section{ggplot2 extensions}\label{ggplot2-extensions}}
+
+\begin{itemize}
+\tightlist
+\item
+  Det finns ett flertal extensions till ggplot
+\item
+  Gå in och kolla på några på \url{https://exts.ggplot2.tidyverse.org/gallery/}
+\end{itemize}
+
+\hypertarget{shiny}{%
+\section{Shiny}\label{shiny}}
+
+\begin{itemize}
+\tightlist
+\item
+  Ett ramverk för att bygga skräddarsydda applikationer i R
+\item
+  Har likheter med traditionella BI-verktyg men är Open Source och därmed kostnadsfritt
+\item
+  Är mer flexibelt än ett traditionellt BI-verktyg - allt du kan göra i HTML kan du göra i Shiny.
+\item
+  Ett otroligt kraftig verktyg för en Data Scientist - automatisera mera
+\item
+  Innebär att vi kan paketera analyser som applikationer som användare kan agera med
+\item
+  Exempelvis ta fram en prognosmodell och låta användare testa att själva ändra paramterar i den, exempelvis vilken typ av säsongsvariation
+\item
+  \url{https://shiny.rstudio.com/gallery/}
+\item
+  \url{https://shiny.rstudio.com/tutorial/}
 \end{itemize}
 
 \hypertarget{bilaga}{%
@@ -2783,7 +3715,7 @@ Symbol i R & Betydelse & Exempel\tabularnewline
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "November 13 2020"
+## [1] "November 16 2020"
 \end{verbatim}
 
 \begin{Shaded}

@@ -24,7 +24,7 @@
 <meta name="author" content="Filip Wästberg &amp; Torbjörn Sjöberg, Solita" />
 
 
-<meta name="date" content="2020-11-13" />
+<meta name="date" content="2020-11-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,6 +53,13 @@
 
 <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -152,8 +159,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#tidyverse-and-friends"><i class="fa fa-check"></i><b>2.5</b> tidyverse and friends</a></li>
 <li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#workflow-i-r"><i class="fa fa-check"></i><b>2.6</b> Workflow i R</a></li>
-<li class="chapter" data-level="2.7" data-path="intro.html"><a href="intro.html#att-skriva-kod-i-r"><i class="fa fa-check"></i><b>2.7</b> Att skriva kod i R</a></li>
-<li class="chapter" data-level="2.8" data-path="intro.html"><a href="intro.html#rmarkdown"><i class="fa fa-check"></i><b>2.8</b> Rmarkdown</a></li>
+<li class="chapter" data-level="2.7" data-path="intro.html"><a href="intro.html#r-markdown"><i class="fa fa-check"></i><b>2.7</b> R Markdown</a></li>
+<li class="chapter" data-level="2.8" data-path="intro.html"><a href="intro.html#kodstil-att-skriva-kod-i-r"><i class="fa fa-check"></i><b>2.8</b> Kodstil: Att skriva kod i R</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="databearbetning.html"><a href="databearbetning.html"><i class="fa fa-check"></i><b>3</b> Datamanipulering med dplyr</a>
 <ul>
@@ -169,16 +176,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="3.3.1" data-path="databearbetning.html"><a href="databearbetning.html#övning-2"><i class="fa fa-check"></i><b>3.3.1</b> Övning</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="databearbetning.html"><a href="databearbetning.html#mutate"><i class="fa fa-check"></i><b>3.4</b> Mutate</a>
+<li class="chapter" data-level="3.4" data-path="databearbetning.html"><a href="databearbetning.html#kallad-the-pipe"><i class="fa fa-check"></i><b>3.4</b> <code>%&gt;%</code> kallad “the pipe”</a></li>
+<li class="chapter" data-level="3.5" data-path="databearbetning.html"><a href="databearbetning.html#mutate"><i class="fa fa-check"></i><b>3.5</b> Mutate</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="databearbetning.html"><a href="databearbetning.html#if_else"><i class="fa fa-check"></i><b>3.4.1</b> if_else()</a></li>
-<li class="chapter" data-level="3.4.2" data-path="databearbetning.html"><a href="databearbetning.html#andra-funktioner"><i class="fa fa-check"></i><b>3.4.2</b> Andra funktioner</a></li>
-<li class="chapter" data-level="3.4.3" data-path="databearbetning.html"><a href="databearbetning.html#övningar"><i class="fa fa-check"></i><b>3.4.3</b> Övningar</a></li>
+<li class="chapter" data-level="3.5.1" data-path="databearbetning.html"><a href="databearbetning.html#if_else"><i class="fa fa-check"></i><b>3.5.1</b> if_else()</a></li>
+<li class="chapter" data-level="3.5.2" data-path="databearbetning.html"><a href="databearbetning.html#case_when"><i class="fa fa-check"></i><b>3.5.2</b> case_when()</a></li>
+<li class="chapter" data-level="3.5.3" data-path="databearbetning.html"><a href="databearbetning.html#andra-funktioner"><i class="fa fa-check"></i><b>3.5.3</b> Andra funktioner</a></li>
+<li class="chapter" data-level="3.5.4" data-path="databearbetning.html"><a href="databearbetning.html#övningar"><i class="fa fa-check"></i><b>3.5.4</b> Övningar</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="databearbetning.html"><a href="databearbetning.html#summarise"><i class="fa fa-check"></i><b>3.5</b> Summarise</a></li>
-<li class="chapter" data-level="3.6" data-path="databearbetning.html"><a href="databearbetning.html#sample_n"><i class="fa fa-check"></i><b>3.6</b> sample_n()</a>
+<li class="chapter" data-level="3.6" data-path="databearbetning.html"><a href="databearbetning.html#summarise"><i class="fa fa-check"></i><b>3.6</b> Summarise</a>
 <ul>
-<li class="chapter" data-level="3.6.1" data-path="databearbetning.html"><a href="databearbetning.html#övning-3"><i class="fa fa-check"></i><b>3.6.1</b> Övning</a></li>
+<li class="chapter" data-level="3.6.1" data-path="databearbetning.html"><a href="databearbetning.html#count"><i class="fa fa-check"></i><b>3.6.1</b> count()</a></li>
+<li class="chapter" data-level="3.6.2" data-path="databearbetning.html"><a href="databearbetning.html#sample_n"><i class="fa fa-check"></i><b>3.6.2</b> <code>sample_n()</code></a></li>
+<li class="chapter" data-level="3.6.3" data-path="databearbetning.html"><a href="databearbetning.html#övning---väv-ihop-allt-du-lärt-dig"><i class="fa fa-check"></i><b>3.6.3</b> Övning - väv ihop allt du lärt dig</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="eda.html"><a href="eda.html"><i class="fa fa-check"></i><b>4</b> Explorativ dataanalys</a>
@@ -219,6 +229,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.8.1" data-path="eda.html"><a href="eda.html#det-ni-ska-ta-med-er-idag-är-inte-de-specifika-sakerna-vi-har-undersökt-utan-ett-mindset"><i class="fa fa-check"></i><b>4.8.1</b> Det ni ska ta med er idag är inte de specifika sakerna vi har undersökt, utan ett mindset!</a></li>
 </ul></li>
 <li class="chapter" data-level="4.9" data-path="eda.html"><a href="eda.html#länkar-till-resurser"><i class="fa fa-check"></i><b>4.9</b> Länkar till resurser</a></li>
+<li class="chapter" data-level="4.10" data-path="eda.html"><a href="eda.html#övningar-explorativ-dataanalys"><i class="fa fa-check"></i><b>4.10</b> Övningar Explorativ dataanalys</a></li>
+<li class="chapter" data-level="4.11" data-path="eda.html"><a href="eda.html#fördelningar"><i class="fa fa-check"></i><b>4.11</b> Fördelningar</a>
+<ul>
+<li class="chapter" data-level="4.11.1" data-path="eda.html"><a href="eda.html#skalor-och-fördelningar"><i class="fa fa-check"></i><b>4.11.1</b> Skalor och fördelningar</a></li>
+<li class="chapter" data-level="4.11.2" data-path="eda.html"><a href="eda.html#övningar---fördelning"><i class="fa fa-check"></i><b>4.11.2</b> Övningar - Fördelning</a></li>
+</ul></li>
+<li class="chapter" data-level="4.12" data-path="eda.html"><a href="eda.html#korrelation"><i class="fa fa-check"></i><b>4.12</b> Korrelation</a></li>
+<li class="chapter" data-level="4.13" data-path="eda.html"><a href="eda.html#pimp-my-plot"><i class="fa fa-check"></i><b>4.13</b> Pimp my plot!</a></li>
+<li class="chapter" data-level="4.14" data-path="eda.html"><a href="eda.html#vi-kan-ändra-tema-med-theme_..."><i class="fa fa-check"></i><b>4.14</b> Vi kan ändra tema med <code>theme_...</code></a></li>
+<li class="chapter" data-level="4.15" data-path="eda.html"><a href="eda.html#andra-aesthetics"><i class="fa fa-check"></i><b>4.15</b> Andra aesthetics</a></li>
+<li class="chapter" data-level="4.16" data-path="eda.html"><a href="eda.html#diskreta-variabler"><i class="fa fa-check"></i><b>4.16</b> Diskreta variabler</a></li>
+<li class="chapter" data-level="4.17" data-path="eda.html"><a href="eda.html#facets-1"><i class="fa fa-check"></i><b>4.17</b> Facets</a></li>
+<li class="chapter" data-level="4.18" data-path="eda.html"><a href="eda.html#barcharts-på-aggregerade-tabeller"><i class="fa fa-check"></i><b>4.18</b> Barcharts på aggregerade tabeller</a>
+<ul>
+<li class="chapter" data-level="4.18.1" data-path="eda.html"><a href="eda.html#geom_col"><i class="fa fa-check"></i><b>4.18.1</b> geom_col()</a></li>
+<li class="chapter" data-level="4.18.2" data-path="eda.html"><a href="eda.html#hur-fördelar-sig-kvadratmeterpris-per-bostadstyp"><i class="fa fa-check"></i><b>4.18.2</b> Hur fördelar sig kvadratmeterpris per bostadstyp?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.19" data-path="eda.html"><a href="eda.html#sortera-kategorier"><i class="fa fa-check"></i><b>4.19</b> Sortera kategorier</a></li>
+<li class="chapter" data-level="4.20" data-path="eda.html"><a href="eda.html#sortera-din-bar-chart-efter-medianpris"><i class="fa fa-check"></i><b>4.20</b> Sortera din bar-chart efter medianpris</a></li>
+<li class="chapter" data-level="4.21" data-path="eda.html"><a href="eda.html#tidsserier"><i class="fa fa-check"></i><b>4.21</b> Tidsserier</a></li>
+<li class="chapter" data-level="4.22" data-path="eda.html"><a href="eda.html#grammar-of-graphics---artikel-om-the-grammar-of-graphics-som-ggplot-bygger-på"><i class="fa fa-check"></i><b>4.22</b> Grammar of Graphics - Artikel om the grammar of graphics som ggplot bygger på</a></li>
+<li class="chapter" data-level="4.23" data-path="eda.html"><a href="eda.html#r-for-data-science"><i class="fa fa-check"></i><b>4.23</b> R for Data Science</a></li>
+<li class="chapter" data-level="4.24" data-path="eda.html"><a href="eda.html#ggplot2-extensions"><i class="fa fa-check"></i><b>4.24</b> ggplot2 extensions</a></li>
+<li class="chapter" data-level="4.25" data-path="eda.html"><a href="eda.html#shiny"><i class="fa fa-check"></i><b>4.25</b> Shiny</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="bilaga.html"><a href="bilaga.html"><i class="fa fa-check"></i><b>5</b> Bilaga</a>
 <ul>
@@ -319,36 +353,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 <p><code>flights</code> är en så kallad data.frame som egentligen är en samling vektorer. data.frame är den vanligaste data-typen i R för att arbeta med data.</p>
 <p>Om du är nyfiken på att undersöka variabeltypen, eller klassen, på ett objekt eller en kolumn kan du använda funktionen <strong>class()</strong></p>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="bilaga.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="bilaga.html#cb221-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(x)</span></code></pre></div>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
-<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="bilaga.html#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(text)</span></code></pre></div>
+<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="bilaga.html#cb223-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(text)</span></code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
 <div id="vektorer" class="section level3" number="5.1.1">
 <h3><span class="header-section-number">5.1.1</span> Vektorer</h3>
 <p>Vektorer är ett objekt i R som innehåller en eller flera element. En vektor kan endast innehålla en typ av variabel. Det vanligaste sättet att skapa en vektor är genom <strong>c()</strong>.</p>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="bilaga.html#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Numerisk vektor</span></span>
-<span id="cb150-2"><a href="bilaga.html#cb150-2" aria-hidden="true" tabindex="-1"></a>numvec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">7</span>)</span>
-<span id="cb150-3"><a href="bilaga.html#cb150-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb150-4"><a href="bilaga.html#cb150-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Textvektor</span></span>
-<span id="cb150-5"><a href="bilaga.html#cb150-5" aria-hidden="true" tabindex="-1"></a>charvec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Kalle&quot;</span>, <span class="st">&quot;Anka&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="bilaga.html#cb225-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Numerisk vektor</span></span>
+<span id="cb225-2"><a href="bilaga.html#cb225-2" aria-hidden="true" tabindex="-1"></a>numvec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">7</span>)</span>
+<span id="cb225-3"><a href="bilaga.html#cb225-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb225-4"><a href="bilaga.html#cb225-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Textvektor</span></span>
+<span id="cb225-5"><a href="bilaga.html#cb225-5" aria-hidden="true" tabindex="-1"></a>charvec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Kalle&quot;</span>, <span class="st">&quot;Anka&quot;</span>)</span></code></pre></div>
 </div>
 <div id="faktorvariabel" class="section level3" number="5.1.2">
 <h3><span class="header-section-number">5.1.2</span> Faktorvariabel</h3>
 <p>En annan typ av variabel är den såkallade faktorer, <em>factor</em>. Faktorer är kategoriska variabler som har olika nivåer som representerar fakta. Kön eller åldersgrupp är exempel på faktorer.</p>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="bilaga.html#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="co"># minText är en textvektor</span></span>
-<span id="cb151-2"><a href="bilaga.html#cb151-2" aria-hidden="true" tabindex="-1"></a>min_text <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>)</span>
-<span id="cb151-3"><a href="bilaga.html#cb151-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb151-4"><a href="bilaga.html#cb151-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Konvertera minText till faktorvariabel med as.factor</span></span>
-<span id="cb151-5"><a href="bilaga.html#cb151-5" aria-hidden="true" tabindex="-1"></a>min_faktor <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(min_text)</span>
-<span id="cb151-6"><a href="bilaga.html#cb151-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb151-7"><a href="bilaga.html#cb151-7" aria-hidden="true" tabindex="-1"></a>min_faktor</span></code></pre></div>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="bilaga.html#cb226-1" aria-hidden="true" tabindex="-1"></a><span class="co"># minText är en textvektor</span></span>
+<span id="cb226-2"><a href="bilaga.html#cb226-2" aria-hidden="true" tabindex="-1"></a>min_text <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>)</span>
+<span id="cb226-3"><a href="bilaga.html#cb226-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb226-4"><a href="bilaga.html#cb226-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Konvertera minText till faktorvariabel med as.factor</span></span>
+<span id="cb226-5"><a href="bilaga.html#cb226-5" aria-hidden="true" tabindex="-1"></a>min_faktor <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(min_text)</span>
+<span id="cb226-6"><a href="bilaga.html#cb226-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb226-7"><a href="bilaga.html#cb226-7" aria-hidden="true" tabindex="-1"></a>min_faktor</span></code></pre></div>
 <pre><code>## [1] A B A A
 ## Levels: A B</code></pre>
-<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="bilaga.html#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="co"># För att undersöka klassen av vektorn minFaktor</span></span>
-<span id="cb153-2"><a href="bilaga.html#cb153-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(min_faktor)</span></code></pre></div>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="bilaga.html#cb228-1" aria-hidden="true" tabindex="-1"></a><span class="co"># För att undersöka klassen av vektorn minFaktor</span></span>
+<span id="cb228-2"><a href="bilaga.html#cb228-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(min_faktor)</span></code></pre></div>
 <pre><code>## [1] &quot;factor&quot;</code></pre>
-<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="bilaga.html#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="co"># För att undersöka vilka unika värden finns på minFaktor </span></span>
-<span id="cb155-2"><a href="bilaga.html#cb155-2" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(min_faktor)</span></code></pre></div>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="bilaga.html#cb230-1" aria-hidden="true" tabindex="-1"></a><span class="co"># För att undersöka vilka unika värden finns på minFaktor </span></span>
+<span id="cb230-2"><a href="bilaga.html#cb230-2" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(min_faktor)</span></code></pre></div>
 <pre><code>## [1] &quot;A&quot; &quot;B&quot;</code></pre>
 </div>
 <div id="logik" class="section level3" number="5.1.3">
@@ -434,8 +468,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">5.1.4</span> Matriser</h3>
 <p>Matriser är också en av de vanligaste datastruktur i R. Den har två dimensioner, rader och kolumner. Likt som vektorer så kan matriser bara innehålla en typ av element. Det innebär att en matris kan endast vara en textmatris, numerisk matris eller logisk matris.</p>
 <p>Matriserna kan skapas enkelt i R med funktionen <strong>matrix()</strong>.</p>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="bilaga.html#cb157-1" aria-hidden="true" tabindex="-1"></a>min_matris <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>), <span class="at">nrow=</span><span class="dv">2</span>)</span>
-<span id="cb157-2"><a href="bilaga.html#cb157-2" aria-hidden="true" tabindex="-1"></a>min_matris</span></code></pre></div>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="bilaga.html#cb232-1" aria-hidden="true" tabindex="-1"></a>min_matris <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>), <span class="at">nrow=</span><span class="dv">2</span>)</span>
+<span id="cb232-2"><a href="bilaga.html#cb232-2" aria-hidden="true" tabindex="-1"></a>min_matris</span></code></pre></div>
 <pre><code>##      [,1] [,2]
 ## [1,]    1    3
 ## [2,]    2    4</code></pre>
@@ -444,45 +478,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">5.1.5</span> Data.frame</h3>
 <p>data.frame är en tabell som innehåller flera olika typer av variabler. Det är egentligen en samling av vektorer, därför kan en data.frame innehålla olika typer av vektorer som numeriska, logiska, textsträngar och faktorer.</p>
 <p>För att skapa ett dataset i R används funktionen <strong>data.frame()</strong></p>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="bilaga.html#cb159-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">num =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">text =</span> <span class="fu">rep</span>(<span class="st">&quot;Text&quot;</span>, <span class="dv">3</span>), <span class="at">logi=</span><span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)) </span>
-<span id="cb159-2"><a href="bilaga.html#cb159-2" aria-hidden="true" tabindex="-1"></a>df </span></code></pre></div>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="bilaga.html#cb234-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">num =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">text =</span> <span class="fu">rep</span>(<span class="st">&quot;Text&quot;</span>, <span class="dv">3</span>), <span class="at">logi=</span><span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)) </span>
+<span id="cb234-2"><a href="bilaga.html#cb234-2" aria-hidden="true" tabindex="-1"></a>df </span></code></pre></div>
 <pre><code>##   num text  logi
 ## 1   1 Text  TRUE
 ## 2   2 Text  TRUE
 ## 3   3 Text FALSE</code></pre>
 <p>Det finns ett antal förinstallerade data frames i R som du kan använda, det är även vanligt med paket vars enda syfte är att innehålla data.</p>
 <p>För att kolla upp vilka data frames som finns förinstallerade kan du använda funktionen <strong>data()</strong>.</p>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="bilaga.html#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>()</span>
-<span id="cb161-2"><a href="bilaga.html#cb161-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb161-3"><a href="bilaga.html#cb161-3" aria-hidden="true" tabindex="-1"></a><span class="co"># För att läsa in en data.frame i Global Environment så skriv namn av data inom parentesen</span></span>
-<span id="cb161-4"><a href="bilaga.html#cb161-4" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
-<span id="cb161-5"><a href="bilaga.html#cb161-5" aria-hidden="true" tabindex="-1"></a>iris</span></code></pre></div>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="bilaga.html#cb236-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>()</span>
+<span id="cb236-2"><a href="bilaga.html#cb236-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb236-3"><a href="bilaga.html#cb236-3" aria-hidden="true" tabindex="-1"></a><span class="co"># För att läsa in en data.frame i Global Environment så skriv namn av data inom parentesen</span></span>
+<span id="cb236-4"><a href="bilaga.html#cb236-4" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
+<span id="cb236-5"><a href="bilaga.html#cb236-5" aria-hidden="true" tabindex="-1"></a>iris</span></code></pre></div>
 <div id="section" class="section level4" number="5.1.5.1">
 <h4><span class="header-section-number">5.1.5.1</span> $</h4>
 <p>Även om <code>dplyr</code> är att föredra för datamanipuleringar är det bra att veta att det går att göra samma manipuleringar i R men med en annan syntax. Då använder man i princip endast de inbyggda paketen (ofta kallade för <code>base</code>) som laddas mer R.</p>
 <p>En viktig operatör i <code>base</code>-R är <code>$</code> (extract-operator) som extraherar värden från objekt baserat på namn.</p>
 <p>Exempelvis</p>
-<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="bilaga.html#cb162-1" aria-hidden="true" tabindex="-1"></a>mtcars<span class="sc">$</span>cyl</span></code></pre></div>
+<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="bilaga.html#cb237-1" aria-hidden="true" tabindex="-1"></a>mtcars<span class="sc">$</span>cyl</span></code></pre></div>
 <pre><code>##  [1] 6 6 4 6 8 6 8 4 4 6 6 8 8 8 8 8 8 4 4 4 4 8 8 8 8 4 4 4 8 6 8 4</code></pre>
 <p>Med <code>$</code> kan du också skapa nya variabler.</p>
-<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="bilaga.html#cb164-1" aria-hidden="true" tabindex="-1"></a>mtcars<span class="sc">$</span>ny_variabel <span class="ot">&lt;-</span> mtcars<span class="sc">$</span>mpg <span class="sc">/</span> mtcars<span class="sc">$</span>cyl</span></code></pre></div>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="bilaga.html#cb239-1" aria-hidden="true" tabindex="-1"></a>mtcars<span class="sc">$</span>ny_variabel <span class="ot">&lt;-</span> mtcars<span class="sc">$</span>mpg <span class="sc">/</span> mtcars<span class="sc">$</span>cyl</span></code></pre></div>
 <p>Eller döpa om variabler</p>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="bilaga.html#cb165-1" aria-hidden="true" tabindex="-1"></a>mtcars<span class="sc">$</span>mpg_med_konstigt_namn <span class="ot">&lt;-</span> mtcars<span class="sc">$</span>mpg</span></code></pre></div>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="bilaga.html#cb240-1" aria-hidden="true" tabindex="-1"></a>mtcars<span class="sc">$</span>mpg_med_konstigt_namn <span class="ot">&lt;-</span> mtcars<span class="sc">$</span>mpg</span></code></pre></div>
 </div>
 <div id="colnames" class="section level4" number="5.1.5.2">
 <h4><span class="header-section-number">5.1.5.2</span> colnames()</h4>
 <p>Om du vill ha dina kolumnnamn som en vektor kan du extrahera dessa med <code>colnames()</code>.</p>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="bilaga.html#cb166-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(mtcars)</span></code></pre></div>
+<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="bilaga.html#cb241-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(mtcars)</span></code></pre></div>
 <pre><code>##  [1] &quot;mpg&quot;                   &quot;cyl&quot;                   &quot;disp&quot;                 
 ##  [4] &quot;hp&quot;                    &quot;drat&quot;                  &quot;wt&quot;                   
 ##  [7] &quot;qsec&quot;                  &quot;vs&quot;                    &quot;am&quot;                   
 ## [10] &quot;gear&quot;                  &quot;carb&quot;                  &quot;ny_variabel&quot;          
 ## [13] &quot;mpg_med_konstigt_namn&quot;</code></pre>
 <p>Ibland kanske du har en lista på variabelnamn som du vill att data ska ha.</p>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="bilaga.html#cb168-1" aria-hidden="true" tabindex="-1"></a>kolumnnamn <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;D&quot;</span>, <span class="st">&quot;E&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;G&quot;</span>, <span class="st">&quot;H&quot;</span>, <span class="st">&quot;I&quot;</span>, <span class="st">&quot;J&quot;</span>, <span class="st">&quot;K&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="bilaga.html#cb243-1" aria-hidden="true" tabindex="-1"></a>kolumnnamn <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;D&quot;</span>, <span class="st">&quot;E&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;G&quot;</span>, <span class="st">&quot;H&quot;</span>, <span class="st">&quot;I&quot;</span>, <span class="st">&quot;J&quot;</span>, <span class="st">&quot;K&quot;</span>)</span></code></pre></div>
 <p>Då kan du applicera <code>colnames()</code> med din vektor på din data.frame.</p>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="bilaga.html#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(mtcars) <span class="ot">&lt;-</span> kolumnnamn</span>
-<span id="cb169-2"><a href="bilaga.html#cb169-2" aria-hidden="true" tabindex="-1"></a>mtcars</span></code></pre></div>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="bilaga.html#cb244-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(mtcars) <span class="ot">&lt;-</span> kolumnnamn</span>
+<span id="cb244-2"><a href="bilaga.html#cb244-2" aria-hidden="true" tabindex="-1"></a>mtcars</span></code></pre></div>
 <pre><code>##                        A B     C   D    E     F     G H I J K       NA   NA
 ## Mazda RX4           21.0 6 160.0 110 3.90 2.620 16.46 0 1 4 4 3.500000 21.0
 ## Mazda RX4 Wag       21.0 6 160.0 110 3.90 2.875 17.02 0 1 4 4 3.500000 21.0
@@ -522,13 +556,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">5.1.6</span> Listor</h3>
 <p>Listor är mer generell datastruktur i R. Man kan jämföra lista med en “låda” som innehåller olika datastrukter i R. En lista kan innehålla vektorer, data.frame och matriser, i olika längd och storlek, samtidigt.</p>
 <p>För att skapa en lista används funktionen <strong>list()</strong></p>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="bilaga.html#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="co"># skapar vektorer a, b, c</span></span>
-<span id="cb171-2"><a href="bilaga.html#cb171-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;hej&quot;</span>, <span class="st">&quot;Kalle&quot;</span>, <span class="st">&quot;hejdå&quot;</span>)</span>
-<span id="cb171-3"><a href="bilaga.html#cb171-3" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span>
-<span id="cb171-4"><a href="bilaga.html#cb171-4" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span></span>
-<span id="cb171-5"><a href="bilaga.html#cb171-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb171-6"><a href="bilaga.html#cb171-6" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">list</span>(a,b,c)</span>
-<span id="cb171-7"><a href="bilaga.html#cb171-7" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="bilaga.html#cb246-1" aria-hidden="true" tabindex="-1"></a><span class="co"># skapar vektorer a, b, c</span></span>
+<span id="cb246-2"><a href="bilaga.html#cb246-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;hej&quot;</span>, <span class="st">&quot;Kalle&quot;</span>, <span class="st">&quot;hejdå&quot;</span>)</span>
+<span id="cb246-3"><a href="bilaga.html#cb246-3" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span>
+<span id="cb246-4"><a href="bilaga.html#cb246-4" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span></span>
+<span id="cb246-5"><a href="bilaga.html#cb246-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb246-6"><a href="bilaga.html#cb246-6" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">list</span>(a,b,c)</span>
+<span id="cb246-7"><a href="bilaga.html#cb246-7" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] &quot;hej&quot;   &quot;Kalle&quot; &quot;hejdå&quot;
 ## 
@@ -538,19 +572,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [[3]]
 ## [1] 1 2 3 4 5 6 7 8</code></pre>
 <p>Ett mycket vanligt exempel på en lista är modellobjekt, dvs objektet man skapar när man anpassar en modell, till exempel en regressionsmodell. Hela resultatet från modellanpassningen ligger på en lista. Se nedan.</p>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="bilaga.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Skapar en data.frame</span></span>
-<span id="cb173-2"><a href="bilaga.html#cb173-2" aria-hidden="true" tabindex="-1"></a>ctl <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">4.17</span>,<span class="fl">5.58</span>,<span class="fl">5.18</span>,<span class="fl">6.11</span>,<span class="fl">4.50</span>,<span class="fl">4.61</span>,<span class="fl">5.17</span>,<span class="fl">4.53</span>,<span class="fl">5.33</span>,<span class="fl">5.14</span>)</span>
-<span id="cb173-3"><a href="bilaga.html#cb173-3" aria-hidden="true" tabindex="-1"></a>trt <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">4.81</span>,<span class="fl">4.17</span>,<span class="fl">4.41</span>,<span class="fl">3.59</span>,<span class="fl">5.87</span>,<span class="fl">3.83</span>,<span class="fl">6.03</span>,<span class="fl">4.89</span>,<span class="fl">4.32</span>,<span class="fl">4.69</span>)</span>
-<span id="cb173-4"><a href="bilaga.html#cb173-4" aria-hidden="true" tabindex="-1"></a>group <span class="ot">&lt;-</span> <span class="fu">gl</span>(<span class="dv">2</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Ctl&quot;</span>,<span class="st">&quot;Trt&quot;</span>))</span>
-<span id="cb173-5"><a href="bilaga.html#cb173-5" aria-hidden="true" tabindex="-1"></a>weight <span class="ot">&lt;-</span> <span class="fu">c</span>(ctl, trt)</span>
-<span id="cb173-6"><a href="bilaga.html#cb173-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb173-7"><a href="bilaga.html#cb173-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Linjär regression.</span></span>
-<span id="cb173-8"><a href="bilaga.html#cb173-8" aria-hidden="true" tabindex="-1"></a>lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight <span class="sc">~</span> group)</span>
-<span id="cb173-9"><a href="bilaga.html#cb173-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb173-10"><a href="bilaga.html#cb173-10" aria-hidden="true" tabindex="-1"></a><span class="fu">is.list</span>(lm)</span></code></pre></div>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="bilaga.html#cb248-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Skapar en data.frame</span></span>
+<span id="cb248-2"><a href="bilaga.html#cb248-2" aria-hidden="true" tabindex="-1"></a>ctl <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">4.17</span>,<span class="fl">5.58</span>,<span class="fl">5.18</span>,<span class="fl">6.11</span>,<span class="fl">4.50</span>,<span class="fl">4.61</span>,<span class="fl">5.17</span>,<span class="fl">4.53</span>,<span class="fl">5.33</span>,<span class="fl">5.14</span>)</span>
+<span id="cb248-3"><a href="bilaga.html#cb248-3" aria-hidden="true" tabindex="-1"></a>trt <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">4.81</span>,<span class="fl">4.17</span>,<span class="fl">4.41</span>,<span class="fl">3.59</span>,<span class="fl">5.87</span>,<span class="fl">3.83</span>,<span class="fl">6.03</span>,<span class="fl">4.89</span>,<span class="fl">4.32</span>,<span class="fl">4.69</span>)</span>
+<span id="cb248-4"><a href="bilaga.html#cb248-4" aria-hidden="true" tabindex="-1"></a>group <span class="ot">&lt;-</span> <span class="fu">gl</span>(<span class="dv">2</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Ctl&quot;</span>,<span class="st">&quot;Trt&quot;</span>))</span>
+<span id="cb248-5"><a href="bilaga.html#cb248-5" aria-hidden="true" tabindex="-1"></a>weight <span class="ot">&lt;-</span> <span class="fu">c</span>(ctl, trt)</span>
+<span id="cb248-6"><a href="bilaga.html#cb248-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb248-7"><a href="bilaga.html#cb248-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Linjär regression.</span></span>
+<span id="cb248-8"><a href="bilaga.html#cb248-8" aria-hidden="true" tabindex="-1"></a>lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight <span class="sc">~</span> group)</span>
+<span id="cb248-9"><a href="bilaga.html#cb248-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb248-10"><a href="bilaga.html#cb248-10" aria-hidden="true" tabindex="-1"></a><span class="fu">is.list</span>(lm)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="bilaga.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vilka element eller objekt som finns i listan lm? </span></span>
-<span id="cb175-2"><a href="bilaga.html#cb175-2" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(lm)</span></code></pre></div>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="bilaga.html#cb250-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vilka element eller objekt som finns i listan lm? </span></span>
+<span id="cb250-2"><a href="bilaga.html#cb250-2" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(lm)</span></code></pre></div>
 <pre><code>## $names
 ##  [1] &quot;coefficients&quot;  &quot;residuals&quot;     &quot;effects&quot;       &quot;rank&quot;         
 ##  [5] &quot;fitted.values&quot; &quot;assign&quot;        &quot;qr&quot;            &quot;df.residual&quot;  
@@ -564,11 +598,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="datum" class="section level3" number="5.1.7">
 <h3><span class="header-section-number">5.1.7</span> Datum</h3>
 <p>I R uttrycks datum som antal dagar från 1970-01-01. Datum som kommer innan det skrivs ut som negativa värde.</p>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="bilaga.html#cb177-1" aria-hidden="true" tabindex="-1"></a>minaDatum <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="fu">c</span>(<span class="st">&quot;2018-08-14&quot;</span>, <span class="st">&quot;1970-01-01&quot;</span>))</span>
-<span id="cb177-2"><a href="bilaga.html#cb177-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb177-3"><a href="bilaga.html#cb177-3" aria-hidden="true" tabindex="-1"></a>minaDatum[<span class="dv">1</span>] <span class="sc">-</span> minaDatum[<span class="dv">2</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="bilaga.html#cb252-1" aria-hidden="true" tabindex="-1"></a>minaDatum <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="fu">c</span>(<span class="st">&quot;2018-08-14&quot;</span>, <span class="st">&quot;1970-01-01&quot;</span>))</span>
+<span id="cb252-2"><a href="bilaga.html#cb252-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb252-3"><a href="bilaga.html#cb252-3" aria-hidden="true" tabindex="-1"></a>minaDatum[<span class="dv">1</span>] <span class="sc">-</span> minaDatum[<span class="dv">2</span>]</span></code></pre></div>
 <pre><code>## Time difference of 17757 days</code></pre>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="bilaga.html#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.Date</span>(<span class="dv">17757</span>, <span class="at">origin =</span> <span class="st">&quot;1970-01-01&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="bilaga.html#cb254-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.Date</span>(<span class="dv">17757</span>, <span class="at">origin =</span> <span class="st">&quot;1970-01-01&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;2018-08-14&quot;</code></pre>
 <p><strong>Sys.Date()</strong> ger dagens datum.
 <strong>date()</strong> returnerar dagens veckodag, datum och tid.</p>
@@ -628,12 +662,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="formatera-datum" class="section level4" number="5.1.7.2">
 <h4><span class="header-section-number">5.1.7.2</span> Formatera datum</h4>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="bilaga.html#cb181-1" aria-hidden="true" tabindex="-1"></a>idag <span class="ot">&lt;-</span> <span class="fu">Sys.Date</span>()</span>
-<span id="cb181-2"><a href="bilaga.html#cb181-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb181-3"><a href="bilaga.html#cb181-3" aria-hidden="true" tabindex="-1"></a>format_idag <span class="ot">&lt;-</span> <span class="fu">format</span>(idag, <span class="at">format =</span> <span class="st">&quot;%B %d %Y&quot;</span>)</span>
-<span id="cb181-4"><a href="bilaga.html#cb181-4" aria-hidden="true" tabindex="-1"></a>format_idag</span></code></pre></div>
-<pre><code>## [1] &quot;November 13 2020&quot;</code></pre>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="bilaga.html#cb183-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span>(minaDatum[<span class="dv">2</span>], <span class="at">format=</span><span class="st">&quot;%m/%d/%y&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="bilaga.html#cb256-1" aria-hidden="true" tabindex="-1"></a>idag <span class="ot">&lt;-</span> <span class="fu">Sys.Date</span>()</span>
+<span id="cb256-2"><a href="bilaga.html#cb256-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb256-3"><a href="bilaga.html#cb256-3" aria-hidden="true" tabindex="-1"></a>format_idag <span class="ot">&lt;-</span> <span class="fu">format</span>(idag, <span class="at">format =</span> <span class="st">&quot;%B %d %Y&quot;</span>)</span>
+<span id="cb256-4"><a href="bilaga.html#cb256-4" aria-hidden="true" tabindex="-1"></a>format_idag</span></code></pre></div>
+<pre><code>## [1] &quot;November 16 2020&quot;</code></pre>
+<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="bilaga.html#cb258-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span>(minaDatum[<span class="dv">2</span>], <span class="at">format=</span><span class="st">&quot;%m/%d/%y&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;01/01/70&quot;</code></pre>
 </div>
 </div>
@@ -642,44 +676,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">5.2</span> Indexering</h2>
 <p>Ibland är man bara intresserad av en kolumn eller enstaka värde. För att indexera eller plocka ut specifikt element ur ett objekt kan man använda sig av hackparentes [] eller dollar tecken $ och detta görs på olika sätt.
 ### Genom att ange positions nummer</p>
-<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="bilaga.html#cb185-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Vektor</span></span>
-<span id="cb185-2"><a href="bilaga.html#cb185-2" aria-hidden="true" tabindex="-1"></a>testScore <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">23</span>, <span class="fl">1.2</span>)</span>
-<span id="cb185-3"><a href="bilaga.html#cb185-3" aria-hidden="true" tabindex="-1"></a>testScore[<span class="dv">3</span>] <span class="co">#tredje element</span></span></code></pre></div>
+<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="bilaga.html#cb260-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Vektor</span></span>
+<span id="cb260-2"><a href="bilaga.html#cb260-2" aria-hidden="true" tabindex="-1"></a>testScore <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">23</span>, <span class="fl">1.2</span>)</span>
+<span id="cb260-3"><a href="bilaga.html#cb260-3" aria-hidden="true" tabindex="-1"></a>testScore[<span class="dv">3</span>] <span class="co">#tredje element</span></span></code></pre></div>
 <pre><code>## [1] 20</code></pre>
-<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="bilaga.html#cb187-1" aria-hidden="true" tabindex="-1"></a>testScore[<span class="sc">-</span><span class="dv">1</span>] <span class="co">#alla utom den första</span></span></code></pre></div>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="bilaga.html#cb262-1" aria-hidden="true" tabindex="-1"></a>testScore[<span class="sc">-</span><span class="dv">1</span>] <span class="co">#alla utom den första</span></span></code></pre></div>
 <pre><code>## [1] 15.0 20.0 20.0 23.0  1.2</code></pre>
 <p>Kör koden nedan för att se resultatet.</p>
-<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="bilaga.html#cb189-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Data.frame.</span></span>
-<span id="cb189-2"><a href="bilaga.html#cb189-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
-<span id="cb189-3"><a href="bilaga.html#cb189-3" aria-hidden="true" tabindex="-1"></a>iris[, <span class="dv">1</span>] <span class="co"># Väljer kolumn nummer 1</span></span>
-<span id="cb189-4"><a href="bilaga.html#cb189-4" aria-hidden="true" tabindex="-1"></a>iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)] <span class="co"># Rad 1 till 5 på Kolumn 1 och 2</span></span></code></pre></div>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="bilaga.html#cb264-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Data.frame.</span></span>
+<span id="cb264-2"><a href="bilaga.html#cb264-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
+<span id="cb264-3"><a href="bilaga.html#cb264-3" aria-hidden="true" tabindex="-1"></a>iris[, <span class="dv">1</span>] <span class="co"># Väljer kolumn nummer 1</span></span>
+<span id="cb264-4"><a href="bilaga.html#cb264-4" aria-hidden="true" tabindex="-1"></a>iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)] <span class="co"># Rad 1 till 5 på Kolumn 1 och 2</span></span></code></pre></div>
 <div id="genom-att-begränsa-värden-som-man-vill-plocka-ut" class="section level3" number="5.2.1">
 <h3><span class="header-section-number">5.2.1</span> Genom att begränsa värden som man vill plocka ut</h3>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="bilaga.html#cb190-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vektor</span></span>
-<span id="cb190-2"><a href="bilaga.html#cb190-2" aria-hidden="true" tabindex="-1"></a>testScore[testScore <span class="sc">&lt;</span> <span class="dv">10</span>] <span class="co"># alla som är mindre än 10</span></span></code></pre></div>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="bilaga.html#cb265-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vektor</span></span>
+<span id="cb265-2"><a href="bilaga.html#cb265-2" aria-hidden="true" tabindex="-1"></a>testScore[testScore <span class="sc">&lt;</span> <span class="dv">10</span>] <span class="co"># alla som är mindre än 10</span></span></code></pre></div>
 <pre><code>## [1] 7.0 1.2</code></pre>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="bilaga.html#cb192-1" aria-hidden="true" tabindex="-1"></a>testScore[testScore <span class="sc">==</span> <span class="dv">20</span>] <span class="co"># alla som är lika med 20</span></span></code></pre></div>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="bilaga.html#cb267-1" aria-hidden="true" tabindex="-1"></a>testScore[testScore <span class="sc">==</span> <span class="dv">20</span>] <span class="co"># alla som är lika med 20</span></span></code></pre></div>
 <pre><code>## [1] 20 20</code></pre>
 <p>Kör koden nedan för att se resultatet.</p>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="bilaga.html#cb194-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Data.frame</span></span>
-<span id="cb194-2"><a href="bilaga.html#cb194-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris[iris[,<span class="dv">1</span>] <span class="sc">&gt;</span> <span class="dv">7</span>,]) <span class="co"># alla observationer där kolumn nummer 1 är större än 7. Funktionen head() används för att minimera rader som skrivs ut. </span></span></code></pre></div>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="bilaga.html#cb269-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Data.frame</span></span>
+<span id="cb269-2"><a href="bilaga.html#cb269-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris[iris[,<span class="dv">1</span>] <span class="sc">&gt;</span> <span class="dv">7</span>,]) <span class="co"># alla observationer där kolumn nummer 1 är större än 7. Funktionen head() används för att minimera rader som skrivs ut. </span></span></code></pre></div>
 </div>
 <div id="genom-att-ange-namn-av-elementet-eller-kolumnen" class="section level3" number="5.2.2">
 <h3><span class="header-section-number">5.2.2</span> Genom att ange namn av elementet eller kolumnen</h3>
 <p>Det går att namnge element i en vektor. Koder nedan visar hur man ger namn till varje element i en vektor. Efter att ha namngett vektorn kan du nu plocka ut värde med hjälp av namn.</p>
-<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="bilaga.html#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sätter namn på respektive element i testScore</span></span>
-<span id="cb195-2"><a href="bilaga.html#cb195-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(testScore) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Zaida&quot;</span>, <span class="st">&quot;Anna&quot;</span>, <span class="st">&quot;Helena&quot;</span>, <span class="st">&quot;Per&quot;</span>, <span class="st">&quot;Filip&quot;</span>, <span class="st">&quot;Annelie&quot;</span>)</span>
-<span id="cb195-3"><a href="bilaga.html#cb195-3" aria-hidden="true" tabindex="-1"></a>testScore</span></code></pre></div>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="bilaga.html#cb270-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sätter namn på respektive element i testScore</span></span>
+<span id="cb270-2"><a href="bilaga.html#cb270-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(testScore) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Zaida&quot;</span>, <span class="st">&quot;Anna&quot;</span>, <span class="st">&quot;Helena&quot;</span>, <span class="st">&quot;Per&quot;</span>, <span class="st">&quot;Filip&quot;</span>, <span class="st">&quot;Annelie&quot;</span>)</span>
+<span id="cb270-3"><a href="bilaga.html#cb270-3" aria-hidden="true" tabindex="-1"></a>testScore</span></code></pre></div>
 <pre><code>##   Zaida    Anna  Helena     Per   Filip Annelie 
 ##     7.0    15.0    20.0    20.0    23.0     1.2</code></pre>
-<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="bilaga.html#cb197-1" aria-hidden="true" tabindex="-1"></a>testScore[<span class="st">&quot;Per&quot;</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="bilaga.html#cb272-1" aria-hidden="true" tabindex="-1"></a>testScore[<span class="st">&quot;Per&quot;</span>]</span></code></pre></div>
 <pre><code>## Per 
 ##  20</code></pre>
-<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="bilaga.html#cb199-1" aria-hidden="true" tabindex="-1"></a>testScore[<span class="st">&quot;Filip&quot;</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="bilaga.html#cb274-1" aria-hidden="true" tabindex="-1"></a>testScore[<span class="st">&quot;Filip&quot;</span>]</span></code></pre></div>
 <pre><code>## Filip 
 ##    23</code></pre>
-<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="bilaga.html#cb201-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Kolumnen i en data.frame oftast har namn. Objekt som har 2 eller mer dimensioner kan vi använda oss av dollar tecken.   </span></span>
-<span id="cb201-2"><a href="bilaga.html#cb201-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(iris)</span></code></pre></div>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="bilaga.html#cb276-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Kolumnen i en data.frame oftast har namn. Objekt som har 2 eller mer dimensioner kan vi använda oss av dollar tecken.   </span></span>
+<span id="cb276-2"><a href="bilaga.html#cb276-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(iris)</span></code></pre></div>
 <pre><code>## [1] &quot;Sepal.Length&quot; &quot;Sepal.Width&quot;  &quot;Petal.Length&quot; &quot;Petal.Width&quot;  &quot;Species&quot;</code></pre>
 
 </div>

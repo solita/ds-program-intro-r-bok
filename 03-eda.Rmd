@@ -498,8 +498,8 @@ kuwait_data %>%
 ```
 
 
-
 I jämförelse med utveckingen i resten av toppländerna 1972?
+
 ```{r}
 top_countries <- data %>%  top_n(11, gdpPercap) %>% 
   filter( country!= 'Kuwait') %>% 
@@ -551,3 +551,504 @@ Det finns i princip alltid mera saker man skulle kunna undersöka som:
 - [kaggle](https://www.kaggle.com/) - Hemsida med AI/ML tävlingar och källa till gratis dataset
 
 - [stack overflow](https://www.stackoverflow.com) - Forum för programmeringsfrågor, där svar på nästan alla problem man stöter på finns
+
+
+## Övningar Explorativ dataanalys
+
+Datan vi använder idag kommer från Hemnet!
+
+```{r prepare-hem, message=FALSE, warning=FALSE}
+library(tidyverse)      # Innehåller många mindre paket bl.a ggplot2
+library(scales)         # Färghanteringspaket
+library(gapminder)      # Datasetet gapminder
+library(hrbrthemes)     # Teman till ggplot2
+
+hem <- read_csv("https://raw.githubusercontent.com/Ferrologic/ds-program-block2/master/data/hemnet_data.csv")
+
+hem
+```
+
+Vi kan börja med att använda `skim()` från `skimr` på vårt dataset.
+
+```{r load_skim, error=TRUE}
+library(___)
+
+skim(___)
+```
+
+
+Det var mycket information. Men vi kan försöka plocka ut några delar. 
+
+Hur många rader och kolumner har datasetet?
+
+Vad för typ av data är kolumnen `area`?
+
+I vilken kolumn saknas det flest värden?
+
+Men vad innehåller egentligen kolumnerna `area`, `type`? För att svara på det så kan vi titta på några rader av dataset med R:s inbyggda funktion `head()`
+
+```{r load_head, error=TRUE}
+head(___)
+```
+
+Säg att det företag du jobbar på endast är intresserad av Stockholm, Malmö och Göteborg då börjar vi med att endast titta på de försäljningar som gjorts där:
+
+Om du känner att du hellre vill undersöka några andra städer så är det bara att skriva in dem istället, men försäkra dig om att städerna finns med genom att exempelvis använda `hem %>% filter(city == 'din stad')` eller `hem[hem$city == 'din stad',]`.
+
+```{r hem_stader, error=TRUE}
+hem_storstad <- hem %>% filter(city %in% c('stockholm', 'malmö', ___))
+```
+
+Hur har de slutgiltiga priserna i storstäderna sett ut? 
+
+
+```{r stader_density, error=TRUE}
+ggplot(___, 
+          aes(x = ___)) +
+  geom_density()
+```
+
+Är det nån skillnad mellan städerna? Det kan vi undersöka med hjälp av färg och en ridgeplot:
+
+
+```{r stader_density2, error=TRUE}
+library(ggridges)
+ggplot(___, 
+          aes(x = ___, 
+              y = city,
+              color = ___,
+              fill = city)) + geom_density_ridges()
+```
+
+
+Vill vi göra en lättare jämförelse mellan städerna kan vi använda `geom_density()` istället och färg. Notera användandet av `alpha` och jämför med det tidigare kommandot. Det är också värt att notera användandet av parametern `alpha`, som styr hur genomskinliga de olika densiteterna är.
+
+```{r, error=TRUE}
+___ %>% ggplot(aes(x = ___,
+                            color = city, 
+                            fill = city)) +
+  geom_density(alpha=0.5)
+```
+
+Som i `gapminder`-exemplet från presentationen så är fördelningen för final price skev. 
+Igen så kan vi använda en logaritmisk skala på x axeln `scale_x_log10()` för att motverka detta.
+
+```{r}
+hem_storstad <- hem %>% filter(city %in% c('stockholm', 'malmö', "göteborg"))
+
+hem_storstad %>% ggplot(aes(x = final_price, 
+                            color = city, fill = city)) +
+  geom_density(alpha = 0.5) +
+  scale_x_log10()
+```
+
+Vad kan vi se för skillnader mellan fördelingen av slutpriser mellan de städerna?
+Vilken stad är dyrast?
+Vad är det vanligaste priset ungefär?
+Är det någon stad som är mer olik de andra?
+
+Det går självklart att fortsätta att ställa mera frågor och undersöka dem, men nu kommer resten av övningarna att fokusera på att introducera flera sorters visualiseringar!
+
+## Fördelningar 
+
+I de flesta fall är vi intresserade av fördelningar. De vanligaste typerna av visualiserings för fördelingar är dessa:
+
+Densitetsdiagram:
+
+```{r p_den}
+library(gapminder)
+ggplot(gapminder, aes(x = gdpPercap)) +
+  geom_density()
+```
+
+Histogram:
+
+```{r p_hist}
+ggplot(gapminder, aes(x = gdpPercap)) +
+  geom_histogram()
+```
+
+Boxplots:
+
+```{r p_box}
+ggplot(gapminder, aes(x = continent, y = gdpPercap)) +
+  geom_boxplot()
+```
+
+Fioldiagram:
+
+```{r p_fiol}
+ggplot(gapminder, aes(x = continent, y = gdpPercap)) +
+  geom_violin()
+```
+
+Ridgediagram:
+
+```{r p_ridges}
+library(ggridges)
+ggplot(gapminder, aes(x = gdpPercap, y = continent, fill = continent)) +
+  geom_density_ridges() +
+  theme_ridges() + 
+  theme(legend.position = "none")
+```
+
+För att direkt jämföra grupperna går även ett densitetsdiagram med färg att använda
+
+```{r}
+ggplot(gapminder, aes(x = gdpPercap, color = continent)) +
+  geom_density(aes(fill = continent, alpha = 0.7))
+
+```
+
+### Skalor och fördelningar 
+
+I verkligheten är data sällan normalt fördelad. Med den underliggande statistiska processen kan ofta vara det. Därför kan det vara klokt, om data är skevt fördelat, att testa att använda en annan skala på data. Det finns flera olika sätt att transformera data till en annan skala men ett av de vanligaste är att ta logaritmen.
+
+Nedan skalar vi x-axeln med `log10()`, som är den logaritm vi oftast använder i "verkligheten". 
+
+```{r p_log}
+ggplot(gapminder, aes(x = gdpPercap)) +
+  geom_histogram() +
+  scale_x_log10()
+```
+
+### Övningar - Fördelning
+
+Nu är det din tur att prova på de här graferna på hemnetdatan `hem`.
+Hur ser fördelningen ut för `final_price`?
+
+```{r plot_fp, error=TRUE}
+ggplot(aes(_)) +
+  geom_
+```
+
+
+Hur ser fördelningen ut för respektive `type`? Nedan använder du dig av en ridge-plot.
+
+```{r ex_ridge, error=TRUE}
+library(ggridges)
+ggplot(hem, aes(x = final_price, y = _, fill = type)) +
+  geom_density_ridges() +
+  theme_ridges() + 
+  theme(legend.position = _) +
+  scale_x_continuous(labels = scales::number)
+```
+
+
+Boxplot är en annan värdefull visualiseringstyp. Den kalkylerar även outliers, som är de svarta prickarna. Outliers är här definierade som Q3 + 1.5*IQR, d.v.s. den tredje kvartilen + 1.5 gånger avståndet mellan kvartil 1 och kvartil 3.
+
+- Visualisera slutpris per bostadstyp 
+- Notera att vi använder `scales` i `scale_x_continuous()` för att få snyggare formatering på x-axlen. `scales` har också formateringsalternativ för procent, kr/$/€ med mera.
+
+```{r p_flip, error=TRUE}
+ggplot(hem, aes(x = final_price, y = _, fill = _)) +
+  geom_boxplot() + 
+  theme(legend.position = "none") +
+  scale_x_continuous(labels = scales::number_format(suffix = "kr"))
+```
+
+## Korrelation
+
+Visualisera relationen mellan `list_price` och `final_price`.
+
+- Vad är dina `aesthetics`?
+- Vilken `geom_` använder du?
+- Passar skalan?
+- Finns det någon passande statistic för att visuellt beskriva relationen?
+
+```{r p_rel, error=TRUE}
+ggplot(_, aes(x = _, y = _)) +
+  geom_ +
+  stat_
+```
+
+## Pimp my plot!
+
+Vi kan addera titlar och data-etiketter med `labs()`. 
+
+```{r p_labs}
+p <- ggplot(mtcars, aes(mpg, hp, color = am)) +
+  geom_point() +
+  labs(title = "Min titel",
+       x = "Min x-axel",
+       y = "Min y-axel", 
+       subtitle = "Min subtitle",
+       caption = "Källa: Min caption",
+       color = "Legend-titel")
+
+p
+```
+
+## Vi kan ändra tema med `theme_...`
+
+```{r p_theme}
+p + theme_minimal()
+```
+
+Utgå från relationen mellan slutpris och listpris. Ändra labs och lägg till ett tema.
+
+*OBS* Det finns en uppsjö av olika teman. Exempelvis i paketen `hrbrthemes`, `ggthemes`, `ggthemr` m.m. Du kan också skapa dina egna teman exempelvis med företagsfont och färger. Testa gärna exempelvis theme_economist() och theme_solarized_2()
+
+```{r p_labs_ex, error=TRUE}
+library(ggthemes)
+ggplot(hem, aes(x = list_price, y = final_price)) +
+  geom_point() +
+  stat_smooth() +
+  labs(title = "",
+       x = "",
+       y = "", 
+       subtitle = "",
+       caption = "") +
+  theme_
+```
+
+## Andra aesthetics 
+
+- Utgå från din visualisering av relationen mellan utropspris och slutpris
+- Mappa vår aesthetic `color` till en numerisk variabel, exempelvis `fee`. 
+- Vad händer om vår data har stora outliers? (testa att mappa `color` till sq_m)
+
+```{r p_color, error=TRUE}
+ggplot(hem, aes(x = list_price, 
+                y = final_price,
+                color = ___)) +
+  geom_point() +
+  stat_smooth()
+```
+
+## Diskreta variabler
+
+- Utgå från din visualisering av relationen mellan utropspris och slutpris
+- Mappa vår aesthetic `color` till en kategorisk variabel, notera att kategoriska variabler med fler än 30 kategorier kommer att bli svåra att visualisera. Se exempelvis city och area, som du därmed bör undvika.
+- Om det är en kategorisk variabel som är numerisk behöver du ändra den med `as.factor()`
+
+```{r p_color_fct, error=TRUE}
+ggplot(hem, aes(x = list_price, 
+                y = final_price,
+                color = ...)) +
+  geom_point() +
+  stat_smooth()
+```
+
+
+## Facets 
+
+- Visualisera fördelningen per bostadstyp med sub-plots istället
+- Hur hanterar du x-axeln? Finns det något sätt att göra den snyggare?
+- För att hantera långa labels i `facet_wrap()` kan du använda funktionen `labeller` och `label_wrap_gen(10)`.
+
+```{r p_facet, error=TRUE}
+ggplot(hem, aes(final_price)) +
+  geom_histogram() +
+  scale_x_log10() +
+  facet_wrap(~___, labeller = labeller(type = label_wrap_gen(10)), scales = "free")
+```
+
+
+## Barcharts på aggregerade tabeller
+
+Inte sällan har vi aggregerade tabeller som vi vill visualisera.
+
+```{r prepare-gap}
+gap_continent <- gapminder %>% 
+  group_by(continent) %>% 
+  summarise(mean_gdp_per_cap = mean(gdpPercap))
+
+gap_continent
+```
+
+### geom_col()
+
+- `geom_bar()` används när vi vill veta antalet rader per kategori
+- `geom_col()` används på färdiga tabeller
+- Sorterar efter bokstavsordning på kategorier
+
+```{r p_col}
+gap_continent %>% 
+  ggplot(aes(x = continent, y = mean_gdp_per_cap)) +
+  geom_col()
+```
+
+Ibland har vi många kategorier, då kan vi bara byta plats på `x` och `y`
+
+```{r p_flip2}
+gap_continent %>% 
+  ggplot(aes(y = continent, x = mean_gdp_per_cap)) +
+  geom_col()
+```
+
+
+### Hur fördelar sig kvadratmeterpris per bostadstyp? 
+
+- Ta fram en aggregerad tabell med genomsnittligt kvadratmeterpris per bostadstyp
+
+- Vilken funktion använder du för att kalkylera genomsnitt? Ha fördelningen i åtanke
+
+- Visualisera med `geom_col()`
+
+```{r prepare-tbltype}
+tbl_type <- hem %>% 
+  group_by(type) %>% 
+  summarise(median_sq_m_price = median(square_m_price, na.rm = T))
+```
+
+```{r p_dplyr, error=TRUE}
+ggplot(tbl_type, aes(y = type, x = _)) +
+  geom_col()
+```
+
+## Sortera kategorier
+
+- Ofta vill vi sortera en kategori vi viusaliserar i fallande eller stigande ordning 
+- Då kan vi bara använda `reorder(x, X = sum)`
+
+```{r p_reorder}
+gap_continent %>% 
+  ggplot(aes(y = reorder(continent, mean_gdp_per_cap), x = mean_gdp_per_cap)) +
+  geom_col()
+```
+
+## Sortera din bar-chart efter medianpris
+
+```{r p_median, error=TRUE}
+ggplot(tbl_type, 
+            aes(y = reorder(type, ___),
+                x = median_sq_m_price)) +
+  geom_col()
+```
+
+## Tidsserier 
+
+Vi har någon form av tidsserie som vi vill visualisera. Oftast har vi då en tidskomponent, exempelvis dag eller månad. I vår hemnet-data har vi datum. 
+
+- Kalkylera genomsnittligt försäljningspris per dag och visualisera
+- Vilken geom använder du?
+- Vilken skala använder du?
+
+```{r p_ts, error=TRUE}
+ hem %>% 
+  group_by(sold_date) %>% 
+  summarise(median_sq_m_price = median(square_m_price, na.rm = T)) %>% 
+  ggplot(aes(_, y = median_sq_m_price)) +
+  geom_()
+```
+
+
+------------------------- OM DU HAR TID ÖVER -------------------------
+Kolla på den här listan och gör det som verkar mest intressant!
+
+1. Fri uppgift som går ut på att undersöka ett annat dataset själv och utforska det och se vad du hittar. 
+2. Lite mera om tidsserier och hur du kan ändra granulariteten på dina tidserier
+3. Testa på enkel interaktivitet i dina grafer
+4. Läsa på från en rekommenderad lista
+
+1. Undersöka själv.
+Du kan självklart fortsätta att undersäka Hemnet datan! 
+Men om du inte vill det så är lite exempel på dataset som du kan använda:
+`iris`   - inbyggt dataset i r som innehåller mätdata om ett par olika blomarter.
+         `iris` finns alltid tillgängligt i r och är bara att kalla på:
+         
+`mtcars` - inbyggt dataset i r som inehåller mätdata om 32 bilmodeller från 1974.
+          `mtcars` finns alltid tillgängligt på samma sätt som `iris`
+
+Pokemon  - Dataset som innehåller statistik om alla Pokemon genom tiderna. Hämtat från Kaggl
+          Laddas med `pokemon <- read_csv('data/pokemon.csv)`
+          
+Temp     - Globala temperaturer per land och datum från 1743 till 2013 mätt en gång i månaden.
+           Laddas med `temp <- read_csv('data/GlobalTemp.csv')`
+
+Covid-19 - Dataset hämtat från Our World In Data (https://ourworldindata.org/coronavirus-source-data), 15/11/2020,
+           som får sin data från the European Center for Disease Control.
+           Innehåller daglig data från hela världen.
+           Det här datasetet är större och svårare att hantera än de andra.
+           Datasetet laddas med `cov <- read_csv('data/covid19-ECDC.csv')`
+
+```{r}
+## Börja undersöka här!
+# iris
+# mtcars
+# pokemon <- read_csv('data/pokemon.csv')
+# temp <- read_csv('data/GlobalTemp.csv')
+# cov <- read_csv('data/covid19-ECDC.csv')
+```
+
+2. Mer stabila tidsserier
+
+- Inte sällan vill vi ha lite mindre granulära tidsserier än det vi hade tidigare, exempelvis per vecka eller månad
+
+- Vi kan då använda antigen `lubridate` för att få fram exempelvis `vecka` och `år` 
+
+- Eller `tsibble` för att få fram `yearweek` eller `yearmonth`.
+
+- Ladda `tsibble` och `lubridate` 
+
+- Skapa en kolumn som representera vecka
+
+- En som representerar år
+
+- En som representerar år-vecka med `tsibble::yearweek()`
+
+- Visualisera per år-vecka
+
+- Visualisera per vecka och sätt `color = år`
+
+```{r p_ts2}
+library(lubridate)
+library(tsibble)
+
+weekly_sales <- hem %>% 
+  mutate(
+    year = as.factor(year(sold_date)),
+    week = week(sold_date),
+    yearweek = yearweek(sold_date)
+  )
+
+p <- weekly_sales %>% 
+  group_by(yearweek) %>% 
+  summarise(median_sq_m_price = median(square_m_price, na.rm = T)) %>% 
+  ggplot(aes(yearweek, median_sq_m_price)) +
+  geom_line() 
+
+p
+```
+
+
+3. Interaktivitet
+
+Med paketet `plotly` kan du ta ett `ggplot2`-objekt och göra om det till en interaktiv graf, som kräver en hemsida.
+
+```{r p_plotly, out.width="100%", out.height="100%", }
+library(plotly)
+plot <-  hem %>% 
+  group_by(sold_date) %>% 
+  summarise(median_sq_m_price = median(square_m_price, na.rm = T)) %>% 
+  ggplot(aes(sold_date, y = median_sq_m_price)) +
+  geom_line()
+
+ggplotly(plot)
+```
+
+4. Läslista
+
+## Grammar of Graphics - Artikel om the grammar of graphics som ggplot bygger på
+- https://towardsdatascience.com/a-comprehensive-guide-to-the-grammar-of-graphics-for-effective-visualization-of-multi-dimensional-1f92b4ed4149
+
+## R for Data Science
+- Både kapitel 3 - Data Visualisation och Kapitel 7 - Exploratory Data Analysis är väldigt relevanta
+
+## ggplot2 extensions
+
+- Det finns ett flertal extensions till ggplot 
+- Gå in och kolla på några på https://exts.ggplot2.tidyverse.org/gallery/
+
+## Shiny
+- Ett ramverk för att bygga skräddarsydda applikationer i R 
+- Har likheter med traditionella BI-verktyg men är Open Source och därmed kostnadsfritt
+- Är mer flexibelt än ett traditionellt BI-verktyg - allt du kan göra i HTML kan du göra i Shiny.
+- Ett otroligt kraftig verktyg för en Data Scientist - automatisera mera 
+- Innebär att vi kan paketera analyser som applikationer som användare kan agera med 
+- Exempelvis ta fram en prognosmodell och låta användare testa att själva ändra paramterar i den, exempelvis vilken typ av säsongsvariation
+- https://shiny.rstudio.com/gallery/
+- https://shiny.rstudio.com/tutorial/
+
+

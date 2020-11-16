@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.11.13)  13 NOV 2020 16:13
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.11.13)  16 NOV 2020 18:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -861,1917 +861,1838 @@ Underfull \hbox (badness 2409) in paragraph at lines 477--478
  []
 
 [12]
+Overfull \hbox (1009.5pt too wide) in paragraph at lines 547--547
+[]\TU/lmtt/m/n/10 Det här är ett R Markdown-dokument, här kan vi kombinera skri
+ven text med inbäddad R-kod. Vi kan skapa sofistikerade rapporter och dashboard
+s. Eftersom allt är kod kan vi följa hur ett dokument förändras över tid. Vi be
+höver inte spara massa olika versioner.[] 
+ []
+
+
+Overfull \hbox (185.25pt too wide) in paragraph at lines 547--547
+[]       \TU/lmtt/m/n/10 subtitle = "För pingvinsorterna Adelie, Chinstrap and 
+Gentoo Penguins på Palmer Station LTER",[] 
+ []
+
+[13]
+File: images/rmd-knitted.png Graphic file (type bmp)
+<images/rmd-knitted.png>
+[14]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 519.
-[13] [14]
-Chapter 3.
-[15
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 572.
+[15] [16
 
 ]
-Overfull \hbox (75.0pt too wide) in paragraph at lines 680--680
+Chapter 3.
+[17]
+Overfull \hbox (75.0pt too wide) in paragraph at lines 728--728
 []\TU/lmtt/m/n/10 ##    year month   day dep_time sched_dep_time dep_delay arr_
 time sched_arr_time[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 680--680
+Overfull \hbox (75.0pt too wide) in paragraph at lines 728--728
 []\TU/lmtt/m/n/10 ##   <int> <int> <int>    <int>          <int>     <dbl>    <
 int>          <int>[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 680--680
+Overfull \hbox (75.0pt too wide) in paragraph at lines 728--728
 []\TU/lmtt/m/n/10 ## 1  2013     2     2      656            700        -4     
  830            839[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 680--680
+Overfull \hbox (75.0pt too wide) in paragraph at lines 728--728
 []\TU/lmtt/m/n/10 ## 2  2013     2     4      652            600        52     
  830            759[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 680--680
+Overfull \hbox (75.0pt too wide) in paragraph at lines 728--728
 []\TU/lmtt/m/n/10 ## 3  2013     2     6      629            630        -1     
  830            845[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 680--680
+Overfull \hbox (75.0pt too wide) in paragraph at lines 728--728
 []\TU/lmtt/m/n/10 ## 4  2013     2    13      633            636        -3     
  830            808[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 680--680
+Overfull \hbox (75.0pt too wide) in paragraph at lines 728--728
 []\TU/lmtt/m/n/10 ## 5  2013     2    18      717            700        17     
  830            832[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 680--680
+Overfull \hbox (75.0pt too wide) in paragraph at lines 728--728
 []\TU/lmtt/m/n/10 ## 6  2013     2    24      557            600        -3     
  830            837[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 680--680
+Overfull \hbox (75.0pt too wide) in paragraph at lines 728--728
 []\TU/lmtt/m/n/10 ## 7  2013     2    25      532            540        -8     
  830            850[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 680--680
+Overfull \hbox (75.0pt too wide) in paragraph at lines 728--728
 []\TU/lmtt/m/n/10 ## 8  2013     2    26      615            615         0     
  830            820[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 680--680
+Overfull \hbox (75.0pt too wide) in paragraph at lines 728--728
 []\TU/lmtt/m/n/10 ## 9  2013     2    28      621            630        -9     
  830            830[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 680--680
+Overfull \hbox (64.5pt too wide) in paragraph at lines 728--728
 []\TU/lmtt/m/n/10 ## # ... with 11 more variables: arr_delay <dbl>, carrier <ch
 r>, flight <int>,[] 
  []
 
 
-Overfull \hbox (69.75pt too wide) in paragraph at lines 680--680
+Overfull \hbox (69.75pt too wide) in paragraph at lines 728--728
 []\TU/lmtt/m/n/10 ## #   tailnum <chr>, origin <chr>, dest <chr>, air_time <dbl
 >, distance <dbl>,[] 
  []
 
-[16]
-Overfull \hbox (80.25pt too wide) in paragraph at lines 707--707
+[18]
+Overfull \hbox (80.25pt too wide) in paragraph at lines 755--755
 []\TU/lmtt/m/n/10 ##     year month   day dep_time sched_dep_time dep_delay arr
 _time sched_arr_time[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 707--707
+Overfull \hbox (80.25pt too wide) in paragraph at lines 755--755
 []\TU/lmtt/m/n/10 ##    <int> <int> <int>    <int>          <int>     <dbl>    
 <int>          <int>[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 707--707
+Overfull \hbox (80.25pt too wide) in paragraph at lines 755--755
 []\TU/lmtt/m/n/10 ##  1  2013     2     1      520            525        -5    
   816            820[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 707--707
+Overfull \hbox (80.25pt too wide) in paragraph at lines 755--755
 []\TU/lmtt/m/n/10 ##  2  2013     2     1      527            530        -3    
   837            829[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 707--707
+Overfull \hbox (80.25pt too wide) in paragraph at lines 755--755
 []\TU/lmtt/m/n/10 ##  3  2013     2     1      554            601        -7    
   920            918[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 707--707
+Overfull \hbox (80.25pt too wide) in paragraph at lines 755--755
 []\TU/lmtt/m/n/10 ##  4  2013     2     1      558            600        -2    
   738            759[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 707--707
+Overfull \hbox (80.25pt too wide) in paragraph at lines 755--755
 []\TU/lmtt/m/n/10 ##  5  2013     2     1      559            600        -1    
   923            925[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 707--707
+Overfull \hbox (80.25pt too wide) in paragraph at lines 755--755
 []\TU/lmtt/m/n/10 ##  6  2013     2     1      600            600         0    
   833            837[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 707--707
+Overfull \hbox (80.25pt too wide) in paragraph at lines 755--755
 []\TU/lmtt/m/n/10 ##  7  2013     2     1      601            608        -7    
   703            725[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 707--707
+Overfull \hbox (80.25pt too wide) in paragraph at lines 755--755
 []\TU/lmtt/m/n/10 ##  8  2013     2     1      601            608        -7    
   723            755[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 707--707
+Overfull \hbox (80.25pt too wide) in paragraph at lines 755--755
 []\TU/lmtt/m/n/10 ##  9  2013     2     1      604            610        -6    
   752            817[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 707--707
+Overfull \hbox (80.25pt too wide) in paragraph at lines 755--755
 []\TU/lmtt/m/n/10 ## 10  2013     2     1      608            615        -7    
   837            842[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 707--707
+Overfull \hbox (27.75pt too wide) in paragraph at lines 755--755
 []\TU/lmtt/m/n/10 ## # ... with 10,336 more rows, and 11 more variables: arr_de
 lay <dbl>,[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 707--707
+Overfull \hbox (54.0pt too wide) in paragraph at lines 755--755
 []\TU/lmtt/m/n/10 ## #   carrier <chr>, flight <int>, tailnum <chr>, origin <ch
 r>, dest <chr>,[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 707--707
-[]\TU/lmtt/m/n/10 ## #   air_time <dbl>, distance <dbl>, hour <dbl>, minute <db
-l>, time_hour <dttm>[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 759--759
-[]\TU/lmtt/m/n/10 ##     year month   day dep_time sched_dep_time dep_delay arr
-_time sched_arr_time[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 759--759
-[]\TU/lmtt/m/n/10 ##    <int> <int> <int>    <int>          <int>     <dbl>    
-<int>          <int>[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 759--759
-[]\TU/lmtt/m/n/10 ##  1  2013    12     7     2040           2123       -43    
-   40           2352[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 759--759
-[]\TU/lmtt/m/n/10 ##  2  2013     2     3     2022           2055       -33    
- 2240           2338[] 
- []
-
-[17]
-Overfull \hbox (80.25pt too wide) in paragraph at lines 759--759
-[]\TU/lmtt/m/n/10 ##  3  2013    11    10     1408           1440       -32    
- 1549           1559[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 759--759
-[]\TU/lmtt/m/n/10 ##  4  2013     1    11     1900           1930       -30    
- 2233           2243[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 759--759
-[]\TU/lmtt/m/n/10 ##  5  2013     1    29     1703           1730       -27    
- 1947           1957[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 759--759
-[]\TU/lmtt/m/n/10 ##  6  2013     8     9      729            755       -26    
- 1002            955[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 759--759
-[]\TU/lmtt/m/n/10 ##  7  2013    10    23     1907           1932       -25    
- 2143           2143[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 759--759
-[]\TU/lmtt/m/n/10 ##  8  2013     3    30     2030           2055       -25    
- 2213           2250[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 759--759
-[]\TU/lmtt/m/n/10 ##  9  2013     3     2     1431           1455       -24    
- 1601           1631[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 759--759
-[]\TU/lmtt/m/n/10 ## 10  2013     5     5      934            958       -24    
- 1225           1309[] 
- []
-
-
-Overfull \hbox (33.0pt too wide) in paragraph at lines 759--759
-[]\TU/lmtt/m/n/10 ## # ... with 336,766 more rows, and 11 more variables: arr_d
-elay <dbl>,[] 
- []
-
-
-Overfull \hbox (54.0pt too wide) in paragraph at lines 759--759
-[]\TU/lmtt/m/n/10 ## #   carrier <chr>, flight <int>, tailnum <chr>, origin <ch
-r>, dest <chr>,[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 759--759
-[]\TU/lmtt/m/n/10 ## #   air_time <dbl>, distance <dbl>, hour <dbl>, minute <db
-l>, time_hour <dttm>[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 786--786
-[]\TU/lmtt/m/n/10 ##     year month   day dep_time sched_dep_time dep_delay arr
-_time sched_arr_time[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 786--786
-[]\TU/lmtt/m/n/10 ##    <int> <int> <int>    <int>          <int>     <dbl>    
-<int>          <int>[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 786--786
-[]\TU/lmtt/m/n/10 ##  1  2013     1     9      641            900      1301    
- 1242           1530[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 786--786
-[]\TU/lmtt/m/n/10 ##  2  2013     6    15     1432           1935      1137    
- 1607           2120[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 786--786
-[]\TU/lmtt/m/n/10 ##  3  2013     1    10     1121           1635      1126    
- 1239           1810[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 786--786
-[]\TU/lmtt/m/n/10 ##  4  2013     9    20     1139           1845      1014    
- 1457           2210[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 786--786
-[]\TU/lmtt/m/n/10 ##  5  2013     7    22      845           1600      1005    
- 1044           1815[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 786--786
-[]\TU/lmtt/m/n/10 ##  6  2013     4    10     1100           1900       960    
- 1342           2211[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 786--786
-[]\TU/lmtt/m/n/10 ##  7  2013     3    17     2321            810       911    
-  135           1020[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 786--786
-[]\TU/lmtt/m/n/10 ##  8  2013     6    27      959           1900       899    
- 1236           2226[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 786--786
-[]\TU/lmtt/m/n/10 ##  9  2013     7    22     2257            759       898    
-  121           1026[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 786--786
-[]\TU/lmtt/m/n/10 ## 10  2013    12     5      756           1700       896    
- 1058           2020[] 
- []
-
-
-Overfull \hbox (33.0pt too wide) in paragraph at lines 786--786
-[]\TU/lmtt/m/n/10 ## # ... with 336,766 more rows, and 11 more variables: arr_d
-elay <dbl>,[] 
- []
-
-
-Overfull \hbox (54.0pt too wide) in paragraph at lines 786--786
-[]\TU/lmtt/m/n/10 ## #   carrier <chr>, flight <int>, tailnum <chr>, origin <ch
-r>, dest <chr>,[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 786--786
-[]\TU/lmtt/m/n/10 ## #   air_time <dbl>, distance <dbl>, hour <dbl>, minute <db
-l>, time_hour <dttm>[] 
- []
-
-[18]
-Overfull \hbox (43.5pt too wide) in paragraph at lines 855--855
-[]\TU/lmtt/m/n/10 ##    carrier  year month   day dep_time sched_dep_time dep_d
-elay arr_time[] 
- []
-
-
-Overfull \hbox (43.5pt too wide) in paragraph at lines 855--855
-[]\TU/lmtt/m/n/10 ##    <chr>   <int> <int> <int>    <int>          <int>     <
-dbl>    <int>[] 
- []
-
-
-Overfull \hbox (43.5pt too wide) in paragraph at lines 855--855
-[]\TU/lmtt/m/n/10 ##  1 UA       2013     1     1      517            515      
-   2      830[] 
- []
-
-
-Overfull \hbox (43.5pt too wide) in paragraph at lines 855--855
-[]\TU/lmtt/m/n/10 ##  2 UA       2013     1     1      533            529      
-   4      850[] 
- []
-
-
-Overfull \hbox (43.5pt too wide) in paragraph at lines 855--855
-[]\TU/lmtt/m/n/10 ##  3 AA       2013     1     1      542            540      
-   2      923[] 
- []
-
-
-Overfull \hbox (43.5pt too wide) in paragraph at lines 855--855
-[]\TU/lmtt/m/n/10 ##  4 B6       2013     1     1      544            545      
-  -1     1004[] 
- []
-
-
-Overfull \hbox (43.5pt too wide) in paragraph at lines 855--855
-[]\TU/lmtt/m/n/10 ##  5 DL       2013     1     1      554            600      
-  -6      812[] 
- []
-
-
-Overfull \hbox (43.5pt too wide) in paragraph at lines 855--855
-[]\TU/lmtt/m/n/10 ##  6 UA       2013     1     1      554            558      
-  -4      740[] 
- []
-
-
-Overfull \hbox (43.5pt too wide) in paragraph at lines 855--855
-[]\TU/lmtt/m/n/10 ##  7 B6       2013     1     1      555            600      
-  -5      913[] 
- []
-
-
-Overfull \hbox (43.5pt too wide) in paragraph at lines 855--855
-[]\TU/lmtt/m/n/10 ##  8 EV       2013     1     1      557            600      
-  -3      709[] 
- []
-
-
-Overfull \hbox (43.5pt too wide) in paragraph at lines 855--855
-[]\TU/lmtt/m/n/10 ##  9 B6       2013     1     1      557            600      
-  -3      838[] 
- []
-
-
-Overfull \hbox (43.5pt too wide) in paragraph at lines 855--855
-[]\TU/lmtt/m/n/10 ## 10 AA       2013     1     1      558            600      
-  -2      753[] 
- []
-
-
-Overfull \hbox (59.25pt too wide) in paragraph at lines 855--855
-[]\TU/lmtt/m/n/10 ## # ... with 336,766 more rows, and 11 more variables: sched
-_arr_time <int>,[] 
- []
-
-
-Overfull \hbox (64.5pt too wide) in paragraph at lines 855--855
-[]\TU/lmtt/m/n/10 ## #   arr_delay <dbl>, flight <int>, tailnum <chr>, origin <
-chr>, dest <chr>,[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 855--855
+Overfull \hbox (80.25pt too wide) in paragraph at lines 755--755
 []\TU/lmtt/m/n/10 ## #   air_time <dbl>, distance <dbl>, hour <dbl>, minute <db
 l>, time_hour <dttm>[] 
  []
 
 [19]
-Overfull \hbox (48.75pt too wide) in paragraph at lines 907--907
-[]\TU/lmtt/m/n/10 ##    month   day dep_time sched_dep_time dep_delay arr_time 
-sched_arr_time[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 820--820
+[]\TU/lmtt/m/n/10 ##     year month   day dep_time sched_dep_time dep_delay arr
+_time sched_arr_time[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 907--907
-[]\TU/lmtt/m/n/10 ##    <int> <int>    <int>          <int>     <dbl>    <int> 
-         <int>[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 820--820
+[]\TU/lmtt/m/n/10 ##    <int> <int> <int>    <int>          <int>     <dbl>    
+<int>          <int>[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 907--907
-[]\TU/lmtt/m/n/10 ##  1     1     1      517            515         2      830 
-           819[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 820--820
+[]\TU/lmtt/m/n/10 ##  1  2013    12     7     2040           2123       -43    
+   40           2352[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 907--907
-[]\TU/lmtt/m/n/10 ##  2     1     1      533            529         4      850 
-           830[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 820--820
+[]\TU/lmtt/m/n/10 ##  2  2013     2     3     2022           2055       -33    
+ 2240           2338[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 907--907
-[]\TU/lmtt/m/n/10 ##  3     1     1      542            540         2      923 
-           850[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 820--820
+[]\TU/lmtt/m/n/10 ##  3  2013    11    10     1408           1440       -32    
+ 1549           1559[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 907--907
-[]\TU/lmtt/m/n/10 ##  4     1     1      544            545        -1     1004 
-          1022[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 820--820
+[]\TU/lmtt/m/n/10 ##  4  2013     1    11     1900           1930       -30    
+ 2233           2243[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 907--907
-[]\TU/lmtt/m/n/10 ##  5     1     1      554            600        -6      812 
-           837[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 820--820
+[]\TU/lmtt/m/n/10 ##  5  2013     1    29     1703           1730       -27    
+ 1947           1957[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 907--907
-[]\TU/lmtt/m/n/10 ##  6     1     1      554            558        -4      740 
-           728[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 820--820
+[]\TU/lmtt/m/n/10 ##  6  2013     8     9      729            755       -26    
+ 1002            955[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 907--907
-[]\TU/lmtt/m/n/10 ##  7     1     1      555            600        -5      913 
-           854[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 820--820
+[]\TU/lmtt/m/n/10 ##  7  2013    10    23     1907           1932       -25    
+ 2143           2143[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 907--907
-[]\TU/lmtt/m/n/10 ##  8     1     1      557            600        -3      709 
-           723[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 820--820
+[]\TU/lmtt/m/n/10 ##  8  2013     3    30     2030           2055       -25    
+ 2213           2250[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 907--907
-[]\TU/lmtt/m/n/10 ##  9     1     1      557            600        -3      838 
-           846[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 820--820
+[]\TU/lmtt/m/n/10 ##  9  2013     3     2     1431           1455       -24    
+ 1601           1631[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 907--907
-[]\TU/lmtt/m/n/10 ## 10     1     1      558            600        -2      753 
-           745[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 820--820
+[]\TU/lmtt/m/n/10 ## 10  2013     5     5      934            958       -24    
+ 1225           1309[] 
  []
 
 
-Overfull \hbox (33.0pt too wide) in paragraph at lines 907--907
+Overfull \hbox (33.0pt too wide) in paragraph at lines 820--820
 []\TU/lmtt/m/n/10 ## # ... with 336,766 more rows, and 11 more variables: arr_d
 elay <dbl>,[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 907--907
+Overfull \hbox (54.0pt too wide) in paragraph at lines 820--820
 []\TU/lmtt/m/n/10 ## #   carrier <chr>, flight <int>, tailnum <chr>, origin <ch
 r>, dest <chr>,[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 907--907
+Overfull \hbox (80.25pt too wide) in paragraph at lines 820--820
 []\TU/lmtt/m/n/10 ## #   air_time <dbl>, distance <dbl>, hour <dbl>, minute <db
 l>, time_hour <dttm>[] 
  []
 
-[20] [21]
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1007--1007
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 847--847
 []\TU/lmtt/m/n/10 ##     year month   day dep_time sched_dep_time dep_delay arr
 _time sched_arr_time[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1007--1007
+Overfull \hbox (80.25pt too wide) in paragraph at lines 847--847
 []\TU/lmtt/m/n/10 ##    <int> <int> <int>    <int>          <int>     <dbl>    
 <int>          <int>[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1007--1007
-[]\TU/lmtt/m/n/10 ##  1  2013     1     1      517            515         2    
-  830            819[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 847--847
+[]\TU/lmtt/m/n/10 ##  1  2013     1     9      641            900      1301    
+ 1242           1530[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1007--1007
-[]\TU/lmtt/m/n/10 ##  2  2013     1     1      533            529         4    
-  850            830[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 847--847
+[]\TU/lmtt/m/n/10 ##  2  2013     6    15     1432           1935      1137    
+ 1607           2120[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1007--1007
-[]\TU/lmtt/m/n/10 ##  3  2013     1     1      542            540         2    
-  923            850[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 847--847
+[]\TU/lmtt/m/n/10 ##  3  2013     1    10     1121           1635      1126    
+ 1239           1810[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1007--1007
-[]\TU/lmtt/m/n/10 ##  4  2013     1     1      544            545        -1    
- 1004           1022[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 847--847
+[]\TU/lmtt/m/n/10 ##  4  2013     9    20     1139           1845      1014    
+ 1457           2210[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1007--1007
-[]\TU/lmtt/m/n/10 ##  5  2013     1     1      554            600        -6    
-  812            837[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 847--847
+[]\TU/lmtt/m/n/10 ##  5  2013     7    22      845           1600      1005    
+ 1044           1815[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1007--1007
-[]\TU/lmtt/m/n/10 ##  6  2013     1     1      554            558        -4    
-  740            728[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 847--847
+[]\TU/lmtt/m/n/10 ##  6  2013     4    10     1100           1900       960    
+ 1342           2211[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1007--1007
-[]\TU/lmtt/m/n/10 ##  7  2013     1     1      555            600        -5    
-  913            854[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 847--847
+[]\TU/lmtt/m/n/10 ##  7  2013     3    17     2321            810       911    
+  135           1020[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1007--1007
-[]\TU/lmtt/m/n/10 ##  8  2013     1     1      557            600        -3    
-  709            723[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 847--847
+[]\TU/lmtt/m/n/10 ##  8  2013     6    27      959           1900       899    
+ 1236           2226[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1007--1007
-[]\TU/lmtt/m/n/10 ##  9  2013     1     1      557            600        -3    
-  838            846[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 847--847
+[]\TU/lmtt/m/n/10 ##  9  2013     7    22     2257            759       898    
+  121           1026[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1007--1007
-[]\TU/lmtt/m/n/10 ## 10  2013     1     1      558            600        -2    
-  753            745[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 847--847
+[]\TU/lmtt/m/n/10 ## 10  2013    12     5      756           1700       896    
+ 1058           2020[] 
  []
 
 
-Overfull \hbox (33.0pt too wide) in paragraph at lines 1007--1007
-[]\TU/lmtt/m/n/10 ## # ... with 336,766 more rows, and 12 more variables: arr_d
+Overfull \hbox (33.0pt too wide) in paragraph at lines 847--847
+[]\TU/lmtt/m/n/10 ## # ... with 336,766 more rows, and 11 more variables: arr_d
 elay <dbl>,[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 1007--1007
+Overfull \hbox (54.0pt too wide) in paragraph at lines 847--847
 []\TU/lmtt/m/n/10 ## #   carrier <chr>, flight <int>, tailnum <chr>, origin <ch
 r>, dest <chr>,[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 1007--1007
+Overfull \hbox (80.25pt too wide) in paragraph at lines 847--847
 []\TU/lmtt/m/n/10 ## #   air_time <dbl>, distance <dbl>, hour <dbl>, minute <db
-l>, time_hour <dttm>,[] 
+l>, time_hour <dttm>[] 
+ []
+
+[20]
+Overfull \hbox (43.5pt too wide) in paragraph at lines 916--916
+[]\TU/lmtt/m/n/10 ##    carrier  year month   day dep_time sched_dep_time dep_d
+elay arr_time[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1035--1035
+Overfull \hbox (43.5pt too wide) in paragraph at lines 916--916
+[]\TU/lmtt/m/n/10 ##    <chr>   <int> <int> <int>    <int>          <int>     <
+dbl>    <int>[] 
+ []
+
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 916--916
+[]\TU/lmtt/m/n/10 ##  1 UA       2013     1     1      517            515      
+   2      830[] 
+ []
+
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 916--916
+[]\TU/lmtt/m/n/10 ##  2 UA       2013     1     1      533            529      
+   4      850[] 
+ []
+
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 916--916
+[]\TU/lmtt/m/n/10 ##  3 AA       2013     1     1      542            540      
+   2      923[] 
+ []
+
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 916--916
+[]\TU/lmtt/m/n/10 ##  4 B6       2013     1     1      544            545      
+  -1     1004[] 
+ []
+
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 916--916
+[]\TU/lmtt/m/n/10 ##  5 DL       2013     1     1      554            600      
+  -6      812[] 
+ []
+
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 916--916
+[]\TU/lmtt/m/n/10 ##  6 UA       2013     1     1      554            558      
+  -4      740[] 
+ []
+
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 916--916
+[]\TU/lmtt/m/n/10 ##  7 B6       2013     1     1      555            600      
+  -5      913[] 
+ []
+
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 916--916
+[]\TU/lmtt/m/n/10 ##  8 EV       2013     1     1      557            600      
+  -3      709[] 
+ []
+
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 916--916
+[]\TU/lmtt/m/n/10 ##  9 B6       2013     1     1      557            600      
+  -3      838[] 
+ []
+
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 916--916
+[]\TU/lmtt/m/n/10 ## 10 AA       2013     1     1      558            600      
+  -2      753[] 
+ []
+
+[21]
+Overfull \hbox (59.25pt too wide) in paragraph at lines 916--916
+[]\TU/lmtt/m/n/10 ## # ... with 336,766 more rows, and 11 more variables: sched
+_arr_time <int>,[] 
+ []
+
+
+Overfull \hbox (64.5pt too wide) in paragraph at lines 916--916
+[]\TU/lmtt/m/n/10 ## #   arr_delay <dbl>, flight <int>, tailnum <chr>, origin <
+chr>, dest <chr>,[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 916--916
+[]\TU/lmtt/m/n/10 ## #   air_time <dbl>, distance <dbl>, hour <dbl>, minute <db
+l>, time_hour <dttm>[] 
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 968--968
+[]\TU/lmtt/m/n/10 ##    month   day dep_time sched_dep_time dep_delay arr_time 
+sched_arr_time[] 
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 968--968
+[]\TU/lmtt/m/n/10 ##    <int> <int>    <int>          <int>     <dbl>    <int> 
+         <int>[] 
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 968--968
+[]\TU/lmtt/m/n/10 ##  1     1     1      517            515         2      830 
+           819[] 
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 968--968
+[]\TU/lmtt/m/n/10 ##  2     1     1      533            529         4      850 
+           830[] 
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 968--968
+[]\TU/lmtt/m/n/10 ##  3     1     1      542            540         2      923 
+           850[] 
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 968--968
+[]\TU/lmtt/m/n/10 ##  4     1     1      544            545        -1     1004 
+          1022[] 
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 968--968
+[]\TU/lmtt/m/n/10 ##  5     1     1      554            600        -6      812 
+           837[] 
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 968--968
+[]\TU/lmtt/m/n/10 ##  6     1     1      554            558        -4      740 
+           728[] 
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 968--968
+[]\TU/lmtt/m/n/10 ##  7     1     1      555            600        -5      913 
+           854[] 
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 968--968
+[]\TU/lmtt/m/n/10 ##  8     1     1      557            600        -3      709 
+           723[] 
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 968--968
+[]\TU/lmtt/m/n/10 ##  9     1     1      557            600        -3      838 
+           846[] 
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 968--968
+[]\TU/lmtt/m/n/10 ## 10     1     1      558            600        -2      753 
+           745[] 
+ []
+
+
+Overfull \hbox (33.0pt too wide) in paragraph at lines 968--968
+[]\TU/lmtt/m/n/10 ## # ... with 336,766 more rows, and 11 more variables: arr_d
+elay <dbl>,[] 
+ []
+
+
+Overfull \hbox (54.0pt too wide) in paragraph at lines 968--968
+[]\TU/lmtt/m/n/10 ## #   carrier <chr>, flight <int>, tailnum <chr>, origin <ch
+r>, dest <chr>,[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 968--968
+[]\TU/lmtt/m/n/10 ## #   air_time <dbl>, distance <dbl>, hour <dbl>, minute <db
+l>, time_hour <dttm>[] 
+ []
+
+[22] [23]
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 1039.
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1103--1103
 []\TU/lmtt/m/n/10 ##     year month   day dep_time sched_dep_time dep_delay arr
 _time sched_arr_time[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1035--1035
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1103--1103
 []\TU/lmtt/m/n/10 ##    <int> <int> <int>    <int>          <int>     <dbl>    
 <int>          <int>[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1035--1035
-[]\TU/lmtt/m/n/10 ##  1  2013     1     1      517            515         2    
-  830            819[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1035--1035
-[]\TU/lmtt/m/n/10 ##  2  2013     1     1      533            529         4    
-  850            830[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1035--1035
-[]\TU/lmtt/m/n/10 ##  3  2013     1     1      542            540         2    
-  923            850[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1035--1035
-[]\TU/lmtt/m/n/10 ##  4  2013     1     1      544            545        -1    
- 1004           1022[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1035--1035
-[]\TU/lmtt/m/n/10 ##  5  2013     1     1      554            600        -6    
-  812            837[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1035--1035
-[]\TU/lmtt/m/n/10 ##  6  2013     1     1      554            558        -4    
-  740            728[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1035--1035
-[]\TU/lmtt/m/n/10 ##  7  2013     1     1      555            600        -5    
-  913            854[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1035--1035
-[]\TU/lmtt/m/n/10 ##  8  2013     1     1      557            600        -3    
-  709            723[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1035--1035
-[]\TU/lmtt/m/n/10 ##  9  2013     1     1      557            600        -3    
-  838            846[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1035--1035
-[]\TU/lmtt/m/n/10 ## 10  2013     1     1      558            600        -2    
-  753            745[] 
- []
-
-
-Overfull \hbox (33.0pt too wide) in paragraph at lines 1035--1035
-[]\TU/lmtt/m/n/10 ## # ... with 336,766 more rows, and 12 more variables: arr_d
-elay <dbl>,[] 
- []
-
-
-Overfull \hbox (54.0pt too wide) in paragraph at lines 1035--1035
-[]\TU/lmtt/m/n/10 ## #   carrier <chr>, flight <int>, tailnum <chr>, origin <ch
-r>, dest <chr>,[] 
- []
-
-
-Overfull \hbox (85.5pt too wide) in paragraph at lines 1035--1035
-[]\TU/lmtt/m/n/10 ## #   air_time <dbl>, distance <dbl>, hour <dbl>, minute <db
-l>, time_hour <dttm>,[] 
- []
-
-[22]
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1070--1070
-[]\TU/lmtt/m/n/10 ##     year month   day dep_time sched_dep_time dep_delay arr
-_time sched_arr_time[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1070--1070
-[]\TU/lmtt/m/n/10 ##    <int> <int> <int>    <int>          <int>     <dbl>    
-<int>          <int>[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1070--1070
-[]\TU/lmtt/m/n/10 ##  1  2013     1     1      517            515         2    
-  830            819[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1070--1070
-[]\TU/lmtt/m/n/10 ##  2  2013     1     1      533            529         4    
-  850            830[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1070--1070
-[]\TU/lmtt/m/n/10 ##  3  2013     1     1      542            540         2    
-  923            850[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1070--1070
-[]\TU/lmtt/m/n/10 ##  4  2013     1     1      544            545        -1    
- 1004           1022[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1070--1070
-[]\TU/lmtt/m/n/10 ##  5  2013     1     1      554            600        -6    
-  812            837[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1070--1070
-[]\TU/lmtt/m/n/10 ##  6  2013     1     1      554            558        -4    
-  740            728[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1070--1070
-[]\TU/lmtt/m/n/10 ##  7  2013     1     1      555            600        -5    
-  913            854[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1070--1070
-[]\TU/lmtt/m/n/10 ##  8  2013     1     1      557            600        -3    
-  709            723[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1070--1070
-[]\TU/lmtt/m/n/10 ##  9  2013     1     1      557            600        -3    
-  838            846[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1070--1070
-[]\TU/lmtt/m/n/10 ## 10  2013     1     1      558            600        -2    
-  753            745[] 
- []
-
-
-Overfull \hbox (33.0pt too wide) in paragraph at lines 1070--1070
-[]\TU/lmtt/m/n/10 ## # ... with 336,766 more rows, and 12 more variables: arr_d
-elay <dbl>,[] 
- []
-
-
-Overfull \hbox (54.0pt too wide) in paragraph at lines 1070--1070
-[]\TU/lmtt/m/n/10 ## #   carrier <chr>, flight <int>, tailnum <chr>, origin <ch
-r>, dest <chr>,[] 
- []
-
-
-Overfull \hbox (85.5pt too wide) in paragraph at lines 1070--1070
-[]\TU/lmtt/m/n/10 ## #   air_time <dbl>, distance <dbl>, hour <dbl>, minute <db
-l>, time_hour <dttm>,[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1101--1101
-[]\TU/lmtt/m/n/10 ##     year month   day dep_time sched_dep_time dep_delay arr
-_time sched_arr_time[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1101--1101
-[]\TU/lmtt/m/n/10 ##    <int> <int> <int>    <int>          <int>     <dbl>    
-<int>          <int>[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1101--1101
-[]\TU/lmtt/m/n/10 ##  1  2013     1     1      517            515         2    
-  830            819[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1101--1101
-[]\TU/lmtt/m/n/10 ##  2  2013     1     1      533            529         4    
-  850            830[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1101--1101
-[]\TU/lmtt/m/n/10 ##  3  2013     1     1      542            540         2    
-  923            850[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1101--1101
-[]\TU/lmtt/m/n/10 ##  4  2013     1     1      544            545        -1    
- 1004           1022[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1101--1101
-[]\TU/lmtt/m/n/10 ##  5  2013     1     1      554            600        -6    
-  812            837[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1101--1101
-[]\TU/lmtt/m/n/10 ##  6  2013     1     1      554            558        -4    
-  740            728[] 
- []
-
-[23]
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1101--1101
-[]\TU/lmtt/m/n/10 ##  7  2013     1     1      555            600        -5    
-  913            854[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1101--1101
-[]\TU/lmtt/m/n/10 ##  8  2013     1     1      557            600        -3    
-  709            723[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1101--1101
-[]\TU/lmtt/m/n/10 ##  9  2013     1     1      557            600        -3    
-  838            846[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1101--1101
-[]\TU/lmtt/m/n/10 ## 10  2013     1     1      558            600        -2    
-  753            745[] 
- []
-
-
-Overfull \hbox (33.0pt too wide) in paragraph at lines 1101--1101
-[]\TU/lmtt/m/n/10 ## # ... with 336,766 more rows, and 12 more variables: arr_d
-elay <dbl>,[] 
- []
-
-
-Overfull \hbox (54.0pt too wide) in paragraph at lines 1101--1101
-[]\TU/lmtt/m/n/10 ## #   carrier <chr>, flight <int>, tailnum <chr>, origin <ch
-r>, dest <chr>,[] 
- []
-
-
-Overfull \hbox (85.5pt too wide) in paragraph at lines 1101--1101
-[]\TU/lmtt/m/n/10 ## #   air_time <dbl>, distance <dbl>, hour <dbl>, minute <db
-l>, time_hour <dttm>,[] 
  []
 
 [24]
-Overfull \hbox (17.25pt too wide) in paragraph at lines 1197--1197
-[]\TU/lmtt/m/n/10 ## `summarise()` ungrouping output (override with `.groups` a
-rgument)[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1103--1103
+[]\TU/lmtt/m/n/10 ##  1  2013     1     1      517            515         2    
+  830            819[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1103--1103
+[]\TU/lmtt/m/n/10 ##  2  2013     1     1      533            529         4    
+  850            830[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1103--1103
+[]\TU/lmtt/m/n/10 ##  3  2013     1     1      542            540         2    
+  923            850[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1103--1103
+[]\TU/lmtt/m/n/10 ##  4  2013     1     1      544            545        -1    
+ 1004           1022[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1103--1103
+[]\TU/lmtt/m/n/10 ##  5  2013     1     1      554            600        -6    
+  812            837[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1103--1103
+[]\TU/lmtt/m/n/10 ##  6  2013     1     1      554            558        -4    
+  740            728[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1103--1103
+[]\TU/lmtt/m/n/10 ##  7  2013     1     1      555            600        -5    
+  913            854[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1103--1103
+[]\TU/lmtt/m/n/10 ##  8  2013     1     1      557            600        -3    
+  709            723[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1103--1103
+[]\TU/lmtt/m/n/10 ##  9  2013     1     1      557            600        -3    
+  838            846[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1103--1103
+[]\TU/lmtt/m/n/10 ## 10  2013     1     1      558            600        -2    
+  753            745[] 
+ []
+
+
+Overfull \hbox (33.0pt too wide) in paragraph at lines 1103--1103
+[]\TU/lmtt/m/n/10 ## # ... with 336,766 more rows, and 12 more variables: arr_d
+elay <dbl>,[] 
+ []
+
+
+Overfull \hbox (54.0pt too wide) in paragraph at lines 1103--1103
+[]\TU/lmtt/m/n/10 ## #   carrier <chr>, flight <int>, tailnum <chr>, origin <ch
+r>, dest <chr>,[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 1103--1103
+[]\TU/lmtt/m/n/10 ## #   air_time <dbl>, distance <dbl>, hour <dbl>, minute <db
+l>, time_hour <dttm>,[] 
  []
 
 [25]
-Overfull \hbox (17.25pt too wide) in paragraph at lines 1253--1253
-[]\TU/lmtt/m/n/10 ## `summarise()` ungrouping output (override with `.groups` a
-rgument)[] 
- []
-
-[26]
-Overfull \hbox (17.25pt too wide) in paragraph at lines 1310--1310
-[]\TU/lmtt/m/n/10 ## `summarise()` ungrouping output (override with `.groups` a
-rgument)[] 
- []
-
-[27]
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1397--1397
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1192--1192
 []\TU/lmtt/m/n/10 ##     year month   day dep_time sched_dep_time dep_delay arr
 _time sched_arr_time[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1397--1397
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1192--1192
 []\TU/lmtt/m/n/10 ##    <int> <int> <int>    <int>          <int>     <dbl>    
 <int>          <int>[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1397--1397
-[]\TU/lmtt/m/n/10 ##  1  2013     6     3      801            805        -4    
- 1050           1102[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1192--1192
+[]\TU/lmtt/m/n/10 ##  1  2013     1     1      517            515         2    
+  830            819[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1397--1397
-[]\TU/lmtt/m/n/10 ##  2  2013     9    17     1335           1330         5    
- 1536           1545[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1192--1192
+[]\TU/lmtt/m/n/10 ##  2  2013     1     1      533            529         4    
+  850            830[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1192--1192
+[]\TU/lmtt/m/n/10 ##  3  2013     1     1      542            540         2    
+  923            850[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1192--1192
+[]\TU/lmtt/m/n/10 ##  4  2013     1     1      544            545        -1    
+ 1004           1022[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1192--1192
+[]\TU/lmtt/m/n/10 ##  5  2013     1     1      554            600        -6    
+  812            837[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1192--1192
+[]\TU/lmtt/m/n/10 ##  6  2013     1     1      554            558        -4    
+  740            728[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1192--1192
+[]\TU/lmtt/m/n/10 ##  7  2013     1     1      555            600        -5    
+  913            854[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1192--1192
+[]\TU/lmtt/m/n/10 ##  8  2013     1     1      557            600        -3    
+  709            723[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1192--1192
+[]\TU/lmtt/m/n/10 ##  9  2013     1     1      557            600        -3    
+  838            846[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1192--1192
+[]\TU/lmtt/m/n/10 ## 10  2013     1     1      558            600        -2    
+  753            745[] 
+ []
+
+
+Overfull \hbox (33.0pt too wide) in paragraph at lines 1192--1192
+[]\TU/lmtt/m/n/10 ## # ... with 336,766 more rows, and 12 more variables: arr_d
+elay <dbl>,[] 
+ []
+
+
+Overfull \hbox (54.0pt too wide) in paragraph at lines 1192--1192
+[]\TU/lmtt/m/n/10 ## #   carrier <chr>, flight <int>, tailnum <chr>, origin <ch
+r>, dest <chr>,[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 1192--1192
+[]\TU/lmtt/m/n/10 ## #   air_time <dbl>, distance <dbl>, hour <dbl>, minute <db
+l>, time_hour <dttm>,[] 
+ []
+
+[26]
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1226--1226
+[]\TU/lmtt/m/n/10 ##     year month   day dep_time sched_dep_time dep_delay arr
+_time sched_arr_time[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1226--1226
+[]\TU/lmtt/m/n/10 ##    <int> <int> <int>    <int>          <int>     <dbl>    
+<int>          <int>[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1226--1226
+[]\TU/lmtt/m/n/10 ##  1  2013     1     1      517            515         2    
+  830            819[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1226--1226
+[]\TU/lmtt/m/n/10 ##  2  2013     1     1      533            529         4    
+  850            830[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1226--1226
+[]\TU/lmtt/m/n/10 ##  3  2013     1     1      542            540         2    
+  923            850[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1226--1226
+[]\TU/lmtt/m/n/10 ##  4  2013     1     1      544            545        -1    
+ 1004           1022[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1226--1226
+[]\TU/lmtt/m/n/10 ##  5  2013     1     1      554            600        -6    
+  812            837[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1226--1226
+[]\TU/lmtt/m/n/10 ##  6  2013     1     1      554            558        -4    
+  740            728[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1226--1226
+[]\TU/lmtt/m/n/10 ##  7  2013     1     1      555            600        -5    
+  913            854[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1226--1226
+[]\TU/lmtt/m/n/10 ##  8  2013     1     1      557            600        -3    
+  709            723[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1226--1226
+[]\TU/lmtt/m/n/10 ##  9  2013     1     1      557            600        -3    
+  838            846[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1226--1226
+[]\TU/lmtt/m/n/10 ## 10  2013     1     1      558            600        -2    
+  753            745[] 
+ []
+
+
+Overfull \hbox (33.0pt too wide) in paragraph at lines 1226--1226
+[]\TU/lmtt/m/n/10 ## # ... with 336,766 more rows, and 12 more variables: arr_d
+elay <dbl>,[] 
+ []
+
+
+Overfull \hbox (54.0pt too wide) in paragraph at lines 1226--1226
+[]\TU/lmtt/m/n/10 ## #   carrier <chr>, flight <int>, tailnum <chr>, origin <ch
+r>, dest <chr>,[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 1226--1226
+[]\TU/lmtt/m/n/10 ## #   air_time <dbl>, distance <dbl>, hour <dbl>, minute <db
+l>, time_hour <dttm>,[] 
+ []
+
+[27]
+Overfull \hbox (17.25pt too wide) in paragraph at lines 1300--1300
+[]\TU/lmtt/m/n/10 ## `summarise()` ungrouping output (override with `.groups` a
+rgument)[] 
  []
 
 [28]
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1397--1397
-[]\TU/lmtt/m/n/10 ##  3  2013     8    26      909            915        -6    
- 1008           1039[] 
+Overfull \hbox (17.25pt too wide) in paragraph at lines 1335--1335
+[]\TU/lmtt/m/n/10 ## `summarise()` ungrouping output (override with `.groups` a
+rgument)[] 
+ []
+
+[29]
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 1401.
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1430--1430
+[]\TU/lmtt/m/n/10 ##     year month   day dep_time sched_dep_time dep_delay arr
+_time sched_arr_time[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1397--1397
-[]\TU/lmtt/m/n/10 ##  4  2013     5    15     1832           1715        77    
- 2147           2000[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1430--1430
+[]\TU/lmtt/m/n/10 ##    <int> <int> <int>    <int>          <int>     <dbl>    
+<int>          <int>[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1397--1397
-[]\TU/lmtt/m/n/10 ##  5  2013     6     7     1050           1050         0    
- 1249           1300[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1430--1430
+[]\TU/lmtt/m/n/10 ##  1  2013     1     8     1942           1935         7    
+ 2140           2145[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1397--1397
-[]\TU/lmtt/m/n/10 ##  6  2013     1    31     1745           1745         0    
- 2116           2117[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1430--1430
+[]\TU/lmtt/m/n/10 ##  2  2013    11    20     1800           1801        -1    
+ 1946           1944[] 
+ []
+
+[30]
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1430--1430
+[]\TU/lmtt/m/n/10 ##  3  2013     2    19     1919           1855        24    
+ 2058           2100[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1397--1397
-[]\TU/lmtt/m/n/10 ##  7  2013     5    17     1154            955       119    
- 1334           1139[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1430--1430
+[]\TU/lmtt/m/n/10 ##  4  2013     8    26     1550           1550         0    
+ 1735           1749[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1397--1397
-[]\TU/lmtt/m/n/10 ##  8  2013     4    22       NA           1738        NA    
-   NA           1926[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1430--1430
+[]\TU/lmtt/m/n/10 ##  5  2013    11    11     2104           2107        -3    
+ 2218           2226[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1397--1397
-[]\TU/lmtt/m/n/10 ##  9  2013     2    17      739            740        -1    
- 1034           1044[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1430--1430
+[]\TU/lmtt/m/n/10 ##  6  2013    10    24     1618           1615         3    
+ 1909           1915[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1397--1397
-[]\TU/lmtt/m/n/10 ## 10  2013    12    17     1743           1556       107    
- 2121           1914[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1430--1430
+[]\TU/lmtt/m/n/10 ##  7  2013     7    11     1132           1130         2    
+ 1333           1327[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 1397--1397
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1430--1430
+[]\TU/lmtt/m/n/10 ##  8  2013     1    21     1123           1130        -7    
+ 1412           1422[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1430--1430
+[]\TU/lmtt/m/n/10 ##  9  2013     3    14     1427           1415        12    
+ 1632           1631[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1430--1430
+[]\TU/lmtt/m/n/10 ## 10  2013     6    27     1951           1723       148    
+   NA           2013[] 
+ []
+
+
+Overfull \hbox (64.5pt too wide) in paragraph at lines 1430--1430
 []\TU/lmtt/m/n/10 ## # ... with 11 more variables: arr_delay <dbl>, carrier <ch
 r>, flight <int>,[] 
  []
 
 
-Overfull \hbox (69.75pt too wide) in paragraph at lines 1397--1397
+Overfull \hbox (69.75pt too wide) in paragraph at lines 1430--1430
 []\TU/lmtt/m/n/10 ## #   tailnum <chr>, origin <chr>, dest <chr>, air_time <dbl
 >, distance <dbl>,[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1424--1424
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1457--1457
 []\TU/lmtt/m/n/10 ##     year month   day dep_time sched_dep_time dep_delay arr
 _time sched_arr_time[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1424--1424
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1457--1457
 []\TU/lmtt/m/n/10 ##    <int> <int> <int>    <int>          <int>     <dbl>    
 <int>          <int>[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1424--1424
-[]\TU/lmtt/m/n/10 ##  1  2013     1    11     1614           1605         9    
- 1852           1925[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1457--1457
+[]\TU/lmtt/m/n/10 ##  1  2013     5    23     2343           2159       104    
+   52           2326[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1424--1424
-[]\TU/lmtt/m/n/10 ##  2  2013     1    29     1716           1719        -3    
- 1940           1945[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1457--1457
+[]\TU/lmtt/m/n/10 ##  2  2013     9    26     1827           1829        -2    
+ 2016           2011[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1424--1424
-[]\TU/lmtt/m/n/10 ##  3  2013     7    21     1826           1620       126    
- 2219           1945[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1457--1457
+[]\TU/lmtt/m/n/10 ##  3  2013     3     9     1137           1139        -2    
+ 1430           1446[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1424--1424
-[]\TU/lmtt/m/n/10 ##  4  2013    12     1     1627           1630        -3    
- 1935           1957[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1457--1457
+[]\TU/lmtt/m/n/10 ##  4  2013    10    31      840            630       130    
+ 1114            839[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1424--1424
-[]\TU/lmtt/m/n/10 ##  5  2013     8    15     1912           1827        45    
- 2106           2033[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1457--1457
+[]\TU/lmtt/m/n/10 ##  5  2013     5    22     1835           1700        95    
+ 2006           1819[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1424--1424
-[]\TU/lmtt/m/n/10 ##  6  2013     5     1     1500           1500         0    
- 1712           1722[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1457--1457
+[]\TU/lmtt/m/n/10 ##  6  2013     8     1     1344           1338         6    
+ 1642           1634[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1424--1424
-[]\TU/lmtt/m/n/10 ##  7  2013     8    13     1237           1100        97    
- 1338           1215[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1457--1457
+[]\TU/lmtt/m/n/10 ##  7  2013     1    11      757            755         2    
+  909            930[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1424--1424
-[]\TU/lmtt/m/n/10 ##  8  2013     4    21     1409           1359        10    
- 1730           1715[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1457--1457
+[]\TU/lmtt/m/n/10 ##  8  2013     3    26     1730           1730         0    
+ 1923           1923[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1424--1424
-[]\TU/lmtt/m/n/10 ##  9  2013     9    16     1530           1530         0    
- 1657           1645[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1457--1457
+[]\TU/lmtt/m/n/10 ##  9  2013     8     5     1513           1520        -7    
+ 1705           1710[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1424--1424
-[]\TU/lmtt/m/n/10 ## 10  2013     7    27     1236           1240        -4    
- 1427           1445[] 
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1457--1457
+[]\TU/lmtt/m/n/10 ## 10  2013     8    25     1729           1735        -6    
+ 1918           1929[] 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 1424--1424
+Overfull \hbox (12.0pt too wide) in paragraph at lines 1457--1457
 []\TU/lmtt/m/n/10 ## # ... with 327 more rows, and 11 more variables: arr_delay
  <dbl>,[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 1424--1424
+Overfull \hbox (54.0pt too wide) in paragraph at lines 1457--1457
 []\TU/lmtt/m/n/10 ## #   carrier <chr>, flight <int>, tailnum <chr>, origin <ch
 r>, dest <chr>,[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1424--1424
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1457--1457
 []\TU/lmtt/m/n/10 ## #   air_time <dbl>, distance <dbl>, hour <dbl>, minute <db
 l>, time_hour <dttm>[] 
  []
 
-[29] [30
+[31] [32]
+Chapter 4.
+[33
 
 ]
-Chapter 4.
-[31]
 File: images/Iris_skim.png Graphic file (type bmp)
 <images/Iris_skim.png>
-[32] [33]
+[34] [35]
 File: ds-intro-till-r-bok_files/figure-latex/anscombe_final-1.pdf Graphic file 
 (type pdf)
 <use ds-intro-till-r-bok_files/figure-latex/anscombe_final-1.pdf>
-[34]
-Overfull \hbox (17.25pt too wide) in paragraph at lines 1660--1660
+[36]
+Overfull \hbox (17.25pt too wide) in paragraph at lines 1705--1705
 []\TU/lmtt/m/n/10 ## `summarise()` ungrouping output (override with `.groups` a
 rgument)[] 
  []
 
-[35]
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-25-1.pdf Graphic fil
-e (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-25-1.pdf>
-[36]
+[37]
 File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-1.pdf Graphic fil
 e (type pdf)
 <use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-1.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-2.pdf Graphic fil
+[38]
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-1.pdf Graphic fil
 e (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-2.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-3.pdf Graphic fil
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-1.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-2.pdf Graphic fil
 e (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-3.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-4.pdf Graphic fil
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-2.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-3.pdf Graphic fil
 e (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-4.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-5.pdf Graphic fil
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-3.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-4.pdf Graphic fil
 e (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-5.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-6.pdf Graphic fil
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-4.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-5.pdf Graphic fil
 e (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-6.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-7.pdf Graphic fil
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-5.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-6.pdf Graphic fil
 e (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-7.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-8.pdf Graphic fil
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-6.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-7.pdf Graphic fil
 e (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-8.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-9.pdf Graphic fil
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-7.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-8.pdf Graphic fil
 e (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-9.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-10.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-8.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-9.pdf Graphic fil
+e (type pdf)
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-9.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-10.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-10.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-11.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-10.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-11.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-11.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-12.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-11.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-12.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-12.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-13.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-12.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-13.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-13.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-14.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-13.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-14.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-14.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-15.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-14.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-15.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-15.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-16.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-15.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-16.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-16.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-17.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-16.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-17.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-17.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-18.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-17.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-18.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-18.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-19.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-18.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-19.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-19.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-20.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-19.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-20.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-20.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-21.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-20.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-21.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-21.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-22.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-21.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-22.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-22.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-23.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-22.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-23.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-23.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-24.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-23.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-24.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-24.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-25.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-24.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-25.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-25.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-26.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-25.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-26.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-26.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-27.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-26.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-27.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-27.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-28.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-27.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-28.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-28.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-29.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-28.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-29.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-29.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-30.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-29.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-30.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-30.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-31.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-30.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-31.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-31.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-32.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-31.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-32.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-32.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-33.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-32.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-33.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-33.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-34.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-33.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-34.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-34.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-35.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-34.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-35.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-35.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-36.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-35.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-36.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-36.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-37.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-36.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-37.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-37.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-38.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-37.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-38.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-38.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-39.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-38.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-39.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-39.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-40.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-39.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-40.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-40.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-41.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-40.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-41.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-41.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-42.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-41.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-42.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-42.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-43.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-42.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-43.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-43.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-44.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-43.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-44.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-44.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-45.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-44.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-45.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-45.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-46.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-45.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-46.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-46.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-47.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-46.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-47.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-47.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-48.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-47.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-48.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-48.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-49.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-48.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-49.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-49.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-50.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-49.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-50.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-50.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-51.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-50.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-51.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-51.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-52.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-51.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-52.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-52.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-53.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-52.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-53.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-53.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-54.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-53.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-54.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-54.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-55.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-54.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-55.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-55.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-56.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-55.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-56.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-56.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-57.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-56.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-57.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-57.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-58.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-57.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-58.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-58.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-59.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-58.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-59.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-59.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-60.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-59.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-60.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-60.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-61.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-60.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-61.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-61.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-62.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-61.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-62.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-62.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-63.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-62.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-63.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-63.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-64.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-63.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-64.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-64.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-65.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-64.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-65.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-65.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-66.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-65.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-66.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-66.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-67.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-66.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-67.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-67.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-68.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-67.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-68.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-68.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-69.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-68.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-69.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-69.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-70.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-69.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-70.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-70.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-71.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-70.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-71.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-71.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-72.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-71.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-72.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-72.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-73.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-72.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-73.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-73.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-74.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-73.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-74.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-74.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-75.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-74.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-75.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-75.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-76.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-75.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-76.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-76.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-77.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-76.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-77.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-77.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-78.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-77.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-78.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-78.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-79.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-78.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-79.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-79.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-80.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-79.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-80.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-80.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-81.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-80.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-81.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-81.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-82.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-81.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-82.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-82.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-83.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-82.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-83.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-83.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-84.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-83.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-84.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-84.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-85.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-84.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-85.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-85.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-86.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-85.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-86.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-86.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-87.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-86.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-87.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-87.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-88.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-87.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-88.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-88.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-89.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-88.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-89.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-89.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-90.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-89.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-90.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-90.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-91.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-90.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-91.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-91.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-92.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-91.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-92.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-92.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-93.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-92.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-93.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-93.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-94.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-93.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-94.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-94.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-95.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-94.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-95.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-95.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-96.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-95.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-96.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-96.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-97.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-96.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-97.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-97.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-98.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-97.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-98.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-98.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-99.pdf Graphic fi
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-98.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-99.pdf Graphic fi
 le (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-99.pdf>
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-100.pdf Graphic f
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-99.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-100.pdf Graphic f
 ile (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-26-100.pdf>
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-27-100.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 []
  []
 
 
 Underfull \vbox (badness 4013) has occurred while \output is active []
-
-[37]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[38]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [39]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2911,54 +2832,60 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [84]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[85] [86]
-Overfull \hbox (1.5pt too wide) in paragraph at lines 1795--1795
+[85]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[86]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[87] [88]
+Overfull \hbox (1.5pt too wide) in paragraph at lines 1840--1840
 []\TU/lmtt/m/n/10 ##  Afghanistan:  12   Africa  :624   Min.   :1952   Min.   :
 23.60[] 
  []
 
 
-Overfull \hbox (1.5pt too wide) in paragraph at lines 1795--1795
+Overfull \hbox (1.5pt too wide) in paragraph at lines 1840--1840
 []\TU/lmtt/m/n/10 ##  Albania    :  12   Americas:300   1st Qu.:1966   1st Qu.:
 48.20[] 
  []
 
 
-Overfull \hbox (1.5pt too wide) in paragraph at lines 1795--1795
+Overfull \hbox (1.5pt too wide) in paragraph at lines 1840--1840
 []\TU/lmtt/m/n/10 ##  Algeria    :  12   Asia    :396   Median :1980   Median :
 60.71[] 
  []
 
 
-Overfull \hbox (1.5pt too wide) in paragraph at lines 1795--1795
+Overfull \hbox (1.5pt too wide) in paragraph at lines 1840--1840
 []\TU/lmtt/m/n/10 ##  Angola     :  12   Europe  :360   Mean   :1980   Mean   :
 59.47[] 
  []
 
 
-Overfull \hbox (1.5pt too wide) in paragraph at lines 1795--1795
+Overfull \hbox (1.5pt too wide) in paragraph at lines 1840--1840
 []\TU/lmtt/m/n/10 ##  Argentina  :  12   Oceania : 24   3rd Qu.:1993   3rd Qu.:
 70.85[] 
  []
 
 
-Overfull \hbox (1.5pt too wide) in paragraph at lines 1795--1795
+Overfull \hbox (1.5pt too wide) in paragraph at lines 1840--1840
 []\TU/lmtt/m/n/10 ##  Australia  :  12                  Max.   :2007   Max.   :
 82.60[] 
  []
 
-[87]
+[89]
 File: images/gapminder_skim.png Graphic file (type bmp)
 <images/gapminder_skim.png>
-[88]
+[90]
 File: ds-intro-till-r-bok_files/figure-latex/gapminder_data-1.pdf Graphic file 
 (type pdf)
 <use ds-intro-till-r-bok_files/figure-latex/gapminder_data-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[89]
-Underfull \hbox (badness 1472) in paragraph at lines 1864--1866
+[91]
+Underfull \hbox (badness 1472) in paragraph at lines 1909--1911
 []\TU/lmr/m/n/10 Vi behöver \TU/lmtt/m/n/10 mappa \TU/lmr/m/n/10 data till visu
 aliseringen. Vi mappar data till
  []
@@ -2969,31 +2896,31 @@ type pdf)
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[90]
+[92]
 File: ds-intro-till-r-bok_files/figure-latex/gapminder_geoms-1.pdf Graphic file
  (type pdf)
 <use ds-intro-till-r-bok_files/figure-latex/gapminder_geoms-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[91]
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-28-1.pdf Graphic fil
+[93]
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-29-1.pdf Graphic fil
 e (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-28-1.pdf>
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-29-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[92]
+[94]
 File: ds-intro-till-r-bok_files/figure-latex/gapminder_aes_size-1.pdf Graphic f
 ile (type pdf)
 <use ds-intro-till-r-bok_files/figure-latex/gapminder_aes_size-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[93]
+[95]
 
 LaTeX Font Warning: Font shape `TU/lmtt/bx/it' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/sl' tried instead on input line 1943.
+(Font)              Font shape `TU/lmtt/b/sl' tried instead on input line 1988.
 
 
 File: ds-intro-till-r-bok_files/figure-latex/gapminder_scale1-1.pdf Graphic fil
@@ -3002,28 +2929,28 @@ e (type pdf)
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[94]
+[96]
 File: ds-intro-till-r-bok_files/figure-latex/gapminder_gdp-1.pdf Graphic file (
 type pdf)
 <use ds-intro-till-r-bok_files/figure-latex/gapminder_gdp-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[95]
+[97]
 File: ds-intro-till-r-bok_files/figure-latex/gapminder_gdplog-1.pdf Graphic fil
 e (type pdf)
 <use ds-intro-till-r-bok_files/figure-latex/gapminder_gdplog-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[96]
+[98]
 File: ds-intro-till-r-bok_files/figure-latex/gapminder_log-1.pdf Graphic file (
 type pdf)
 <use ds-intro-till-r-bok_files/figure-latex/gapminder_log-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[97]
+[99]
 File: ds-intro-till-r-bok_files/figure-latex/hans_rosling-1.pdf Graphic file (t
 ype pdf)
 <use ds-intro-till-r-bok_files/figure-latex/hans_rosling-1.pdf>
@@ -3325,507 +3252,501 @@ File: ds-intro-till-r-bok_files/figure-latex/hans_rosling-100.pdf Graphic file
 (type pdf)
 <use ds-intro-till-r-bok_files/figure-latex/hans_rosling-100.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
 []
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[98]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[99]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [100]
@@ -3969,8 +3890,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [146]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[147] [148]
-Overfull \hbox (85.5pt too wide) in paragraph at lines 2044--2044
+[147]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[148]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[149] [150]
+Overfull \hbox (85.5pt too wide) in paragraph at lines 2089--2089
 []\TU/lmtt/m/n/10 ## Warning in max(ids, na.rm = TRUE): no non-missing argument
 s to max; returning -[] 
  []
@@ -3978,22 +3905,22 @@ s to max; returning -[]
 File: ds-intro-till-r-bok_files/figure-latex/gapminder_lm-1.pdf Graphic file (t
 ype pdf)
 <use ds-intro-till-r-bok_files/figure-latex/gapminder_lm-1.pdf>
-[149]
+[151]
 File: ds-intro-till-r-bok_files/figure-latex/gapminder_lm_all-1.pdf Graphic fil
 e (type pdf)
 <use ds-intro-till-r-bok_files/figure-latex/gapminder_lm_all-1.pdf>
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 2099--2099
+Overfull \hbox (85.5pt too wide) in paragraph at lines 2144--2144
 []\TU/lmtt/m/n/10 ## Warning in max(ids, na.rm = TRUE): no non-missing argument
 s to max; returning -[] 
  []
 
-[150]
+[152]
 File: ds-intro-till-r-bok_files/figure-latex/gapminder_facets-1.pdf Graphic fil
 e (type pdf)
 <use ds-intro-till-r-bok_files/figure-latex/gapminder_facets-1.pdf>
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 2129--2129
+Overfull \hbox (85.5pt too wide) in paragraph at lines 2174--2174
 []\TU/lmtt/m/n/10 ## Warning in max(ids, na.rm = TRUE): no non-missing argument
 s to max; returning -[] 
  []
@@ -4001,294 +3928,528 @@ s to max; returning -[]
 File: ds-intro-till-r-bok_files/figure-latex/gapminder_facet_scale-1.pdf Graphi
 c file (type pdf)
 <use ds-intro-till-r-bok_files/figure-latex/gapminder_facet_scale-1.pdf>
-[151]
+[153]
 File: images/Nightingale-mortality.jpg Graphic file (type bmp)
 <images/Nightingale-mortality.jpg>
-[152]
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-29-1.pdf Graphic fil
+[154]
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-30-1.pdf Graphic fil
 e (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-29-1.pdf>
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-30-1.pdf>
 
 Underfull \vbox (badness 7649) has occurred while \output is active []
 
-[153] [154]
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-31-1.pdf Graphic fil
+[155] [156]
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-32-1.pdf Graphic fil
 e (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-31-1.pdf>
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-32-1.pdf>
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 2240--2240
+Overfull \hbox (17.25pt too wide) in paragraph at lines 2285--2285
 []\TU/lmtt/m/n/10 ##  [1] Bahrain       Canada        Denmark       Germany    
    Libya[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 2240--2240
+Overfull \hbox (59.25pt too wide) in paragraph at lines 2285--2285
 []\TU/lmtt/m/n/10 ##  [6] Netherlands   Norway        Saudi Arabia  Switzerland
    United States[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 2240--2240
+Overfull \hbox (85.5pt too wide) in paragraph at lines 2285--2285
 []\TU/lmtt/m/n/10 ## 142 Levels: Afghanistan Albania Algeria Angola Argentina A
 ustralia ... Zimbabwe[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 2253--2253
+Overfull \hbox (17.25pt too wide) in paragraph at lines 2298--2298
 []\TU/lmtt/m/n/10 ## `summarise()` ungrouping output (override with `.groups` a
 rgument)[] 
  []
 
-[155]
-File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-32-1.pdf Graphic fil
+[157]
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-33-1.pdf Graphic fil
 e (type pdf)
-<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-32-1.pdf>
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-33-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[156] [157] [158]
-Chapter 5.
-[159
+[158] [159]
+Overfull \hbox (69.75pt too wide) in paragraph at lines 2409--2409
+[]\TU/lmtt/m/n/10 ##    sold_date  final_price square_m_price type  area  city 
+  sq_m rooms   fee[] 
+ []
 
-] [160]
+
+Overfull \hbox (69.75pt too wide) in paragraph at lines 2409--2409
+[]\TU/lmtt/m/n/10 ##    <date>           <dbl>          <dbl> <chr> <chr> <chr>
+ <dbl> <dbl> <dbl>[] 
+ []
+
+
+Overfull \hbox (69.75pt too wide) in paragraph at lines 2409--2409
+[]\TU/lmtt/m/n/10 ##  1 2019-01-11     2800000          56000 bost~ järv~ solna
+    50     2  3087[] 
+ []
+
+
+Overfull \hbox (69.75pt too wide) in paragraph at lines 2409--2409
+[]\TU/lmtt/m/n/10 ##  2 2019-01-11     1280000          18003 bost~ östr~ malmö
+   711     3  4346[] 
+ []
+
+
+Overfull \hbox (69.75pt too wide) in paragraph at lines 2409--2409
+[]\TU/lmtt/m/n/10 ##  3 2019-01-11     7250000          76316 frit~ sote~ sote~
+    95     6    NA[] 
+ []
+
+
+Overfull \hbox (69.75pt too wide) in paragraph at lines 2409--2409
+[]\TU/lmtt/m/n/10 ##  4 2019-01-11     2130000          38727 bost~ väll~ stoc~
+    55     2  3838[] 
+ []
+
+
+Overfull \hbox (69.75pt too wide) in paragraph at lines 2409--2409
+[]\TU/lmtt/m/n/10 ##  5 2019-01-11      950000          11176 fril~ cent~ kil  
+    85     3    NA[] 
+ []
+
+
+Overfull \hbox (69.75pt too wide) in paragraph at lines 2409--2409
+[]\TU/lmtt/m/n/10 ##  6 2019-01-11     2195000          39909 bost~ edsä~ soll~
+    55     2  3208[] 
+ []
+
+
+Overfull \hbox (69.75pt too wide) in paragraph at lines 2409--2409
+[]\TU/lmtt/m/n/10 ##  7 2019-01-11     2900000          30851 par/~ bran~ hani~
+    94     3    NA[] 
+ []
+
+
+Overfull \hbox (69.75pt too wide) in paragraph at lines 2409--2409
+[]\TU/lmtt/m/n/10 ##  8 2019-01-11     4200000          46154 bost~ minn~ stoc~
+    91     4  4641[] 
+ []
+
+
+Overfull \hbox (69.75pt too wide) in paragraph at lines 2409--2409
+[]\TU/lmtt/m/n/10 ##  9 2019-01-11     2825000          49045 bost~ erik~ göte~
+   576     2  2875[] 
+ []
+
+
+Overfull \hbox (69.75pt too wide) in paragraph at lines 2409--2409
+[]\TU/lmtt/m/n/10 ## 10 2019-01-11     1995000          29556 bost~ stoc~ stoc~
+   675     2  5218[] 
+ []
+
+
+Overfull \hbox (38.25pt too wide) in paragraph at lines 2409--2409
+[]\TU/lmtt/m/n/10 ## # ... with 99,828 more rows, and 6 more variables: add_are
+a_sqm <dbl>,[] 
+ []
+
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 2409--2409
+[]\TU/lmtt/m/n/10 ## #   perc_change <dbl>, list_price <dbl>, price_diff <dbl>,
+ month <chr>,[] 
+ []
+
+[160]
+Overfull \hbox (33.0pt too wide) in paragraph at lines 2463--2463
+[]\TU/lmtt/m/n/10 ## 1: hem_storstad <- hem %>% filter(city %in% c('stockholm',
+ 'malmö', _[] 
+ []
+
+
+Overfull \hbox (38.25pt too wide) in paragraph at lines 2463--2463
+[]\TU/lmtt/m/n/10 ##                                                           
+           ^[] 
+ []
+
+[161]
+Overfull \hbox (4.84999pt too wide) in paragraph at lines 2501--2502
+[]\TU/lmr/m/n/10 Vill vi göra en lättare jämförelse mellan städerna kan vi anvä
+nda \TU/lmtt/m/n/10 geom_density()
+ []
+
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-35-1.pdf Graphic fil
+e (type pdf)
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-35-1.pdf>
+[162]
+File: ds-intro-till-r-bok_files/figure-latex/p_den-1.pdf Graphic file (type pdf
+)
+<use ds-intro-till-r-bok_files/figure-latex/p_den-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[163]
+Overfull \hbox (17.25pt too wide) in paragraph at lines 2569--2569
+[]\TU/lmtt/m/n/10 ## `stat_bin()` using `bins = 30`. Pick better value with `bi
+nwidth`.[] 
+ []
+
+File: ds-intro-till-r-bok_files/figure-latex/p_hist-1.pdf Graphic file (type pd
+f)
+<use ds-intro-till-r-bok_files/figure-latex/p_hist-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[164]
+File: ds-intro-till-r-bok_files/figure-latex/p_box-1.pdf Graphic file (type pdf
+)
+<use ds-intro-till-r-bok_files/figure-latex/p_box-1.pdf>
+[165]
+File: ds-intro-till-r-bok_files/figure-latex/p_fiol-1.pdf Graphic file (type pd
+f)
+<use ds-intro-till-r-bok_files/figure-latex/p_fiol-1.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/p_ridges-1.pdf Graphic file (type 
+pdf)
+<use ds-intro-till-r-bok_files/figure-latex/p_ridges-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[166]
+File: ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-36-1.pdf Graphic fil
+e (type pdf)
+<use ds-intro-till-r-bok_files/figure-latex/unnamed-chunk-36-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[167]
+Overfull \hbox (17.25pt too wide) in paragraph at lines 2641--2641
+[]\TU/lmtt/m/n/10 ## `stat_bin()` using `bins = 30`. Pick better value with `bi
+nwidth`.[] 
+ []
+
+File: ds-intro-till-r-bok_files/figure-latex/p_log-1.pdf Graphic file (type pdf
+)
+<use ds-intro-till-r-bok_files/figure-latex/p_log-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[168] [169] [170]
+File: ds-intro-till-r-bok_files/figure-latex/p_labs-1.pdf Graphic file (type pd
+f)
+<use ds-intro-till-r-bok_files/figure-latex/p_labs-1.pdf>
+File: ds-intro-till-r-bok_files/figure-latex/p_theme-1.pdf Graphic file (type p
+df)
+<use ds-intro-till-r-bok_files/figure-latex/p_theme-1.pdf>
+[171] [172]
+Overfull \hbox (274.5pt too wide) in paragraph at lines 2851--2851
+[]\TU/lmtt/m/n/10 ## Error in ggplot.default(hem, aes(x = list_price, y = final
+_price, color = ...)): '...' used in an incorrect context[] 
+ []
+
+[173]
+Overfull \hbox (17.25pt too wide) in paragraph at lines 2897--2897
+[]\TU/lmtt/m/n/10 ## `summarise()` ungrouping output (override with `.groups` a
+rgument)[] 
+ []
+
+File: ds-intro-till-r-bok_files/figure-latex/p_col-1.pdf Graphic file (type pdf
+)
+<use ds-intro-till-r-bok_files/figure-latex/p_col-1.pdf>
+[174]
+File: ds-intro-till-r-bok_files/figure-latex/p_flip2-1.pdf Graphic file (type p
+df)
+<use ds-intro-till-r-bok_files/figure-latex/p_flip2-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[175]
+Overfull \hbox (17.25pt too wide) in paragraph at lines 2973--2973
+[]\TU/lmtt/m/n/10 ## `summarise()` ungrouping output (override with `.groups` a
+rgument)[] 
+ []
+
+[176]
+File: ds-intro-till-r-bok_files/figure-latex/p_reorder-1.pdf Graphic file (type
+ pdf)
+<use ds-intro-till-r-bok_files/figure-latex/p_reorder-1.pdf>
+[177]
+Overfull \hbox (54.0pt too wide) in paragraph at lines 3058--3058
+[]\TU/lmtt/m/n/10 ## 3:   summarise(median_sq_m_price = median(square_m_price, 
+na.rm = T)) %>%[] 
+ []
+
+[178] [179]
+Overfull \hbox (17.25pt too wide) in paragraph at lines 3158--3158
+[]\TU/lmtt/m/n/10 ## `summarise()` ungrouping output (override with `.groups` a
+rgument)[] 
+ []
+
+File: ds-intro-till-r-bok_files/figure-latex/p_ts2-1.pdf Graphic file (type pdf
+)
+<use ds-intro-till-r-bok_files/figure-latex/p_ts2-1.pdf>
+
+Overfull \hbox (17.25pt too wide) in paragraph at lines 3191--3191
+[]\TU/lmtt/m/n/10 ## `summarise()` ungrouping output (override with `.groups` a
+rgument)[] 
+ []
+
+[180]
+File: ds-intro-till-r-bok_files/figure-latex/p_plotly-1.pdf Graphic file (type 
+pdf)
+<use ds-intro-till-r-bok_files/figure-latex/p_plotly-1.pdf>
+
+Overfull \hbox (2.48001pt too wide) in paragraph at lines 3215--3216
+[][]$[][][][][] [] [] [] [][][][][][][][][][][][][][][][][][] [] [][][] [] [] [
+][] [][][][][][][][][][][][][] [][] [][][][][] [][] [][] [][] [][][] [][] [][][
+][][][][] [][]
+ []
+
+
+Overfull \hbox (184.66682pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 4.22.  GRAMMAR OF GRAPHICS - ARTIKEL OM THE GRAMMAR OF GRAPHICS
+ SOM GGPLOT BYGGER PÅ \TU/lmr/m/n/10 181
+ []
+
+[181] [182]
+Chapter 5.
+[183
+
+] [184]
 Underfull \vbox (badness 1968) has occurred while \output is active []
 
-[161] [162]
-Overfull \hbox (27.75pt too wide) in paragraph at lines 2563--2563
+[185] [186]
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3495--3495
 []\TU/lmtt/m/n/10 ##  [1] 6 6 4 6 8 6 8 4 4 6 6 8 8 8 8 8 8 4 4 4 4 8 8 8 8 4 4
  4 8 6 8 4[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 2598--2598
+Overfull \hbox (17.25pt too wide) in paragraph at lines 3530--3530
 []\TU/lmtt/m/n/10 ## [10] "gear"                  "carb"                  "ny_v
 ariabel"[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ##                        A B     C   D    E     F     G H I 
 J K       NA   NA[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Mazda RX4           21.0 6 160.0 110 3.90 2.620 16.46 0 1 
 4 4 3.500000 21.0[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Mazda RX4 Wag       21.0 6 160.0 110 3.90 2.875 17.02 0 1 
 4 4 3.500000 21.0[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Datsun 710          22.8 4 108.0  93 3.85 2.320 18.61 1 1 
 4 1 5.700000 22.8[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Hornet 4 Drive      21.4 6 258.0 110 3.08 3.215 19.44 1 0 
 3 1 3.566667 21.4[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Hornet Sportabout   18.7 8 360.0 175 3.15 3.440 17.02 0 0 
 3 2 2.337500 18.7[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Valiant             18.1 6 225.0 105 2.76 3.460 20.22 1 0 
 3 1 3.016667 18.1[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Duster 360          14.3 8 360.0 245 3.21 3.570 15.84 0 0 
 3 4 1.787500 14.3[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Merc 240D           24.4 4 146.7  62 3.69 3.190 20.00 1 0 
 4 2 6.100000 24.4[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Merc 230            22.8 4 140.8  95 3.92 3.150 22.90 1 0 
 4 2 5.700000 22.8[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Merc 280            19.2 6 167.6 123 3.92 3.440 18.30 1 0 
 4 4 3.200000 19.2[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Merc 280C           17.8 6 167.6 123 3.92 3.440 18.90 1 0 
 4 4 2.966667 17.8[] 
  []
 
-[163]
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+[187]
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Merc 450SE          16.4 8 275.8 180 3.07 4.070 17.40 0 0 
 3 3 2.050000 16.4[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Merc 450SL          17.3 8 275.8 180 3.07 3.730 17.60 0 0 
 3 3 2.162500 17.3[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Merc 450SLC         15.2 8 275.8 180 3.07 3.780 18.00 0 0 
 3 3 1.900000 15.2[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Cadillac Fleetwood  10.4 8 472.0 205 2.93 5.250 17.98 0 0 
 3 4 1.300000 10.4[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Lincoln Continental 10.4 8 460.0 215 3.00 5.424 17.82 0 0 
 3 4 1.300000 10.4[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Chrysler Imperial   14.7 8 440.0 230 3.23 5.345 17.42 0 0 
 3 4 1.837500 14.7[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Fiat 128            32.4 4  78.7  66 4.08 2.200 19.47 1 1 
 4 1 8.100000 32.4[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Honda Civic         30.4 4  75.7  52 4.93 1.615 18.52 1 1 
 4 2 7.600000 30.4[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Toyota Corolla      33.9 4  71.1  65 4.22 1.835 19.90 1 1 
 4 1 8.475000 33.9[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Toyota Corona       21.5 4 120.1  97 3.70 2.465 20.01 1 0 
 3 1 5.375000 21.5[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Dodge Challenger    15.5 8 318.0 150 2.76 3.520 16.87 0 0 
 3 2 1.937500 15.5[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## AMC Javelin         15.2 8 304.0 150 3.15 3.435 17.30 0 0 
 3 2 1.900000 15.2[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Camaro Z28          13.3 8 350.0 245 3.73 3.840 15.41 0 0 
 3 4 1.662500 13.3[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Pontiac Firebird    19.2 8 400.0 175 3.08 3.845 17.05 0 0 
 3 2 2.400000 19.2[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Fiat X1-9           27.3 4  79.0  66 4.08 1.935 18.90 1 1 
 4 1 6.825000 27.3[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Porsche 914-2       26.0 4 120.3  91 4.43 2.140 16.70 0 1 
 5 2 6.500000 26.0[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Lotus Europa        30.4 4  95.1 113 3.77 1.513 16.90 1 1 
 5 2 7.600000 30.4[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Ford Pantera L      15.8 8 351.0 264 4.22 3.170 14.50 0 1 
 5 4 1.975000 15.8[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Ferrari Dino        19.7 6 145.0 175 3.62 2.770 15.50 0 1 
 5 6 3.283333 19.7[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Maserati Bora       15.0 8 301.0 335 3.54 3.570 14.60 0 1 
 5 8 1.875000 15.0[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2651--2651
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3583--3583
 []\TU/lmtt/m/n/10 ## Volvo 142E          21.4 4 121.0 109 4.11 2.780 18.60 1 1 
 4 2 5.350000 21.4[] 
  []
 
-[164]
-Overfull \hbox (17.25pt too wide) in paragraph at lines 2720--2720
+[188]
+Overfull \hbox (17.25pt too wide) in paragraph at lines 3652--3652
 []\TU/lmtt/m/n/10 ##  [5] "fitted.values" "assign"        "qr"            "df.r
 esidual"[] 
  []
 
-[165] [166] [167]
-Overfull \hbox (54.0pt too wide) in paragraph at lines 2920--2920
+[189] [190] [191]
+Overfull \hbox (54.0pt too wide) in paragraph at lines 3852--3852
 []\TU/lmtt/m/n/10 ## [1] "Sepal.Length" "Sepal.Width"  "Petal.Length" "Petal.Wi
 dth"  "Species"[] 
  []
 
-[168] (./ds-intro-till-r-bok.aux)
+[192] (./ds-intro-till-r-bok.aux)
 Package rerunfilecheck Info: File `ds-intro-till-r-bok.out' has not changed.
-(rerunfilecheck)             Checksum: 0AA49033934A2B17B3C950C4D27F5360;4244.
+(rerunfilecheck)             Checksum: F461C0D6A7CB32A8BC5E5051F1A97C15;7163.
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 17811 strings out of 479426
- 368489 string characters out of 5879404
- 770982 words of memory out of 5000000
- 36741 multiletter control sequences out of 15000+600000
- 539091 words of font info for 74 fonts, out of 8000000 for 9000
+ 17936 strings out of 479426
+ 373926 string characters out of 5879404
+ 772337 words of memory out of 5000000
+ 36848 multiletter control sequences out of 15000+600000
+ 539107 words of font info for 76 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 94i,6n,118p,8196b,474s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 94i,6n,118p,8196b,472s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ds-intro-till-r-bok.pdf (168 pages).
+Output written on ds-intro-till-r-bok.pdf (192 pages).

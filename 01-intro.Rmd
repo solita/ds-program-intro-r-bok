@@ -202,7 +202,59 @@ Vi kommer här att fokusera på `tidyverse` eftersom det är ett bra sätt att k
 
 I R så jobbar vi med så kallade R-projects. I Rstudio kan du klicka på *file -> New Project -> New Directory -> Create Project* för att skapa ett nytt projekt. Genom att skapa ett projekt vet R alltid var filerna för det projektet är och det blir enklare för dig att jobba.
 
-## Att skriva kod i R
+## R Markdown
+
+R Markdown är ett fil-format för att bygga dynamiska rapporter och dokument i R. R Markdown är skrivet i *markdown*, som är ett enkelt dokumentformat, och innehåller inbäddad R-kod, i form av kodblock. Du kan enkelt infoga ett kodblock i ditt R Markdown genom `ctrl + alt + i` på Windows och `alt + command + i` på Mac.
+
+En R Markdown-fil kan exporteras till HTML, PDF, Word eller Powerpoint samt en rad andra format.
+
+Längst upp i ett R Markdown-dokument finns en `YAML`. I den skriver du titel på dokumentet, författare och output-format. Om du exempelvis vill ha ett word-dokument skriver du:
+
+````
+---
+title: "Min titel"
+author: "Mitt namn"
+output: word_document
+---
+````
+
+Men det vanligaste, och enklaste formatet att arbeta med är `html_document`.
+
+Nedan har du ett exempel ett sådant dokument:
+
+````
+---
+title: "Min titel"
+author: "Mitt namn"
+output: html_document
+---
+
+Det här är ett R Markdown-dokument, här kan vi kombinera skriven text med inbäddad R-kod. Vi kan skapa sofistikerade rapporter och dashboards. Eftersom allt är kod kan vi följa hur ett dokument förändras över tid. Vi behöver inte spara massa olika versioner. 
+
+```{r, eval=TRUE}`r ''`
+library(tidyverse)
+penguins <- palmerpenguins::penguins
+
+ggplot(data = penguins, aes(x = bill_depth_mm,
+                           y = bill_length_mm,
+                           color = species)) +
+  geom_point(size = 3, alpha = 0.8) +
+  geom_smooth(method = "lm", se = FALSE, aes(color = species)) +
+  theme_minimal() +
+  ggthemes::scale_color_tableau() +
+  labs(title = "Längd och bredd pingvinnäbbar",
+       subtitle = "För pingvinsorterna Adelie, Chinstrap and Gentoo Penguins på Palmer Station LTER",
+       x = "Näbbdjup (mm)",
+       y = "Näbblängd (mm)",
+       color = "Pingvinart")
+```
+````
+
+Klickar du sedan på `Knit` längst upp till vänster i dokumentet, eller kör `knitr::render("filnamn.rmd")` så blir resultatet:
+
+![](images/rmd-knitted.png)
+
+## Kodstil: Att skriva kod i R
 
 När du skriver kod gör du det dels med hänsyn dels till andra men framför allt med hänsyn till ditt framtida jag. Koden ska med andra ord vara enkel att läsa.
 
@@ -257,7 +309,42 @@ iris %>%
   ) 
 ```
 
-## Rmarkdown
 
-Rmarkdown är ett format som tillåter dig varva r-kod med skriven text. Du kan sedan rendera filen till antigen HTML, PDF, Word, PowerPoint samt en rad andra format. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
